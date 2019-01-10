@@ -1,0 +1,7 @@
+Пришем приложение EnglishClub.
+
+Client на React
+Server на Nodejs
+BD на SQL
+
+Server и BD пока что размешаем на heroku.com, в дальнейшем посмотрим, возможно перенесем на Amazon.
