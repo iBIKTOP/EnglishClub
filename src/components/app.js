@@ -1,38 +1,48 @@
 import React, { Component } from "react";
+import DictionaryCatalog from "./DictionaryCatalog";
+
 
 import '../styles/App.css';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { words: "" };
+        this.state = { catalog: null };
     }
 
     componentDidMount() {
-        let data = this.getWords();
-        this.setState = { words: data };
+        this.getWords();
     }
 
     getWords() {
-        fetch("http://localhost:3000/words")
+        fetch("http://192.168.0.188:5000")
             .then(function (response) {
                 return response.text();
             })
             .then(function (data) {
                 data = JSON.parse(data);//парсим JSON, создаем объект
                 console.log(data);
-            })
+                this.setState({ catalog: data });
+                console.log(this.state.catalog);
+            }.bind(this))
             .catch(function (error) {
                 log('Request failed', error)
             });
     };
 
     render() {
-        return (
-            <div>
-                <h1>My React App!</h1>
-            </div>
-        );
+        if(this.state.catalog!==null){
+            return (
+                <div className="container">
+                    <h1>My English dictionary!</h1>
+                    <DictionaryCatalog catalog={this.state.catalog}/>
+                </div>
+            );
+        }else{
+            return (
+                <p>Подгружаем...</p>
+            )
+        }
     }
 }
 
