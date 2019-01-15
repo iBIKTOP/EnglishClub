@@ -2,3 +2,11 @@ h1 {
     color: #27aedb;
     text-align: center;
 }
+.logoName{
+    color: white;
+    text-decoration: none;
+}
+.logoName:hover{
+    color: rgb(212, 212, 212);
+    text-decoration: none;
+}
