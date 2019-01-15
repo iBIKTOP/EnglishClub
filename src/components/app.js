@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import DictionaryCatalog from "./DictionaryCatalog";
 
 
@@ -15,7 +17,7 @@ class App extends Component {
     }
 
     getWords() {
-        fetch("http://192.168.0.188:5000")
+        fetch("http://192.168.4.129:5000")
             .then(function (response) {
                 return response.text();
             })
