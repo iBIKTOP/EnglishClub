@@ -1,5 +1,5 @@
 export function getWords(callback) {
-    fetch("http://192.168.0.188:5000")
+    fetch("http://192.168.4.129:5000")
         .then(function (response) {
             return response.text();
         })
@@ -13,7 +13,7 @@ export function getWords(callback) {
         });
 };
 export function getUsers(callback) {
-    fetch("http://192.168.0.188:5000/users")
+    fetch("http://192.168.4.129:5000/users")
         .then(function (response) {
             return response.text();
         })
@@ -21,6 +21,27 @@ export function getUsers(callback) {
             data = JSON.parse(data);//парсим JSON, создаем объект
             console.log(data);
             callback({ users: data });
+        })
+        .catch(function (error) {
+            log('Request failed', error)
+        });
+};
+export function addUser(login, pass, callback) {
+    console.log(JSON.stringify({login: login, pass: pass}));
+    fetch("http://192.168.4.129:5000/addUser", 
+        {   method: 'post', 
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            },
+            body: `login=${login}&pass=${pass}`
+        })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);//парсим JSON, создаем объект
+            console.log(data);
+            callback({ user: data });
         })
         .catch(function (error) {
             log('Request failed', error)

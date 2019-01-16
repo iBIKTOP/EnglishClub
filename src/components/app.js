@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { getWords, getUsers } from "../services/requests"
-
 import DictionaryCatalog from "./DictionaryCatalog";
 
 
