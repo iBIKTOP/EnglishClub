@@ -1,5 +1,5 @@
 export function getWords(callback) {
-    fetch("http://192.168.4.129:5000")
+    fetch("http://localhost:5000")
         .then(function (response) {
             return response.text();
         })
@@ -13,7 +13,7 @@ export function getWords(callback) {
         });
 };
 export function getUsers(callback) {
-    fetch("http://192.168.4.129:5000/users")
+    fetch("http://localhost:5000/users")
         .then(function (response) {
             return response.text();
         })
@@ -27,13 +27,14 @@ export function getUsers(callback) {
         });
 };
 export function addUser(login, pass, callback) {
-    console.log(JSON.stringify({login: login, pass: pass}));
-    fetch("http://192.168.4.129:5000/addUser", 
-        {   method: 'post', 
+    fetch("http://localhost:5000/addUser",
+        {
+            method: "POST",
             headers: {
-                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: `login=${login}&pass=${pass}`
+            body: JSON.stringify({ login: login, pass: pass })
         })
         .then(function (response) {
             return response.text();

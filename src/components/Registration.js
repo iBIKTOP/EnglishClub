@@ -1,11 +1,11 @@
 import React from 'react';
 import validate from "../services/validate";
-import {addUser} from "../services/requests"
+import { addUser } from "../services/requests"
 
 export default class Registration extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {login: '', pass1: '', pass2: ''}
+        this.state = { login: '', pass1: '', pass2: '', user: '' }
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onLoginChange = this.onLoginChange.bind(this);
@@ -13,27 +13,26 @@ export default class Registration extends React.Component {
         this.onPass2Change = this.onPass2Change.bind(this);
     }
 
-    onSubmit(e){
+    onSubmit(e) {
         e.preventDefault();
-        if(this.state.pass1 == this.state.pass2){
-            addUser(this.state.login, this.state.pass1, (({user}) => {
-                this.setState({user});
+        if (this.state.pass1 == this.state.pass2) {
+            addUser(this.state.login, this.state.pass1, (({ user }) => {
+                this.setState({ user });
             }));
         }
-        
     }
 
-    onLoginChange(e){
+    onLoginChange(e) {
         let login = e.target.value;
-        this.setState({login: validate(login)});
+        this.setState({ login: validate(login) });
     }
-    onPass1Change(e){
+    onPass1Change(e) {
         let pass1 = e.target.value;
-        this.setState({pass1: validate(pass1)});
+        this.setState({ pass1: validate(pass1) });
     }
-    onPass2Change(e){
+    onPass2Change(e) {
         let pass2 = e.target.value;
-        this.setState({pass2: validate(pass2)});
+        this.setState({ pass2: validate(pass2) });
     }
     render() {
         return (
