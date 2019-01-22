@@ -1,11 +1,12 @@
 import React from 'react';
 import validate from "../services/validate";
-import { addUser, getUsers } from "../services/requests"
+import { getUser, addUser, getUsers } from "../services/requests"
+import Message from './Message';
 
 export default class Registration extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { login: '', pass1: '', pass2: '', user: '' }
+        this.state = { login: '', pass1: '', pass2: '', user: '', message: '' }
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onLoginChange = this.onLoginChange.bind(this);
@@ -15,48 +16,59 @@ export default class Registration extends React.Component {
 
     onSubmit(e) {
         e.preventDefault();
-        if (this.state.login.length>0&&this.state.pass1.length>0&&this.state.pass2.length>0&&this.state.pass1 == this.state.pass2) {
-            // getUser(this.state.login);
-            addUser(this.state.login, this.state.pass1, (({ user }) => {
-                this.setState({ user });
-            }));
-        }else{
-            alert("Поля не могут быть пустые.");
+        if (this.state.login.length > 0 && this.state.pass1.length > 0 && this.state.pass2.length > 0 && this.state.pass1 == this.state.pass2) {
+            getUser(this.state.login, (user) => {
+                if (user) {
+                    this.setState({ message: '(Ошибка: login занят)' });
+                } else {
+                    addUser(this.state.login, this.state.pass1, (({ user }) => {
+                        this.setState({ user });
+                    }));
+                    this.setState({ message: '(Регистрация успешна)' });
+                }
+            });
+
+        } else {
+            this.setState({ message: '(Ошибка: Данные введены некоректно)' });
         }
     }
 
     onLoginChange(e) {
         let login = e.target.value;
         this.setState({ login: validate(login) });
+        this.setState({ message: '' });
     }
     onPass1Change(e) {
         let pass1 = e.target.value;
         this.setState({ pass1: validate(pass1) });
+        this.setState({ message: '' });
     }
     onPass2Change(e) {
         let pass2 = e.target.value;
         this.setState({ pass2: validate(pass2) });
+        this.setState({ message: '' });
     }
     render() {
         return (
             <div className="container">
                 <div className="card w-50 mx-auto mt-3 border-dark">
-                    <div className="card-header bg-dark text-white">Регистрация</div>
+                    <div className="card-header bg-dark text-white">Регистрация <Message message={this.state.message} /></div>
                     <div className="card-body">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
                                 <label>Логин:</label>
-                                <input type="text" className="form-control" value={this.state.login} onChange={this.onLoginChange}></input>
+                                <input type="text" className="form-control" value={this.state.login || ''} onChange={this.onLoginChange}></input>
                             </div>
                             <div className="form-group">
                                 <label>Пароль:</label>
-                                <input type="password" className="form-control" value={this.state.pass1} onChange={this.onPass1Change}></input>
+                                <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
                             </div>
                             <div className="form-group">
                                 <label>Пароль, еще раз:</label>
-                                <input type="password" className="form-control" value={this.state.pass2} onChange={this.onPass2Change}></input>
+                                <input type="password" className="form-control" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
                             </div>
                             <button type="submit" className="btn btn-outline-dark">Зарегестрироваться</button>
+
                         </form>
                     </div>
                 </div>

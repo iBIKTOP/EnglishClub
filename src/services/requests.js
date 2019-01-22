@@ -26,6 +26,22 @@ export function getUsers(callback) {
             log('Request failed', error)
         });
 };
+
+export function getUser(login, callback) {
+    fetch("http://localhost:5000/users/" + login)
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);//парсим JSON, создаем объект
+            console.log(data[0]);
+            callback(data[0]);
+        })
+        .catch(function (error) {
+            log('Request failed', error)
+        });
+};
+
 export function addUser(login, pass, callback) {
     fetch("http://localhost:5000/addUser",
         {
