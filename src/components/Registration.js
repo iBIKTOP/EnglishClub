@@ -1,6 +1,6 @@
 import React from 'react';
 import validate from "../services/validate";
-import { addUser } from "../services/requests"
+import { addUser, getUsers } from "../services/requests"
 
 export default class Registration extends React.Component {
     constructor(props) {
@@ -15,10 +15,13 @@ export default class Registration extends React.Component {
 
     onSubmit(e) {
         e.preventDefault();
-        if (this.state.pass1 == this.state.pass2) {
+        if (this.state.login.length>0&&this.state.pass1.length>0&&this.state.pass2.length>0&&this.state.pass1 == this.state.pass2) {
+            // getUser(this.state.login);
             addUser(this.state.login, this.state.pass1, (({ user }) => {
                 this.setState({ user });
             }));
+        }else{
+            alert("Поля не могут быть пустые.");
         }
     }
 
