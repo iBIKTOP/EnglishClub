@@ -5,4 +5,5 @@ import striptags from "striptags";
 export default function validate(val) {
     val = htmlspecialchars(trim(striptags(val)));
     if (val.length > 0) return val;
+    else return '';
 }
