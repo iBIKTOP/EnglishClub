@@ -18,6 +18,7 @@ class App extends Component {
         getUsers(({ users }) => {
             this.setState({ users });
         });
+        console.log( document.cookie || "Cookie пустой" );
     }
 
     render() {

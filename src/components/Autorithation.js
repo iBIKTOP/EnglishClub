@@ -10,7 +10,7 @@ import { getUser } from "../services/requests"
 export default class Autorithation extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { login: '', pass1: '', user: '', message: '' }
+        this.state = { login: '', pass1: '', user: '', message: ''}
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onLoginChange = this.onLoginChange.bind(this);
@@ -23,10 +23,9 @@ export default class Autorithation extends React.Component{
             getUser(this.state.login, (user) => {
                 if (user) {
                     if(md5(this.state.pass1) == user.pass){
-                        // this.setState({ message: '(залогинился)' });
-                        <Switch>
-                            <Redirect from="/autorithation" to="/" />
-                        </Switch>
+                        this.setState({ message: '(залогинился)', user: user.login});
+                        this.renderRedirect();
+                        document.cookie = `name=${user.login}; path=/; expires=${(new Date(Date.now()+1000*60*60*24)).toUTCString()}`;
                     }else{
                         this.setState({ message: '(Pass не верный)' });
                     }
@@ -34,9 +33,14 @@ export default class Autorithation extends React.Component{
                     this.setState({ message: '(Login не существует)' });
                 }
             });
-
         } else {
             this.setState({ message: '(Ошибка: Данные введены некоректно)' });
+        }
+    }
+
+    renderRedirect(){
+        if (this.state.user != '') {
+          return <Redirect to='/' />
         }
     }
 
@@ -68,6 +72,7 @@ export default class Autorithation extends React.Component{
                         </div>
                         <button type="submit" className="btn btn-outline-dark">Вход</button>
                     </form>
+                    {this.renderRedirect()}
                 </div>
             </div>
         </div>
