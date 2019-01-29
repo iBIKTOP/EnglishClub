@@ -24,8 +24,8 @@ export default class Autorithation extends React.Component{
                 if (user) {
                     if(md5(this.state.pass1) == user.pass){
                         this.setState({ message: '(залогинился)', user: user.login});
-                        this.renderRedirect();
                         document.cookie = `name=${user.login}; path=/; expires=${(new Date(Date.now()+1000*60*60*24)).toUTCString()}`;
+                        this.renderRedirect();
                     }else{
                         this.setState({ message: '(Pass не верный)' });
                     }
