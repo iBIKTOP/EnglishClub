@@ -2,6 +2,7 @@ import React from 'react';
 import validate from "../services/validate";
 import { getUser, addUser, getUsers } from "../services/requests"
 import Message from './Message';
+import Nav from "./Nav";
 
 export default class Registration extends React.Component {
     constructor(props) {
@@ -50,30 +51,32 @@ export default class Registration extends React.Component {
     }
     render() {
         return (
-            <div className="container">
-                <div className="card w-50 mx-auto mt-3 border-dark">
-                    <div className="card-header bg-dark text-white">Регистрация <Message message={this.state.message} /></div>
-                    <div className="card-body">
-                        <form onSubmit={this.onSubmit}>
-                            <div className="form-group">
-                                <label>Логин:</label>
-                                <input type="text" className="form-control" value={this.state.login || ''} onChange={this.onLoginChange}></input>
-                            </div>
-                            <div className="form-group">
-                                <label>Пароль:</label>
-                                <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
-                            </div>
-                            <div className="form-group">
-                                <label>Пароль, еще раз:</label>
-                                <input type="password" className="form-control" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
-                            </div>
-                            <button type="submit" className="btn btn-outline-dark">Зарегестрироваться</button>
+            <div>
+                <Nav />
+                <div className="container">
+                    <div className="card w-50 mx-auto mt-3 border-dark">
+                        <div className="card-header bg-dark text-white">Регистрация <Message message={this.state.message} /></div>
+                        <div className="card-body">
+                            <form onSubmit={this.onSubmit}>
+                                <div className="form-group">
+                                    <label>Логин:</label>
+                                    <input type="text" className="form-control" value={this.state.login || ''} onChange={this.onLoginChange}></input>
+                                </div>
+                                <div className="form-group">
+                                    <label>Пароль:</label>
+                                    <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
+                                </div>
+                                <div className="form-group">
+                                    <label>Пароль, еще раз:</label>
+                                    <input type="password" className="form-control" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
+                                </div>
+                                <button type="submit" className="btn btn-outline-dark">Зарегестрироваться</button>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
         )
     }
 }

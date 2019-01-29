@@ -1,16 +1,18 @@
 import React from 'react';
 import md5 from "md5";
-import {Switch, Redirect} from "react-router-dom"
+import { Switch, Redirect } from "react-router-dom"
 
 import validate from "../services/validate";
 import Message from './Message';
 import { getUser } from "../services/requests"
+import { setCookie } from '../services/cookie';
+import Nav from "./Nav";
 
 
-export default class Autorithation extends React.Component{
+export default class Autorithation extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { login: '', pass1: '', user: '', message: ''}
+        this.state = { login: '', pass1: '', user: '', message: '' }
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onLoginChange = this.onLoginChange.bind(this);
@@ -22,11 +24,17 @@ export default class Autorithation extends React.Component{
         if (this.state.login.length > 0 && this.state.pass1.length > 0) {
             getUser(this.state.login, (user) => {
                 if (user) {
-                    if(md5(this.state.pass1) == user.pass){
-                        this.setState({ message: '(залогинился)', user: user.login});
-                        document.cookie = `name=${user.login}; path=/; expires=${(new Date(Date.now()+1000*60*60*24)).toUTCString()}`;
-                        this.renderRedirect();
-                    }else{
+                    if (md5(this.state.pass1) == user.pass) {
+                        console.log('стадия запуска асинхронной функции');
+                        try {
+                            setCookie(user.login);
+                            console.log(document.cookie || "cookie clear");
+                            this.setState({ user: user.login });
+                            this.renderRedirect();
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    } else {
                         this.setState({ message: '(Pass не верный)' });
                     }
                 } else {
@@ -38,9 +46,9 @@ export default class Autorithation extends React.Component{
         }
     }
 
-    renderRedirect(){
+    renderRedirect() {
         if (this.state.user != '') {
-          return <Redirect to='/' />
+            return <Redirect to='/' />
         }
     }
 
@@ -55,27 +63,30 @@ export default class Autorithation extends React.Component{
         this.setState({ message: '' });
     }
 
-    render(){
+    render() {
         return (
-            <div className="container">
-            <div className="card w-50 mx-auto mt-3 border-dark">
-                <div className="card-header bg-dark text-white">Авторизация <Message message={this.state.message} /></div>
-                <div className="card-body">
-                    <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <label>Логин:</label>
-                            <input type="text" className="form-control" value={this.state.login || ''} onChange={this.onLoginChange}></input>
+            <div>
+                <Nav />
+                <div className="container">
+                    <div className="card w-50 mx-auto mt-3 border-dark">
+                        <div className="card-header bg-dark text-white">Авторизация <Message message={this.state.message} /></div>
+                        <div className="card-body">
+                            <form onSubmit={this.onSubmit}>
+                                <div className="form-group">
+                                    <label>Логин:</label>
+                                    <input type="text" className="form-control" value={this.state.login || ''} onChange={this.onLoginChange}></input>
+                                </div>
+                                <div className="form-group">
+                                    <label>Пароль:</label>
+                                    <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
+                                </div>
+                                <button type="submit" className="btn btn-outline-dark">Вход</button>
+                            </form>
+                            {this.renderRedirect()}
                         </div>
-                        <div className="form-group">
-                            <label>Пароль:</label>
-                            <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
-                        </div>
-                        <button type="submit" className="btn btn-outline-dark">Вход</button>
-                    </form>
-                    {this.renderRedirect()}
+                    </div>
                 </div>
             </div>
-        </div>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getWords, getUsers } from "../services/requests"
 import DictionaryCatalog from "./DictionaryCatalog";
+import Nav from "./Nav";
 
 
 import '../styles/App.css';
@@ -24,9 +25,13 @@ class App extends Component {
     render() {
         if (this.state.catalog !== null) {
             return (
-                <div className="container">
-                    <DictionaryCatalog catalog={this.state.catalog} />
+                <div>
+                    <Nav />
+                    <div className="container">
+                        <DictionaryCatalog catalog={this.state.catalog} />
+                    </div>
                 </div>
+
             );
         } else {
             return (

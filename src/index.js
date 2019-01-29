@@ -11,7 +11,6 @@ import App from "./components/App.js";
 ReactDOM.render(
     <Router>
         <div>
-            <Nav />
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/registration" component={Registration} />
