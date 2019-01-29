@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link, BrowserRouter } from 'react-router-dom';
+import { getCookie, deleteCookie } from '../services/cookie';
 
 export default class Nav extends React.Component {
     constructor(props){
         super(props);
         this.state = {user: ''}
-    }
-
-    getCookie(name) {
-        var matches = document.cookie.match(new RegExp(
-          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        ));
-        return matches ? decodeURIComponent(matches[1]) : '';
-    }
-    deleteCookie(){
-        document.cookie = `name=''; path=/; expires=${(new Date(Date.now()-1000)).toUTCString()}`;             
+        this.onExit = this.onExit.bind(this);
     }
 
     componentDidMount() {
-        this.setState({user: this.getCookie('name')});
+        console.log(getCookie('name'));
+        let user = getCookie('name');
+        this.setState({user: user});
+        console.log("user: "+this.state.user);
+    }
+
+    onExit(){
+        deleteCookie();
+        this.setState({user: ''});
     }
 
     renderUser(){
@@ -29,11 +29,11 @@ export default class Nav extends React.Component {
                     <Link className="btn btn-outline-light ml-2" to="/autorithation">Вход</Link>
                 </div>
             )
-        }else{
+        }else if(this.state.user!=''){
             return (
                 <div className="col-3 p-0 m-0 text-right">
-                    <Link className="btn btn-outline-light ml-2" to="/">{this.state.user}</Link>
-                    <button className="btn btn-outline-light ml-2" onClick={this.deleteCookie()}>Выход</button>
+                    <h3>{this.state.user}</h3>
+                    <button className="btn btn-outline-light ml-2" onClick={this.onExit}>Выход</button>
                 </div>
             )
         }
