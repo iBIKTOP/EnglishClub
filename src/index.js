@@ -4,17 +4,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Nav from "./components/Nav";
 import Registration from "./components/Registration";
-import Autorithation from "./components/Autorithation";
+import Login from "./components/Login";
 import NotFound from "./components/NotFound";
-import App from "./components/App.js";
+import Home from "./components/Home.js";
 
 ReactDOM.render(
     <Router>
         <div>
             <Switch>
-                <Route exact path="/" component={App} />
+                <Route exact path="/" component={Home} />
                 <Route path="/registration" component={Registration} />
-                <Route path="/autorithation" component={Autorithation} />
+                <Route path="/login" component={Login} />
                 <Route component={NotFound} />
             </Switch>
         </div>

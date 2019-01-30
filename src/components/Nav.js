@@ -26,7 +26,7 @@ export default class Nav extends React.Component {
             return (
                 <div className="col-3 p-0 m-0 text-right">
                     <Link className="btn btn-outline-light ml-2" to="/registration">Регистрация</Link>
-                    <Link className="btn btn-outline-light ml-2" to="/autorithation">Вход</Link>
+                    <Link className="btn btn-outline-light ml-2" to="/login">Вход</Link>
                 </div>
             )
         } else if (this.state.user != '') {

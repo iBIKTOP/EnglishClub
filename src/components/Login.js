@@ -9,7 +9,7 @@ import { setCookie } from '../services/cookie';
 import Nav from "./Nav";
 
 
-export default class Autorithation extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = { login: '', pass1: '', user: '', message: '' }
@@ -25,15 +25,10 @@ export default class Autorithation extends React.Component {
             getUser(this.state.login, (user) => {
                 if (user) {
                     if (md5(this.state.pass1) == user.pass) {
-                        console.log('стадия запуска асинхронной функции');
-                        try {
-                            setCookie(user.login);
-                            console.log(document.cookie || "cookie clear");
-                            this.setState({ user: user.login });
-                            this.renderRedirect();
-                        } catch (error) {
-                            console.log(error);
-                        }
+                        setCookie(user.login);
+                        console.log(document.cookie || "cookie is empty");
+                        this.setState({ user: user.login });
+                        this.renderRedirect();
                     } else {
                         this.setState({ message: '(Pass не верный)' });
                     }
@@ -66,7 +61,6 @@ export default class Autorithation extends React.Component {
     render() {
         return (
             <div>
-                <Nav />
                 <div className="container">
                     <div className="card w-50 mx-auto mt-3 border-dark">
                         <div className="card-header bg-dark text-white">Авторизация <Message message={this.state.message} /></div>
