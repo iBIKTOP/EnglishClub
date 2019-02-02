@@ -3,41 +3,25 @@ import { Link, BrowserRouter } from 'react-router-dom';
 import { getCookie, deleteCookie } from '../services/cookie';
 
 export default class Nav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { user: '' }
-        this.onExit = this.onExit.bind(this);
-    }
-
-    componentDidMount() {
-        getCookie('name', (name) => {
-            this.setState({ user: name });
-            console.log(name);
-        });
-    }
-
-    onExit() {
-        deleteCookie();
-        this.setState({ user: '' });
-    }
 
     renderUser() {
-        if (this.state.user == '') {
+        if (this.props.user == '') {
             return (
                 <div className="col-3 p-0 m-0 text-right">
                     <Link className="btn btn-outline-light ml-2" to="/registration">Регистрация</Link>
                     <Link className="btn btn-outline-light ml-2" to="/login">Вход</Link>
                 </div>
             )
-        } else if (this.state.user != '') {
+        } else if (this.props.user != '') {
             return (
                 <div className="col-3 p-0 m-0 text-right">
-                    <button className="btn btn-outline-light ml-2">{this.state.user}</button>
-                    <button className="btn btn-outline-light ml-2" onClick={this.onExit}>Выход</button>
+                    <button className="btn btn-outline-light ml-2">{this.props.user}</button>
+                    <button className="btn btn-outline-light ml-2" onClick={this.props.onLogOut}>Выход</button>
                 </div>
             )
         }
     }
+
     render() {
         return (
             <div className="bg-dark">
