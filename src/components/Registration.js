@@ -1,6 +1,6 @@
 import React from 'react';
 import validate from "../services/validate";
-import { getUser, addUser, getUsers } from "../services/requests"
+import { getUser, addUser } from "../services/requests"
 import Message from './Message';
 import Nav from "./Nav";
 

@@ -3,7 +3,7 @@ import { getWords, getUsers } from "../services/requests"
 import DictionaryCatalog from "./DictionaryCatalog";
 import Nav from "./Nav";
 import { getCookie, deleteCookie } from '../services/cookie';
-
+import welcom from "../img/welcom.jpg";
 import '../styles/App.css';
 
 export default class Home extends Component {
@@ -15,15 +15,15 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        getWords(({ catalog }) => {
-            this.setState({ catalog });
-        });
-        getUsers(({ users }) => {
-            this.setState({ users });
-        });
-        getCookie('name', (name) => {
-            this.setState({ user: name });
-        });
+        getCookie('name',
+            (name) => {
+                this.setState({ user: name });
+            },
+            (name) => {
+                getWords(name, ({ catalog }) => {
+                    this.setState({ catalog });
+                });
+            });
     }
 
     onLogOut() {
@@ -35,7 +35,7 @@ export default class Home extends Component {
         if (this.state.user != '') {
             return this.state.catalog !== null ? <DictionaryCatalog catalog={this.state.catalog} /> : <p>К сожалению сервер не доступен.</p>;
         } else {
-            return <p>Необходима авторизация!!!</p>
+            return <div className="text-center"><img src={welcom}></img></div>
         }
     }
 

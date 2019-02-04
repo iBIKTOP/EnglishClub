@@ -1,16 +1,19 @@
-export function getWords(callback) {
-    fetch("http://localhost:5000")
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
-            console.log(data);
-            callback({ catalog: data });
-        })
-        .catch(function (error) {
-            log('Request failed', error)
-        });
+export function getWords(user, callback) {
+    if (user != '') {
+        fetch(`http://localhost:5000/${user}`)
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+                data = JSON.parse(data);//парсим JSON, создаем объект
+                console.log(data);
+                callback({ catalog: data });
+            })
+            .catch(function (error) {
+                log('Request failed', error)
+            });
+    }
+
 };
 export function getUsers(callback) {
     fetch("http://localhost:5000/users")
