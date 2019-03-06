@@ -1,6 +1,7 @@
-export function getWords(user, callback) {
-    if (user != '') {
-        fetch(`http://localhost:5000/${user}`)
+export function getWords(userID, callback) {
+    console.log("Запрашиваем слова пользователя с ID = " + userID);
+    if (userID != '') {
+        fetch(`http://localhost:5000/${userID}`)
             .then(function (response) {
                 return response.text();
             })
@@ -13,7 +14,6 @@ export function getWords(user, callback) {
                 log('Request failed', error)
             });
     }
-
 };
 export function getUsers(callback) {
     fetch("http://localhost:5000/users")

@@ -9,18 +9,18 @@ import '../styles/App.css';
 export default class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { catalog: null, users: null, user: '' };
+        this.state = { catalog: null, users: null, id: '' };
 
         this.onLogOut = this.onLogOut.bind(this);
     }
 
     componentDidMount() {
-        getCookie('name',
-            (name) => {
-                this.setState({ user: name });
+        getCookie('ID',
+            (id) => {
+                this.setState({ id: id });
             },
-            (name) => {
-                getWords(name, ({ catalog }) => {
+            (id) => {
+                getWords(id, ({ catalog }) => {
                     this.setState({ catalog });
                 });
             });
@@ -28,11 +28,11 @@ export default class Home extends Component {
 
     onLogOut() {
         deleteCookie();
-        this.setState({ user: '' });
+        this.setState({ id: '' });
     }
 
     renderDictionaryCatalog() {
-        if (this.state.user != '') {
+        if (this.state.id != '') {
             return this.state.catalog !== null ? <DictionaryCatalog catalog={this.state.catalog} /> : <p>К сожалению сервер не доступен.</p>;
         } else {
             return <div className="text-center"><img src={welcom}></img></div>
@@ -42,7 +42,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Nav user={this.state.user} onLogOut={this.onLogOut} />
+                <Nav user={this.state.id} onLogOut={this.onLogOut} />
                 <div className="container">
                     {this.renderDictionaryCatalog()}
                 </div>

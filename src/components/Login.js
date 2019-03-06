@@ -25,7 +25,7 @@ export default class Login extends React.Component {
             getUser(this.state.login, (user) => {
                 if (user) {
                     if (md5(this.state.pass1) == user.pass) {
-                        setCookie(user.login);
+                        setCookie(user.id); //устанавливаю куки ID
                         console.log(document.cookie || "cookie is empty");
                         this.setState({ user: user.login });
                         this.renderRedirect();
