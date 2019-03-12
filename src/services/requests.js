@@ -1,4 +1,4 @@
-export function getWords(userID, callback) {
+export function getUserGroups(userID, setStateUserGroups) {
     console.log("Запрашиваем слова пользователя с ID = " + userID);
     if (userID != '') {
         fetch(`http://localhost:5000/${userID}`)
@@ -8,7 +8,8 @@ export function getWords(userID, callback) {
             .then(function (data) {
                 data = JSON.parse(data);//парсим JSON, создаем объект
                 console.log(data);
-                callback({ catalog: data });
+                //setStateUserGroups - callback установка списка групп пользователя
+                setStateUserGroups({ userGroups: data });
             })
             .catch(function (error) {
                 log('Request failed', error)
