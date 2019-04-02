@@ -30,6 +30,20 @@ export function getUsers(callback) {
             log('Request failed', error)
         });
 };
+export function getIrregularVerbs(callback) {
+    fetch("http://localhost:5000/irregular_verbs")
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);//парсим JSON, создаем объект
+            console.log(data);
+            callback(data);
+        })
+        .catch(function (error) {
+            log('Request failed', error)
+        });
+};
 
 export function getUser(login, callback) {
     fetch("http://localhost:5000/users/" + login)

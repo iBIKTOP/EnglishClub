@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getUserGroups, getUsers } from "../services/requests"
+import { getUserGroups } from "../services/requests"
 import DictionaryCatalog from "./DictionaryCatalog";
 import Nav from "./Nav";
 import { getCookie, deleteCookie } from '../services/cookie';
