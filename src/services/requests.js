@@ -1,7 +1,7 @@
 export function getUserGroups(userID, setStateUserGroups) {
     console.log("Запрашиваем слова пользователя с ID = " + userID);
     if (userID != '') {
-        fetch(`http://localhost:5000/${userID}`)
+        fetch(`http://18.130.38.194:5000/${userID}`)
             .then(function (response) {
                 return response.text();
             })
@@ -17,7 +17,7 @@ export function getUserGroups(userID, setStateUserGroups) {
     }
 };
 export function getUsers(callback) {
-    fetch("http://localhost:5000/users")
+    fetch("http://18.130.38.194:5000/users")
         .then(function (response) {
             return response.text();
         })
@@ -31,7 +31,7 @@ export function getUsers(callback) {
         });
 };
 export function getIrregularVerbs(callback) {
-    fetch("http://localhost:5000/irregular_verbs")
+    fetch("http://18.130.38.194:5000/irregular_verbs")
         .then(function (response) {
             return response.text();
         })
@@ -46,7 +46,7 @@ export function getIrregularVerbs(callback) {
 };
 
 export function getUser(login, callback) {
-    fetch("http://localhost:5000/users/" + login)
+    fetch("http://18.130.38.194:5000/users/" + login)
         .then(function (response) {
             return response.text();
         })
@@ -61,7 +61,7 @@ export function getUser(login, callback) {
 };
 
 export function addUser(login, pass, callback) {
-    fetch("http://localhost:5000/addUser",
+    fetch("http://18.130.38.194:5000/addUser",
         {
             method: "POST",
             headers: {

@@ -6,8 +6,8 @@ class IrregularRow extends Component {
             <tr>
                 <th scope="row">{this.props.i}</th>
                 <td>{this.props.row.infinitive}</td>
-                <td>{this.props.row.t1}</td>past_simple
-                    <td>{this.props.row.past_simple}</td>
+                <td>{this.props.row.t1}</td>
+                <td>{this.props.row.past_simple}</td>
                 <td>{this.props.row.t2}</td>
                 <td>{this.props.row.past_participle}</td>
                 <td>{this.props.row.t3}</td>

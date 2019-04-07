@@ -22,7 +22,7 @@ class Irregular_verbs extends Component {
                     <Nav />
                     <div className="container">
                         <h1>Irregular_verbs</h1>
-                        <table class="table table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">№</th>
@@ -36,16 +36,16 @@ class Irregular_verbs extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-
+                                {//выводим список
+                                    this.state.irregular_verbs.map(function (row, i) {
+                                        return (
+                                            <IrregularRow key={i} row={row} i={i} />
+                                        )
+                                    })
+                                }
                             </tbody>
                         </table>
-                        {//выводим список
-                            this.state.irregular_verbs.map(function (row, i) {
-                                return (
-                                    <IrregularRow key={i} row={row} i={i} />
-                                )
-                            })
-                        }
+
 
                     </div>
                 </div>
