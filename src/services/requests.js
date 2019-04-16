@@ -30,7 +30,7 @@ export function getUsers(callback) {
             log('Request failed', error)
         });
 };
-export function getIrregularVerbs(callback) {
+export function getIrregularVerbs(id, callback) {
     fetch("http://18.130.38.194:5000/irregular_verbs")
         .then(function (response) {
             return response.text();

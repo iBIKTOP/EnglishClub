@@ -2,17 +2,27 @@ import React, { Component } from "react";
 import Nav from "./Nav"
 import { getIrregularVerbs } from "../services/requests"
 import IrregularRow from "./IrregularRow.js"
+import { getCookie, deleteCookie } from '../services/cookie';
 
 class Irregular_verbs extends Component {
     constructor(props) {
         super(props);
-        this.state = { irregular_verbs: null };
+        this.state = { irregular_verbs: null, id: '' };
     }
 
     componentDidMount() {
-        getIrregularVerbs((irregular_verbs) => {
-            this.setState({ irregular_verbs: irregular_verbs })
-        });
+        getCookie('ID',
+            //если Cookie хранит ID пользователя то сохраняем его в state,
+            //если Cookie не сущестует, то устанавливаем пустое значение
+            (id) => {
+                this.setState({ id: id });
+            },
+            //если Cookie хранит ID пользователя то запускаем функцию получения групп пользователя
+            (id) => {
+                getIrregularVerbs(id, (irregular_verbs) => {
+                    this.setState({ irregular_verbs: irregular_verbs });
+                });
+            });
     }
 
     render() {
@@ -21,8 +31,25 @@ class Irregular_verbs extends Component {
                 <div>
                     <Nav />
                     <div className="container">
-                        <h1>Irregular_verbs</h1>
-                        <table className="table table-striped">
+                        <h1>IRREGULAR VERBS</h1>
+                        <h6>(Учим неправельные глаголы)</h6>
+                        <div className='row'>
+                            <div className='col-2 font-weight-bold'>Infinitive</div>
+                            <div className='col-2 font-weight-bold'>Past Tense</div>
+                            <div className='col-2 font-weight-bold'>Past Participle</div>
+                            <div className='col-2 font-weight-bold'>Translate</div>
+                            <div className='col-2 font-weight-bold'>1</div>
+                            <div className='col-2 font-weight-bold'>2</div>
+                        </div>
+                        <hr></hr>
+                        {//выводим список
+                            this.state.irregular_verbs.map(function (row, i) {
+                                return (
+                                    <IrregularRow key={i} row={row} i={i} />
+                                )
+                            })
+                        }
+                        {/* <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">№</th>
@@ -44,15 +71,13 @@ class Irregular_verbs extends Component {
                                     })
                                 }
                             </tbody>
-                        </table>
-
-
+                        </table> */}
                     </div>
                 </div>
             )
         } else {
             return (
-                <p>не подгрузилось</p>
+                <p>Подождите, подгружаем данные.</p>
             )
         }
 
