@@ -6,7 +6,7 @@ export function getUserGroups(userID, setStateUserGroups) {
                 return response.text();
             })
             .then(function (data) {
-                data = JSON.parse(data);//парсим JSON, создаем объект
+                data = JSON.parse(data);
                 console.log(data);
                 //setStateUserGroups - callback установка списка групп пользователя
                 setStateUserGroups({ userGroups: data });
@@ -16,27 +16,43 @@ export function getUserGroups(userID, setStateUserGroups) {
             });
     }
 };
-export function getUsers(callback) {
-    fetch("http://18.130.38.194:5000/users")
+
+export function getUser(id, callback) {
+    fetch(`http://18.130.38.194:5000/usersId/${id}`)
         .then(function (response) {
             return response.text();
         })
         .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
-            console.log(data);
-            callback({ users: data });
+            data = JSON.parse(data);
+            console.log("+++++++++");
+            console.log(data[0].login);
+            callback(data[0].login);
         })
         .catch(function (error) {
             log('Request failed', error)
         });
 };
+// export function getUsers(callback) {
+//     fetch("http://18.130.38.194:5000/users")
+//         .then(function (response) {
+//             return response.text();
+//         })
+//         .then(function (data) {
+//             data = JSON.parse(data);
+//             // console.log(data);
+//             callback({ users: data });
+//         })
+//         .catch(function (error) {
+//             log('Request failed', error)
+//         });
+// };
 export function getIrregularVerbs(id, callback) {
-    fetch("http://18.130.38.194:5000/irregular_verbs")
+    fetch(`http://18.130.38.194:5000/irregular_verbs/${id}`)
         .then(function (response) {
             return response.text();
         })
         .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
+            data = JSON.parse(data);
             console.log(data);
             callback(data);
         })
@@ -45,13 +61,14 @@ export function getIrregularVerbs(id, callback) {
         });
 };
 
-export function getUser(login, callback) {
-    fetch("http://18.130.38.194:5000/users/" + login)
+//проверка логина при регистрации
+export function getLogin(login, callback) {
+    fetch("http://18.130.38.194:5000/usersLogin/" + login)
         .then(function (response) {
             return response.text();
         })
         .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
+            data = JSON.parse(data);
             console.log(data[0]);
             callback(data[0]);
         })

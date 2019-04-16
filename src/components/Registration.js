@@ -1,6 +1,6 @@
 import React from 'react';
 import validate from "../services/validate";
-import { getUser, addUser } from "../services/requests"
+import { getLogin, addUser } from "../services/requests"
 import Message from './Message';
 import Nav from "./Nav";
 
@@ -18,7 +18,7 @@ export default class Registration extends React.Component {
     onSubmit(e) {
         e.preventDefault();
         if (this.state.login.length > 0 && this.state.pass1.length > 0 && this.state.pass2.length > 0 && this.state.pass1 == this.state.pass2) {
-            getUser(this.state.login, (user) => {
+            getLogin(this.state.login, (user) => {
                 if (user) {
                     this.setState({ message: '(Ошибка: login занят)' });
                 } else {

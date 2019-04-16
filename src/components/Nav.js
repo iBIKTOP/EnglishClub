@@ -25,11 +25,11 @@ export default class Nav extends React.Component {
 
     render() {
         return (
-            <div className="bg-dark">
+            <div className="nav_panel">
                 <div className="container">
-                    <div className="row p-1 m-0 justify-content-between">
+                    <div className="row p-1 m-0 justify-content-between align-items-center">
                         <div className="col-4 p-0 m-0">
-                            <Link className="logoName" to="/"><h4>EnglishClub</h4></Link>
+                            <Link className="logoName" to="/">EngForYou</Link>
                         </div>
                         {this.renderUser()}
                     </div>

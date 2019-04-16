@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getUserGroups } from "../services/requests"
+import { getUserGroups, getUser } from "../services/requests"
 import DictionaryCatalog from "./DictionaryCatalog";
 import Nav from "./Nav";
 import { getCookie, deleteCookie } from '../services/cookie';
@@ -9,20 +9,23 @@ import '../styles/App.css';
 export default class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { userGroups: null, users: null, id: '' };
+        this.state = { userGroups: null, id: '', login: '' };
 
         this.onLogOut = this.onLogOut.bind(this);
     }
     //перед стартом страницы проверяем Cookie
     componentDidMount() {
         getCookie('ID',
-            //если Cookie хранит ID пользователя то сохраняем его в state,
-            //если Cookie не сущестует, то устанавливаем пустое значение
             (id) => {
+                //если Cookie хранит ID пользователя то сохраняем его в state,
+                //если Cookie не сущестует, то устанавливаем пустое значение
                 this.setState({ id: id });
-            },
-            //если Cookie хранит ID пользователя то запускаем функцию получения групп пользователя
-            (id) => {
+                //получаем данные о пользователе
+                getUser(id, (login) => {
+                    this.setState({ login: login });
+                    console.log(this.state.login);
+                });
+                //если Cookie хранит ID пользователя то запускаем функцию получения групп пользователя
                 getUserGroups(id, ({ userGroups }) => {
                     this.setState({ userGroups });
                 });
@@ -31,7 +34,7 @@ export default class Home extends Component {
 
     onLogOut() {
         deleteCookie();
-        this.setState({ id: '' });
+        this.setState({ id: '', login: '' });
     }
 
     renderDictionaryCatalog() {
@@ -45,7 +48,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Nav user={this.state.id} onLogOut={this.onLogOut} />
+                <Nav user={this.state.login} onLogOut={this.onLogOut} />
                 <div className="container">
                     {this.renderDictionaryCatalog()}
                 </div>

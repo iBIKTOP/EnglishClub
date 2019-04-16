@@ -1,47 +1,55 @@
 import React, { Component } from "react";
 import Nav from "./Nav"
-import { getIrregularVerbs } from "../services/requests"
+import { getUser, getIrregularVerbs } from "../services/requests"
 import IrregularRow from "./IrregularRow.js"
 import { getCookie, deleteCookie } from '../services/cookie';
 
 class Irregular_verbs extends Component {
     constructor(props) {
         super(props);
-        this.state = { irregular_verbs: null, id: '' };
+        this.state = { irregular_verbs: null, id: '', login: '' };
+
+        this.onLogOut = this.onLogOut.bind(this);
     }
 
     componentDidMount() {
         getCookie('ID',
-            //если Cookie хранит ID пользователя то сохраняем его в state,
-            //если Cookie не сущестует, то устанавливаем пустое значение
             (id) => {
+                //если Cookie хранит ID пользователя то сохраняем его в state,
+                //если Cookie не сущестует, то устанавливаем пустое значение
                 this.setState({ id: id });
-            },
-            //если Cookie хранит ID пользователя то запускаем функцию получения групп пользователя
-            (id) => {
+                //получаем данные о пользователе
+                getUser(id, (login) => {
+                    this.setState({ login: login });
+                    console.log(this.state.login);
+                });
+                //если Cookie хранит ID пользователя то запускаем функцию получения групп пользователя
                 getIrregularVerbs(id, (irregular_verbs) => {
                     this.setState({ irregular_verbs: irregular_verbs });
                 });
             });
     }
 
+    onLogOut() {
+        deleteCookie();
+        this.setState({ id: '', login: '' });
+    }
+
     render() {
         if (this.state.irregular_verbs != null) {
             return (
                 <div>
-                    <Nav />
+                    <Nav user={this.state.login} onLogOut={this.onLogOut} />
                     <div className="container">
                         <h1>IRREGULAR VERBS</h1>
-                        <h6>(Учим неправельные глаголы)</h6>
-                        <div className='row'>
-                            <div className='col-2 font-weight-bold'>Infinitive</div>
-                            <div className='col-2 font-weight-bold'>Past Tense</div>
-                            <div className='col-2 font-weight-bold'>Past Participle</div>
-                            <div className='col-2 font-weight-bold'>Translate</div>
-                            <div className='col-2 font-weight-bold'>1</div>
-                            <div className='col-2 font-weight-bold'>2</div>
+                        <h6>(Учим неправильные глаголы)</h6>
+                        <div className='row align-items-center m-1 p-1'>
+                            <div className='col-3 font-weight-bold p-1'>Infinitive</div>
+                            <div className='col-3 font-weight-bold p-1'>Past Tense</div>
+                            <div className='col-3 font-weight-bold p-1'>Past Participle</div>
+                            <div className='col-3 font-weight-bold p-1'>Translate</div>
                         </div>
-                        <hr></hr>
+                        <div className='line1'></div>
                         {//выводим список
                             this.state.irregular_verbs.map(function (row, i) {
                                 return (
@@ -49,29 +57,6 @@ class Irregular_verbs extends Component {
                                 )
                             })
                         }
-                        {/* <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">№</th>
-                                    <th scope="col">Infinitive</th>
-                                    <th scope="col">T1</th>
-                                    <th scope="col">Past Tense</th>
-                                    <th scope="col">T2</th>
-                                    <th scope="col">Past Participle</th>
-                                    <th scope="col">T3</th>
-                                    <th scope="col">Translate</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {//выводим список
-                                    this.state.irregular_verbs.map(function (row, i) {
-                                        return (
-                                            <IrregularRow key={i} row={row} i={i} />
-                                        )
-                                    })
-                                }
-                            </tbody>
-                        </table> */}
                     </div>
                 </div>
             )

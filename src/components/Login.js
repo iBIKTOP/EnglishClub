@@ -4,7 +4,7 @@ import { Switch, Redirect } from "react-router-dom"
 
 import validate from "../services/validate";
 import Message from './Message';
-import { getUser } from "../services/requests"
+import { getLogin } from "../services/requests"
 import { setCookie } from '../services/cookie';
 import Nav from "./Nav";
 
@@ -22,7 +22,7 @@ export default class Login extends React.Component {
     onSubmit(e) {
         e.preventDefault();
         if (this.state.login.length > 0 && this.state.pass1.length > 0) {
-            getUser(this.state.login, (user) => {
+            getLogin(this.state.login, (user) => {
                 if (user) {
                     if (md5(this.state.pass1) == user.pass) {
                         setCookie(user.id); //устанавливаю куки ID
