@@ -1,6 +1,6 @@
 import React from 'react';
 import validate from "../services/validate";
-import { getLogin, addUser } from "../services/requests"
+import { getLogin, addUser, addUserIrregularVerbs } from "../services/requests"
 import Message from './Message';
 import Nav from "./Nav";
 
@@ -22,9 +22,10 @@ export default class Registration extends React.Component {
                 if (user) {
                     this.setState({ message: '(Ошибка: login занят)' });
                 } else {
-                    addUser(this.state.login, this.state.pass1, (({ user }) => {
-                        this.setState({ user });
-                    }));
+                    addUser(this.state.login, this.state.pass1, (user) => {
+                        this.setState({ user: user });
+                        addUserIrregularVerbs(user.id);
+                    });
                     this.setState({ message: '(Регистрация успешна)' });
                 }
             });

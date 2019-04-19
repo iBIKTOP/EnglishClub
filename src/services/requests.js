@@ -93,12 +93,15 @@ export function addUser(login, pass, callback) {
         .then(function (data) {
             data = JSON.parse(data);//парсим JSON, создаем объект
             console.log(data);
-            callback({ user: data });
+            callback(data);
         })
         .catch(function (error) {
             log('Request failed', error)
         });
 };
+export function addUserIrregularVerbs(id){
+    console.log(`прилитело АЙДИ ${id}`);
+}
 // async function getWords() {
 //     try {
 //         let res = await fetch('http://192.168.0.188:5000');
