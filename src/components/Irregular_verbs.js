@@ -3,6 +3,7 @@ import Nav from "./Nav"
 import { getUser, getIrregularVerbs } from "../services/requests"
 import IrregularRow from "./IrregularRow.js"
 import { getCookie, deleteCookie } from '../services/cookie';
+import { Switch, Redirect } from "react-router-dom";
 
 class Irregular_verbs extends Component {
     constructor(props) {
@@ -29,7 +30,11 @@ class Irregular_verbs extends Component {
                 });
             });
     }
-
+    // renderRedirect() {
+    //     if (this.state.login != '') {
+    //         return <Redirect to='/' />
+    //     }
+    // }
     onLogOut() {
         deleteCookie();
         this.setState({ id: '', login: '' });
@@ -58,6 +63,7 @@ class Irregular_verbs extends Component {
                             })
                         }
                     </div>
+                    {/* {this.renderRedirect()} */}
                 </div>
             )
         } else {

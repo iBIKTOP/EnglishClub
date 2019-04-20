@@ -23,8 +23,8 @@ export default class Registration extends React.Component {
                     this.setState({ message: '(Ошибка: login занят)' });
                 } else {
                     addUser(this.state.login, this.state.pass1, (user) => {
-                        this.setState({ user: user });
-                        addUserIrregularVerbs(user.id);
+                        this.setState({ user: user[0] });
+                        addUserIrregularVerbs(user[0].id);
                     });
                     this.setState({ message: '(Регистрация успешна)' });
                 }
@@ -50,6 +50,11 @@ export default class Registration extends React.Component {
         this.setState({ pass2: validate(pass2) });
         this.setState({ message: '' });
     }
+    // renderRedirect() {
+    //     if (this.state.login != '') {
+    //         return <Redirect to='/' />
+    //     }
+    // }
     render() {
         return (
             <div>
@@ -77,6 +82,7 @@ export default class Registration extends React.Component {
                         </div>
                     </div>
                 </div>
+                {/* {this.renderRedirect()} */}
             </div>
         )
     }

@@ -1,6 +1,6 @@
 export function getUserGroups(userID, setStateUserGroups) {
-    console.log("Запрашиваем слова пользователя с ID = " + userID);
     if (userID != '') {
+        console.log("Запрашиваем слова пользователя с ID = " + userID);
         fetch(`http://18.130.38.194:5000/${userID}`)
             .then(function (response) {
                 return response.text();
@@ -12,25 +12,27 @@ export function getUserGroups(userID, setStateUserGroups) {
                 setStateUserGroups({ userGroups: data });
             })
             .catch(function (error) {
-                log('Request failed', error)
+                console.log('Request failed', error)
             });
     }
 };
 
 export function getUser(id, callback) {
-    fetch(`http://18.130.38.194:5000/usersId/${id}`)
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);
-            console.log("+++++++++");
-            console.log(data[0].login);
-            callback(data[0].login);
-        })
-        .catch(function (error) {
-            log('Request failed', error)
-        });
+    if (id != '') {
+        fetch(`http://18.130.38.194:5000/usersId/${id}`)
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+                data = JSON.parse(data);
+                console.log("+++++++++");
+                console.log(data[0].login);
+                callback(data[0].login);
+            })
+            .catch(function (error) {
+                console.log('Request failed', error)
+            });
+    }
 };
 // export function getUsers(callback) {
 //     fetch("http://18.130.38.194:5000/users")
@@ -46,6 +48,27 @@ export function getUser(id, callback) {
 //             log('Request failed', error)
 //         });
 // };
+export function addUserIrregularVerbs(id) {
+    fetch("http://18.130.38.194:5000/irregular_verbs/addUserIrregularVerbs",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: id })
+        })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);//парсим JSON, создаем объект
+            console.log("Save!");
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
+}
 export function getIrregularVerbs(id, callback) {
     fetch(`http://18.130.38.194:5000/irregular_verbs/${id}`)
         .then(function (response) {
@@ -57,7 +80,7 @@ export function getIrregularVerbs(id, callback) {
             callback(data);
         })
         .catch(function (error) {
-            log('Request failed', error)
+            console.log('Request failed', error)
         });
 };
 
@@ -73,7 +96,7 @@ export function getLogin(login, callback) {
             callback(data[0]);
         })
         .catch(function (error) {
-            log('Request failed', error)
+            console.log('Request failed', error)
         });
 };
 
@@ -92,16 +115,13 @@ export function addUser(login, pass, callback) {
         })
         .then(function (data) {
             data = JSON.parse(data);//парсим JSON, создаем объект
-            console.log(data);
             callback(data);
         })
         .catch(function (error) {
-            log('Request failed', error)
+            console.log('Request failed', error)
         });
 };
-export function addUserIrregularVerbs(id){
-    console.log(`прилитело АЙДИ ${id}`);
-}
+
 // async function getWords() {
 //     try {
 //         let res = await fetch('http://192.168.0.188:5000');
