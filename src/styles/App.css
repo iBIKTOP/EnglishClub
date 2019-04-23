@@ -26,6 +26,7 @@
 body{
     color: #555555;
     font-family: 'Playfair Display', serif;
+    background-color: #f9f9f9;
 }
 
 h1,h6 {
@@ -55,4 +56,9 @@ h1,h6 {
 .line2{
     height: 0.5px;
     border: 0.5px solid #555555;
+}
+.irregular_row{
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
 }

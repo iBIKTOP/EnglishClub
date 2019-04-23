@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, BrowserRouter } from 'react-router-dom';
-import { getCookie, deleteCookie } from '../services/cookie';
+import ir from '../img/iv.png';
+
 
 export default class Nav extends React.Component {
 
@@ -15,7 +16,7 @@ export default class Nav extends React.Component {
         } else if (this.props.user != '') {
             return (
                 <div className="col-6 p-0 m-0 text-right">
-                    <Link className="btn btn-outline-light ml-2" to="/irregular_verbs">Irregular Verbs</Link>
+                    <Link className="ml-2" to="/irregular_verbs"><img src={ir} width='40px;'></img></Link>
                     <button className="btn btn-outline-light ml-2">{this.props.user}</button>
                     <button className="btn btn-outline-light ml-2" onClick={this.props.onLogOut}>Выход</button>
                 </div>
