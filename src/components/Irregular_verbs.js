@@ -30,31 +30,30 @@ class Irregular_verbs extends Component {
                 });
             });
     }
-    // renderRedirect() {
-    //     if (this.state.login != '') {
-    //         return <Redirect to='/' />
-    //     }
-    // }
+    renderRedirect() {
+        if (this.state.id == '') {
+            return <Redirect to='/' />
+        }
+    }
     onLogOut() {
         deleteCookie();
         this.setState({ id: '', login: '' });
     }
 
     render() {
-        if (this.state.irregular_verbs != null) {
+        if (this.state.irregular_verbs != null && this.state.irregular_verbs.length != 0) {
             return (
                 <div>
                     <Nav user={this.state.login} onLogOut={this.onLogOut} />
                     <div className="container">
                         <h1>IRREGULAR VERBS</h1>
                         <h6>(Учим неправильные глаголы)</h6>
-                        <div className='row align-items-center m-1 p-1'>
+                        <div className='row align-items-center m-1 p-1 htable'>
                             <div className='col-3 font-weight-bold p-1'>Infinitive</div>
                             <div className='col-3 font-weight-bold p-1'>Past Tense</div>
                             <div className='col-3 font-weight-bold p-1'>Past Participle</div>
                             <div className='col-3 font-weight-bold p-1'>Translate</div>
                         </div>
-                        <div className='line1'></div>
                         {//выводим список
                             this.state.irregular_verbs.map(function (row, i) {
                                 return (
@@ -63,12 +62,33 @@ class Irregular_verbs extends Component {
                             })
                         }
                     </div>
-                    {/* {this.renderRedirect()} */}
+                    {this.renderRedirect()}
+                    <div className='modal_overlay'>
+                        <div className='modal_body text-center'>
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    Как будет слово...
+                            </div>
+                                <div class="card-body">
+                                    <p>Вторая форма глагола</p>
+                                    <p>Третья форма глагола</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button className='btn btn-success'>Знаю</button>
+                                    <button className='btn btn-warning'>Сомневаюсь</button>
+                                    <button className='btn btn-danger'>Незнаю</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <p>Подождите, подгружаем данные.</p>
+                <div>
+                    <p>Подождите, подгружаем данные.</p>
+                </div>
+
             )
         }
 

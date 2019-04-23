@@ -24,6 +24,7 @@
 }
 
 body{
+    position: relative;
     color: #555555;
     font-family: 'Playfair Display', serif;
     background-color: #f9f9f9;
@@ -49,16 +50,48 @@ h1,h6 {
     background-color: #4479a1;
     box-shadow: 0 0 5px black;
 }
-.line1{
-    height: 1px;
-    border: 2px solid #555555;
-}
-.line2{
-    height: 0.5px;
-    border: 0.5px solid #555555;
+.nav_panel Link{
+    color: white;
 }
 .irregular_row{
     box-sizing: border-box;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0 0 5px gray;
 }
+.htable{
+    box-sizing: border-box;
+    background-color: #4479a1;
+    border-radius: 10px;
+    box-shadow: 0 0 5px gray;
+    color: white;
+}
+.btn{
+    padding: 5px;;
+}
+
+.modal_overlay{
+    display: block;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.modal_body{
+    display: block;
+    z-index: 100;
+    background: white;
+    position: fixed;
+    width: 300px;
+    height: 540px;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -270px;
+}
+/* .container{
+    filter: blur(5px);
+} */

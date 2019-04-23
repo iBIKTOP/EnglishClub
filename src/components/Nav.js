@@ -15,8 +15,8 @@ export default class Nav extends React.Component {
             )
         } else if (this.props.user != '') {
             return (
-                <div className="col-6 p-0 m-0 text-right">
-                    <Link className="ml-2" to="/irregular_verbs"><img src={ir} width='40px;'></img></Link>
+                <div className="col-8 p-0 m-0 text-right">
+                    <Link className="m-0 p-0" to="/irregular_verbs"><img src={ir} width='40px;'></img></Link>
                     <button className="btn btn-outline-light ml-2">{this.props.user}</button>
                     <button className="btn btn-outline-light ml-2" onClick={this.props.onLogOut}>Выход</button>
                 </div>

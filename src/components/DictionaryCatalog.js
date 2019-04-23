@@ -9,7 +9,10 @@ class DictionaryCatalog extends Component {
                     {//выводим список
                         this.props.catalog.map(function (row, i) {
                             return (
-                                <DictionaryRow key={i} row={row} index={i} />
+                                <div>
+                                    <h1 className="text-center">Список твоих групп</h1>
+                                    <DictionaryRow key={i} row={row} index={i} />
+                                </div>
                             )
                         })
                     }
