@@ -4,6 +4,7 @@ import { getUser, getIrregularVerbs } from "../services/requests"
 import IrregularRow from "./IrregularRow.js"
 import { getCookie, deleteCookie } from '../services/cookie';
 import { Switch, Redirect } from "react-router-dom";
+import Irregular_verbs_study from './Irregular_verbs_study.js'
 
 class Irregular_verbs extends Component {
     constructor(props) {
@@ -63,24 +64,7 @@ class Irregular_verbs extends Component {
                         }
                     </div>
                     {this.renderRedirect()}
-                    <div className='modal_overlay'>
-                        <div className='modal_body text-center'>
-                            <div class="card text-center">
-                                <div class="card-header">
-                                    Как будет слово...
-                            </div>
-                                <div class="card-body">
-                                    <p>Вторая форма глагола</p>
-                                    <p>Третья форма глагола</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button className='btn btn-success'>Знаю</button>
-                                    <button className='btn btn-warning'>Сомневаюсь</button>
-                                    <button className='btn btn-danger'>Незнаю</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Irregular_verbs_study />
                 </div>
             )
         } else {
@@ -88,10 +72,8 @@ class Irregular_verbs extends Component {
                 <div>
                     <p>Подождите, подгружаем данные.</p>
                 </div>
-
             )
         }
-
     }
 }
 

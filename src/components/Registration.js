@@ -29,7 +29,6 @@ export default class Registration extends React.Component {
                     this.setState({ message: '(Регистрация успешна)' });
                 }
             });
-
         } else {
             this.setState({ message: '(Ошибка: Данные введены некоректно)' });
         }
@@ -77,7 +76,6 @@ export default class Registration extends React.Component {
                                     <input type="password" className="form-control" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
                                 </div>
                                 <button type="submit" className="btn btn-outline-dark">Зарегестрироваться</button>
-
                             </form>
                         </div>
                     </div>

@@ -122,6 +122,28 @@ export function addUser(login, pass, callback) {
         });
 };
 
+export function addNewGroup(userID, newGroup, callback) {
+    fetch("http://18.130.38.194:5000/urerGroups/addNewGroup",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userID: userID, newGroup: newGroup })
+        })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);//парсим JSON, создаем объект
+            callback(data);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
+}
+
 // async function getWords() {
 //     try {
 //         let res = await fetch('http://192.168.0.188:5000');
