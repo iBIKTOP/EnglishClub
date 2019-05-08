@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DictionaryRow from "./DictionaryRow";
-import { getUserGroups, getNewGroup, addNewGroup } from "../services/requests"
+import { getUserGroups, getNewGroup, addNewGroup } from "../../services/requests"
 
 class DictionaryCatalog extends Component {
     constructor(props) {

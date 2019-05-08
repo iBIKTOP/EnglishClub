@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, BrowserRouter } from 'react-router-dom';
-import ir from '../img/iv.png';
+import ir from '../../img/iv.png';
 
 
 export default class Nav extends React.Component {

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { getUser } from "../services/requests"
+import { getUser } from "../../services/requests"
 import DictionaryCatalog from "./DictionaryCatalog";
-import Nav from "./Nav";
-import { getCookie, deleteCookie } from '../services/cookie';
-import welcom from "../img/welcom.jpg";
-import '../styles/App.css';
+import Nav from "../public/Nav";
+import { getCookie, deleteCookie } from '../../services/cookie';
+import welcom from "../../img/welcom.jpg";
+import '../../styles/App.css';
 
 export default class Home extends Component {
     constructor(props) {

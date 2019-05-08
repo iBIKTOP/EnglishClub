@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Nav from "./components/Nav";
-import Registration from "./components/Registration";
-import Login from "./components/Login";
-import NotFound from "./components/NotFound";
-import Home from "./components/Home.js";
-import Irregular_verbs from "./components/Irregular_verbs.js"
+import Registration from "./components/registrationPage/Registration";
+import Login from "./components/loginPage/Login";
+import NotFound from "./components/notFound/NotFound";
+import Home from "./components/homePage/Home";
+import Irregular_verbs from "./components/irregularVerbsPage/Irregular_verbs"
 
 ReactDOM.render(
     <Router>

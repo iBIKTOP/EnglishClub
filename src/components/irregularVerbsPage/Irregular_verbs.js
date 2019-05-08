@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Nav from "./Nav"
-import { getUser, getIrregularVerbs } from "../services/requests"
+import Nav from "../public/Nav"
+import { getUser, getIrregularVerbs } from "../../services/requests"
 import IrregularRow from "./IrregularRow.js"
-import { getCookie, deleteCookie } from '../services/cookie';
+import { getCookie, deleteCookie } from '../../services/cookie';
 import { Switch, Redirect } from "react-router-dom";
 import Irregular_verbs_study from './Irregular_verbs_study.js'
 
