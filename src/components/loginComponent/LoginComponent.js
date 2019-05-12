@@ -1,15 +1,14 @@
 import React from 'react';
 import md5 from "md5";
-import { Switch, Redirect } from "react-router-dom"
+import { Switch, Redirect } from "react-router-dom";
 
 import validate from "../../services/validate";
 import Message from '../public/Message';
 import { getLogin } from "../../services/requests"
 import { setCookie } from '../../services/cookie';
-import Nav from "../public/Nav";
 
 
-export default class Login extends React.Component {
+export default class LoginComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = { login: '', pass1: '', user: '', message: '' }
@@ -26,9 +25,10 @@ export default class Login extends React.Component {
                 if (user) {
                     if (md5(this.state.pass1) == user.pass) {
                         setCookie(user.id); //устанавливаю куки ID
-                        console.log(document.cookie || "cookie is empty");
+                        // console.log(document.cookie || "cookie is empty");
                         this.setState({ user: user.login });
-                        this.renderRedirect();
+                        // this.renderRedirect();
+                        this.props.onUserNameChange(user);
                     } else {
                         this.setState({ message: '(Pass не верный)' });
                     }
@@ -41,11 +41,11 @@ export default class Login extends React.Component {
         }
     }
 
-    renderRedirect() {
-        if (this.state.user != '') {
-            return <Redirect to='/' />
-        }
-    }
+    // renderRedirect() {
+    //     if (this.state.user != '') {
+    //         return <Redirect to='/' />
+    //     }
+    // }
 
     onLoginChange(e) {
         let login = e.target.value;
@@ -76,7 +76,7 @@ export default class Login extends React.Component {
                                 </div>
                                 <button type="submit" className="btn btn-outline-dark">Вход</button>
                             </form>
-                            {this.renderRedirect()}
+                            {/* {this.renderRedirect()} */}
                         </div>
                     </div>
                 </div>

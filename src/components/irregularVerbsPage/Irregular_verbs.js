@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Nav from "../public/Nav"
+
+import Nav from "../headerComponent/HeaderComponent"
 import { getUser, getIrregularVerbs } from "../../services/requests"
 import IrregularRow from "./IrregularRow.js"
 import { getCookie, deleteCookie } from '../../services/cookie';
-import { Switch, Redirect } from "react-router-dom";
 import Irregular_verbs_study from './Irregular_verbs_study.js'
 
-class Irregular_verbs extends Component {
+export default class Irregular_verbs extends Component {
     constructor(props) {
         super(props);
         this.state = { irregular_verbs: null, id: '', login: '' };
@@ -31,11 +31,11 @@ class Irregular_verbs extends Component {
                 });
             });
     }
-    renderRedirect() {
-        if (this.state.id == '') {
-            return <Redirect to='/' />
-        }
-    }
+    // renderRedirect() {
+    //     if (this.state.id == '') {
+    //         return <Redirect to='/' />
+    //     }
+    // }
     onLogOut() {
         deleteCookie();
         this.setState({ id: '', login: '' });
@@ -45,7 +45,7 @@ class Irregular_verbs extends Component {
         if (this.state.irregular_verbs != null && this.state.irregular_verbs.length != 0) {
             return (
                 <div>
-                    <Nav user={this.state.login} onLogOut={this.onLogOut} />
+                    <HeaderComponent user={this.state.login} onLogOut={this.onLogOut} />
                     <div className="container">
                         <h1>IRREGULAR VERBS</h1>
                         <h6>(Учим неправильные глаголы)</h6>
@@ -64,7 +64,7 @@ class Irregular_verbs extends Component {
                         }
                     </div>
                     {this.renderRedirect()}
-                    <Irregular_verbs_study />
+                    {/* <Irregular_verbs_study /> */}
                 </div>
             )
         } else {
@@ -76,5 +76,3 @@ class Irregular_verbs extends Component {
         }
     }
 }
-
-export default Irregular_verbs;

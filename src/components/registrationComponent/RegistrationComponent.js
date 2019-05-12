@@ -2,9 +2,8 @@ import React from 'react';
 import validate from "../../services/validate";
 import { getLogin, addUser, addUserIrregularVerbs } from "../../services/requests"
 import Message from '../public/Message';
-import Nav from "../public/Nav";
 
-export default class Registration extends React.Component {
+export default class RegistrationComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = { login: '', pass1: '', pass2: '', user: '', message: '' }
@@ -14,7 +13,6 @@ export default class Registration extends React.Component {
         this.onPass1Change = this.onPass1Change.bind(this);
         this.onPass2Change = this.onPass2Change.bind(this);
     }
-
     onSubmit(e) {
         e.preventDefault();
         if (this.state.login.length > 0 && this.state.pass1.length > 0 && this.state.pass2.length > 0 && this.state.pass1 == this.state.pass2) {
@@ -25,6 +23,7 @@ export default class Registration extends React.Component {
                     addUser(this.state.login, this.state.pass1, (user) => {
                         this.setState({ user: user[0] });
                         addUserIrregularVerbs(user[0].id);
+                        this.props.onUserNameChange(user[0]);
                     });
                     this.setState({ message: '(Регистрация успешна)' });
                 }
@@ -33,7 +32,6 @@ export default class Registration extends React.Component {
             this.setState({ message: '(Ошибка: Данные введены некоректно)' });
         }
     }
-
     onLoginChange(e) {
         let login = e.target.value;
         this.setState({ login: validate(login) });
@@ -49,15 +47,9 @@ export default class Registration extends React.Component {
         this.setState({ pass2: validate(pass2) });
         this.setState({ message: '' });
     }
-    // renderRedirect() {
-    //     if (this.state.login != '') {
-    //         return <Redirect to='/' />
-    //     }
-    // }
     render() {
         return (
             <div>
-                <Nav />
                 <div className="container">
                     <div className="card w-50 mx-auto mt-3 border-dark">
                         <div className="card-header bg-dark text-white">Регистрация <Message message={this.state.message} /></div>
@@ -80,7 +72,6 @@ export default class Registration extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* {this.renderRedirect()} */}
             </div>
         )
     }
