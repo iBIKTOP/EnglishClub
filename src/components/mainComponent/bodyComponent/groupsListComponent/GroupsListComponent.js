@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import ir from '../../img/iv.png';
+import ir from '../../../../img/iv.png';
 import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs"
 import GroupsListRowComponent from "./GroupsListRowComponent";
-import { getUserGroups, getNewGroup, addNewGroup } from "../../services/requests"
+import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
 
 export default class GroupsListComponent extends Component {
     constructor(props) {
@@ -12,6 +12,8 @@ export default class GroupsListComponent extends Component {
 
         this.newGroupChange = this.newGroupChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.toggleTrue = this.toggleTrue.bind(this);
+        this.toggleFalse = this.toggleFalse.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +36,12 @@ export default class GroupsListComponent extends Component {
             alert("Придумайте название новой группы");
         }
     }
+    toggleTrue() {
+        this.props.onToggleChange(true);
+    }
+    toggleFalse() {
+        this.props.onToggleChange(false);
+    }
     renderGroupsList() {
         if (this.state.userGroups != '' || this.state.userGroups.length != 0) {
             return (
@@ -41,9 +49,9 @@ export default class GroupsListComponent extends Component {
                     {//выводим список
                         this.state.userGroups.map(function (row, i) {
                             return (
-                                <GroupsListRowComponent key={i} row={row} index={i} />
+                                <GroupsListRowComponent key={i} row={row} index={i} onChange={this.toggleFalse} />
                             )
-                        })
+                        }.bind(this))
                     }
                 </div>
             )
@@ -56,17 +64,16 @@ export default class GroupsListComponent extends Component {
     render() {
         return (
             <div>
-                <h1 className="text-center">Список твоих групп:</h1>
-                <div className="card m-1">
+                <h1 className="text-center">GroupsList:</h1>
+                <div className="card m-1" onClick={this.toggleTrue}>
                     <div className="card-body p-2">
                         <div className="row justify-content-around align-items-center m-0 p-0">
-                            <div className="col-1 m-0 p-0"><img src={ir} width='40px;'></img></div>
-                            <div className="col-10 m-0 p-0">Irregular verbs</div>
-                            <div className="col-1 text-right"><a href="#" >Х</a></div>
+                            <div className="col-4 m-0 p-0"><img src={ir} width='40px;'></img></div>
+                            <div className="col-8 m-0 p-0">I|R</div>
+                            {/* <div className="col-1 text-right"><a href="#" >Х</a></div> */}
                         </div>
                     </div>
                 </div>
-
                 {this.renderGroupsList()}
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">

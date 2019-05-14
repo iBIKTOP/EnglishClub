@@ -1,52 +1,36 @@
 import React from 'react';
-import md5 from "md5";
-import { Switch, Redirect } from "react-router-dom";
+import validate from "../../../../services/validate";
+import { getLogin, addUser, addUserIrregularVerbs } from "../../../../services/requests"
+import Message from '../../../public/Message';
 
-import validate from "../../services/validate";
-import Message from '../public/Message';
-import { getLogin } from "../../services/requests"
-import { setCookie } from '../../services/cookie';
-
-
-export default class LoginComponent extends React.Component {
+export default class RegistrationComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { login: '', pass1: '', user: '', message: '' }
+        this.state = { login: '', pass1: '', pass2: '', message: '' }
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onLoginChange = this.onLoginChange.bind(this);
         this.onPass1Change = this.onPass1Change.bind(this);
+        this.onPass2Change = this.onPass2Change.bind(this);
     }
-
     onSubmit(e) {
         e.preventDefault();
-        if (this.state.login.length > 0 && this.state.pass1.length > 0) {
+        if (this.state.login.length > 0 && this.state.pass1.length > 0 && this.state.pass2.length > 0 && this.state.pass1 == this.state.pass2) {
             getLogin(this.state.login, (user) => {
                 if (user) {
-                    if (md5(this.state.pass1) == user.pass) {
-                        setCookie(user.id); //устанавливаю куки ID
-                        // console.log(document.cookie || "cookie is empty");
-                        this.setState({ user: user.login });
-                        // this.renderRedirect();
-                        this.props.onUserNameChange(user);
-                    } else {
-                        this.setState({ message: '(Pass не верный)' });
-                    }
+                    this.setState({ message: '(Ошибка: login занят)' });
                 } else {
-                    this.setState({ message: '(Login не существует)' });
+                    addUser(this.state.login, this.state.pass1, (user) => {
+                        addUserIrregularVerbs(user[0].id);
+                        this.props.onUserIDChange(user[0].id);
+                    });
+                    this.setState({ message: '(Регистрация успешна)' });
                 }
             });
         } else {
             this.setState({ message: '(Ошибка: Данные введены некоректно)' });
         }
     }
-
-    // renderRedirect() {
-    //     if (this.state.user != '') {
-    //         return <Redirect to='/' />
-    //     }
-    // }
-
     onLoginChange(e) {
         let login = e.target.value;
         this.setState({ login: validate(login) });
@@ -57,13 +41,17 @@ export default class LoginComponent extends React.Component {
         this.setState({ pass1: validate(pass1) });
         this.setState({ message: '' });
     }
-
+    onPass2Change(e) {
+        let pass2 = e.target.value;
+        this.setState({ pass2: validate(pass2) });
+        this.setState({ message: '' });
+    }
     render() {
         return (
             <div>
                 <div className="container">
                     <div className="card w-50 mx-auto mt-3 border-dark">
-                        <div className="card-header bg-dark text-white">Авторизация <Message message={this.state.message} /></div>
+                        <div className="card-header bg-dark text-white">Регистрация <Message message={this.state.message} /></div>
                         <div className="card-body">
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
@@ -74,9 +62,12 @@ export default class LoginComponent extends React.Component {
                                     <label>Пароль:</label>
                                     <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
                                 </div>
-                                <button type="submit" className="btn btn-outline-dark">Вход</button>
+                                <div className="form-group">
+                                    <label>Пароль, еще раз:</label>
+                                    <input type="password" className="form-control" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
+                                </div>
+                                <button type="submit" className="btn btn-outline-dark">Зарегестрироваться</button>
                             </form>
-                            {/* {this.renderRedirect()} */}
                         </div>
                     </div>
                 </div>
