@@ -9,38 +9,13 @@ export default class Irregular_verbs extends Component {
     constructor(props) {
         super(props);
         this.state = { irregular_verbs: null, id: '', login: '' };
-
-        // this.onLogOut = this.onLogOut.bind(this);
     }
 
     componentDidMount() {
-        // getCookie('ID',
-        //     (id) => {
-        //         //если Cookie хранит ID пользователя то сохраняем его в state,
-        //         //если Cookie не сущестует, то устанавливаем пустое значение
-        //         this.setState({ id: id });
-        //         //получаем данные о пользователе
-        //         getUser(id, (login) => {
-        //             this.setState({ login: login });
-        //             console.log(this.state.login);
-        //         });
-        //         //если Cookie хранит ID пользователя то запускаем функцию получения групп пользователя
-
-        //     });
-        console.log(this.props.userID);
         getIrregularVerbs(this.props.userID, (irregular_verbs) => {
             this.setState({ irregular_verbs: irregular_verbs });
         });
     }
-    // renderRedirect() {
-    //     if (this.state.id == '') {
-    //         return <Redirect to='/' />
-    //     }
-    // }
-    // onLogOut() {
-    //     deleteCookie();
-    //     this.setState({ id: '', login: '' });
-    // }
 
     render() {
         if (this.state.irregular_verbs != null && this.state.irregular_verbs.length != 0) {

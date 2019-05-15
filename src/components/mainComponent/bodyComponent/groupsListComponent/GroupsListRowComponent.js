@@ -7,7 +7,7 @@ export default class GroupsListRowComponent extends Component {
     }
 
     onClickItem() {
-        this.props.onChange(this.props.row);
+        this.props.onChange(this.props.row.id);
     }
     render() {
         return (

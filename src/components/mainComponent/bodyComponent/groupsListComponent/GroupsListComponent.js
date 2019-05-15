@@ -8,7 +8,7 @@ import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/re
 export default class GroupsListComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { userGroups: '', newGroup: '', irregularVerbsComponent: false }
+        this.state = { userGroups: '', newGroup: '', irregularVerbsComponent: false, activeGroupID: '' }
 
         this.newGroupChange = this.newGroupChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -39,8 +39,8 @@ export default class GroupsListComponent extends Component {
     toggleTrue() {
         this.props.onToggleChange(true);
     }
-    toggleFalse() {
-        this.props.onToggleChange(false);
+    toggleFalse(activeGroupID) {
+        this.props.onToggleChange(false, activeGroupID);
     }
     renderGroupsList() {
         if (this.state.userGroups != '' || this.state.userGroups.length != 0) {

@@ -100,6 +100,21 @@ export function getLogin(login, callback) {
         });
 };
 
+export function getWordsList(groupID, callback) {
+    fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`)
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);
+            console.log(data);
+            callback(data);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
+}
+
 export function addUser(login, pass, callback) {
     fetch("http://18.130.38.194:5000/addUser",
         {
