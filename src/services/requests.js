@@ -92,7 +92,6 @@ export function getLogin(login, callback) {
         })
         .then(function (data) {
             data = JSON.parse(data);
-            console.log(data[0]);
             callback(data[0]);
         })
         .catch(function (error) {
@@ -157,6 +156,42 @@ export function addNewGroup(userID, newGroup, callback) {
         .catch(function (error) {
             console.log('Request failed', error)
         });
+}
+
+// function getWord(eng) {
+//     fetch("http://18.130.38.194:5000/getWord/" + eng)
+//         .then(function (response) {
+//             return response.text();
+//         })
+//         .then(function (data) {
+//             data = JSON.parse(data);
+//             return data;
+//         })
+//         .catch(function (error) {
+//             console.log('Request failed', error)
+//         });
+// };
+
+export function addNewWord(groupID, newEng, newRus, callback) {
+        fetch("http://18.130.38.194:5000/addNewWord",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
+            })
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+                data = JSON.parse(data);//парсим JSON, создаем объект
+                callback(data);
+            })
+            .catch(function (error) {
+                console.log('Request failed', error)
+            });
 }
 
 // async function getWords() {
