@@ -1,65 +1,74 @@
 import React, { Component } from 'react';
-import { getWordsList, addNewWord } from "../../../../services/requests"
+import { getWordsList, deleteWord } from "../../../../services/requests";
+import WordListRowComponent from './WordListRowComponent';
+import SearchComponent from './SearchComponent';
 
 export default class WordsListComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { wordList: '', newEng: '', newRus: '' };
-        this.changeEng = this.changeEng.bind(this);
-        this.changeRus = this.changeRus.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.state = { wordList: [], newEng: '', newRus: '', class: 'off' };
+
+        this.onDelete = this.onDelete.bind(this);
+        this.onToggleAddForm = this.onToggleAddForm.bind(this);
+        this.refresh = this.refresh.bind(this);
     }
     componentDidMount() {
+
         getWordsList(this.props.groupID, (wordList) => {
+            console.log(wordList);
             this.setState({ wordList: wordList });
         });
     }
-    changeEng(e){
-        let newEng = e.target.value;
-        this.setState({newEng: newEng});
+    refresh(data) {
+        this.setState({ wordList: data });
     }
-    changeRus(e){
-        let newRus = e.target.value;
-        this.setState({newRus: newRus});
+    onDelete(rowID) {
+        console.log('Delete ID = ' + rowID)
+        deleteWord(this.props.groupID, rowID, (data) => {
+            this.setState({ wordList: data });
+        })
     }
-    onSubmit(e){
-        e.preventDefault();
-        if (this.state.newEng != '' && this.state.newRus != '') {
-            addNewWord(this.props.groupID, this.state.newEng, this.state.newRus, (data) => {
-            this.setState({wordList: data, newEng: '', newRus: ''});
-            });
-        } else {
-            alert('поля пустые');
+    onToggleAddForm() {
+        let className = this.state.class === 'off' ? 'on' : 'off';
+        this.setState({ class: className });
+        // console.log(this.state.class);
+    }
+    renderContent() {
+        if (this.state.wordList.length == 0) {
+            return (
+                <h3>Ваш список еще пустой!</h3>
+            )
         }
-    }
-    render() {
-        if (this.state.wordList != '') {
+        else if (this.state.wordList.length > 0) {
             return (
                 <div>
-                    <form onSubmit={this.onSubmit}>
-                        <div className="flex-container">
-                            <div className="flex-block" style={{flexGrow: '3'}}>
-                                <span>Eng:</span><input type="text" className="" value={this.state.newEng || ''} onChange={this.changeEng}></input>
-                            </div>
-                            <div className="flex-block" style={{flexGrow: '3'}}>
-                                <span>Rus:</span><input type="text" className="" value={this.state.newRus || ''} onChange={this.changeRus}></input>
-                            </div>
-                            <div className="flex-block" style={{flexGrow: '1'}}><button type="submit" className="btn btn-outline-dark">Добавить</button></div>
-                        </div>
-                    </form>
                     {
                         this.state.wordList.map(function (row, i) {
                             return (
-                                <p key={i}>{row.eng} - {row.rus}</p>
+                                <WordListRowComponent key={i} row={row} onDel={this.onDelete}></WordListRowComponent>
                             )
-                        })
+                        }.bind(this))
                     }
                 </div>
             )
-        } else {
-            return (
-                <p>Weit</p>
-            )
         }
+    }
+
+    addFormRender() {
+        return (
+            <SearchComponent className={this.state.class} groupID={this.props.groupID} refresh={this.refresh} />
+        )
+    }
+
+    render() {
+        return (
+            <div className='wordList'>
+                <h1>{this.props.groupName} {this.props.groupID}</h1>
+                <input type="text" className="flex-block-3 myInput" placeholder="Filter"></input>
+                {this.renderContent()}
+                <button id="add" onClick={this.onToggleAddForm}>+</button>
+                {this.addFormRender()}
+            </div>
+        )
     }
 }

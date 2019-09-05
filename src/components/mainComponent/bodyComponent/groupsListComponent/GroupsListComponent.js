@@ -39,8 +39,8 @@ export default class GroupsListComponent extends Component {
     toggleTrue() {
         this.props.onToggleChange(true);
     }
-    toggleFalse(activeGroupID) {
-        this.props.onToggleChange(false, activeGroupID);
+    toggleFalse(activeGroupID, activeGroupName) {
+        this.props.onToggleChange(false, activeGroupID, activeGroupName);
     }
     renderGroupsList() {
         if (this.state.userGroups != '' || this.state.userGroups.length != 0) {

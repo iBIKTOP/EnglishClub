@@ -40,7 +40,7 @@ export default class HeaderComponent extends React.Component {
                     <div className="row p-1 m-0 justify-content-between align-items-center">
                         <div className="col-4 p-0 m-0">
                             {/* <Link className="logoName" to="/">EngForYou</Link> */}
-                            <a>EngForYou</a>
+                            <div className='logo'>English For You</div>
                         </div>
                         {this.renderUser()}
                     </div>

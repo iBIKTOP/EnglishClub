@@ -49,27 +49,27 @@ export default class RegistrationComponent extends React.Component {
     render() {
         return (
             <div>
-                <div className="container">
-                    <div className="card w-50 mx-auto mt-3 border-dark">
-                        <div className="card-header bg-dark text-white">Регистрация <Message message={this.state.message} /></div>
-                        <div className="card-body">
-                            <form onSubmit={this.onSubmit}>
-                                <div className="form-group">
-                                    <label>Логин:</label>
-                                    <input type="text" className="form-control" value={this.state.login || ''} onChange={this.onLoginChange}></input>
-                                </div>
-                                <div className="form-group">
-                                    <label>Пароль:</label>
-                                    <input type="password" className="form-control" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
-                                </div>
-                                <div className="form-group">
-                                    <label>Пароль, еще раз:</label>
-                                    <input type="password" className="form-control" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
-                                </div>
-                                <button type="submit" className="btn btn-outline-dark">Зарегестрироваться</button>
-                            </form>
+                <div className="mycard">
+                    <div className="mycard-header">Регистрация <Message message={this.state.message} /></div>
+
+                    <form onSubmit={this.onSubmit}>
+                        <div className="mycard-body">
+                            <label>Логин:</label>
+                            <input type="text" className="myInput" value={this.state.login || ''} onChange={this.onLoginChange}></input>
                         </div>
-                    </div>
+                        <div className="mycard-body">
+                            <label>Пароль:</label>
+                            <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
+                        </div>
+                        <div className="mycard-body">
+                            <label>Пароль, еще раз:</label>
+                            <input type="password" className="myInput" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
+                        </div>
+                        <div className="mycard-body">
+                            <button type="submit" className="mybutton">Зарегестрироваться</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         )

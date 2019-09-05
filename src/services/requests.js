@@ -106,7 +106,7 @@ export function getWordsList(groupID, callback) {
         })
         .then(function (data) {
             data = JSON.parse(data);
-            console.log(data);
+            // console.log(data);
             callback(data);
         })
         .catch(function (error) {
@@ -158,40 +158,71 @@ export function addNewGroup(userID, newGroup, callback) {
         });
 }
 
-// function getWord(eng) {
-//     fetch("http://18.130.38.194:5000/getWord/" + eng)
-//         .then(function (response) {
-//             return response.text();
-//         })
-//         .then(function (data) {
-//             data = JSON.parse(data);
-//             return data;
-//         })
-//         .catch(function (error) {
-//             console.log('Request failed', error)
-//         });
-// };
+export function getAllWords(callback) {
+    fetch("http://18.130.38.194:5000/words/getAllWords")
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);
+            console.log(data);
+            callback(data);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
+};
 
 export function addNewWord(groupID, newEng, newRus, callback) {
-        fetch("http://18.130.38.194:5000/addNewWord",
-            {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
-            })
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                data = JSON.parse(data);//парсим JSON, создаем объект
-                callback(data);
-            })
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
+    fetch("http://18.130.38.194:5000/addNewWord",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
+        })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);//парсим JSON, создаем объект
+            callback(data);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
+}
+
+export function addWordToGroup(groupID, wordID, callback) {
+    fetch(`http://18.130.38.194:5000/addWordToGroup/${groupID}/${wordID}`)
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);
+            console.log(data);
+            callback(data);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
+}
+
+export function deleteWord(groupID, wordID, callback) {
+    fetch(`http://18.130.38.194:5000/deleteWord/${groupID}/${wordID}`)
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            data = JSON.parse(data);
+            console.log(data);
+            callback(data);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
 }
 
 // async function getWords() {

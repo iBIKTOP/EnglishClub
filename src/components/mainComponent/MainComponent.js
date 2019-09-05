@@ -39,7 +39,8 @@ export default class MainComponent extends Component {
         } else {
             return (
                 <div>
-                    <div className="text-center"><img src={welcom}></img></div>
+                    <HeaderComponent userID={this.state.id} onLogOut={this.onLogOut} />
+                    {/* <div className="text-center"><img src={welcom}></img></div> */}
                     <LoginComponent onUserIDChange={this.onUserIDChange} />
                     <RegistrationComponent onUserIDChange={this.onUserIDChange} />
                 </div>

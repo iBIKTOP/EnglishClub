@@ -24,10 +24,10 @@ export default class Irregular_verbs extends Component {
                     <h1>IRREGULAR VERBS</h1>
                     <h6>(Учим неправильные глаголы)</h6>
                     <div className='flex-container htable'>
-                        <div className='flex-block' style={{fontWeight: "bold"}}>Infinitive</div>
-                        <div className='flex-block' style={{fontWeight: "bold"}}>Past Tense</div>
-                        <div className='flex-block' style={{fontWeight: "bold"}}>Past Participle</div>
-                        <div className='flex-block' style={{fontWeight: "bold"}}>Translate</div>
+                        <div className='flex-block-3' style={{fontWeight: "bold"}}>Infinitive</div>
+                        <div className='flex-block-3' style={{fontWeight: "bold"}}>Past Tense</div>
+                        <div className='flex-block-3' style={{fontWeight: "bold"}}>Past Participle</div>
+                        <div className='flex-block-3' style={{fontWeight: "bold"}}>Translate</div>
                     </div>
                     {//выводим список
                         this.state.irregular_verbs.map(function (row, i) {
