@@ -25,9 +25,7 @@ export function getUser(id, callback) {
             })
             .then(function (data) {
                 data = JSON.parse(data);
-                console.log("+++++++++");
-                console.log(data[0].login);
-                callback(data[0].login);
+                callback(data[0]);
             })
             .catch(function (error) {
                 console.log('Request failed', error)

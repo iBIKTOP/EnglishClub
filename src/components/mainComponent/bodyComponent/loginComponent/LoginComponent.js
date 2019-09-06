@@ -27,7 +27,7 @@ export default class LoginComponent extends React.Component {
                         // console.log(document.cookie || "cookie is empty");
                         this.setState({ user: user.login });
                         // this.renderRedirect();
-                        this.props.onUserIDChange(user.id);
+                        this.props.onUserIDChange(user);
                     } else {
                         this.setState({ message: '(Pass не верный)' });
                     }
@@ -66,7 +66,7 @@ export default class LoginComponent extends React.Component {
                             <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
                         </div>
                         <div className='mycard-body'>
-                            <button type="submit" className="mybutton">Вход</button>
+                            <button type="submit" className="mybutton" style={{width:'100%'}}>Вход</button>
                         </div>
                     </form>
                 </div>

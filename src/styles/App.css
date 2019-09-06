@@ -82,14 +82,14 @@ h1,h6 {
     color: white;
 }
 .mybutton{
-    background: linear-gradient(0deg, #f6a30f, #facb2f);
+    background: linear-gradient(0deg, #f6a30f, #ffffff);
     padding: 5px;
     border: 1px solid #2a2a2a;
     border-radius: 10px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
+    margin: 5px;
+}
+.mybutton:hover{
+    background: linear-gradient(0deg,  #facb2f, #ffffff);
 }
 
 .modal_overlay{
