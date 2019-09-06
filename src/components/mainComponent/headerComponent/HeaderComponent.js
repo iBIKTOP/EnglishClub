@@ -23,6 +23,7 @@ export default class HeaderComponent extends React.Component {
                 </div>
             )
         } else if (this.props.user != '') {
+            console.log(this.props.userGroups);
             return (
                 <div className="col-8 p-0 m-0 text-right">
                     {/* <Link className="m-0 p-0" to="/irregular_verbs"><img src={ir} width='40px;'></img></Link> */}

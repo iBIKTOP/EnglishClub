@@ -7,12 +7,12 @@ import '../../styles/App.css';
 import RegistrationComponent from "./bodyComponent/registrationComponent/RegistrationComponent";
 import LoginComponent from "./bodyComponent/loginComponent/LoginComponent";
 import BodyComponent from "./bodyComponent/BodyComponent";
-import { getUser } from "../../services/requests"
+import { getUser, getUserGroups } from "../../services/requests"
 
 export default class MainComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: '', toggle: false };
+        this.state = { user: '', userGroups: '', toggle: false };
 
         this.onLogOut = this.onLogOut.bind(this);
         this.onUserIDChange = this.onUserIDChange.bind(this);
@@ -20,7 +20,9 @@ export default class MainComponent extends Component {
     componentDidMount() {
         getCookie('ID', (id) => {
             getUser(id, (user) => {
-                this.setState({ user: user });
+                getUserGroups(user.id, ({ userGroups }) => {
+                    this.setState({ user: user, userGroups: userGroups });
+                });
             });
         });
         
@@ -33,17 +35,17 @@ export default class MainComponent extends Component {
         this.setState({ user: user });
     }
     render() {
-        if (this.state.user != '') {
+        if (this.state.user != '' && this.state.userGroups != '') {
             return (
                 <div>
-                    <HeaderComponent user={this.state.user} onLogOut={this.onLogOut} />
+                    <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} />
                     <BodyComponent userID={this.state.user.id} />
                 </div>
             );
         } else {
             return (
                 <div>
-                    <HeaderComponent user={this.state.user} onLogOut={this.onLogOut} />
+                    <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} />
                     {/* <div className="text-center"><img src={welcom}></img></div> */}
                     <LoginComponent onUserIDChange={this.onUserIDChange} />
                     {/* <RegistrationComponent onUserIDChange={this.onUserIDChange} /> */}
