@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { getUser } from "../../../services/requests"
-import GroupsListComponent from "./groupsListComponent/GroupsListComponent";
+// import GroupsListComponent from "../headerComponent/groupsListComponent/GroupsListComponent";
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import { getCookie, deleteCookie } from '../../../services/cookie';
 import welcom from "../../../img/welcom.jpg";
@@ -21,11 +21,11 @@ export default class BodyComponent extends Component {
     toggleChange(toggle, groupID, groupName) {
         this.setState({ toggle: toggle, groupID: groupID, groupName: groupName });
     }
-    renderGroupsList() {
-        return (
-            <GroupsListComponent userID={this.props.userID} onToggleChange={this.toggleChange} />
-        )
-    }
+    // renderGroupsList() {
+    //     return (
+    //         <GroupsListComponent userID={this.props.userID} onToggleChange={this.toggleChange} />
+    //     )
+    // }
     renderContent() {
         return (
             this.state.toggle == true ? <Irregular_verbs userID={this.props.userID} /> : <WordsListComponent groupID={this.state.groupID} groupName={this.state.groupName} />
@@ -38,7 +38,7 @@ export default class BodyComponent extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-3">
-                                {this.renderGroupsList()}
+                                {/* {this.renderGroupsList()} */}
                             </div>
                             <div className="col-9">
                                 {this.renderContent()}

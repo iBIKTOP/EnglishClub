@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import ir from '../../../../img/iv.png';
-import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs"
+import Irregular_verbs from "../../bodyComponent/irregularVerbsPage/Irregular_verbs"
 import GroupsListRowComponent from "./GroupsListRowComponent";
 import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
 

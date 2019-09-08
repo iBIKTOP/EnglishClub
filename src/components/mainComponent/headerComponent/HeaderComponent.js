@@ -1,50 +1,73 @@
 import React from 'react';
-
+import GroupsListRowComponent from "./GroupsListComponent/GroupsListRowComponent";
 import { getUser } from "../../../services/requests"
 
 export default class HeaderComponent extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = { userName: '' }
+        this.state = { groupsClass: 'groups' }
+        this.toggleGroups = this.toggleGroups.bind(this);
+        this.setWordsList = this.setWordsList.bind(this);
     }
-    // componentDidMount() {
-    //     if (this.props.userID) {
-    //         getUser(this.props.userID, (login) => {
-    //             this.setState({ userName: login });
-    //         });
-    //     }
-    // }
+    toggleGroups() {
+        this.state.groupsClass == 'groups' ? this.setState({ groupsClass: 'groups visible' }) : this.setState({ groupsClass: 'groups' });
+    }
+    setWordsList(groupID) {
+        this.props.setWordsList(groupID);
+    }
     renderUser() {
-        if (this.props.user == '') {
+        if (this.props.user != '') {
             return (
-                <div className="col-6 p-0 m-0 text-right">Необходима регистрация
-                    {/* <Link className="btn btn-outline-light ml-2" to="/registration">Регистрация</Link>
-                    <Link className="btn btn-outline-light ml-2" to="/login">Вход</Link> */}
-                </div>
-            )
-        } else if (this.props.user != '') {
-            console.log(this.props.userGroups);
-            return (
-                <div className="col-8 p-0 m-0 text-right">
+                <div className="flex-container">
+                    <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                        {this.props.user.login}
+                    </div>
                     {/* <Link className="m-0 p-0" to="/irregular_verbs"><img src={ir} width='40px;'></img></Link> */}
-                    <span>Hello, {this.props.user.login}</span>
+                    <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                        <button className='mybutton'><i className="material-icons" onClick={this.toggleGroups}>view_list</i></button>
+                        <button className='mybutton'><i className="material-icons" onClick={this.props.onLogOut}>exit_to_app</i></button>
+                    </div>
                     {/* <button className="btn btn-outline-light ml-2" onClick={this.props.onLogOut}>Выход</button> */}
-                    <button className='mybutton'><i className="material-icons" onClick={this.props.onLogOut}>exit_to_app</i></button>
                 </div>
             )
         }
     }
-
+    renderGroupList() {
+        if (this.props.userGroups != '') {
+            return (
+                <div>
+                    {//выводим список
+                        this.props.userGroups.map(function (row, i) {
+                            return (
+                                <GroupsListRowComponent key={i} row={row} index={i} groupsClass={this.state.groupsClass} setWordList={this.setWordList} />
+                            )
+                        }.bind(this))
+                    }
+                </div>
+            )
+        } else {
+            return (
+                <p>Вы еще не создали ниодной группы!</p>
+            )
+        }
+    }
     render() {
         return (
-            <div className="nav_panel">
+            <div className="header">
                 <div className="container">
-                    <div className="row p-1 m-0 justify-content-between align-items-center">
-                        <div className="col-4 p-0 m-0">
+                    {/* шапка */}
+                    <div className="flex-container">
+                        <div className="flex-block-3">
                             {/* <Link className="logoName" to="/">EngForYou</Link> */}
-                            <div className='logo'>English For You</div>
+                            <div className=''>English For You</div>
                         </div>
-                        {this.renderUser()}
+                        <div className="flex-block-3">
+                            {this.renderUser()}
+                        </div>
+                    </div>
+                    {/* Группы */}
+                    <div className="">
+                        {this.renderGroupList()}
                     </div>
                 </div>
             </div>

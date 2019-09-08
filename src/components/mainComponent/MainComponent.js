@@ -7,15 +7,17 @@ import '../../styles/App.css';
 import RegistrationComponent from "./bodyComponent/registrationComponent/RegistrationComponent";
 import LoginComponent from "./bodyComponent/loginComponent/LoginComponent";
 import BodyComponent from "./bodyComponent/BodyComponent";
-import { getUser, getUserGroups } from "../../services/requests"
+import { getUser, getUserGroups, getWordsList } from "../../services/requests"
+
 
 export default class MainComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: '', userGroups: '', toggle: false };
+        this.state = { user: '', userGroups: '', wordsList: '', toggle: false };
 
         this.onLogOut = this.onLogOut.bind(this);
         this.onUserIDChange = this.onUserIDChange.bind(this);
+        this.setWordsList = this.setWordsList.bind(this);
     }
     componentDidMount() {
         getCookie('ID', (id) => {
@@ -25,7 +27,7 @@ export default class MainComponent extends Component {
                 });
             });
         });
-        
+
     }
     onLogOut() {
         deleteCookie();
@@ -34,7 +36,13 @@ export default class MainComponent extends Component {
     onUserIDChange(user) {
         this.setState({ user: user });
     }
+    setWordsList(groupID) {
+        getWordsList(groupID, (data) => {
+            this.setState({ wordsList: data });
+        });
+    }
     render() {
+        console.log(this.state.wordList);
         if (this.state.user != '' && this.state.userGroups != '') {
             return (
                 <div>
@@ -45,7 +53,7 @@ export default class MainComponent extends Component {
         } else {
             return (
                 <div>
-                    <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} />
+                    <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} setWordsList={this.setWordsList} />
                     {/* <div className="text-center"><img src={welcom}></img></div> */}
                     <LoginComponent onUserIDChange={this.onUserIDChange} />
                     {/* <RegistrationComponent onUserIDChange={this.onUserIDChange} /> */}

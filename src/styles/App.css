@@ -27,11 +27,15 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
+    .container{
+        max-width: 80% !important;
+    }
 }
 
 @media (min-width: 1200px) {
-
+    .container{
+        max-width: 80% !important;
+    }
 }
 
 body{
@@ -40,6 +44,10 @@ body{
     color: #2a2a2a;
     font-family: 'Playfair Display', serif;
     background-color: #f9f9f9;
+}
+.container{
+    margin: 0;
+    padding: 0;
 }
 
 h1,h6 {
@@ -58,10 +66,11 @@ h1,h6 {
     color: red;
     font-weight: bold;
 }
-.nav_panel{
+.header{
     /*background-color: #f6a30f;*/
     background: linear-gradient(0deg, #f6a30f, #facb2f);
     box-shadow: 0 0 5px gray;
+    padding: 5px;
 }
 .nav_panel Link{
     color: white;
@@ -83,10 +92,14 @@ h1,h6 {
 }
 .mybutton{
     background: linear-gradient(0deg, #f6a30f, #ffffff);
-    padding: 5px;
     border: 1px solid #2a2a2a;
     border-radius: 10px;
-    margin: 5px;
+    line-height: 24px;
+    display: inline-flex; /* keep the inline nature of buttons */
+    align-items: center; 
+    padding: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 .mybutton:hover{
     background: linear-gradient(0deg,  #facb2f, #ffffff);
@@ -123,7 +136,6 @@ h1,h6 {
     flex-wrap: wrap;
     justify-content: space-between; /*выравнивание по главной оси*/
     align-items: center; /*выравнивание по поперечной оси*/
-    margin: 5px;
 }
 .flex-block-1 {
     flex-basis: 10px;/*базовый размер отдельно взятого flex-блока*/
@@ -136,7 +148,7 @@ h1,h6 {
     flex-basis: 50px;/*базовый размер отдельно взятого flex-блока*/
     flex-grow: 3;/*“жадность” отдельно взятого flex-блока*/
     flex-shrink: 3;/*фактор “сжимаемости” отдельно взятого flex-блока*/
-    margin: 5px;
+    margin: auto;
     width: 100%;
     /* padding: 5px; */
 }
@@ -231,4 +243,17 @@ h1,h6 {
 }
 .mycard-body{
     padding: 10px;
+}
+.groups{
+    box-sizing: border-box;
+    border-bottom: 1px solid #2a2a2a;
+    width: 90%;
+    margin-top: 10px; 
+    margin-left: auto;
+    margin-right: auto; 
+    display: none;
+    text-align: center;
+}
+.visible{
+    display: block;
 }
