@@ -13,7 +13,7 @@ import { getUser, getUserGroups, getWordsList } from "../../services/requests"
 export default class MainComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: '', userGroups: '', wordsList: '', toggle: false };
+        this.state = { user: '', userGroups: '', wordsList: '', wordsListName: '', toggle: false };
 
         this.onLogOut = this.onLogOut.bind(this);
         this.onUserIDChange = this.onUserIDChange.bind(this);
@@ -36,29 +36,34 @@ export default class MainComponent extends Component {
     onUserIDChange(user) {
         this.setState({ user: user });
     }
-    setWordsList(groupID) {
-        getWordsList(groupID, (data) => {
-            this.setState({ wordsList: data });
+    setWordsList(group) {
+        getWordsList(group.id, (data) => {
+            this.setState({ wordsList: data, wordsListName: group.name });
         });
     }
-    render() {
-        console.log(this.state.wordList);
+    renderBody(){
         if (this.state.user != '' && this.state.userGroups != '') {
             return (
                 <div>
-                    <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} />
-                    <BodyComponent userID={this.state.user.id} />
+                    <BodyComponent wordsList={this.state.wordsList} wordsListName={this.state.wordsListName} />
                 </div>
             );
         } else {
             return (
                 <div>
-                    <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} setWordsList={this.setWordsList} />
                     {/* <div className="text-center"><img src={welcom}></img></div> */}
                     <LoginComponent onUserIDChange={this.onUserIDChange} />
                     {/* <RegistrationComponent onUserIDChange={this.onUserIDChange} /> */}
                 </div>
             )
         }
+    }
+    render() {
+        return (
+            <div>
+                <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} setWordsList={this.setWordsList}/>
+                {this.renderBody()}
+            </div>
+            ) 
     }
 }

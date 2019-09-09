@@ -7,7 +7,7 @@ export default class GroupsListRowComponent extends Component {
     }
 
     onClickItem() {
-        this.props.setWordsList(this.props.row.id);
+        this.props.setWordsList(this.props.row);
     }
     render() {
         return (

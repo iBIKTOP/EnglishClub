@@ -12,8 +12,8 @@ export default class HeaderComponent extends React.Component {
     toggleGroups() {
         this.state.groupsClass == 'groups' ? this.setState({ groupsClass: 'groups visible' }) : this.setState({ groupsClass: 'groups' });
     }
-    setWordsList(groupID) {
-        this.props.setWordsList(groupID);
+    setWordsList(group) {
+        this.props.setWordsList(group);
     }
     renderUser() {
         if (this.props.user != '') {
@@ -39,7 +39,7 @@ export default class HeaderComponent extends React.Component {
                     {//выводим список
                         this.props.userGroups.map(function (row, i) {
                             return (
-                                <GroupsListRowComponent key={i} row={row} index={i} groupsClass={this.state.groupsClass} setWordList={this.setWordList} />
+                                <GroupsListRowComponent key={i} row={row} index={i} groupsClass={this.state.groupsClass} setWordsList={this.setWordsList} />
                             )
                         }.bind(this))
                     }

@@ -74,7 +74,7 @@ export function getIrregularVerbs(id, callback) {
         })
         .then(function (data) {
             data = JSON.parse(data);
-            console.log(data);
+            // console.log(data);
             callback(data);
         })
         .catch(function (error) {

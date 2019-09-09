@@ -14,25 +14,20 @@ import WordsListComponent from "./wordsListComponent/WordsListComponent";
 export default class BodyComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { toggle: true, groupID: '', groupName: '' };
+        this.state = { toggle: true, groupID: '' };
 
         this.toggleChange = this.toggleChange.bind(this);
     }
     toggleChange(toggle, groupID, groupName) {
         this.setState({ toggle: toggle, groupID: groupID, groupName: groupName });
     }
-    // renderGroupsList() {
-    //     return (
-    //         <GroupsListComponent userID={this.props.userID} onToggleChange={this.toggleChange} />
-    //     )
-    // }
     renderContent() {
         return (
-            this.state.toggle == true ? <Irregular_verbs userID={this.props.userID} /> : <WordsListComponent groupID={this.state.groupID} groupName={this.state.groupName} />
+            this.state.toggle == true ? <Irregular_verbs userID={this.props.userID} /> : <WordsListComponent wordsList={this.props.wordsList} wordsListName={this.props.wordsListName} />
         )
     }
     render() {
-        if (this.props.userID != '') {
+        if (this.props.wordsList != '') {
             return (
                 <div>
                     <div className="container">
@@ -49,7 +44,7 @@ export default class BodyComponent extends Component {
             );
         } else {
             return (
-                <p>Error: No userID</p>
+                <p>Error: No wordsList</p>
             )
         }
     }
