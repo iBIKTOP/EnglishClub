@@ -12,13 +12,6 @@ export default class WordsListComponent extends Component {
         this.onToggleAddForm = this.onToggleAddForm.bind(this);
         this.refresh = this.refresh.bind(this);
     }
-    // componentDidMount() {
-
-    //     getWordsList(this.props.groupID, (wordList) => {
-    //         console.log(wordList);
-    //         this.setState({ wordList: wordList });
-    //     });
-    // }
     refresh(data) {
         this.setState({ wordList: data });
     }
@@ -34,16 +27,16 @@ export default class WordsListComponent extends Component {
         // console.log(this.state.class);
     }
     renderContent() {
-        if (this.props.wordsListName.length == 0) {
+        if (this.props.wordsList.length == 0) {
             return (
                 <h3>Ваш список еще пустой!</h3>
             )
         }
-        else if (this.props.wordsListName.length > 0) {
+        else if (this.props.wordsList.length > 0) {
             return (
                 <div>
                     {
-                        this.props.wordsListName.map(function (row, i) {
+                        this.props.wordsList.map(function (row, i) {
                             return (
                                 <WordListRowComponent key={i} row={row} onDel={this.onDelete}></WordListRowComponent>
                             )
@@ -63,11 +56,10 @@ export default class WordsListComponent extends Component {
     render() {
         return (
             <div className='wordList'>
-                <h1>{this.props.wordsListName}</h1>
                 <input type="text" className="flex-block-3 myInput" placeholder="Filter"></input>
                 {this.renderContent()}
                 <button id="add" onClick={this.onToggleAddForm}>+</button>
-                {this.addFormRender()}
+                {/* {this.addFormRender()} */}
             </div>
         )
     }

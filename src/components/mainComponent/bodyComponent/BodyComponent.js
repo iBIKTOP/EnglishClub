@@ -23,28 +23,23 @@ export default class BodyComponent extends Component {
     }
     renderContent() {
         return (
-            this.state.toggle == true ? <Irregular_verbs userID={this.props.userID} /> : <WordsListComponent wordsList={this.props.wordsList} wordsListName={this.props.wordsListName} />
+            // this.state.toggle == true ? <Irregular_verbs userID={this.props.userID} /> : <WordsListComponent wordsList={this.props.wordsList} wordsListName={this.props.wordsListName} />
+            <WordsListComponent wordsList={this.props.wordsList} />
         )
     }
     render() {
-        if (this.props.wordsList != '') {
+        if (this.props.wordsListName != '') {
             return (
                 <div>
                     <div className="container">
-                        <div className="row">
-                            <div className="col-3">
-                                {/* {this.renderGroupsList()} */}
-                            </div>
-                            <div className="col-9">
-                                {this.renderContent()}
-                            </div>
-                        </div>
+                        <h1>{this.props.wordsListName}</h1>
+                        {this.renderContent()}
                     </div>
                 </div>
             );
         } else {
             return (
-                <p>Error: No wordsList</p>
+                <p>Странно, нет имени группы?</p>
             )
         }
     }

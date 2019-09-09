@@ -42,25 +42,25 @@ export default class GroupsListComponent extends Component {
     toggleFalse(activeGroupID, activeGroupName) {
         this.props.onToggleChange(false, activeGroupID, activeGroupName);
     }
-    renderGroupsList() {
-        if (this.state.userGroups != '' || this.state.userGroups.length != 0) {
-            return (
-                <div>
-                    {//выводим список
-                        this.state.userGroups.map(function (row, i) {
-                            return (
-                                <GroupsListRowComponent key={i} row={row} index={i} onChange={this.toggleFalse} />
-                            )
-                        }.bind(this))
-                    }
-                </div>
-            )
-        } else {
-            return (
-                <p>Вы еще не создали ниодной группы!</p>
-            )
-        }
-    }
+    // renderGroupsList() {
+    //     if (this.state.userGroups != '' || this.state.userGroups.length != 0) {
+    //         return (
+    //             <div>
+    //                 {//выводим список
+    //                     this.state.userGroups.map(function (row, i) {
+    //                         return (
+    //                             <GroupsListRowComponent key={i} row={row} index={i} onChange={this.toggleFalse} />
+    //                         )
+    //                     }.bind(this))
+    //                 }
+    //             </div>
+    //         )
+    //     } else {
+    //         return (
+    //             <p>Вы еще не создали ниодной группы!</p>
+    //         )
+    //     }
+    // }
     render() {
         return (
             <div>

@@ -8,12 +8,18 @@ export default class HeaderComponent extends React.Component {
         this.state = { groupsClass: 'groups' }
         this.toggleGroups = this.toggleGroups.bind(this);
         this.setWordsList = this.setWordsList.bind(this);
+        this.onClickIV = this.onClickIV.bind(this);
     }
     toggleGroups() {
         this.state.groupsClass == 'groups' ? this.setState({ groupsClass: 'groups visible' }) : this.setState({ groupsClass: 'groups' });
     }
     setWordsList(group) {
         this.props.setWordsList(group);
+        this.toggleGroups();
+    }
+    onClickIV() {
+        this.props.setIV();
+        this.toggleGroups();
     }
     renderUser() {
         if (this.props.user != '') {
@@ -32,6 +38,15 @@ export default class HeaderComponent extends React.Component {
             )
         }
     }
+    renderIR() {
+        return (
+            <div className={this.state.groupsClass} onClick={this.onClickIV}>
+                <div className="mycard-body">
+                    Irregular verbs
+                </div>
+            </div>
+        )
+    }
     renderGroupList() {
         if (this.props.userGroups != '') {
             return (
@@ -47,7 +62,7 @@ export default class HeaderComponent extends React.Component {
             )
         } else {
             return (
-                <p>Вы еще не создали ниодной группы!</p>
+                <p>Список личных групп пуст.</p>
             )
         }
     }
@@ -66,6 +81,9 @@ export default class HeaderComponent extends React.Component {
                         </div>
                     </div>
                     {/* Группы */}
+                    <div className="">
+                        {this.renderIR()}
+                    </div>
                     <div className="">
                         {this.renderGroupList()}
                     </div>

@@ -48,6 +48,8 @@ body{
 .container{
     margin: 0;
     padding: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1,h6 {
