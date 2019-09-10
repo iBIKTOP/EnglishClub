@@ -65,7 +65,7 @@ export default class LoginComponent extends React.Component {
                             <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
                         </div>
                         <div className='mycard-body'>
-                            <button type="submit" className="mybutton" style={{ width: '100%' }}>Вход</button>
+                            <button type="submit" className="mybutton" style={{ width: '100%' }}><span>Вход</span></button>
                         </div>
                     </form>
                 </div>

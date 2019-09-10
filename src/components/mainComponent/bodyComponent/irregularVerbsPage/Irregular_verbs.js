@@ -1,26 +1,15 @@
 import React, { Component } from "react";
-
-import { getUser, getIrregularVerbs } from "../../../../services/requests"
 import IrregularRow from "./IrregularRow"
-import { getCookie, deleteCookie } from '../../../../services/cookie';
-import Irregular_verbs_study from './Irregular_verbs_study'
 
 export default class Irregular_verbs extends Component {
     constructor(props) {
         super(props);
-        // this.state = { irregular_verbs: null, id: '', login: '' };
     }
-
-    // componentDidMount() {
-    //     getIrregularVerbs(this.props.userID, (irregular_verbs) => {
-    //         this.setState({ irregular_verbs: irregular_verbs });
-    //     });
-    // }
 
     render() {
         if (this.props.irregular_verbs != null && this.props.irregular_verbs.length != 0) {
             return (
-                <div>
+                <div className='container'>
                     <h1>IRREGULAR VERBS</h1>
                     <h6>(Учим неправильные глаголы)</h6>
                     <div className='flex-container htable'>

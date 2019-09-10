@@ -28,11 +28,9 @@ export default class MainComponent extends Component {
                     getIrregularVerbs(user.id, (iv) => {
                         this.setState({ user: user, userGroups: userGroups, iv: iv });
                     });
-
                 });
             });
         });
-
     }
     onLogOut() {
         deleteCookie();
@@ -64,7 +62,6 @@ export default class MainComponent extends Component {
                     return (
                         <Irregular_verbs irregular_verbs={this.state.iv} />
                     )
-                    break;
                 case 2:
                     if (this.state.wordsListName != '') {
                         return (
@@ -77,20 +74,17 @@ export default class MainComponent extends Component {
                             <div>Статистика</div>
                         )
                     }
-                    break;
             }
-
-
-
-
         }
-
     }
     render() {
         return (
             <div>
                 <HeaderComponent user={this.state.user} userGroups={this.state.userGroups} onLogOut={this.onLogOut} setWordsList={this.setWordsList} setIV={this.setIV} />
-                {this.renderBody()}
+                <div className='container'>
+                    {this.renderBody()}
+                </div>
+                
             </div>
         )
     }

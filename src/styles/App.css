@@ -83,25 +83,28 @@ h1,h6 {
     /*border-radius: 10px;*/
     /*box-shadow: 0 0 5px gray;*/
     border-bottom: 1px solid lightgray;
+    padding: 7px;
 }
 
 .htable{
     box-sizing: border-box;
     background-color: #2a2a2a;
     border-radius: 10px;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 2px #2a2a2a;
     color: white;
+    padding: 7px;
 }
 .mybutton{
     background: linear-gradient(0deg, #f6a30f, #ffffff);
     border: 1px solid #2a2a2a;
+    color: #2a2a2a;
     border-radius: 10px;
     line-height: 24px;
     display: inline-flex; /* keep the inline nature of buttons */
+    justify-content: center;
     align-items: center; 
     padding: 5px;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin: 0 2px 0 2px;
 }
 .mybutton:hover{
     background: linear-gradient(0deg,  #facb2f, #ffffff);
@@ -140,10 +143,20 @@ h1,h6 {
     align-items: center; /*выравнивание по поперечной оси*/
 }
 .flex-block-1 {
+    box-sizing: border-box;
     flex-basis: 10px;/*базовый размер отдельно взятого flex-блока*/
     flex-grow: 1;/*“жадность” отдельно взятого flex-блока*/
     flex-shrink: 1;/*фактор “сжимаемости” отдельно взятого flex-блока*/
-    /* padding: 5px; */
+    margin: auto;
+    width: 100%;
+}
+.flex-block-2 {
+    box-sizing: border-box;
+    flex-basis: 25px;/*базовый размер отдельно взятого flex-блока*/
+    flex-grow: 2;/*“жадность” отдельно взятого flex-блока*/
+    flex-shrink: 2;/*фактор “сжимаемости” отдельно взятого flex-блока*/
+    margin: auto;
+    width: 100%;
 }
 .flex-block-3 {
     box-sizing: border-box;
@@ -152,7 +165,6 @@ h1,h6 {
     flex-shrink: 3;/*фактор “сжимаемости” отдельно взятого flex-блока*/
     margin: auto;
     width: 100%;
-    /* padding: 5px; */
 }
 .myLabel{
     /*position: absolute;*/
@@ -186,9 +198,6 @@ h1,h6 {
     transform: translateY(-1.5em);
     color: #26a69a;
     font-size: 1em;
-}
-.myInput:focus{
-    /*border-bottom: 2px solid #26a69a;*/
 }
 .wordList{
     position: relative;
@@ -233,6 +242,7 @@ h1,h6 {
     box-sizing: border-box;
     border: 1px solid #2a2a2a;
     border-radius: 5px;
+    max-width: 300px;
     width: 90%;
     margin-top: 10px; 
     margin-left: auto;
