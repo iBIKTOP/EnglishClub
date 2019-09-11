@@ -10,10 +10,6 @@ export default class WordsListComponent extends Component {
 
         this.onDelete = this.onDelete.bind(this);
         this.onToggleAddForm = this.onToggleAddForm.bind(this);
-        this.refresh = this.refresh.bind(this);
-    }
-    refresh(data) {
-        this.setState({ wordList: data });
     }
     onDelete(rowID) {
         deleteWord(this.props.groupID, rowID, (data) => {
@@ -23,7 +19,6 @@ export default class WordsListComponent extends Component {
     onToggleAddForm() {
         let className = this.state.class === 'off' ? 'on' : 'off';
         this.setState({ class: className });
-        // console.log(this.state.class);
     }
     renderContent() {
         if (this.props.wordsList.length == 0) {
@@ -48,7 +43,7 @@ export default class WordsListComponent extends Component {
 
     addFormRender() {
         return (
-            <SearchComponent className={this.state.class} groupID={this.props.groupID} refresh={this.refresh} />
+            <SearchComponent className={this.state.class} groupID={this.props.groupID} updateWordsList={this.props.updateWordsList} />
         )
     }
 
@@ -58,7 +53,7 @@ export default class WordsListComponent extends Component {
                 <input type="text" className="flex-block-3 myInput" placeholder="Filter"></input>
                 {this.renderContent()}
                 <button id="add" onClick={this.onToggleAddForm}>+</button>
-                {/* {this.addFormRender()} */}
+                {this.addFormRender()}
             </div>
         )
     }

@@ -42,7 +42,7 @@ export default class SearchComponent extends Component {
         e.preventDefault();
         if (this.state.newEng != '' && this.state.newRus != '') {
             addNewWord(this.props.groupID, this.state.newEng, this.state.newRus, (data) => {
-                this.props.refresh(data);
+                this.props.updateWordsList(data);
                 getAllWords((data) => {
                     this.setState({ allWords: data, temp: data, search: '', newEng: '', newRus: '' });
                 });
@@ -55,39 +55,42 @@ export default class SearchComponent extends Component {
         console.log(row.id);
         addWordToGroup(this.props.groupID, row.id, (data) => {
             console.log(data);
-            this.props.refresh(data);
+            this.props.updateWordsList(data);
             this.setState({ search: '', newEng: '', newRus: '' });
         });
     }
 
     render() {
         return (
+
             <div className={`addForm ${this.props.className}`}>
-                <div className="flex-container">
-                    <div className="flex-block-3">
-                        <input type="text" className="myInput" placeholder='Search' onChange={this.search} value={this.state.search}></input>
+                <div className='container'>
+                    <div className="flex-container">
+                        <div className="flex-block-3">
+                            <input type="text" className="myInput" placeholder='Search' onChange={this.search} value={this.state.search}></input>
+                        </div>
                     </div>
+                    {
+                        this.state.temp.map(function (row, i) {
+                            return (
+                                <SearchRowComponent key={i} row={row} onSave={this.onSave}></SearchRowComponent>
+                            )
+                        }.bind(this))
+                    }
+                    <form onSubmit={this.onSubmit}>
+                        <div className='flex-container'>
+                            <div className='flex-block-3'>
+                                <input className='myInput' placeholder='english' onChange={this.changeEng} value={this.state.newEng}></input>
+                            </div>
+                            <div className='flex-block-3'>
+                                <input className='myInput' placeholder='russian' onChange={this.changeRus} value={this.state.newRus}></input>
+                            </div>
+                            <div className='flex-block-2'>
+                                <button className='mybutton' type='submit'>Save</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                {
-                    this.state.temp.map(function (row, i) {
-                        return (
-                            <SearchRowComponent key={i} row={row} onSave={this.onSave}></SearchRowComponent>
-                        )
-                    }.bind(this))
-                }
-                <form onSubmit={this.onSubmit}>
-                    <div className='flex-container'>
-                        <div className='flex-block-3'>
-                            <input className='myInput' placeholder='english' onChange={this.changeEng} value={this.state.newEng}></input>
-                        </div>
-                        <div className='flex-block-3'>
-                            <input className='myInput' placeholder='russian' onChange={this.changeRus} value={this.state.newRus}></input>
-                        </div>
-                        <div className='flex-block-2'>
-                            <button className='btn' type='submit'>Save</button>
-                        </div>
-                    </div>
-                </form>
             </div>
         )
     }
