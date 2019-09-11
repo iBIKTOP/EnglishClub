@@ -16,9 +16,8 @@ export default class WordsListComponent extends Component {
         this.setState({ wordList: data });
     }
     onDelete(rowID) {
-        console.log('Delete ID = ' + rowID)
         deleteWord(this.props.groupID, rowID, (data) => {
-            this.setState({ wordList: data });
+            this.props.updateWordsList(data);
         })
     }
     onToggleAddForm() {

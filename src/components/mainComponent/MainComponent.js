@@ -14,20 +14,24 @@ import Irregular_verbs from "./bodyComponent/irregularVerbsPage/Irregular_verbs"
 export default class MainComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: '', userGroups: '', wordsList: '', wordsListName: '', iv: '', page: 1 };
+        this.state = { user: '', group: '', userGroups: '', wordsList: '', wordsListName: '', iv: '', page: 1 };
 
         this.onLogOut = this.onLogOut.bind(this);
         this.onUserChange = this.onUserChange.bind(this);
         this.setWordsList = this.setWordsList.bind(this);
+        this.updateWordsList = this.updateWordsList.bind(this);
         this.setIV = this.setIV.bind(this);
     }
     componentDidMount() { //нужно добавить проверку на вымышленного пользователя.
         getCookie('ID', (id) => {
-            getUser(id, (user) => {
-                getUserGroups(user.id, ({ userGroups }) => {
-                    getIrregularVerbs(user.id, (iv) => {
-                        this.setState({ user: user, userGroups: userGroups, iv: iv });
-                    });
+            this.setUserData(id);
+        });
+    }
+    setUserData(id){
+        getUser(id, (user) => {
+            getUserGroups(user.id, ({ userGroups }) => {
+                getIrregularVerbs(user.id, (iv) => {
+                    this.setState({ user: user, userGroups: userGroups, iv: iv });
                 });
             });
         });
@@ -37,12 +41,15 @@ export default class MainComponent extends Component {
         this.setState({ user: '' });
     }
     onUserChange(user) {
-        this.setState({ user: user });
+        this.setUserData(user.id);
     }
     setWordsList(group) {
         getWordsList(group.id, (data) => {
-            this.setState({ wordsList: data, wordsListName: group.group_name, page: 2 });
+            this.setState({ wordsList: data, group: group, page: 2 });
         });
+    }
+    updateWordsList(wordsList){
+        this.setState({ wordsList: wordsList });
     }
     setIV() {
         this.setState({ page: 1 });
@@ -63,10 +70,10 @@ export default class MainComponent extends Component {
                         <Irregular_verbs irregular_verbs={this.state.iv} />
                     )
                 case 2:
-                    if (this.state.wordsListName != '') {
+                    if (this.state.group.wordsListName != '') {
                         return (
                             <div>
-                                <BodyComponent wordsList={this.state.wordsList} wordsListName={this.state.wordsListName} />
+                                <BodyComponent wordsList={this.state.wordsList} group={this.state.group} updateWordsList={this.updateWordsList}/>
                             </div>
                         );
                     } else {

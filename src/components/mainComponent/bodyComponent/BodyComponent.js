@@ -14,7 +14,7 @@ import WordsListComponent from "./wordsListComponent/WordsListComponent";
 export default class BodyComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { toggle: true, groupID: '' };
+        this.state = { toggle: true };
 
         this.toggleChange = this.toggleChange.bind(this);
     }
@@ -24,15 +24,15 @@ export default class BodyComponent extends Component {
     renderContent() {
         return (
             // this.state.toggle == true ? <Irregular_verbs userID={this.props.userID} /> : <WordsListComponent wordsList={this.props.wordsList} wordsListName={this.props.wordsListName} />
-            <WordsListComponent wordsList={this.props.wordsList} />
+            <WordsListComponent groupID={this.props.group.id} wordsList={this.props.wordsList} updateWordsList={this.props.updateWordsList}/>
         )
     }
     render() {
-        if (this.props.wordsListName != '') {
+        if (this.props.group.wordsListName != '') {
             return (
                 <div>
                     <div className="container">
-                        <h1>{this.props.wordsListName}</h1>
+                        <h1>{this.props.group.wordsListName}</h1>
                         {this.renderContent()}
                     </div>
                 </div>
