@@ -9,6 +9,9 @@
         font-size: 0.8rem;
         font-weight: bold;
     }
+    .welcomeImg{
+        width: 80%;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -18,11 +21,17 @@
     .container{
         max-width: 100% !important;
     }
+    .welcomeImg{
+        width: 70%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .container{
         max-width: 100% !important;
+    }
+    .welcomeImg{
+        width: 60%;
     }
 }
 
@@ -30,20 +39,31 @@
     .container{
         max-width: 80% !important;
     }
+    .welcomeImg{
+        width: 50%;
+    }
 }
 
 @media (min-width: 1200px) {
     .container{
         max-width: 80% !important;
     }
+    .welcomeImg{
+        width: 40%;
+    }
 }
 
 body{
     position: relative;
-    /*color: #555555;*/
     color: #2a2a2a;
     font-family: 'Playfair Display', serif;
-    background-color: #f9f9f9;
+    background-color: #ececec;
+}
+.welcomeImg{
+    height: auto;
+    margin: auto;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 .container{
     margin: 0;
@@ -69,9 +89,8 @@ h1,h6 {
     font-weight: bold;
 }
 .header{
-    /*background-color: #f6a30f;*/
-    background: linear-gradient(0deg, #f6a30f, #facb2f);
-    box-shadow: 0 0 5px gray;
+    background: #2bbbad;
+    box-shadow: 0 0 5px black;
     padding: 5px;
 }
 .nav_panel Link{
@@ -95,11 +114,13 @@ h1,h6 {
     padding: 7px;
 }
 .mybutton{
-    background: linear-gradient(0deg, #f6a30f, #ffffff);
-    border: 1px solid #2a2a2a;
-    color: #2a2a2a;
-    border-radius: 10px;
-    line-height: 24px;
+    background: #795548;
+    color: #ececec;
+    border-radius: 2px;
+    border: none;
+    box-shadow: 0 0 5px black;
+    min-width: 65px;
+    /* line-height: 24px; */
     display: inline-flex; /* keep the inline nature of buttons */
     justify-content: center;
     align-items: center; 
@@ -107,7 +128,7 @@ h1,h6 {
     margin: 0 2px 0 2px;
 }
 .mybutton:hover{
-    background: linear-gradient(0deg,  #ffffff, #facb2f);
+    background: #4e372f;
 }
 
 .modal_overlay{
@@ -141,6 +162,7 @@ h1,h6 {
     flex-wrap: wrap;
     justify-content: space-between; /*выравнивание по главной оси*/
     align-items: center; /*выравнивание по поперечной оси*/
+    position: relative;
 }
 .flex-block-1 {
     box-sizing: border-box;
