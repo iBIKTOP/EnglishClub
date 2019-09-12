@@ -107,7 +107,7 @@ h1,h6 {
     margin: 0 2px 0 2px;
 }
 .mybutton:hover{
-    background: linear-gradient(0deg,  #facb2f, #ffffff);
+    background: linear-gradient(0deg,  #ffffff, #facb2f);
 }
 
 .modal_overlay{
@@ -215,18 +215,12 @@ h1,h6 {
     font-weight: bold;
     border: 1px solid #2a2a2a;
 }
-.addForm{
+.searchForm{
     /* box-sizing: initial; */
     position: absolute;
-    border-radius: 10px;
-    left: 5%;
-    top: 15%;
-    width: 90%;
-    min-height: 500px;
-    max-height: 500px;
-    background-color: #f9f9f9;
-    color: #2a2a2a;
-    box-shadow: 0 0 15px #2a2a2a;
+    left: 0;
+    top: 0;
+    width: 100%;
     overflow: auto;
     transition: opacity 0.1s linear;
 }
@@ -241,17 +235,20 @@ h1,h6 {
 .mycard{
     box-sizing: border-box;
     border: 1px solid #2a2a2a;
-    border-radius: 5px;
-    max-width: 300px;
-    width: 90%;
-    margin-top: 10px; 
+    border-radius: 10px;
+    /* width: 99%; */
+    /* margin-top: 10px; 
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;  */
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px #2a2a2a;
 }
 .mycard-header{
-    background: #2a2a2a;
-    color: white;
+    background: linear-gradient(0deg, #f6a30f, #facb2f);
+    color: #2a2a2a;
     padding: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #2a2a2a;
 }
 .mycard-body{
     padding: 10px;

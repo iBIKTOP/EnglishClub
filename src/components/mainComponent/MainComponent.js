@@ -72,7 +72,7 @@ export default class MainComponent extends Component {
                 case 2:
                     if (this.state.group.wordsListName != '') {
                         return (
-                            <div>
+                            <div className='mycard'>
                                 <BodyComponent wordsList={this.state.wordsList} group={this.state.group} updateWordsList={this.updateWordsList}/>
                             </div>
                         );

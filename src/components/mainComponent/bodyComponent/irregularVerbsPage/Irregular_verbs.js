@@ -9,7 +9,7 @@ export default class Irregular_verbs extends Component {
     render() {
         if (this.props.irregular_verbs != null && this.props.irregular_verbs.length != 0) {
             return (
-                <div className='container'>
+                <div>
                     <h1>IRREGULAR VERBS</h1>
                     <h6>(Учим неправильные глаголы)</h6>
                     <div className='flex-container htable'>

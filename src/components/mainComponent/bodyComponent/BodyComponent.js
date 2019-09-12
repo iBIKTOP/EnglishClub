@@ -16,7 +16,7 @@ export default class BodyComponent extends Component {
         if (this.props.group.group_name != '') {
             return (
                 <div>
-                    <h1>{this.props.group.group_name}</h1>
+                    <div className='mycard-header'>{this.props.group.group_name}</div>
                     {this.renderContent()}
                 </div>
             );
