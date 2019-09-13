@@ -48,7 +48,7 @@ export default class RegistrationComponent extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='logInLogUpPlace'>
                 <div className="mycard">
                     <div className="mycard-header">Регистрация <Message message={this.state.message} /></div>
 
@@ -56,16 +56,10 @@ export default class RegistrationComponent extends React.Component {
                         <div className="mycard-body">
                             <label>Логин:</label>
                             <input type="text" className="myInput" value={this.state.login || ''} onChange={this.onLoginChange}></input>
-                        </div>
-                        <div className="mycard-body">
                             <label>Пароль:</label>
                             <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
-                        </div>
-                        <div className="mycard-body">
                             <label>Пароль, еще раз:</label>
                             <input type="password" className="myInput" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
-                        </div>
-                        <div className="mycard-body">
                             <button type="submit" className="mybutton">Зарегестрироваться</button>
                         </div>
                     </form>

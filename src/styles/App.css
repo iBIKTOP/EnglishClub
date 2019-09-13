@@ -9,8 +9,8 @@
         font-size: 0.8rem;
         font-weight: bold;
     }
-    .welcomeImg{
-        width: 80%;
+    .welcomeImg, .logInLogUpPlace{
+        width: 70%;
     }
 }
 
@@ -21,8 +21,8 @@
     .container{
         max-width: 100% !important;
     }
-    .welcomeImg{
-        width: 70%;
+    .welcomeImg, .logInLogUpPlace{
+        width: 60%;
     }
 }
 
@@ -30,8 +30,8 @@
     .container{
         max-width: 100% !important;
     }
-    .welcomeImg{
-        width: 60%;
+    .welcomeImg, .logInLogUpPlace{
+        width: 50%;
     }
 }
 
@@ -39,8 +39,8 @@
     .container{
         max-width: 80% !important;
     }
-    .welcomeImg{
-        width: 50%;
+    .welcomeImg, .logInLogUpPlace{
+        width: 40%;
     }
 }
 
@@ -48,8 +48,8 @@
     .container{
         max-width: 80% !important;
     }
-    .welcomeImg{
-        width: 40%;
+    .welcomeImg, .logInLogUpPlace{
+        width: 30%;
     }
 }
 
@@ -90,7 +90,7 @@ h1,h6 {
 }
 .header{
     background: #2bbbad;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 3px #2a2a2a;
     padding: 5px;
 }
 .nav_panel Link{
@@ -118,9 +118,9 @@ h1,h6 {
     color: #ececec;
     border-radius: 2px;
     border: none;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 3px #2a2a2a;
     min-width: 65px;
-    /* line-height: 24px; */
+    border: 1px solid #795548;
     display: inline-flex; /* keep the inline nature of buttons */
     justify-content: center;
     align-items: center; 
@@ -254,26 +254,48 @@ h1,h6 {
     visibility: hidden;
     opacity: 0; 
 }
+.logInLogUpPlace{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 .mycard{
     box-sizing: border-box;
-    border: 1px solid #2a2a2a;
-    border-radius: 10px;
+    position: relative;
+    /* border: 1px solid #2a2a2a; */
+    /* border-radius: 10px; */
     /* width: 99%; */
     /* margin-top: 10px; 
     margin-left: auto;
     margin-right: auto;  */
-    background-color: #f9f9f9;
-    box-shadow: 0 0 5px #2a2a2a;
+    /* background-color: #f9f9f9; */
+    /* box-shadow: 0 0 5px #2a2a2a; */
 }
 .mycard-header{
-    background: linear-gradient(0deg, #f6a30f, #facb2f);
-    color: #2a2a2a;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: #2bbbad;
+    color: #ffffff;
     padding: 10px;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid #2a2a2a;
+    border-radius: 2px;
+    box-shadow: 0 0 10px gray;
+    width: 90%;
+    z-index: 2;
 }
 .mycard-body{
-    padding: 10px;
+    position: relative;
+    left: 0;
+    top: -15px;
+    background: #ececec;
+    padding: 25px 10px 10px 10px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 2px;
+    width: 100%;
+    z-index: 1;
 }
 .groups{
     box-sizing: border-box;

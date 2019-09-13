@@ -52,20 +52,16 @@ export default class LoginComponent extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='logInLogUpPlace'>
                 <div className="mycard">
                     <div className="mycard-header">Авторизация <Message message={this.state.message} /></div>
                     <form onSubmit={this.onSubmit}>
                         <div className='mycard-body'>
                             <label>Логин:</label>
                             <input type="text" className="myInput" value={this.state.login || ''} onChange={this.onLoginChange}></input>
-                        </div>
-                        <div className='mycard-body'>
                             <label>Пароль:</label>
                             <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
-                        </div>
-                        <div className='mycard-body'>
-                            <button type="submit" className="mybutton" style={{ width: '100%' }}><span>Вход</span></button>
+                            <button type="submit" className="mybutton" style={{ marginTop: '5px' }}>Вход</button>
                         </div>
                     </form>
                 </div>

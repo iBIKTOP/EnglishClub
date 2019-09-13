@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import HeaderComponent from "./headerComponent/HeaderComponent";
-import { getCookie, deleteCookie } from '../../services/cookie';
+import { getCookie, setCookie, deleteCookie } from '../../services/cookie';
 import '../../styles/App.css';
 import RegistrationComponent from "./bodyComponent/registrationComponent/RegistrationComponent";
 import LoginComponent from "./bodyComponent/loginComponent/LoginComponent";
@@ -13,7 +13,14 @@ import WelcomeComponent from "./bodyComponent/welcomeComponent/WelcomeComponent"
 export default class MainComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: '', group: '', userGroups: '', wordsList: '', wordsListName: '', iv: '', page: 1, welcome: 'welcome' };
+        this.state = { user: '', 
+                        group: '', 
+                        userGroups: '', 
+                        wordsList: '', 
+                        wordsListName: '', 
+                        iv: '', 
+                        page: 1, 
+                        welcome: 'welcome' };
 
         this.onLogOut = this.onLogOut.bind(this);
         this.onUserChange = this.onUserChange.bind(this);
@@ -24,6 +31,7 @@ export default class MainComponent extends Component {
     }
     componentDidMount() { //нужно добавить проверку на вымышленного пользователя.
         getCookie('ID', (id) => {
+            setCookie(id);
             this.setUserData(id);
         });
     }
