@@ -6,20 +6,16 @@ import SearchComponent from './SearchComponent';
 export default class WordsListComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { wordList: [], newEng: '', newRus: '', class: 'off' };
+        this.state = { wordList: [], newEng: '', newRus: '' };
 
         this.onDelete = this.onDelete.bind(this);
-        this.onToggleAddForm = this.onToggleAddForm.bind(this);
     }
     onDelete(rowID) {
         deleteWord(this.props.groupID, rowID, (data) => {
             this.props.updateWordsList(data);
         })
     }
-    onToggleAddForm() {
-        let className = this.state.class === 'off' ? 'on' : 'off';
-        this.setState({ class: className });
-    }
+
     renderContent() {
         if (this.props.wordsList.length == 0) {
             return (
@@ -40,20 +36,11 @@ export default class WordsListComponent extends Component {
             )
         }
     }
-
-    addFormRender() {
-        return (
-            <SearchComponent className={this.state.class} groupID={this.props.groupID} updateWordsList={this.props.updateWordsList} />
-        )
-    }
-
     render() {
         return (
-            <div className='wordList'>
-                <input type="text" className="flex-block-3 myInput" placeholder="Filter"></input>
+            <div className='mycard-body'>
+                <input type="text" className="myInput" placeholder="Filter"></input>
                 {this.renderContent()}
-                <button id="add" onClick={this.onToggleAddForm}>+</button>
-                {this.addFormRender()}
             </div>
         )
     }

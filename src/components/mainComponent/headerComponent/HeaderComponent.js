@@ -93,7 +93,7 @@ export default class HeaderComponent extends React.Component {
                     <div className="flex-container">
                         <div className="flex-block-3">
                             {/* <Link className="logoName" to="/">EngForYou</Link> */}
-                            <div className=''>English For You</div>
+                            <div className='logo'>English For You</div>
                         </div>
                         <div className="flex-block-3" style={{ textAlign: 'right' }}>
                             {this.renderUser()}

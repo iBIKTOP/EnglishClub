@@ -61,7 +61,8 @@ export default class LoginComponent extends React.Component {
                             <input type="text" className="myInput" value={this.state.login || ''} onChange={this.onLoginChange}></input>
                             <label>Пароль:</label>
                             <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
-                            <button type="submit" className="mybutton" style={{ marginTop: '5px' }}>Вход</button>
+                            <div style={{ textAlign: 'right' }}><button type="submit" className="mybutton" style={{ marginTop: '5px' }}>Вход</button></div>
+
                         </div>
                     </form>
                 </div>

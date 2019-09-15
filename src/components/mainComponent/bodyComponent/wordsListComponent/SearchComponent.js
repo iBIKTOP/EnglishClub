@@ -56,6 +56,7 @@ export default class SearchComponent extends Component {
         addWordToGroup(this.props.groupID, row.id, (data) => {
             console.log(data);
             this.props.updateWordsList(data);
+            this.props.onToggleAddForm();
             this.setState({ search: '', newEng: '', newRus: '' });
         });
     }
@@ -63,9 +64,9 @@ export default class SearchComponent extends Component {
     render() {
         return (
 
-            <div className={`searchForm ${this.props.className}`}>
+            <div>
                 <div className='container'>
-                    <div className='mycard'>
+                    <div className='mycard-body'>
                         <div className="flex-container">
                             <div className="flex-block-3">
                                 <input type="text" className="myInput" placeholder='Search' onChange={this.search} value={this.state.search}></input>
@@ -92,7 +93,7 @@ export default class SearchComponent extends Component {
                             </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         )

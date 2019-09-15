@@ -60,7 +60,8 @@ export default class RegistrationComponent extends React.Component {
                             <input type="password" className="myInput" value={this.state.pass1 || ''} onChange={this.onPass1Change}></input>
                             <label>Пароль, еще раз:</label>
                             <input type="password" className="myInput" value={this.state.pass2 || ''} onChange={this.onPass2Change}></input>
-                            <button type="submit" className="mybutton">Зарегестрироваться</button>
+                            <div style={{ textAlign: 'right' }}><button type="submit" className="mybutton" style={{ marginTop: '5px' }}>Зарегестрироваться</button></div>
+
                         </div>
                     </form>
 
