@@ -20,20 +20,22 @@ export default class LoginComponent extends React.Component {
     onSubmit(e) {
         e.preventDefault();
         if (this.state.login.length > 0 && this.state.pass1.length > 0) {
-            getLogin(this.state.login, (user) => {
-                if (user) {
-                    if (md5(this.state.pass1) == user.pass) {
-                        setCookie(user.id); //устанавливаю куки ID
-                        // console.log(document.cookie || "cookie is empty");
-                        // this.renderRedirect();
-                        this.props.onUserChange(user);
-                    } else {
-                        this.setState({ message: '(Pass не верный)' });
-                    }
-                } else {
-                    this.setState({ message: '(Login не существует)' });
-                }
-            });
+            getLogin(this.state.login)
+                .then(
+                    (user) => {
+                        if (user) {
+                            if (md5(this.state.pass1) == user.pass) {
+                                setCookie(user.id); //устанавливаю куки ID
+                                // console.log(document.cookie || "cookie is empty");
+                                // this.renderRedirect();
+                                this.props.onUserChange(user);
+                            } else {
+                                this.setState({ message: '(Pass не верный)' });
+                            }
+                        } else {
+                            this.setState({ message: '(Login не существует)' });
+                        }
+                    });
         } else {
             this.setState({ message: '(Ошибка: Данные введены некоректно)' });
         }

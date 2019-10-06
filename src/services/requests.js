@@ -82,19 +82,29 @@ export function getIrregularVerbs(id, callback) {
         });
 };
 
-//проверка логина при регистрации
-export function getLogin(login, callback) {
-    fetch("http://18.130.38.194:5000/usersLogin/" + login)
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);
-            callback(data[0]);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
+//проверка логина при регистрации или логировании
+export function getLogin(login) {
+    return new Promise((resolve, reject) => {
+        fetch("http://18.130.38.194:5000/getUserLogin/",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login })
+            })
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+                data = JSON.parse(data);
+                resolve(data[0]);
+            })
+            .catch(function (error) {
+                console.log('Request failed', error)
+            });
+    })
 };
 
 export function getWordsList(groupID, callback) {
