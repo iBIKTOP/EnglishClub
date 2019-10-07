@@ -83,7 +83,7 @@ export function getIrregularVerbs(id, callback) {
 };
 
 //проверка логина при регистрации или логировании
-export function getLogin(login) {
+export const getLogin = (login) => {
     return new Promise((resolve, reject) => {
         fetch("http://18.130.38.194:5000/getUserLogin/",
             {
@@ -94,16 +94,12 @@ export function getLogin(login) {
                 },
                 body: JSON.stringify({ login: login })
             })
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
+            .then(response => response.text())
+            .then(data => {
                 data = JSON.parse(data);
                 resolve(data[0]);
             })
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
+            .catch(error => console.log('Request failed', error));
     })
 };
 
