@@ -17,19 +17,22 @@ export function getUserGroups(userID, setStateUserGroups) {
     }
 };
 
-export function getUser(id, callback) {
-    if (id != '') {
-        fetch(`http://18.130.38.194:5000/usersId/${id}`)
+export function getUser(id) {
+    if (id != null) {
+        return new Promise((resolve, reject) => {
+            fetch(`http://18.130.38.194:5000/usersId/${id}`)
             .then(function (response) {
                 return response.text();
             })
             .then(function (data) {
                 data = JSON.parse(data);
-                callback(data[0]);
+                resolve(data[0]);
             })
             .catch(function (error) {
                 console.log('Request failed', error)
             });
+        });
+        
     }
 };
 // export function getUsers(callback) {
