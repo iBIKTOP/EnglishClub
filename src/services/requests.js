@@ -21,18 +21,18 @@ export function getUser(id) {
     if (id != null) {
         return new Promise((resolve, reject) => {
             fetch(`http://18.130.38.194:5000/usersId/${id}`)
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                data = JSON.parse(data);
-                resolve(data[0]);
-            })
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
+                .then(function (response) {
+                    return response.text();
+                })
+                .then(function (data) {
+                    data = JSON.parse(data);
+                    resolve(data[0]);
+                })
+                .catch(function (error) {
+                    console.log('Request failed', error)
+                });
         });
-        
+
     }
 };
 // export function getUsers(callback) {
@@ -86,9 +86,29 @@ export function getIrregularVerbs(id, callback) {
 };
 
 //проверка логина при регистрации или логировании
+export const authentication = (login, pass) => {
+    return new Promise((resolve, reject) => {
+        fetch("http://18.130.38.194:5000/authentication/",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login, pass: pass })
+            })
+            .then(response => response.text())
+            .then(data => {
+                data = JSON.parse(data);
+                resolve(data[0]);
+            })
+            .catch(error => console.log('Request failed', error));
+    })
+};
+
 export const getLogin = (login) => {
     return new Promise((resolve, reject) => {
-        fetch("http://18.130.38.194:5000/getUserLogin/",
+        fetch("http://18.130.38.194:5000/getLogin/",
             {
                 method: "POST",
                 headers: {
@@ -121,26 +141,29 @@ export function getWordsList(groupID, callback) {
         });
 }
 
-export function addUser(login, pass, callback) {
-    fetch("http://18.130.38.194:5000/addUser",
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ login: login, pass: pass })
-        })
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
-            callback(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
+export function addUser(login, pass) {
+    return new Promise((resolve, reject) => {
+        fetch("http://18.130.38.194:5000/addUser",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login, pass: pass })
+            })
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+                data = JSON.parse(data);//парсим JSON, создаем объект
+                resolve(data);
+            })
+            .catch(function (error) {
+                console.log('Request failed', error)
+            });
+    });
+
 };
 
 export function addNewGroup(userID, newGroup, callback) {

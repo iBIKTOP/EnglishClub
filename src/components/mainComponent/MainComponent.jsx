@@ -11,17 +11,23 @@ import Irregular_verbs from "./bodyComponent/irregularVerbsPage/Irregular_verbs"
 import WelcomeComponent from "./bodyComponent/welcomeComponent/WelcomeComponent";
 
 
-export default function MainComponent(props){
+export default function MainComponent(props) {
     const [user, setUser] = React.useState(null);
     const [page, setPage] = React.useState('welcome');
 
     React.useEffect(() => {
-        getCookie('ID')
-            .then((cookieId) => getUser(cookieId))
-            .then((user) => setUser(user))      
+        if (user == null) {
+            getCookie('ID')
+                .then((cookieId) => getUser(cookieId))
+                .then((user) => setUser(user))
+        }
+
     });
-    let setWelcomePage = (data) => {
-        setPage({ page: data })
+    let setWelcomePage = (data) => setPage(data);
+    let onUserChange = (user) => setUser(user);
+    let onLogOut = () => {
+        deleteCookie();
+        setUser(null);
     }
     let renderBody = () => {
         if (user == null) {
@@ -37,42 +43,43 @@ export default function MainComponent(props){
                 case 'signIn':
                     return (
                         <div>
-                            <LoginComponent />
+                            <LoginComponent onUserChange={onUserChange} />
                         </div>
                     )
                     break;
                 case 'signUp':
                     return (
                         <div>
-                            {/* <RegistrationComponent onUserIDChange={this.onUserIDChange} /> */}
+                            <RegistrationComponent onUserChange={onUserChange} />
                         </div>
                     )
                     break;
             }
         } else {
-            switch (this.state.page) {
-                case 1:
-                    return (
-                        <Irregular_verbs irregular_verbs={this.state.iv} />
-                    )
-                case 2:
-                    if (this.state.group.wordsListName != '') {
-                        return (
-                            <div className='mycard'>
-                                <BodyComponent wordsList={this.state.wordsList} group={this.state.group} updateWordsList={this.updateWordsList} />
-                            </div>
-                        );
-                    } else {
-                        return (
-                            <div>Статистика</div>
-                        )
-                    }
-            }
+            <p>ok</p>
+            // switch (this.state.page) {
+            //     case 1:
+            //         return (
+            //             <Irregular_verbs irregular_verbs={this.state.iv} />
+            //         )
+            //     case 2:
+            //         if (this.state.group.wordsListName != '') {
+            //             return (
+            //                 <div className='mycard'>
+            //                     <BodyComponent wordsList={this.state.wordsList} group={this.state.group} updateWordsList={this.updateWordsList} />
+            //                 </div>
+            //             );
+            //         } else {
+            //             return (
+            //                 <div>Статистика</div>
+            //             )
+            //         }
+            // }
         }
     }
     return (
         <div>
-            <HeaderComponent user={user} setWelcomePage={setWelcomePage}/>
+            <HeaderComponent user={user} setWelcomePage={setWelcomePage} onLogOut={onLogOut} />
             {renderBody()}
         </div>
     )

@@ -2,30 +2,25 @@ import React from 'react';
 import GroupsListRowComponent from "./GroupsListComponent/GroupsListRowComponent";
 import { getUser } from "../../../services/requests"
 
-export default function HeaderComponent({user, setWelcomePage}){
-    React.useEffect(() => {
-              
-    });
-
+export default function HeaderComponent({ user, setWelcomePage, onLogOut }) {
     let onSignInClick = () => setWelcomePage('signIn');
-    
+    let onSignUpClick = () => setWelcomePage('signUp');
     let renderUser = () => {
-            console.log('Пользователь: ', user);
-            if (user != null) {
-                return (
-                    <button className='mybutton'><i>exit_to_app</i></button>
-                )
-            }
-            else {
-                return (
-                    <div className="flex-container">
-                        <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                            <button className='mybutton' onClick={onSignInClick}>Sign In</button>
-                            <button className='mybutton'>Sign Up</button>
-                        </div>
+        if (user != null) {
+            return (
+                <button className='mybutton'><i className="material-icons" onClick={onLogOut}>exit_to_app</i></button>
+            )
+        }
+        else {
+            return (
+                <div className="flex-container">
+                    <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                        <button className='mybutton' onClick={onSignInClick}>Sign In</button>
+                        <button className='mybutton' onClick={onSignUpClick}>Sign Up</button>
                     </div>
-                )
-            }
+                </div>
+            )
+        }
     }
     return (
         <div className="header">
