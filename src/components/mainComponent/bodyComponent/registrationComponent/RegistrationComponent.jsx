@@ -3,7 +3,7 @@ import validate from "../../../../services/validate";
 import { getLogin, addUser, addUserIrregularVerbs } from "../../../../services/requests"
 import Message from '../../../public/Message';
 
-export default function RegistrationComponent({ onUserChange }) {
+export default function RegistrationComponent({ onUserChange, setWelcomePage }) {
     const [login, setLogin] = React.useState('');
     const [pass1, setPass1] = React.useState('');
     const [pass2, setPass2] = React.useState('');
@@ -48,7 +48,15 @@ export default function RegistrationComponent({ onUserChange }) {
     return (
         <div className='logInLogUpPlace'>
             <div className="mycard">
-                <div className="mycard-header">Регистрация <Message message={message} />
+                <div className="mycard-header">
+                    <div className="flex-container">
+                        <div className="flex-block-3" style={{ textAlign: 'left' }}>
+                            Регистрация <Message message={message} />
+                        </div>
+                        <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                            <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{float: 'right'}}>X</button>
+                        </div>
+                    </div>
                 </div>
 
                 <form onSubmit={onSubmit}>

@@ -5,10 +5,9 @@ import { getCookie, setCookie, deleteCookie } from '../../services/cookie';
 import '../../styles/App.css';
 import RegistrationComponent from "./bodyComponent/registrationComponent/RegistrationComponent";
 import LoginComponent from "./bodyComponent/loginComponent/LoginComponent";
-import BodyComponent from "./bodyComponent/BodyComponent";
 import { getUser, getUserGroups, getWordsList, getIrregularVerbs } from "../../services/requests"
-import Irregular_verbs from "./bodyComponent/irregularVerbsPage/Irregular_verbs";
 import WelcomeComponent from "./bodyComponent/welcomeComponent/WelcomeComponent";
+import GroupsListComponent from "./bodyComponent/groupsListComponent/GroupsListComponent"
 
 
 export default function MainComponent(props) {
@@ -23,40 +22,29 @@ export default function MainComponent(props) {
         }
 
     });
-    let setWelcomePage = (data) => setPage(data);
+    let setWelcomePage = (page) => setPage(page);
     let onUserChange = (user) => setUser(user);
     let onLogOut = () => {
         deleteCookie();
         setUser(null);
+        setPage('welcome');
     }
     let renderBody = () => {
         if (user == null) {
             switch (page) {
                 case 'welcome':
-                    return (
-                        <div>
-                            {/* <WelcomeComponent /> */}
-                            <p>Welcome</p>
-                        </div>
-                    )
-                    break;
+                    return (<WelcomeComponent />)
                 case 'signIn':
-                    return (
-                        <div>
-                            <LoginComponent onUserChange={onUserChange} />
-                        </div>
-                    )
-                    break;
+                    return (<LoginComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />)
                 case 'signUp':
-                    return (
-                        <div>
-                            <RegistrationComponent onUserChange={onUserChange} />
-                        </div>
-                    )
-                    break;
+                    return (<RegistrationComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />)
             }
         } else {
-            <p>ok</p>
+            switch (page) {
+                case 'groupsList':
+                    return (<GroupsListComponent />)
+            }
+            
             // switch (this.state.page) {
             //     case 1:
             //         return (

@@ -1,10 +1,6 @@
 import React from 'react';
-import GroupsListRowComponent from "./GroupsListComponent/GroupsListRowComponent";
-import { getUser } from "../../../services/requests"
 
 export default function HeaderComponent({ user, setWelcomePage, onLogOut }) {
-    let onSignInClick = () => setWelcomePage('signIn');
-    let onSignUpClick = () => setWelcomePage('signUp');
     let renderUser = () => {
         if (user != null) {
             return (
@@ -15,8 +11,8 @@ export default function HeaderComponent({ user, setWelcomePage, onLogOut }) {
             return (
                 <div className="flex-container">
                     <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                        <button className='mybutton' onClick={onSignInClick}>Sign In</button>
-                        <button className='mybutton' onClick={onSignUpClick}>Sign Up</button>
+                        <button className='mybutton' onClick={() => setWelcomePage('signIn')}>Sign In</button>
+                        <button className='mybutton' onClick={() => setWelcomePage('signUp')}>Sign Up</button>
                     </div>
                 </div>
             )

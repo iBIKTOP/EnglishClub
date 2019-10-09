@@ -7,7 +7,7 @@ import { authentication } from "../../../../services/requests"
 import { setCookie } from '../../../../services/cookie';
 
 
-export default function LoginComponent({ onUserChange }) {
+export default function LoginComponent({ onUserChange, setWelcomePage }) {
 
     const [login, setLogin] = React.useState('');
     const [pass1, setPass1] = React.useState('');
@@ -30,10 +30,9 @@ export default function LoginComponent({ onUserChange }) {
             authentication(login, pass1)
                 .then((user) => {
                     if (user) {
-                        setCookie(user.id); //устанавливаю куки ID
-                        // console.log(document.cookie || "cookie is empty");
-                        // this.renderRedirect();
+                        setCookie(user.id); 
                         onUserChange(user);
+                        setWelcomePage('groupsList');
                     } else {
                         setMessage('(Ошибка: Неверный логин или пароль.)');
                     }
@@ -45,7 +44,17 @@ export default function LoginComponent({ onUserChange }) {
     return (
         <div className='logInLogUpPlace'>
             <div className="mycard">
-                <div className="mycard-header">Авторизация <Message message={message} /></div>
+                <div className="mycard-header">
+                    <div className="flex-container">
+                        <div className="flex-block-3" style={{ textAlign: 'left' }}>
+                            Авторизация <Message message={message} />
+                        </div>
+                        <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                            <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{float: 'right'}}>X</button>
+                        </div>
+                    </div>
+                    
+                </div>
                 <form onSubmit={onSubmit}>
                     <div className='mycard-body'>
                         <label>Логин:</label>

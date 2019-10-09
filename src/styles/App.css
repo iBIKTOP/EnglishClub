@@ -57,7 +57,7 @@ body{
     position: relative;
     color: #2a2a2a;
     font-family: 'Playfair Display', serif;
-    background-color: #ececec;
+    background-color: #ffffff;
 }
 .welcomeImg{
     height: auto;
@@ -84,6 +84,13 @@ h1,h6 {
     color: rgb(212, 212, 212);
     text-decoration: none;
 }
+.logo{
+    color: white;
+    font-size: 25px;
+}
+.logo:hover{
+    color: rgb(212, 212, 212);
+}
 .message{
     color: red;
     font-weight: bold;
@@ -104,7 +111,6 @@ h1,h6 {
     border-bottom: 1px solid lightgray;
     padding: 7px;
 }
-
 .htable{
     box-sizing: border-box;
     background-color: #2a2a2a;
