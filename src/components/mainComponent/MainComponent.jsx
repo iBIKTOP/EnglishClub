@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import HeaderComponent from "./headerComponent/HeaderComponent";
 import { getCookie, setCookie, deleteCookie } from '../../services/cookie';
 import '../../styles/App.css';
-import RegistrationComponent from "./bodyComponent/registrationComponent/RegistrationComponent";
-import LoginComponent from "./bodyComponent/loginComponent/LoginComponent";
+import RegistrationComponent from "./registrationComponent/RegistrationComponent";
+import LoginComponent from "./loginComponent/LoginComponent";
 import { getUser, getUserGroups, getWordsList, getIrregularVerbs } from "../../services/requests"
-import WelcomeComponent from "./bodyComponent/welcomeComponent/WelcomeComponent";
+import WelcomeComponent from "./welcomeComponent/WelcomeComponent";
 import UserPlaceComponent from "./bodyComponent/UserPlaceComponent";
 
 
@@ -19,7 +19,7 @@ export default function MainComponent(props) {
         if (user == null) {
             getCookie('ID')
                 .then((cookieId) => {
-                    if(cookieId != '') {
+                    if (cookieId != '') {
                         getUser(cookieId)
                             .then((user) => {
                                 setUser(user);
@@ -50,9 +50,9 @@ export default function MainComponent(props) {
         } else {
             switch (page) {
                 case 'userPlace':
-                    return (<UserPlaceComponent />)
+                    return (<UserPlaceComponent id={user.id} />)
             }
-            
+
             // switch (this.state.page) {
             //     case 1:
             //         return (

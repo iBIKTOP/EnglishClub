@@ -1,10 +1,9 @@
 import React from 'react';
-import md5 from "md5";
 
-import validate from "../../../../services/validate";
-import Message from '../../../public/Message';
-import { authentication } from "../../../../services/requests"
-import { setCookie } from '../../../../services/cookie';
+import validate from "../../../services/validate";
+import Message from '../../public/Message';
+import { authentication } from "../../../services/requests"
+import { setCookie } from '../../../services/cookie';
 
 
 export default function LoginComponent({ onUserChange, setWelcomePage }) {
@@ -30,7 +29,7 @@ export default function LoginComponent({ onUserChange, setWelcomePage }) {
             authentication(login, pass1)
                 .then((user) => {
                     if (user) {
-                        setCookie(user.id); 
+                        setCookie(user.id);
                         onUserChange(user);
                         setWelcomePage('userPlace');
                     } else {
@@ -50,10 +49,10 @@ export default function LoginComponent({ onUserChange, setWelcomePage }) {
                             Авторизация <Message message={message} />
                         </div>
                         <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                            <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{float: 'right'}}>X</button>
+                            <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{ float: 'right' }}>X</button>
                         </div>
                     </div>
-                    
+
                 </div>
                 <form onSubmit={onSubmit}>
                     <div className='mycard-body'>

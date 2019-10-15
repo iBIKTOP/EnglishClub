@@ -6,10 +6,36 @@ import GroupsListRowComponent from "./GroupsListRowComponent";
 import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
 
 
-export default function GroupsListComponent(){
-    return(
-        <p>GroupsListComponent</p>
-    )
+export default function GroupsListComponent({ id, onuserPlacePageChange }) {
+    const [userGroups, setUserGroups] = React.useState(null);
+    React.useEffect(() => {
+        if (userGroups == null) {
+            getUserGroups(id)
+                .then((groups) => {
+                    setUserGroups(groups);
+                })
+        }
+
+    });
+    if (userGroups != null) {
+        return (
+            <div>
+                {
+                    userGroups.map(function (row, i) {
+                        return (
+                            <GroupsListRowComponent key={i} row={row} index={i} onuserPlacePageChange={onuserPlacePageChange} />
+                        )
+                    })
+                }
+            </div>
+        )
+    } else if (userGroups == null) {
+        return (
+            <p>Загрузка...</p>
+        )
+    }
+
+
 }
 
 // export default class GroupsListComponent extends Component {

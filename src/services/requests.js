@@ -1,24 +1,23 @@
-export function getUserGroups(userID, setStateUserGroups) {
-    if (userID != '') {
-        console.log("Запрашиваем слова пользователя с ID = " + userID);
-        fetch(`http://18.130.38.194:5000/${userID}`)
+export function getUserGroups(userID) {
+    console.log(userID);
+    return new Promise((resolve, reject) => {
+        fetch(`http://18.130.38.194:5000/userGroups/${userID}`)
             .then(function (response) {
                 return response.text();
             })
             .then(function (data) {
-                data = JSON.parse(data);
-                console.log(data);
-                //setStateUserGroups - callback установка списка групп пользователя
-                setStateUserGroups({ userGroups: data });
+                let groups = JSON.parse(data);
+                resolve(groups);
             })
             .catch(function (error) {
                 console.log('Request failed', error)
             });
-    }
+    });
+
 };
 
 export function getUser(id) {
-    
+
     return new Promise((resolve, reject) => {
         fetch(`http://18.130.38.194:5000/usersId/${id}`)
             .then(function (response) {
@@ -33,7 +32,7 @@ export function getUser(id) {
             });
     });
 
-    
+
 };
 // export function getUsers(callback) {
 //     fetch("http://18.130.38.194:5000/users")

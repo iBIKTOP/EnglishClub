@@ -1,7 +1,7 @@
 import React from 'react';
-import validate from "../../../../services/validate";
-import { getLogin, addUser, addUserIrregularVerbs } from "../../../../services/requests"
-import Message from '../../../public/Message';
+import validate from "../../../services/validate";
+import { getLogin, addUser, addUserIrregularVerbs } from "../../../services/requests"
+import Message from '../../public/Message';
 
 export default function RegistrationComponent({ onUserChange, setWelcomePage }) {
     const [login, setLogin] = React.useState('');
@@ -54,7 +54,7 @@ export default function RegistrationComponent({ onUserChange, setWelcomePage }) 
                             Регистрация <Message message={message} />
                         </div>
                         <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                            <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{float: 'right'}}>X</button>
+                            <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{ float: 'right' }}>X</button>
                         </div>
                     </div>
                 </div>
