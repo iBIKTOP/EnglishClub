@@ -6,7 +6,7 @@ export function getCookie(id) {
         let matches = document.cookie.match(new RegExp(
             "(?:^|; )" + id.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
         ));
-        matches ? resolve(decodeURIComponent(matches[1])) : resolve(null);
+        matches ? resolve(decodeURIComponent(matches[1])) : resolve('');
     });
     
 }

@@ -32,7 +32,7 @@ export default function LoginComponent({ onUserChange, setWelcomePage }) {
                     if (user) {
                         setCookie(user.id); 
                         onUserChange(user);
-                        setWelcomePage('groupsList');
+                        setWelcomePage('userPlace');
                     } else {
                         setMessage('(Ошибка: Неверный логин или пароль.)');
                     }

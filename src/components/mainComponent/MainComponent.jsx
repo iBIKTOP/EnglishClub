@@ -7,7 +7,7 @@ import RegistrationComponent from "./bodyComponent/registrationComponent/Registr
 import LoginComponent from "./bodyComponent/loginComponent/LoginComponent";
 import { getUser, getUserGroups, getWordsList, getIrregularVerbs } from "../../services/requests"
 import WelcomeComponent from "./bodyComponent/welcomeComponent/WelcomeComponent";
-import GroupsListComponent from "./bodyComponent/groupsListComponent/GroupsListComponent"
+import UserPlaceComponent from "./bodyComponent/UserPlaceComponent";
 
 
 export default function MainComponent(props) {
@@ -15,13 +15,21 @@ export default function MainComponent(props) {
     const [page, setPage] = React.useState('welcome');
 
     React.useEffect(() => {
+        console.log(page);
         if (user == null) {
             getCookie('ID')
-                .then((cookieId) => getUser(cookieId))
-                .then((user) => setUser(user))
+                .then((cookieId) => {
+                    if(cookieId != '') {
+                        getUser(cookieId)
+                            .then((user) => {
+                                setUser(user);
+                                setPage('userPlace');
+                            })
+                    }
+                })
         }
-
     });
+
     let setWelcomePage = (page) => setPage(page);
     let onUserChange = (user) => setUser(user);
     let onLogOut = () => {
@@ -41,8 +49,8 @@ export default function MainComponent(props) {
             }
         } else {
             switch (page) {
-                case 'groupsList':
-                    return (<GroupsListComponent />)
+                case 'userPlace':
+                    return (<UserPlaceComponent />)
             }
             
             // switch (this.state.page) {
