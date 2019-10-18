@@ -125,19 +125,21 @@ export const getLogin = (login) => {
     })
 };
 
-export function getWordsList(groupID, callback) {
-    fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`)
+export function getWordsList(groupID) {
+    return new Promise((resolve, reject) => {
+        fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`)
         .then(function (response) {
             return response.text();
         })
         .then(function (data) {
             data = JSON.parse(data);
-            // console.log(data);
-            callback(data);
+            resolve(data);
         })
         .catch(function (error) {
             console.log('Request failed', error)
         });
+    });
+    
 }
 
 export function addUser(login, pass) {
@@ -239,19 +241,21 @@ export function addWordToGroup(groupID, wordID, callback) {
         });
 }
 
-export function deleteWord(groupID, wordID, callback) {
-    fetch(`http://18.130.38.194:5000/deleteWord/${groupID}/${wordID}`)
+export function deleteWord(groupID, wordID) {
+    return new Promise((resolve, reject) => {
+        fetch(`http://18.130.38.194:5000/deleteWord/${groupID}/${wordID}`)
         .then(function (response) {
             return response.text();
         })
         .then(function (data) {
             data = JSON.parse(data);
-            console.log(data);
-            callback(data);
+            resolve(data);
         })
         .catch(function (error) {
             console.log('Request failed', error)
         });
+    });
+    
 }
 
 // async function getWords() {

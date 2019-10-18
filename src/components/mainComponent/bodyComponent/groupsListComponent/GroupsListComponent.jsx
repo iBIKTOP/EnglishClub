@@ -6,7 +6,7 @@ import GroupsListRowComponent from "./GroupsListRowComponent";
 import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
 
 
-export default function GroupsListComponent({ id, onuserPlacePageChange }) {
+export default function GroupsListComponent({ id, onuserPlacePageChange, onLogOut }) {
     const [userGroups, setUserGroups] = React.useState(null);
     React.useEffect(() => {
         if (userGroups == null) {
@@ -15,11 +15,23 @@ export default function GroupsListComponent({ id, onuserPlacePageChange }) {
                     setUserGroups(groups);
                 })
         }
-
     });
+    
     if (userGroups != null) {
         return (
             <div>
+                <div className="header">
+                    <div className="container">
+                        <div className="flex-container">
+                            <div className="flex-block-3" style={{ textAlign: 'left' }}>
+                                <button className='mybutton'>Назад</button>
+                            </div>
+                            <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                                <button className='mybutton' onClick={() => onLogOut()}>Exit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {
                     userGroups.map(function (row, i) {
                         return (

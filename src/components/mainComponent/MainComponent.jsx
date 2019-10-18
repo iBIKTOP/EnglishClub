@@ -41,41 +41,39 @@ export default function MainComponent(props) {
         if (user == null) {
             switch (page) {
                 case 'welcome':
-                    return (<WelcomeComponent />)
+                    return (
+                        <div>
+                            <HeaderComponent user={user} setWelcomePage={setWelcomePage} onLogOut={onLogOut} />
+                            <WelcomeComponent />
+                        </div>
+                    )
                 case 'signIn':
-                    return (<LoginComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />)
+                    return (
+                        <div>
+                            
+                            <LoginComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />
+                        </div>
+                    )
                 case 'signUp':
-                    return (<RegistrationComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />)
+                    return (
+                        <div>
+                            <HeaderComponent user={user} setWelcomePage={setWelcomePage} onLogOut={onLogOut} />
+                            <RegistrationComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />
+                        </div>
+                    )
             }
         } else {
             switch (page) {
                 case 'userPlace':
-                    return (<UserPlaceComponent id={user.id} />)
+                    return (
+                        <UserPlaceComponent id={user.id} onLogOut={onLogOut}/>
+                    )
             }
-
-            // switch (this.state.page) {
-            //     case 1:
-            //         return (
-            //             <Irregular_verbs irregular_verbs={this.state.iv} />
-            //         )
-            //     case 2:
-            //         if (this.state.group.wordsListName != '') {
-            //             return (
-            //                 <div className='mycard'>
-            //                     <BodyComponent wordsList={this.state.wordsList} group={this.state.group} updateWordsList={this.updateWordsList} />
-            //                 </div>
-            //             );
-            //         } else {
-            //             return (
-            //                 <div>Статистика</div>
-            //             )
-            //         }
-            // }
         }
     }
     return (
         <div>
-            <HeaderComponent user={user} setWelcomePage={setWelcomePage} onLogOut={onLogOut} />
+            
             {renderBody()}
         </div>
     )
