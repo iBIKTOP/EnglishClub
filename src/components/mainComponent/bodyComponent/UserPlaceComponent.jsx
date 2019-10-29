@@ -9,10 +9,13 @@ import { userInfo } from "os";
 export default function UserPlaceComponent({ id, onLogOut }) {
     const [userPlacePage, setUserPlacePage] = React.useState('userGgroups');
     const [groupWords, setGroupWords] = React.useState(null);
+
     let onuserPlacePageChange = (page, row) => { 
         setUserPlacePage(page);
         setGroupWords(row);
     };
+    let clickBack = page => setUserPlacePage(page);
+        
     switch (userPlacePage) {
         case 'userGgroups':
             return (
@@ -23,7 +26,7 @@ export default function UserPlaceComponent({ id, onLogOut }) {
         case 'wordsList':
             return (
                 <div>
-                    <WordsListComponent groupWords={groupWords} onLogOut={onLogOut}/>
+                    <WordsListComponent groupWords={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
                 </div>
             )
         // case 'signUp':

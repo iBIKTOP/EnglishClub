@@ -3,10 +3,8 @@ import React, { Component } from "react";
 
 export default function GroupsListRowComponent({ row, onuserPlacePageChange }) {
     return (
-        <div>
-            <div className="mycard-body" onClick={() => { onuserPlacePageChange('wordsList', row) }}>
-                {row.group_name}
-            </div>
+        <div className="groupsRow" onClick={() => { onuserPlacePageChange('wordsList', row) }}>
+            {row.group_name}
         </div>
 
     )

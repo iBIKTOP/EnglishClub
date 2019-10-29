@@ -3,11 +3,10 @@ import { getWordsList, deleteWord } from "../../../../services/requests";
 import WordListRowComponent from './WordListRowComponent';
 // import SearchComponent from '.';
 
-export default function WordsListComponent({groupWords, onLogOut}){
+export default function WordsListComponent({groupWords, onLogOut, clickBack}){
     
     const[wordsList, setWordsList] = React.useState(null);
     React.useEffect(() => {
-        console.log("ooo");
         if(wordsList == null){
             getWordsList(groupWords.id)
             .then((data) => {
@@ -23,6 +22,8 @@ export default function WordsListComponent({groupWords, onLogOut}){
         onLogOut();
         setWordsList([]);
     }
+    let onClickBack = () => clickBack('userGgroups');
+        
     let renderContent = () => {
         if (wordsList && wordsList.length == 0) {
             return (
@@ -36,7 +37,7 @@ export default function WordsListComponent({groupWords, onLogOut}){
                         <div className="container">
                             <div className="flex-container">
                                 <div className="flex-block-3" style={{ textAlign: 'left' }}>
-                                    <button className='mybutton'>Назад</button>
+                                    <button className='mybutton' onClick={onClickBack}>Назад</button>
                                 </div>
                                 <div className="flex-block-3" style={{ textAlign: 'right' }}>
                                     <button className='mybutton' onClick={onClickOnLogOut}>Exit</button>
