@@ -45,13 +45,15 @@ export default function WordsListComponent({groupWords, onLogOut, clickBack}){
                             </div>
                         </div>
                     </div>
-                    {
-                        wordsList.map(function (row, i) {
-                            return (
-                                <WordListRowComponent key={i} row={row} onDel={onDelete}></WordListRowComponent>
-                            )
-                        })
-                    }
+                    <div className="container">
+                        {
+                            wordsList.map(function (row, i) {
+                                return (
+                                    <WordListRowComponent key={i} row={row} onDel={onDelete}></WordListRowComponent>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             )
         }else{

@@ -194,6 +194,14 @@ h1,h6 {
     margin: auto;
     width: 100%;
 }
+.flex-block-9 {
+    box-sizing: border-box;
+    flex-basis: 100px;/*базовый размер отдельно взятого flex-блока*/
+    flex-grow: 9;/*“жадность” отдельно взятого flex-блока*/
+    flex-shrink: 9;/*фактор “сжимаемости” отдельно взятого flex-блока*/
+    margin: auto;
+    width: 100%;
+}
 .myLabel{
     /*position: absolute;*/
     /*margin-left: 10px;*/
@@ -317,7 +325,17 @@ h1,h6 {
     display: block;
 }
 .groupsRow{
-    border: 1px solid black;
-    width: calc((100% - 10px) / 3);
-    height: 200px;
+    border: 1px solid rgb(212, 212, 212);
+    /* width: calc((100% - 10px) / 3); */
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.groupsRowItem{
+    /* border: 1px solid rgb(212, 212, 212); */
+    padding: 10px;
+}
+.icons{
+    color: #2a2a2a;
+    margin-top: 5px !important;
 }

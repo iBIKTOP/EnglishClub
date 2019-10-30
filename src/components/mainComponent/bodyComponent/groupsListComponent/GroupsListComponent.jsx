@@ -24,7 +24,10 @@ export default function GroupsListComponent({ id, onuserPlacePageChange, onLogOu
                     <div className="container">
                         <div className="flex-container">
                             <div className="flex-block-3" style={{ textAlign: 'left' }}>
-                                {/* <button className='mybutton'>Назад</button> */}
+                                <div className='logo'>Groups</div>
+                            </div>
+                            <div className="flex-block-3" style={{ textAlign: 'center' }}>
+                            <button className='mybutton'>Learn</button>
                             </div>
                             <div className="flex-block-3" style={{ textAlign: 'right' }}>
                                 <button className='mybutton' onClick={() => onLogOut()}>Exit</button>
@@ -33,15 +36,13 @@ export default function GroupsListComponent({ id, onuserPlacePageChange, onLogOu
                     </div>
                 </div>
                 <div className='container'>
-                    <div className="flex-container">
-                        {
-                            userGroups.map(function (row, i) {
-                                return (
-                                    <GroupsListRowComponent key={i} row={row} index={i} onuserPlacePageChange={onuserPlacePageChange} />
-                                )
-                            })
-                        }
-                    </div>
+                    {
+                        userGroups.map(function (row, i) {
+                            return (
+                                <GroupsListRowComponent key={i} row={row} index={i} onuserPlacePageChange={onuserPlacePageChange} />
+                            )
+                        })
+                    }
                 </div>
             </div>
         )
