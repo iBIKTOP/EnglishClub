@@ -243,7 +243,15 @@ export function addWordToGroup(groupID, wordID, callback) {
 
 export function deleteWord(groupID, wordID) {
     return new Promise((resolve, reject) => {
-        fetch(`http://18.130.38.194:5000/deleteWord/${groupID}/${wordID}`)
+        fetch(`http://18.130.38.194:5000/deleteWord`,
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ groupID: groupID, wordID: wordID })
+        })
         .then(function (response) {
             return response.text();
         })

@@ -121,11 +121,12 @@ h1,h6 {
 }
 .mybutton{
     background: #795548;
-    color: #ececec;
+    color: #fff;
     border-radius: 2px;
     border: none;
     box-shadow: 0 0 3px #2a2a2a;
-    min-width: 65px;
+    min-width: 40px;
+    max-height: 40px;
     border: 1px solid #795548;
     display: inline-flex; /* keep the inline nature of buttons */
     justify-content: center;
@@ -222,12 +223,13 @@ h1,h6 {
     width: 100%;
     /*background: transparent;*/
     /*transition: all 0.5s;*/
+    box-shadow: 0 0 3px #2a2a2a;
     box-sizing: border-box;
-    /*height: 30px;*/
+    height: 37px;
     /*line-height: 30px;*/
-    border-radius: 10px;
+    border-radius: 5px;
     /* margin: 5px; */
-    border: 1px solid #2a2a2a;
+    border: 2px solid #795548;
     padding: 10px;
 }
 .myLabel:focus{
@@ -338,4 +340,8 @@ h1,h6 {
 .icons{
     color: #2a2a2a;
     margin-top: 5px !important;
+}
+.icons:hover{
+    cursor: pointer;
+    color: #2bbbad;
 }

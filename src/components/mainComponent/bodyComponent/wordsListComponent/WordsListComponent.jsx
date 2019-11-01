@@ -27,33 +27,21 @@ export default function WordsListComponent({groupWords, onLogOut, clickBack}){
     let renderContent = () => {
         if (wordsList && wordsList.length == 0) {
             return (
-                <h3>Ваш список еще пустой!</h3>
+                <div className="container">
+                    <h3>Ваш список пуст!</h3>
+                </div>
             )
         }
         else if (wordsList && wordsList.length > 0) {
             return (
-                <div>
-                    <div className="header">
-                        <div className="container">
-                            <div className="flex-container">
-                                <div className="flex-block-3" style={{ textAlign: 'left' }}>
-                                    <button className='mybutton' onClick={onClickBack}>Назад</button>
-                                </div>
-                                <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                                    <button className='mybutton' onClick={onClickOnLogOut}>Exit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        {
-                            wordsList.map(function (row, i) {
-                                return (
-                                    <WordListRowComponent key={i} row={row} onDel={onDelete}></WordListRowComponent>
-                                )
-                            })
-                        }
-                    </div>
+                <div className="container">
+                    {
+                        wordsList.map(function (row, i) {
+                            return (
+                                <WordListRowComponent key={i} row={row} onDel={onDelete}></WordListRowComponent>
+                            )
+                        })
+                    }
                 </div>
             )
         }else{
@@ -62,7 +50,25 @@ export default function WordsListComponent({groupWords, onLogOut, clickBack}){
     }
     return (
             <div>
-                {/* <input type="text" className="myInput" placeholder="Filter"></input> */}
+                <div className="header">
+                    <div className="container">
+                        <div className="flex-container">
+                            <div className="flex-block-1" style={{ textAlign: 'left' }}>
+                                <button className='mybutton' onClick={onClickBack}>
+                                    <i className="material-icons">arrow_back</i>
+                                </button>
+                            </div>
+                            <div className="flex-block-9" style={{ textAlign: 'right' }}>
+                                <input type="text" className="myInput" placeholder="Filter"></input>
+                            </div>
+                            <div className="flex-block-1" style={{ textAlign: 'right' }}>
+                                <button className='mybutton' onClick={onClickOnLogOut}>
+                                    <i className="material-icons">exit_to_app</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {renderContent()}
             </div>
     )

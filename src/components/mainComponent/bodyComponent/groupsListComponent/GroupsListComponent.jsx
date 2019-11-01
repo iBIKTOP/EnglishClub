@@ -27,10 +27,14 @@ export default function GroupsListComponent({ id, onuserPlacePageChange, onLogOu
                                 <div className='logo'>Groups</div>
                             </div>
                             <div className="flex-block-3" style={{ textAlign: 'center' }}>
-                            <button className='mybutton'>Learn</button>
+                                <button className='mybutton'>
+                                    <i className="material-icons">done_all</i>
+                                </button>
                             </div>
                             <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                                <button className='mybutton' onClick={() => onLogOut()}>Exit</button>
+                                <button className='mybutton' onClick={() => onLogOut()}>
+                                    <i className="material-icons">exit_to_app</i>
+                                </button>
                             </div>
                         </div>
                     </div>
