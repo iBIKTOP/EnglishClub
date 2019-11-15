@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 
-
 export default function GroupsListRowComponent({ row, onuserPlacePageChange }) {
+    console.log(row);
+    let getChecked = ()=> {
+        return row.checked==0 ? 'check_box_outline_blank' : 'check_box'
+    }
     return (
         <div className="groupsRow">
             <div className="flex-container">
                 <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'left' }}>
-                    <i class="material-icons icons">check_box_outline_blank</i>
+                    <i className="material-icons icons">{getChecked()}</i>
                 </div>
                 <div className="flex-block-9 groupsRowItem" style={{ textAlign: 'left' }} >
                     {row.group_name}
                 </div>
                 <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'right' }} onClick={() => { onuserPlacePageChange('wordsList', row) }}>
-                    <i class="material-icons icons">edit</i>
+                    <i className="material-icons icons">edit</i>
                 </div>
                
             </div>

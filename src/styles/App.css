@@ -345,3 +345,12 @@ h1,h6 {
     cursor: pointer;
     color: #2bbbad;
 }
+
+/* прячем input checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+label{
+    margin-bottom: 0 !important;
+}
+
