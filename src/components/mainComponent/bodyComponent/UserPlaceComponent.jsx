@@ -1,26 +1,24 @@
 import React from "react";
-
 import '../../../styles/App.css';
 import GroupsListComponents from "./groupsListComponent/GroupsListComponent"
 import WordsListComponent from "./wordsListComponent/WordsListComponent";
 // import SearchComponent from "./wordsListComponent/SearchComponent";
-import { userInfo } from "os";
 
 export default function UserPlaceComponent({ id, onLogOut }) {
-    const [userPlacePage, setUserPlacePage] = React.useState('userGgroups');
+    const [userPlacePage, setUserPlacePage] = React.useState('userGroups');
     const [groupWords, setGroupWords] = React.useState(null);
 
-    let onuserPlacePageChange = (page, row) => { 
+    let onUserPlacePageChange = (page, row) => { 
         setUserPlacePage(page);
         setGroupWords(row);
     };
     let clickBack = page => setUserPlacePage(page);
         
     switch (userPlacePage) {
-        case 'userGgroups':
+        case 'userGroups':
             return (
                 <div>
-                    <GroupsListComponents id={id} onuserPlacePageChange={onuserPlacePageChange} onLogOut={onLogOut}/>
+                    <GroupsListComponents id={id} onUserPlacePageChange={onUserPlacePageChange} onLogOut={onLogOut}/>
                 </div>
             )
         case 'wordsList':
@@ -29,8 +27,6 @@ export default function UserPlaceComponent({ id, onLogOut }) {
                     <WordsListComponent groupWords={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
                 </div>
             )
-        // case 'signUp':
-        //     return (<RegistrationComponent onUserChange={onUserChange} setWelcomePage={setWelcomePage} />)
     }
 }
 

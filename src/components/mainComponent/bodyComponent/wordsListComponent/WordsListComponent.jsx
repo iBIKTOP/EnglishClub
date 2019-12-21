@@ -8,21 +8,21 @@ export default function WordsListComponent({groupWords, onLogOut, clickBack}){
     const[wordsList, setWordsList] = React.useState(null);
     React.useEffect(() => {
         if(wordsList == null){
-            getWordsList(groupWords.id)
-            .then((data) => {
-                setWordsList(data);
-            })
+            (async () => {
+                setWordsList(await getWordsList(groupWords.id));
+            })();
         }
     });
-    let onDelete = (rowID) => {
-        deleteWord(groupWords.id, rowID)
-            .then((data) => setWordsList(data))
+    let onDelete = async (rowID) => {
+        //function removes necessary word and sends answer with new word's list
+        let newWordsList = await deleteWord(groupWords.id, rowID);
+        setWordsList(newWordsList);
     }
     let onClickOnLogOut = () => {
         onLogOut();
         setWordsList([]);
     }
-    let onClickBack = () => clickBack('userGgroups');
+    let onClickBack = () => clickBack('userGroups');
         
     let renderContent = () => {
         if (wordsList && wordsList.length == 0) {
@@ -73,46 +73,3 @@ export default function WordsListComponent({groupWords, onLogOut, clickBack}){
             </div>
     )
 }
-
-// export default class WordsListComponent extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = { wordList: [], newEng: '', newRus: '' };
-
-//         this.onDelete = this.onDelete.bind(this);
-//     }
-//     onDelete(rowID) {
-//         deleteWord(this.props.groupID, rowID, (data) => {
-//             this.props.updateWordsList(data);
-//         })
-//     }
-
-//     renderContent() {
-//         if (this.props.wordsList.length == 0) {
-//             return (
-//                 <h3>Ваш список еще пустой!</h3>
-//             )
-//         }
-//         else if (this.props.wordsList.length > 0) {
-//             return (
-//                 <div>
-//                     {
-//                         this.props.wordsList.map(function (row, i) {
-//                             return (
-//                                 <WordListRowComponent key={i} row={row} onDel={this.onDelete}></WordListRowComponent>
-//                             )
-//                         }.bind(this))
-//                     }
-//                 </div>
-//             )
-//         }
-//     }
-//     render() {
-//         return (
-//             <div className='mycard-body'>
-//                 <input type="text" className="myInput" placeholder="Filter"></input>
-//                 {this.renderContent()}
-//             </div>
-//         )
-//     }
-// }

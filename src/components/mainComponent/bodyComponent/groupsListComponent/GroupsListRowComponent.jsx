@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-export default function GroupsListRowComponent({ row, onuserPlacePageChange }) {
-    console.log(row);
+export default function GroupsListRowComponent({ row, onUserPlacePageChange }) {
     let getChecked = ()=> {
         return row.checked==0 ? 'check_box_outline_blank' : 'check_box'
     }
@@ -14,7 +13,7 @@ export default function GroupsListRowComponent({ row, onuserPlacePageChange }) {
                 <div className="flex-block-9 groupsRowItem" style={{ textAlign: 'left' }} >
                     {row.group_name}
                 </div>
-                <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'right' }} onClick={() => { onuserPlacePageChange('wordsList', row) }}>
+                <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'right' }} onClick={() => { onUserPlacePageChange('wordsList', row) }}>
                     <i className="material-icons icons">edit</i>
                 </div>
                

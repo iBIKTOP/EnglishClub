@@ -1,31 +1,18 @@
-export function getUserGroups(userID) {
-    console.log(userID);
-    return new Promise((resolve, reject) => {
-        fetch(`http://18.130.38.194:5000/userGroups/`,
-            {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ userID: userID })
-            })
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                let groups = JSON.parse(data);
-                resolve(groups);
-            })
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
+export async function getUserGroups(userID) {
+    let response = await fetch(`http://18.130.38.194:5000/userGroups/`,
+    {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userID: userID })
     });
-
+    let data = await response.text();
+    return JSON.parse(data);
 };
 
 export function getUser(id) {
-
     return new Promise((resolve, reject) => {
         fetch(`http://18.130.38.194:5000/usersId/${id}`)
             .then(function (response) {
@@ -39,8 +26,6 @@ export function getUser(id) {
                 console.log('Request failed', error)
             });
     });
-
-
 };
 // export function getUsers(callback) {
 //     fetch("http://18.130.38.194:5000/users")
@@ -133,21 +118,14 @@ export const getLogin = (login) => {
     })
 };
 
-export function getWordsList(groupID) {
-    return new Promise((resolve, reject) => {
-        fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`)
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);
-            resolve(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
-    });
-    
+export async function getWordsList(groupID) {
+    try{
+        let response = await fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`);
+        return await response.json();
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
 }
 
 export function addUser(login, pass) {
@@ -249,49 +227,16 @@ export function addWordToGroup(groupID, wordID, callback) {
         });
 }
 
-export function deleteWord(groupID, wordID) {
-    return new Promise((resolve, reject) => {
-        fetch(`http://18.130.38.194:5000/deleteWord`,
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ groupID: groupID, wordID: wordID })
-        })
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);
-            resolve(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
+export async function deleteWord(groupID, wordID) {
+    let response = await fetch(`http://18.130.38.194:5000/deleteWord`,
+    {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ groupID: groupID, wordID: wordID })
     });
-    
+    let wordsList = await response.text();
+    return JSON.parse(wordsList);  
 }
-
-// async function getWords() {
-//     try {
-//         let res = await fetch('http://192.168.0.188:5000');
-//         console.log(res);
-//         let data = await res.json();
-//         return data;
-//     } catch{
-//         throw new Error("Чтото не так с запросом!!!");
-//     }
-// }
-
-// export function getWords2(callback) {
-//     (async function () {
-//         try {
-//             let data = await getWords();
-//             callback({ catalog: data });
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     })();
-// }
