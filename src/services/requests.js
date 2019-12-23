@@ -1,4 +1,4 @@
-export async function getUserGroups(userID) {
+export const getUserGroups = async (userID) => {
     let response = await fetch(`http://18.130.38.194:5000/userGroups/`,
     {
         method: "POST",
@@ -12,7 +12,10 @@ export async function getUserGroups(userID) {
     return JSON.parse(data);
 };
 
-export function getUser(id) {
+export async function getUser(id) {
+    // let response = await fetch(`http://18.130.38.194:5000/usersId/${id}`);
+    // let data = await response.text();
+    // return JSON.parse(data);
     return new Promise((resolve, reject) => {
         fetch(`http://18.130.38.194:5000/usersId/${id}`)
             .then(function (response) {
@@ -78,24 +81,24 @@ export function getIrregularVerbs(id, callback) {
 };
 
 //проверка логина при регистрации или логировании
-export const authentication = (login, pass) => {
-    return new Promise((resolve, reject) => {
-        fetch("http://18.130.38.194:5000/authentication/",
-            {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ login: login, pass: pass })
-            })
-            .then(response => response.text())
-            .then(data => {
-                data = JSON.parse(data);
-                resolve(data[0]);
-            })
-            .catch(error => console.log('Request failed', error));
-    })
+export const authentication = async (login, pass) => {
+    try{
+        let response = await fetch("http://18.130.38.194:5000/authentication/",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ login: login, pass: pass })
+        });
+        let data = await response.text();
+        let user = JSON.parse(data);
+        return user[0];
+    }
+    catch(error){
+        console.log("Server doesn't answer", error);
+    }
 };
 
 export const getLogin = (login) => {
@@ -118,7 +121,7 @@ export const getLogin = (login) => {
     })
 };
 
-export async function getWordsList(groupID) {
+export const getWordsList = async (groupID) => {
     try{
         let response = await fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`);
         return await response.json();
@@ -227,7 +230,7 @@ export function addWordToGroup(groupID, wordID, callback) {
         });
 }
 
-export async function deleteWord(groupID, wordID) {
+export const deleteWord = async (groupID, wordID) => {
     let response = await fetch(`http://18.130.38.194:5000/deleteWord`,
     {
         method: "POST",

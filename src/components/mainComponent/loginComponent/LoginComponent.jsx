@@ -18,19 +18,27 @@ export default function LoginComponent({ onUserChange, setWelcomePage }) {
         setPass1(validate(pass1));
         setMessage('');
     }
-    let onSubmit = (e) => {
+    let onSubmit = async (e) => {
         e.preventDefault();
         if (login.length > 0 && pass1.length > 0) {
-            authentication(login, pass1)
-                .then((user) => {
-                    if (user) {
-                        setCookie(user.id);
-                        onUserChange(user);
-                        setWelcomePage('userPlace');
-                    } else {
-                        setMessage('(Ошибка: Неверный логин или пароль.)');
-                    }
-                });
+            let user = await authentication(login, pass1);
+            if (user) {
+                setCookie(user.id);
+                onUserChange(user);
+                setWelcomePage('userPlace');
+            } else {
+                setMessage('(Ошибка: Неверный логин или пароль.)');
+            }
+            // authentication(login, pass1)
+            //     .then((user) => {
+            //         if (user) {
+            //             setCookie(user.id);
+            //             onUserChange(user);
+            //             setWelcomePage('userPlace');
+            //         } else {
+            //             setMessage('(Ошибка: Неверный логин или пароль.)');
+            //         }
+            //     });
         } else {
             setMessage('(Ошибка: Данные введены некоректно)');
         }
