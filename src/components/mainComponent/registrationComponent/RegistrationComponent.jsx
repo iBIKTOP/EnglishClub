@@ -24,23 +24,18 @@ export default function RegistrationComponent({ onUserChange, setWelcomePage }) 
         setPass2(validate(pass2));
         setMessage('');
     }
-    let onSubmit = (e) => {
+    let onSubmit = async (e) => {
         e.preventDefault();
         if (login.length > 0 && pass1.length > 0 && pass2.length > 0 && pass1 == pass2) {
-            getLogin(login)
-                .then((user) => {
-                    if (user) {
-                        setMessage('(Ошибка: login занят)');
-                    } else {
-                        addUser(login, pass1)
-                            .then((user) => {
-                                console.log(user);
-                                // addUserIrregularVerbs(user[0].id);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                                onUserChange(user[0]);
-                            })
-                        setMessage('(Регистрация успешна)');
-                    }
-                })
+            let user = await getLogin(login);
+            if (user) {
+                setMessage('(Ошибка: login занят)');
+            } else {
+                let user = await addUser(login, pass1);
+                // addUserIrregularVerbs(user[0].id);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                onUserChange(user);
+                setWelcomePage('userPlace');
+            }
         } else {
             setMessage('(Ошибка: Данные введены некоректно)');
         }

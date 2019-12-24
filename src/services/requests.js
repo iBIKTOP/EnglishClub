@@ -1,34 +1,27 @@
 export const getUserGroups = async (userID) => {
-    let response = await fetch(`http://18.130.38.194:5000/userGroups/`,
-    {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ userID: userID })
-    });
-    let data = await response.text();
-    return JSON.parse(data);
+    try{
+        let response = await fetch(`http://18.130.38.194:5000/userGroups/`,
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userID: userID })
+        });
+        let data = await response.text();
+        return JSON.parse(data);   
+    }
+    catch(error){
+        console.error("Server doesn't answer");
+    }
 };
 
-export async function getUser(id) {
-    // let response = await fetch(`http://18.130.38.194:5000/usersId/${id}`);
-    // let data = await response.text();
-    // return JSON.parse(data);
-    return new Promise((resolve, reject) => {
-        fetch(`http://18.130.38.194:5000/usersId/${id}`)
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                data = JSON.parse(data);
-                resolve(data[0]);
-            })
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
-    });
+export const getUser = async (id) => {
+    let response = await fetch(`http://18.130.38.194:5000/usersId/${id}`);
+    let data = await response.text();
+    let user = JSON.parse(data);
+    return user[0];
 };
 // export function getUsers(callback) {
 //     fetch("http://18.130.38.194:5000/users")
@@ -72,7 +65,6 @@ export function getIrregularVerbs(id, callback) {
         })
         .then(function (data) {
             data = JSON.parse(data);
-            // console.log(data);
             callback(data);
         })
         .catch(function (error) {
@@ -101,24 +93,24 @@ export const authentication = async (login, pass) => {
     }
 };
 
-export const getLogin = (login) => {
-    return new Promise((resolve, reject) => {
-        fetch("http://18.130.38.194:5000/getLogin/",
-            {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ login: login })
-            })
-            .then(response => response.text())
-            .then(data => {
-                data = JSON.parse(data);
-                resolve(data[0]);
-            })
-            .catch(error => console.log('Request failed', error));
-    })
+export const getLogin = async (login) => {
+    try{
+        let response = await fetch("http://18.130.38.194:5000/getLogin/",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ login: login })
+        });
+        let data = await response.text();
+        let user = JSON.parse(data);
+        return user[0];
+    }
+    catch(error){
+        console.log("Server doesn't answer", error);
+    }
 };
 
 export const getWordsList = async (groupID) => {
@@ -131,29 +123,24 @@ export const getWordsList = async (groupID) => {
     }
 }
 
-export function addUser(login, pass) {
-    return new Promise((resolve, reject) => {
-        fetch("http://18.130.38.194:5000/addUser",
-            {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ login: login, pass: pass })
-            })
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                data = JSON.parse(data);//парсим JSON, создаем объект
-                resolve(data);
-            })
-            .catch(function (error) {
-                console.log('Request failed', error)
-            });
-    });
-
+export const addUser = async (login, pass) => {
+    try{
+        let response = await fetch("http://18.130.38.194:5000/addUser",
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ login: login, pass: pass })
+        });
+        let data = await response.text();
+        let user = JSON.parse(data);
+        return user[0];
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
 };
 
 export function addNewGroup(userID, newGroup, callback) {

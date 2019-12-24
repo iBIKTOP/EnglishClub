@@ -26,9 +26,14 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, onLogOu
                             <div className="flex-block-3" style={{ textAlign: 'left' }}>
                                 <div className='logo'>Groups</div>
                             </div>
-                            <div className="flex-block-3" style={{ textAlign: 'center' }}>
+                            <div className="flex-block-3" style={{ textAlign: 'right' }}>
                                 <button className='mybutton'>
                                     <i className="material-icons">done_all</i>
+                                </button>
+                            </div>
+                            <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                                <button className='mybutton'>
+                                    <i className="material-icons">add_box</i>
                                 </button>
                             </div>
                             <div className="flex-block-3" style={{ textAlign: 'right' }}>

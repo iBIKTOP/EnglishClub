@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import HeaderComponent from "./headerComponent/HeaderComponent";
-import { getCookie, setCookie, deleteCookie } from '../../services/cookie';
+import { getCookie, deleteCookie } from '../../services/cookie';
 import '../../styles/App.css';
 import RegistrationComponent from "./registrationComponent/RegistrationComponent";
 import LoginComponent from "./loginComponent/LoginComponent";
-import { getUser, getUserGroups, getWordsList, getIrregularVerbs } from "../../services/requests"
+import { getUser } from "../../services/requests"
 import WelcomeComponent from "./welcomeComponent/WelcomeComponent";
-import UserPlaceComponent from "./bodyComponent/UserPlaceComponent";
+import UserPlaceComponent from "./userPlaceComponent/UserPlaceComponent";
 
-export default function MainComponent(props) {
+export default function MainComponent() {
     const [user, setUser] = React.useState(null);
     const [page, setPage] = React.useState('welcome');
 
-    React.useEffect(() => {
+    React.useEffect( () => {
         if (user == null) {
             (async () => {
                 let cookieId = await getCookie('ID');
@@ -20,13 +20,15 @@ export default function MainComponent(props) {
                     let user = await getUser(cookieId);
                     setUser(user);
                     setPage('userPlace');
-                }
+            }
             })();
         }
     });
 
     let setWelcomePage = (page) => setPage(page);
-    let onUserChange = (user) => setUser(user);
+    let onUserChange = (user) => {
+        setUser(user);
+    }
     let onLogOut = () => {
         deleteCookie();
         setUser(null);
