@@ -6,7 +6,7 @@ import GroupsListRowComponent from "./GroupsListRowComponent";
 import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
 
 
-export default function GroupsListComponent({ id, onUserPlacePageChange, onLogOut }) {
+export default function GroupsListComponent({ id, onUserPlacePageChange, groupWordsChange, onLogOut }) {
     const [userGroups, setUserGroups] = React.useState(null);
     React.useEffect(() => {
         if (userGroups == null) {
@@ -48,7 +48,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, onLogOu
                     {
                         userGroups.map(function (row, i) {
                             return (
-                                <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} />
+                                <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} />
                             )
                         })
                     }

@@ -8,23 +8,21 @@ export default function UserPlaceComponent({ id, onLogOut }) {
     const [userPlacePage, setUserPlacePage] = React.useState('userGroups');
     const [groupWords, setGroupWords] = React.useState(null);
 
-    let onUserPlacePageChange = (page, row) => { 
-        setUserPlacePage(page);
-        setGroupWords(row);
-    };
+    let onUserPlacePageChange = (page) => setUserPlacePage(page);
+    let groupWordsChange = (group) => setGroupWords(group);
     let clickBack = page => setUserPlacePage(page);
         
     switch (userPlacePage) {
         case 'userGroups':
             return (
                 <div>
-                    <GroupsListComponents id={id} onUserPlacePageChange={onUserPlacePageChange} onLogOut={onLogOut}/>
+                    <GroupsListComponents id={id} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} onLogOut={onLogOut}/>
                 </div>
             )
         case 'wordsList':
             return (
                 <div>
-                    <WordsListComponent groupWords={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
+                    <WordsListComponent group={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
                 </div>
             )
     }

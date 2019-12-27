@@ -23,20 +23,7 @@ export const getUser = async (id) => {
     let user = JSON.parse(data);
     return user[0];
 };
-// export function getUsers(callback) {
-//     fetch("http://18.130.38.194:5000/users")
-//         .then(function (response) {
-//             return response.text();
-//         })
-//         .then(function (data) {
-//             data = JSON.parse(data);
-//             // console.log(data);
-//             callback({ users: data });
-//         })
-//         .catch(function (error) {
-//             log('Request failed', error)
-//         });
-// };
+
 export function addUserIrregularVerbs(id) {
     fetch("http://18.130.38.194:5000/irregular_verbs/addUserIrregularVerbs",
         {

@@ -3,19 +3,19 @@ import { getWordsList, deleteWord } from "../../../../services/requests";
 import WordListRowComponent from './WordListRowComponent';
 // import SearchComponent from '.';
 
-export default function WordsListComponent({groupWords, onLogOut, clickBack}){
+export default function WordsListComponent({group, onLogOut, clickBack}){
     
     const[wordsList, setWordsList] = React.useState(null);
     React.useEffect(() => {
         if(wordsList == null){
             (async () => {
-                setWordsList(await getWordsList(groupWords.id));
+                setWordsList(await getWordsList(group.id));
             })();
         }
     });
     let onDelete = async (rowID) => {
         //function removes necessary word and sends answer with new word's list
-        let newWordsList = await deleteWord(groupWords.id, rowID);
+        let newWordsList = await deleteWord(group.id, rowID);
         setWordsList(newWordsList);
     }
     let onClickOnLogOut = () => {
@@ -69,6 +69,8 @@ export default function WordsListComponent({groupWords, onLogOut, clickBack}){
                         </div>
                     </div>
                 </div>
+                <div className='groupTitle'>{group.group_name}</div>
+                <hr></hr>
                 {renderContent()}
             </div>
     )
