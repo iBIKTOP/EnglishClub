@@ -2,7 +2,7 @@ import React from "react";
 import '../../../styles/App.css';
 import GroupsListComponents from "./groupsListComponent/GroupsListComponent"
 import WordsListComponent from "./wordsListComponent/WordsListComponent";
-// import SearchComponent from "./wordsListComponent/SearchComponent";
+import SearchComponent from "./searchComponent/SearchComponent";
 
 export default function UserPlaceComponent({ id, onLogOut }) {
     const [userPlacePage, setUserPlacePage] = React.useState('userGroups');
@@ -22,7 +22,13 @@ export default function UserPlaceComponent({ id, onLogOut }) {
         case 'wordsList':
             return (
                 <div>
-                    <WordsListComponent group={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
+                    <WordsListComponent group={groupWords} onUserPlacePageChange={onUserPlacePageChange} onLogOut={onLogOut} clickBack={clickBack}/>
+                </div>
+            )
+        case 'search':
+            return (
+                <div>
+                    <SearchComponent group={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
                 </div>
             )
     }

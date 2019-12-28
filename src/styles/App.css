@@ -59,6 +59,9 @@ body{
     font-family: 'Playfair Display', serif;
     background-color: #ffffff;
 }
+button{
+    outline: none !important;
+}
 .welcomeImg{
     height: auto;
     margin: auto;
@@ -240,18 +243,28 @@ h1,h6 {
 .wordList{
     position: relative;
 }
-#add{
-    box-sizing: border-box;
+.addButton{
+    background: #795548;
+    color: #fff;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 0 0 3px #2a2a2a;
+    min-width: 50px;
+    min-height: 50px;
+    border: 1px solid #795548;
+    display: inline-flex; /* keep the inline nature of buttons */
+    justify-content: center;
+    align-items: center; 
+    padding: 5px;
+    margin: 0 2px 0 2px;
     position: fixed;
-    left: 85%;
+    left: 80%;
     top: 85%;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    background: linear-gradient(0deg,  #facb2f, #ffffff);
-    color: #2a2a2a;
-    font-weight: bold;
-    border: 1px solid #2a2a2a;
+    line-height: 25px;
+}
+.addButton:hover{
+    background: #4e372f;
+    
 }
 .searchForm{
     /* box-sizing: initial; */

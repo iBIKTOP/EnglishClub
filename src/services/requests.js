@@ -152,23 +152,32 @@ export function addNewGroup(userID, newGroup, callback) {
         });
 }
 
-export function getAllWords(callback) {
-    fetch("http://18.130.38.194:5000/words/getAllWords")
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);
-            console.log(data);
-            callback(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
+export const getAllWords = async () => {
+    try{
+        let response = await fetch("http://18.130.38.194:5000/words/getAllWords");
+        let data = await response.text();
+        return JSON.parse(data);
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
+    // fetch("http://18.130.38.194:5000/words/getAllWords")
+    //     .then(function (response) {
+    //         return response.text();
+    //     })
+    //     .then(function (data) {
+    //         data = JSON.parse(data);
+    //         console.log(data);
+    //         callback(data);
+    //     })
+    //     .catch(function (error) {
+    //         console.log('Request failed', error)
+    //     });
 };
 
-export function addNewWord(groupID, newEng, newRus, callback) {
-    fetch("http://18.130.38.194:5000/addNewWord",
+export const addNewWord = (groupID, newEng, newRus) => {
+    try{
+        let response = await fetch("http://18.130.38.194:5000/addNewWord",
         {
             method: "POST",
             headers: {
@@ -176,17 +185,32 @@ export function addNewWord(groupID, newEng, newRus, callback) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
-        })
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
-            callback(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
         });
+        let data = await response.text();
+        return JSON.parse(data);
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
+    // fetch("http://18.130.38.194:5000/addNewWord",
+    //     {
+    //         method: "POST",
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
+    //     })
+    //     .then(function (response) {
+    //         return response.text();
+    //     })
+    //     .then(function (data) {
+    //         data = JSON.parse(data);//парсим JSON, создаем объект
+    //         callback(data);
+    //     })
+    //     .catch(function (error) {
+    //         console.log('Request failed', error)
+    //     });
 }
 
 export function addWordToGroup(groupID, wordID, callback) {

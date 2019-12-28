@@ -3,8 +3,7 @@ import { getWordsList, deleteWord } from "../../../../services/requests";
 import WordListRowComponent from './WordListRowComponent';
 // import SearchComponent from '.';
 
-export default function WordsListComponent({group, onLogOut, clickBack}){
-    
+export default function WordsListComponent({group, onLogOut, onUserPlacePageChange, clickBack}){
     const[wordsList, setWordsList] = React.useState(null);
     React.useEffect(() => {
         if(wordsList == null){
@@ -35,6 +34,8 @@ export default function WordsListComponent({group, onLogOut, clickBack}){
         else if (wordsList && wordsList.length > 0) {
             return (
                 <div className="container">
+                    <div className='groupTitle'>{group.group_name}</div>
+                    <hr></hr>
                     {
                         wordsList.map(function (row, i) {
                             return (
@@ -69,9 +70,8 @@ export default function WordsListComponent({group, onLogOut, clickBack}){
                         </div>
                     </div>
                 </div>
-                <div className='groupTitle'>{group.group_name}</div>
-                <hr></hr>
                 {renderContent()}
+                <button className='addButton' onClick={() => onUserPlacePageChange('search')}><i className="material-icons">add_circle</i></button>
             </div>
     )
 }
