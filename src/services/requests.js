@@ -175,7 +175,7 @@ export const getAllWords = async () => {
     //     });
 };
 
-export const addNewWord = (groupID, newEng, newRus) => {
+export const addNewWord = async (groupID, newEng, newRus) => {
     try{
         let response = await fetch("http://18.130.38.194:5000/addNewWord",
         {
@@ -187,45 +187,36 @@ export const addNewWord = (groupID, newEng, newRus) => {
             body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
         });
         let data = await response.text();
-        return JSON.parse(data);
+        // return JSON.parse(data);
+        console.log('WordList is updated');
     }
     catch{
         console.log(new Error("Server doesn't answer!!!"));
     }
-    // fetch("http://18.130.38.194:5000/addNewWord",
-    //     {
-    //         method: "POST",
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
-    //     })
+}
+
+export const addWordToGroup = async (groupID, wordID) => {
+    try{
+        let response = await fetch(`http://18.130.38.194:5000/addWordToGroup/${groupID}/${wordID}`);
+        let data = await response.text();
+        // return JSON.parse(data);
+        console.log('WordList is updated');
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
+    // fetch(`http://18.130.38.194:5000/addWordToGroup/${groupID}/${wordID}`)
     //     .then(function (response) {
     //         return response.text();
     //     })
     //     .then(function (data) {
-    //         data = JSON.parse(data);//парсим JSON, создаем объект
+    //         data = JSON.parse(data);
+    //         console.log(data);
     //         callback(data);
     //     })
     //     .catch(function (error) {
     //         console.log('Request failed', error)
     //     });
-}
-
-export function addWordToGroup(groupID, wordID, callback) {
-    fetch(`http://18.130.38.194:5000/addWordToGroup/${groupID}/${wordID}`)
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);
-            console.log(data);
-            callback(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
 }
 
 export const deleteWord = async (groupID, wordID) => {

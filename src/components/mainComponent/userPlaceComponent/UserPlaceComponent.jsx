@@ -10,7 +10,6 @@ export default function UserPlaceComponent({ id, onLogOut }) {
 
     let onUserPlacePageChange = (page) => setUserPlacePage(page);
     let groupWordsChange = (group) => setGroupWords(group);
-    let clickBack = page => setUserPlacePage(page);
         
     switch (userPlacePage) {
         case 'userGroups':
@@ -22,13 +21,13 @@ export default function UserPlaceComponent({ id, onLogOut }) {
         case 'wordsList':
             return (
                 <div>
-                    <WordsListComponent group={groupWords} onUserPlacePageChange={onUserPlacePageChange} onLogOut={onLogOut} clickBack={clickBack}/>
+                    <WordsListComponent group={groupWords} onUserPlacePageChange={onUserPlacePageChange} onLogOut={onLogOut}/>
                 </div>
             )
         case 'search':
             return (
                 <div>
-                    <SearchComponent group={groupWords} onLogOut={onLogOut} clickBack={clickBack}/>
+                    <SearchComponent group={groupWords} onUserPlacePageChange={onUserPlacePageChange} onLogOut={onLogOut}/>
                 </div>
             )
     }

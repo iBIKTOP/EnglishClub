@@ -1,9 +1,8 @@
 import React from 'react';
 import { getWordsList, deleteWord } from "../../../../services/requests";
 import WordListRowComponent from './WordListRowComponent';
-// import SearchComponent from '.';
 
-export default function WordsListComponent({group, onLogOut, onUserPlacePageChange, clickBack}){
+export default function WordsListComponent({group, onLogOut, onUserPlacePageChange}){
     const[wordsList, setWordsList] = React.useState(null);
     React.useEffect(() => {
         if(wordsList == null){
@@ -55,7 +54,7 @@ export default function WordsListComponent({group, onLogOut, onUserPlacePageChan
                     <div className="container">
                         <div className="flex-container">
                             <div className="flex-block-1" style={{ textAlign: 'left' }}>
-                                <button className='mybutton' onClick={onClickBack}>
+                                <button className='mybutton' onClick={() => onUserPlacePageChange('userGroups')}>
                                     <i className="material-icons">arrow_back</i>
                                 </button>
                             </div>
