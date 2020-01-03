@@ -33,8 +33,6 @@ export default function WordsListComponent({group, onLogOut, onUserPlacePageChan
         else if (wordsList && wordsList.length > 0) {
             return (
                 <div className="container">
-                    <div className='groupTitle'>{group.group_name}</div>
-                    <hr></hr>
                     {
                         wordsList.map(function (row, i) {
                             return (
@@ -59,7 +57,7 @@ export default function WordsListComponent({group, onLogOut, onUserPlacePageChan
                                 </button>
                             </div>
                             <div className="flex-block-9" style={{ textAlign: 'right' }}>
-                                <input type="text" className="myInput" placeholder="Filter"></input>
+                                <div className='groupTitle'>{group.group_name}</div>
                             </div>
                             <div className="flex-block-1" style={{ textAlign: 'right' }}>
                                 <button className='mybutton' onClick={onClickOnLogOut}>
