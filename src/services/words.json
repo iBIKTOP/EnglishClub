@@ -1,0 +1,4066 @@
+{
+  "Unit: 1A":{
+    "Reading":[
+      {
+        "phrase":"carbohydrates",
+        "transcription":"/ˈkɑːbəʊˈhaɪdreɪts/",
+        "translation":"углеводы"
+      },
+      {
+        "phrase":"proteins",
+        "transcription":"/ˈprəʊtiːnz/",
+        "translation":"белки"
+      },
+      {
+        "phrase":"alternative therapy",
+        "transcription":"/ɔːlˈtɜːnətɪv  ˈθɛrəpi/",
+        "translation":"альтернативное лечение"
+      },
+      {
+        "phrase":"mood food",
+        "transcription":"/muːd  fuːd/",
+        "translation":"вкусная, поднимающая настроение еда"
+      },
+      {
+        "phrase":"contain",
+        "transcription":"/kənˈteɪn/",
+        "translation":"содержать"
+      },
+      {
+        "phrase":"substance",
+        "transcription":"/ˈsʌbstəns/",
+        "translation":"вещество"
+      },
+      {
+        "phrase":"prosciutto",
+        "transcription":"/prəˈʃuː.təʊ/",
+        "translation":"вяленая ветчина"
+      },
+      {
+        "phrase":"weapon",
+        "transcription":"/ˈwɛpən/",
+        "translation":"оружие"
+      },
+      {
+        "phrase":"violence",
+        "transcription":"/ˈvaɪələns/",
+        "translation":"насилие, жестокость"
+      },
+      {
+        "phrase":"come up with a solution",
+        "transcription":"/kʌm  ʌp  wɪð  ə  səˈluːʃən/",
+        "translation":"найти выход из положения"
+      },
+      {
+        "phrase":"reduction",
+        "transcription":"/rɪˈdʌkʃən/",
+        "translation":"уменьшение, сокращение"
+      },
+      {
+        "phrase":"endorphins",
+        "transcription":"/enˈdɔː.fɪn/",
+        "translation":"эндорфины"
+      },
+      {
+        "phrase":"tiredness",
+        "transcription":"/ˈtaɪədnəs/",
+        "translation":"усталость"
+      },
+      {
+        "phrase":"efficiently",
+        "transcription":"/ɪˈfɪʃəntli/",
+        "translation":"эффективно"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"prawns",
+        "transcription":"/prɔːnz/",
+        "translation":"креветки"
+      },
+      {
+        "phrase":"lamb",
+        "transcription":"/læm/",
+        "translation":"ягненок"
+      },
+      {
+        "phrase":"heat up",
+        "transcription":"/hiːt  ʌp/",
+        "translation":"подогревать"
+      },
+      {
+        "phrase":"for emergencies",
+        "transcription":"/fɔːr  ɪˈmɜːʤənsiz/",
+        "translation":"на крайний случай"
+      },
+      {
+        "phrase":"beetroot",
+        "transcription":"/ˈbiːtruːt/",
+        "translation":"свекла"
+      },
+      {
+        "phrase":"run a restaurant",
+        "transcription":"/rʌn  ə  ˈrɛstrɒnt/",
+        "translation":"управлять рестораном"
+      },
+      {
+        "phrase":"habit",
+        "transcription":"/ˈhæbɪt/",
+        "translation":"привычка"
+      },
+      {
+        "phrase":"customer",
+        "transcription":"/ˈkʌstəmə/",
+        "translation":"клиент"
+      },
+      {
+        "phrase":"passion",
+        "transcription":"/ˈpæʃən/",
+        "translation":"страсть"
+      },
+      {
+        "phrase":"Burmese",
+        "transcription":"/bɜːˈmiːz/",
+        "translation":"бирманка"
+      },
+      {
+        "phrase":"for instance",
+        "transcription":"/fɔːr  ˈɪnstəns/",
+        "translation":"например"
+      },
+      {
+        "phrase":"snails",
+        "transcription":"/sneɪlz/",
+        "translation":"улитки"
+      },
+      {
+        "phrase":"ingredient",
+        "transcription":"/ɪnˈgriːdiənt/",
+        "translation":"ингредиенты"
+      },
+      {
+        "phrase":"curry paste",
+        "transcription":"/ˈkʌri  peɪst/",
+        "translation":"карри паста"
+      },
+      {
+        "phrase":"casserole",
+        "transcription":"/ˈkæsərəʊl/",
+        "translation":"запеканка"
+      },
+      {
+        "phrase":"precise",
+        "transcription":"/prɪˈsaɪz/",
+        "translation":"тщательный"
+      },
+      {
+        "phrase":"public holiday",
+        "transcription":"/ˈpʌblɪk  ˈhɒlədeɪ/",
+        "translation":"государственный праздник"
+      },
+      {
+        "phrase":"honest",
+        "transcription":"/ˈɒnɪst/",
+        "translation":"честный"
+      },
+      {
+        "phrase":"well-done steak",
+        "transcription":"/wɛl-dʌn  steɪk/",
+        "translation":"хорошо прожаренный стейк"
+      },
+      {
+        "phrase":"generation",
+        "transcription":"/ˌʤɛnəˈreɪʃən/",
+        "translation":"поколение"
+      },
+      {
+        "phrase":"pity",
+        "transcription":"/ˈpɪti/",
+        "translation":"жаль"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"fizzy drinks",
+        "transcription":"/ˈfɪzi  drɪŋks/",
+        "translation":"газированные напитки"
+      },
+      {
+        "phrase":"vitamins",
+        "transcription":"/ˈvɪtəmɪnz/",
+        "translation":"витамины"
+      },
+      {
+        "phrase":"food supplements",
+        "transcription":"/fuːd  ˈsʌplɪmənts/",
+        "translation":"диетические добавки"
+      },
+      {
+        "phrase":"diet",
+        "transcription":"/ˈdaɪət/",
+        "translation":"питание"
+      },
+      {
+        "phrase":"cut down on",
+        "transcription":"/kʌt  daʊn  ɒn/",
+        "translation":"ограничивать"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"mussels",
+        "transcription":"/ˈmʌslz/",
+        "translation":"мидии"
+      },
+      {
+        "phrase":"salmon",
+        "transcription":"/ˈsæmən/",
+        "translation":"семга, лосось"
+      },
+      {
+        "phrase":"squid",
+        "transcription":"/skwɪd/",
+        "translation":"кальмар"
+      },
+      {
+        "phrase":"tuna",
+        "transcription":"/ˈtuːnə/",
+        "translation":"тунец"
+      },
+      {
+        "phrase":"beef",
+        "transcription":"/biːf/",
+        "translation":"говядина"
+      },
+      {
+        "phrase":"pork",
+        "transcription":"/pɔːk/",
+        "translation":"свинина"
+      },
+      {
+        "phrase":"courgette (AmE zucchini)",
+        "transcription":"/kʊəˈʒɛt (zʊˈkiːni)/",
+        "translation":"цукини, кабачек"
+      },
+      {
+        "phrase":"aubergine (eggplant)",
+        "transcription":"/ˈəʊbəʤiːn (ˈɛgˌplɑːnt)/",
+        "translation":"баклажан"
+      },
+      {
+        "phrase":"peach",
+        "transcription":"/piːʧ/",
+        "translation":"персик"
+      },
+      {
+        "phrase":"pear",
+        "transcription":"/peə/",
+        "translation":"груша"
+      },
+      {
+        "phrase":"frozen",
+        "transcription":"/ˈfrəʊzn/",
+        "translation":"замороженный"
+      },
+      {
+        "phrase":"low-fat",
+        "transcription":"/ləʊ-fæt/",
+        "translation":"низкокалорийный"
+      },
+      {
+        "phrase":"steamed",
+        "transcription":"/stiːmd/",
+        "translation":"приготовленный на пару"
+      },
+      {
+        "phrase":"raw",
+        "transcription":"/rɔː/",
+        "translation":"сырой"
+      },
+      {
+        "phrase":"spicy",
+        "transcription":"/ˈspaɪsi/",
+        "translation":"острый"
+      },
+      {
+        "phrase":"feel down",
+        "transcription":"/fiːl  daʊn/",
+        "translation":"тосковать"
+      }
+    ]
+  },
+  "Unit: 1B":{
+    "Vocabulary":[
+      {
+        "phrase":"stepmother",
+        "transcription":"/ˈstɛpˌmʌðə/",
+        "translation":"мачеха"
+      },
+      {
+        "phrase":"brother-in-law",
+        "transcription":"/ˈbrʌðərɪnlɔː/",
+        "translation":"зять"
+      },
+      {
+        "phrase":"great-grandfather",
+        "transcription":"/ˈgreɪtˈgrændˌfɑːðə/",
+        "translation":"прадедушка"
+      },
+      {
+        "phrase":"nephew",
+        "transcription":"/ˈnɛvju(ː)/",
+        "translation":"племянник"
+      },
+      {
+        "phrase":"niece",
+        "transcription":"/niːs/",
+        "translation":"племянница"
+      },
+      {
+        "phrase":"survey",
+        "transcription":"/ˈsɜːveɪ/",
+        "translation":"исследование"
+      },
+      {
+        "phrase":"afford",
+        "transcription":"/əˈfɔːd/",
+        "translation":"иметь возможность"
+      },
+      {
+        "phrase":"charge",
+        "transcription":"/ʧɑːʤ/",
+        "translation":"выставлять счет"
+      },
+      {
+        "phrase":"decline",
+        "transcription":"/dɪˈklaɪn/",
+        "translation":"спад"
+      },
+      {
+        "phrase":"at least",
+        "transcription":"/æt  liːst/",
+        "translation":"по крайней мере"
+      },
+      {
+        "phrase":"on average",
+        "transcription":"/ɒn  ˈævərɪʤ/",
+        "translation":"в среднем"
+      },
+      {
+        "phrase":"immediate family",
+        "transcription":"/ɪˈmiːdiət  ˈfæmɪli/",
+        "translation":"ближайшие poдственники"
+      },
+      {
+        "phrase":"extended family",
+        "transcription":"/ɪksˈtɛndɪd  ˈfæmɪli/",
+        "translation":"расширенная ceмья"
+      },
+      {
+        "phrase":"family member",
+        "transcription":"/ˈfæmɪli  ˈmɛmbə/",
+        "translation":"член семьи"
+      },
+      {
+        "phrase":"affectionate",
+        "transcription":"/əˈfɛkʃnɪt/",
+        "translation":"любящий, нежный"
+      },
+      {
+        "phrase":"anxious",
+        "transcription":"/ˈæŋkʃəs/",
+        "translation":"беспокоящийся"
+      },
+      {
+        "phrase":"bossy",
+        "transcription":"/ˈbɒsi/",
+        "translation":"любящий распоряжаться"
+      },
+      {
+        "phrase":"charming",
+        "transcription":"/ˈʧɑːmɪŋ/",
+        "translation":"очаровательный"
+      },
+      {
+        "phrase":"competitive",
+        "transcription":"/kəmˈpɛtɪtɪv/",
+        "translation":"конкурентно-способный"
+      },
+      {
+        "phrase":"independent",
+        "transcription":"/ˌɪndɪˈpɛndənt/",
+        "translation":"независимый"
+      },
+      {
+        "phrase":"jealous",
+        "transcription":"/ˈʤɛləs/",
+        "translation":"ревнивый"
+      },
+      {
+        "phrase":"moody",
+        "transcription":"/ˈmuːdi/",
+        "translation":"с частыми переменами нa угрюмый"
+      },
+      {
+        "phrase":"rebellious",
+        "transcription":"/rɪˈbɛljəs/",
+        "translation":"непокорный"
+      },
+      {
+        "phrase":"reliable",
+        "transcription":"/rɪˈlaɪəbl/",
+        "translation":"надежный"
+      },
+      {
+        "phrase":"selfish",
+        "transcription":"/ˈsɛlfɪʃ/",
+        "translation":"эгоистичный, самовлюбленный"
+      },
+      {
+        "phrase":"sensitive",
+        "transcription":"/ˈsɛnsɪtɪv/",
+        "translation":"чувствительный"
+      },
+      {
+        "phrase":"sociable",
+        "transcription":"/ˈsəʊʃəbl/",
+        "translation":"общительный"
+      },
+      {
+        "phrase":"spoilt",
+        "transcription":"/spɔɪlt/",
+        "translation":"испорченный, балованны"
+      },
+      {
+        "phrase":"stubborn",
+        "transcription":"/ˈstʌbən/",
+        "translation":"упрямый"
+      },
+      {
+        "phrase":"mean",
+        "transcription":"/miːn/",
+        "translation":"скупой"
+      },
+      {
+        "phrase":"outgoing",
+        "transcription":"/aʊtˈgəʊɪŋ/",
+        "translation":"общительный"
+      },
+      {
+        "phrase":"self-confident",
+        "transcription":"/sɛlf-ˈkɒnfɪdənt/",
+        "translation":"самоуверенный"
+      },
+      {
+        "phrase":"generous",
+        "transcription":"/ˈʤɛnərəs/",
+        "translation":"щедрый"
+      },
+      {
+        "phrase":"insecure",
+        "transcription":"/ˌɪnsɪˈkjʊə/",
+        "translation":"неуверенный в себе"
+      },
+      {
+        "phrase":"imaginative",
+        "transcription":"/ɪˈmæʤɪnətɪv/",
+        "translation":"с хорошим воображением"
+      },
+      {
+        "phrase":"organized",
+        "transcription":"/ˈɔːgənaɪzd/",
+        "translation":"организованный"
+      },
+      {
+        "phrase":"patient",
+        "transcription":"/ˈpeɪʃənt/",
+        "translation":"терпеливым"
+      },
+      {
+        "phrase":"mature",
+        "transcription":"/məˈtjʊə/",
+        "translation":"зрелый, как личность"
+      },
+      {
+        "phrase":"sympathetic",
+        "transcription":"/ˌsɪmpəˈθɛtɪk/",
+        "translation":"сострадательный"
+      }
+    ],
+    "Reading":[
+      {
+        "phrase":"rivalry",
+        "transcription":"/ˈraɪvəlri/",
+        "translation":"конкуренция"
+      },
+      {
+        "phrase":"tension",
+        "transcription":"/ˈtɛnʃən/",
+        "translation":"напряжение"
+      },
+      {
+        "phrase":"no wonder",
+        "transcription":"/nəʊ  ˈwʌndə/",
+        "translation":"неудивительно"
+      },
+      {
+        "phrase":"share",
+        "transcription":"/ʃeə/",
+        "translation":"делиться"
+      },
+      {
+        "phrase":"sensible",
+        "transcription":"/ˈsɛnsəbl/",
+        "translation":"здравомыслящий"
+      },
+      {
+        "phrase":"childhood",
+        "transcription":"/ˈʧaɪldhʊd/",
+        "translation":"детство"
+      },
+      {
+        "phrase":"suffocate",
+        "transcription":"/ˈsʌfəkeɪt/",
+        "translation":"душить"
+      },
+      {
+        "phrase":"bedcover",
+        "transcription":"/bɛdˈkʌvə/",
+        "translation":"покрывало"
+      },
+      {
+        "phrase":"innocent",
+        "transcription":"/ˈɪnəsənt/",
+        "translation":"невинный, невиновный"
+      },
+      {
+        "phrase":"value",
+        "transcription":"/ˈvæljuː/",
+        "translation":"ценить"
+      },
+      {
+        "phrase":"admire",
+        "transcription":"/ədˈmaɪə/",
+        "translation":"восхищаться"
+      },
+      {
+        "phrase":"boarding school",
+        "transcription":"/ˈbɔːdɪŋ  skuːl/",
+        "translation":"школа-интернат"
+      },
+      {
+        "phrase":"gathering",
+        "transcription":"/ˈgæðərɪŋ/",
+        "translation":"сбор, встреча"
+      },
+      {
+        "phrase":"gang",
+        "transcription":"/gæŋ/",
+        "translation":"компания, банда"
+      },
+      {
+        "phrase":"be aware of",
+        "transcription":"/biː  əˈweər  ɒv/",
+        "translation":"быть в курсе"
+      },
+      {
+        "phrase":"conscious",
+        "transcription":"/ˈkɒnʃəs/",
+        "translation":"понимающий"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"influence",
+        "transcription":"/ˈɪnflʊəns/",
+        "translation":"влиять"
+      },
+      {
+        "phrase":"look after",
+        "transcription":"/lʊk  ˈɑːftə/",
+        "translation":"присматривать"
+      },
+      {
+        "phrase":"rejected",
+        "transcription":"/rɪˈʤɛktɪd/",
+        "translation":"отвергнутый"
+      },
+      {
+        "phrase":"get on with",
+        "transcription":"/gɛt  ɒn  wɪð/",
+        "translation":"ладить"
+      },
+      {
+        "phrase":"grow up",
+        "transcription":"/grəʊ  ʌp/",
+        "translation":"расти"
+      },
+      {
+        "phrase":"sort out",
+        "transcription":"/sɔːt  aʊt/",
+        "translation":"решать"
+      },
+      {
+        "phrase":"discipline",
+        "transcription":"/ˈdɪsɪplɪn/",
+        "translation":"дисциплина"
+      }
+    ]
+  },
+  "Unit: 2A":{
+    "Reading":[
+      {
+        "phrase":"have a clue",
+        "transcription":"/hæv  ə  kluː/",
+        "translation":"иметь понятие"
+      },
+      {
+        "phrase":"rough idea",
+        "transcription":"/rʌf  aɪˈdɪə/",
+        "translation":"примерное представление"
+      },
+      {
+        "phrase":"hopefully",
+        "transcription":"/ˈhəʊpfʊli/",
+        "translation":"с надеждой"
+      },
+      {
+        "phrase":"installment",
+        "transcription":"/ɪnˈstɔːlmənt/",
+        "translation":"часть долга"
+      },
+      {
+        "phrase":"burst into tears",
+        "transcription":"/bɜːst  ˈɪntuː  teəz/",
+        "translation":"разразиться слезами"
+      },
+      {
+        "phrase":"salesman",
+        "transcription":"/ˈseɪlzmən/",
+        "translation":"продавец"
+      },
+      {
+        "phrase":"make money",
+        "transcription":"/meɪk  ˈmʌni/",
+        "translation":"зарабатывать деньги, получать прибыль"
+      },
+      {
+        "phrase":"gamble",
+        "transcription":"/ˈgæmbl/",
+        "translation":"авантюра"
+      },
+      {
+        "phrase":"recession",
+        "transcription":"/rɪˈsɛʃən/",
+        "translation":"спад"
+      },
+      {
+        "phrase":"broke",
+        "transcription":"/brəʊk/",
+        "translation":"на мели"
+      },
+      {
+        "phrase":"set up",
+        "transcription":"/sɛt  ʌp/",
+        "translation":"учреждать, основывать"
+      },
+      {
+        "phrase":"ashamed",
+        "transcription":"/əˈʃeɪmd/",
+        "translation":"пристыженный"
+      },
+      {
+        "phrase":"figure",
+        "transcription":"/ˈfɪgə/",
+        "translation":"цифра"
+      },
+      {
+        "phrase":"ghostwriter",
+        "transcription":"/ˈgəʊstˌraɪtə/",
+        "translation":"«автор-призрак» (автор, тайно пишущий статьи, речи, книги)"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"end up",
+        "transcription":"/ɛnd  ʌp/",
+        "translation":"оказываться, очутиться"
+      },
+      {
+        "phrase":"come along",
+        "transcription":"/kʌm  əˈlɒŋ/",
+        "translation":"приходить, наступать"
+      },
+      {
+        "phrase":"broke",
+        "transcription":"/brəʊk/",
+        "translation":"бедный, без гроша"
+      },
+      {
+        "phrase":"get by",
+        "transcription":"/gɛt  baɪ/",
+        "translation":"сводить концы с концами, обходиться"
+      },
+      {
+        "phrase":"hold on to",
+        "transcription":"/həʊld  ɒn  tuː/",
+        "translation":"держаться за"
+      },
+      {
+        "phrase":"up-to-date",
+        "transcription":"/ˈʌptəˈdeɪt/",
+        "translation":"новейший, идущий в ногу со временем"
+      },
+      {
+        "phrase":"make an effort",
+        "transcription":"/meɪk  ən  ˈɛfət/",
+        "translation":"сделать усилие"
+      },
+      {
+        "phrase":"get into debt",
+        "transcription":"/gɛt  ˈɪntuː  dɛt/",
+        "translation":"влезть в долги"
+      },
+      {
+        "phrase":"mean",
+        "transcription":"/miːn/",
+        "translation":"скупой"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"fee",
+        "transcription":"/fiː/",
+        "translation":"взнос, платеж"
+      },
+      {
+        "phrase":"shopping spree",
+        "transcription":"/ˈʃɒpɪŋ  spriː/",
+        "translation":"покупательский бум"
+      },
+      {
+        "phrase":"foot the bill",
+        "transcription":"/fʊt  ðə  bɪl/",
+        "translation":"оплатить счёт"
+      },
+      {
+        "phrase":"willing",
+        "transcription":"/ˈwɪlɪŋ/",
+        "translation":"готовый, охотно делающий"
+      },
+      {
+        "phrase":"soul",
+        "transcription":"/səʊl/",
+        "translation":"душа"
+      },
+      {
+        "phrase":"charge",
+        "transcription":"/ʧɑːʤ/",
+        "translation":"запрашивать цену"
+      },
+      {
+        "phrase":"owe",
+        "transcription":"/əʊ/",
+        "translation":"быть должным (кому-л.)"
+      },
+      {
+        "phrase":"raise",
+        "transcription":"/reɪz/",
+        "translation":"собирать (деньги), поднимать"
+      },
+      {
+        "phrase":"inherit",
+        "transcription":"/ɪnˈhɛrɪt/",
+        "translation":"наследовать"
+      },
+      {
+        "phrase":"put aside",
+        "transcription":"/pʊt  əˈsaɪd/",
+        "translation":"откладывать (деньги)"
+      },
+      {
+        "phrase":"loan",
+        "transcription":"/ləʊn/",
+        "translation":"заём, ссуда"
+      },
+      {
+        "phrase":"mortgage",
+        "transcription":"/ˈmɔːgɪʤ/",
+        "translation":"ипотека"
+      },
+      {
+        "phrase":"tax",
+        "transcription":"/tæks/",
+        "translation":"налог"
+      },
+      {
+        "phrase":"interest",
+        "transcription":"/ˈɪntrɪst/",
+        "translation":"проценты"
+      },
+      {
+        "phrase":"pay back",
+        "transcription":"/peɪ  bæk/",
+        "translation":"вернуть долг"
+      },
+      {
+        "phrase":"cash machine (AmE ATM)",
+        "transcription":"/kæʃ  məˈʃiːn (eɪ-tiː-ɛm)/",
+        "translation":"банкомат"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"bargain",
+        "transcription":"/ˈbɑːgɪn/",
+        "translation":"выгодная покупка"
+      },
+      {
+        "phrase":"scam",
+        "transcription":"/skæm/",
+        "translation":"афера, жульничество"
+      }
+    ]
+  },
+  "Unit: 2В":{
+    "Listening":[
+      {
+        "phrase":"primary school",
+        "transcription":"/ˈpraɪməri  skuːl/",
+        "translation":"начальная школа"
+      },
+      {
+        "phrase":"headmaster",
+        "transcription":"/ˌhɛdˈmɑːstə/",
+        "translation":"директор школы"
+      },
+      {
+        "phrase":"lorry",
+        "transcription":"/ˈlɒri/",
+        "translation":"грузовик"
+      },
+      {
+        "phrase":"refugee",
+        "transcription":"/ˌrɛfju(ː)ˈʤiː/",
+        "translation":"беженец"
+      },
+      {
+        "phrase":"curious",
+        "transcription":"/ˈkjʊərɪəs/",
+        "translation":"любопытный"
+      },
+      {
+        "phrase":"immediately",
+        "transcription":"/ɪˈmiːdiətli/",
+        "translation":"сразу же, мгновенно"
+      },
+      {
+        "phrase":"orphan",
+        "transcription":"/ˈɔːfən/",
+        "translation":"сирота"
+      },
+      {
+        "phrase":"malnutrition",
+        "transcription":"/ˌmælnju(ː)ˈtrɪʃən/",
+        "translation":"недоедание"
+      },
+      {
+        "phrase":"community",
+        "transcription":"/kəˈmjuːnɪti/",
+        "translation":"община"
+      },
+      {
+        "phrase":"deserve",
+        "transcription":"/dɪˈzɜːv/",
+        "translation":"заслуживать"
+      }
+    ],
+    "Reading":[
+      {
+        "phrase":"charity",
+        "transcription":"/ˈʧærɪti/",
+        "translation":"благотворительность"
+      },
+      {
+        "phrase":"kayak",
+        "transcription":"/ˈkaɪæk/",
+        "translation":"плыть на байдарке (либо существительное)"
+      },
+      {
+        "phrase":"challenge",
+        "transcription":"/ˈʧælɪnʤ/",
+        "translation":"вызов"
+      },
+      {
+        "phrase":"consecutive",
+        "transcription":"/kənˈsɛkjʊtɪv/",
+        "translation":"последовательный"
+      },
+      {
+        "phrase":"infest with",
+        "transcription":"/ɪnˈfɛst  wɪð/",
+        "translation":"кишеть, заполнять"
+      },
+      {
+        "phrase":"fall ill",
+        "transcription":"/fɔːl  ɪl/",
+        "translation":"заболеть"
+      },
+      {
+        "phrase":"humidity",
+        "transcription":"/hju(ː)ˈmɪdɪti/",
+        "translation":"сырость, влажность"
+      },
+      {
+        "phrase":"paddle",
+        "transcription":"/ˈpædl/",
+        "translation":"весло"
+      },
+      {
+        "phrase":"current",
+        "transcription":"/ˈkʌrənt/",
+        "translation":"течение"
+      },
+      {
+        "phrase":"melted",
+        "transcription":"/ˈmɛltɪd/",
+        "translation":"расплавленный, растаявший"
+      },
+      {
+        "phrase":"blister",
+        "transcription":"/ˈblɪstə/",
+        "translation":"волдырь"
+      },
+      {
+        "phrase":"bandage",
+        "transcription":"/ˈbændɪʤ/",
+        "translation":"бинтовать"
+      },
+      {
+        "phrase":"heat exhaustion",
+        "transcription":"/hiːt  ɪgˈzɔːsʧən/",
+        "translation":"тепловой удар"
+      },
+      {
+        "phrase":"cotton wool",
+        "transcription":"/ˈkɒtn  wʊl/",
+        "translation":"вата"
+      },
+      {
+        "phrase":"superstitious",
+        "transcription":"/ˌsjuːpəˈstɪʃəs/",
+        "translation":"суеверный"
+      },
+      {
+        "phrase":"drive mad",
+        "transcription":"/draɪv  mæd/",
+        "translation":"сводить с ума"
+      },
+      {
+        "phrase":"scratch",
+        "transcription":"/skræʧ/",
+        "translation":"чесать, чесаться"
+      },
+      {
+        "phrase":"vulture",
+        "transcription":"/ˈvʌlʧə/",
+        "translation":"стервятник"
+      },
+      {
+        "phrase":"set off",
+        "transcription":"/sɛt  ɒf/",
+        "translation":"отправляться (в путь)"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"boiling",
+        "transcription":"/ˈbɔɪlɪŋ/",
+        "translation":"жаркий, знойный"
+      },
+      {
+        "phrase":"furious",
+        "transcription":"/ˈfjʊərɪəs/",
+        "translation":"взбешённый, яростный"
+      },
+      {
+        "phrase":"tiny",
+        "transcription":"/ˈtaɪni/",
+        "translation":"крошечный"
+      },
+      {
+        "phrase":"terrified",
+        "transcription":"/ˈtɛrɪfaɪd/",
+        "translation":"запуганный, испуганный"
+      },
+      {
+        "phrase":"starving",
+        "transcription":"/ˈstɑːvɪŋ/",
+        "translation":"умирающий с голоду"
+      },
+      {
+        "phrase":"delighted",
+        "transcription":"/dɪˈlaɪtɪd/",
+        "translation":"радостный, довольный"
+      },
+      {
+        "phrase":"hilarious",
+        "transcription":"/hɪˈleərɪəs/",
+        "translation":"смешной, уморительный"
+      },
+      {
+        "phrase":"filthy",
+        "transcription":"/ˈfɪlθi/",
+        "translation":"грязный"
+      }
+    ]
+  },
+  "Unit: ЗА":{
+    "Reading":[
+      {
+        "phrase":"turn round",
+        "transcription":"/tɜːn  raʊnd/",
+        "translation":"разворачиваться"
+      },
+      {
+        "phrase":"route",
+        "transcription":"/ruːt/",
+        "translation":"дорога, путь"
+      },
+      {
+        "phrase":"delighted",
+        "transcription":"/dɪˈlaɪtɪd/",
+        "translation":"радостный, довольный"
+      },
+      {
+        "phrase":"reach",
+        "transcription":"/riːʧ/",
+        "translation":"достигать"
+      },
+      {
+        "phrase":"bus lane",
+        "transcription":"/bʌs  leɪn/",
+        "translation":"дорожная полоса для движения автобусов"
+      },
+      {
+        "phrase":"get stuck",
+        "transcription":"/gɛt  stʌk/",
+        "translation":"застрять"
+      },
+      {
+        "phrase":"steady",
+        "transcription":"/ˈstɛdi/",
+        "translation":"равномерный, ровный"
+      },
+      {
+        "phrase":"permit",
+        "transcription":"/ˈpɜːmɪt/",
+        "translation":"разрешение"
+      },
+      {
+        "phrase":"mind",
+        "transcription":"/maɪnd/",
+        "translation":"обращать внимание"
+      },
+      {
+        "phrase":"notice",
+        "transcription":"/ˈnəʊtɪs/",
+        "translation":"замечать"
+      },
+      {
+        "phrase":"frustrating",
+        "transcription":"/frʌsˈtreɪtɪŋ/",
+        "translation":"обескураживающий, разочаровывающий"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"approach",
+        "transcription":"/əˈprəʊʧ/",
+        "translation":"приближаться"
+      },
+      {
+        "phrase":"Oyster card",
+        "transcription":"/ˈɔɪstə  kɑːd/",
+        "translation":"проездной в Лондоне"
+      },
+      {
+        "phrase":"adjust",
+        "transcription":"/əˈʤʌst/",
+        "translation":"настраивать, приспосабливать"
+      },
+      {
+        "phrase":"satnav = satellite navigator",
+        "transcription":"/sætnæv = ˈsætəlaɪt  ˈnævɪgeɪtə/",
+        "translation":"спутниковая система навигации"
+      },
+      {
+        "phrase":"distraction",
+        "transcription":"/dɪsˈtrækʃən/",
+        "translation":"отвлечение внимания"
+      },
+      {
+        "phrase":"steering wheel",
+        "transcription":"/ˈstɪərɪŋ  wiːl/",
+        "translation":"руль"
+      },
+      {
+        "phrase":"hazardous",
+        "transcription":"/ˈhæzədəs/",
+        "translation":"опасный, рискованный"
+      },
+      {
+        "phrase":"obvious",
+        "transcription":"/ˈɒbvɪəs/",
+        "translation":"очевидный"
+      },
+      {
+        "phrase":"carry on",
+        "transcription":"/ˈkæri  ɒn/",
+        "translation":"продолжать"
+      },
+      {
+        "phrase":"equally",
+        "transcription":"/ˈiːkwəli/",
+        "translation":"в равной степени"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"carriage",
+        "transcription":"/ˈkærɪʤ/",
+        "translation":"железнодорожный вагон"
+      },
+      {
+        "phrase":"coach",
+        "transcription":"/kəʊʧ/",
+        "translation":"автобус"
+      },
+      {
+        "phrase":"van",
+        "transcription":"/væn/",
+        "translation":"фургон"
+      },
+      {
+        "phrase":"tram",
+        "transcription":"/træm/",
+        "translation":"трамвай"
+      },
+      {
+        "phrase":"car crash",
+        "transcription":"/kɑː  kræʃ/",
+        "translation":"автокатастрофа"
+      },
+      {
+        "phrase":"cycle lane",
+        "transcription":"/ˈsaɪkl  leɪn/",
+        "translation":"велосипедная дорожка"
+      },
+      {
+        "phrase":"parking fine",
+        "transcription":"/ˈpɑːkɪŋ  faɪn/",
+        "translation":"штраф за парковку в неположенном месте"
+      },
+      {
+        "phrase":"pedestrian zone",
+        "transcription":"/pɪˈdɛstrɪən  zəʊn/",
+        "translation":"пешеходная зона"
+      },
+      {
+        "phrase":"road works",
+        "transcription":"/rəʊd  wɜːks/",
+        "translation":"ремонтные работы на доро"
+      },
+      {
+        "phrase":"rush hour",
+        "transcription":"/rʌʃ  ˈaʊə/",
+        "translation":"час пик"
+      },
+      {
+        "phrase":"seat belt",
+        "transcription":"/siːt  bɛlt/",
+        "translation":"ремень безопасности"
+      },
+      {
+        "phrase":"speed camera",
+        "transcription":"/spiːd  ˈkæmərə/",
+        "translation":"спидкамера, камера контроля скорости"
+      },
+      {
+        "phrase":"taxi rank",
+        "transcription":"/ˈtæksi  ræŋk/",
+        "translation":"стоянка такси"
+      },
+      {
+        "phrase":"traffic",
+        "transcription":"/ˈtræfɪk/",
+        "translation":"lights светофор"
+      },
+      {
+        "phrase":"zebra crossing",
+        "transcription":"/ˈziːbrə  ˈkrɒsɪŋ/",
+        "translation":"пешеходный переход"
+      },
+      {
+        "phrase":"fine",
+        "transcription":"/faɪn/",
+        "translation":"штраф"
+      },
+      {
+        "phrase":"set off",
+        "transcription":"/sɛt  ɒf/",
+        "translation":"отправляться (в путь)"
+      },
+      {
+        "phrase":"pick up",
+        "transcription":"/pɪk  ʌp/",
+        "translation":"брать пассажира, подвозить"
+      },
+      {
+        "phrase":"run out of",
+        "transcription":"/rʌn  aʊt  ɒv/",
+        "translation":"заканчиваться, иссякать"
+      },
+      {
+        "phrase":"Watch out!/Look out!",
+        "transcription":"/wɒʧ  aʊt! / lʊk  aʊt/!",
+        "translation":"Осторожно!"
+      }
+    ]
+  },
+  "Unit: 3B":{
+    "Reading":[
+      {
+        "phrase":"fitted",
+        "transcription":"/ˈfɪtɪd/",
+        "translation":"оснащённый, оборудованный"
+      },
+      {
+        "phrase":"slightly",
+        "transcription":"/ˈslaɪtli/",
+        "translation":"слегка"
+      },
+      {
+        "phrase":"gossip",
+        "transcription":"/ˈgɒsɪp/",
+        "translation":"сплетни, слухи"
+      },
+      {
+        "phrase":"trivial",
+        "transcription":"/ˈtrɪvɪəl/",
+        "translation":"банальный, обычный"
+      },
+      {
+        "phrase":"range",
+        "transcription":"/reɪnʤ/",
+        "translation":"варьироваться"
+      },
+      {
+        "phrase":"tend to",
+        "transcription":"/tɛnd  tuː/",
+        "translation":"иметь склонность к, иметь тенденцию к, как правило"
+      },
+      {
+        "phrase":"claim",
+        "transcription":"/kleɪm/",
+        "translation":"утверждать"
+      },
+      {
+        "phrase":"whereas",
+        "transcription":"/weərˈæz/",
+        "translation":"в то время как"
+      },
+      {
+        "phrase":"stick to",
+        "transcription":"/stɪk  tuː/",
+        "translation":"придерживаться"
+      },
+      {
+        "phrase":"reduce",
+        "transcription":"/rɪˈdjuːs/",
+        "translation":"сокращать"
+      },
+      {
+        "phrase":"swap",
+        "transcription":"/swɒp/",
+        "translation":"обмениваться"
+      },
+      {
+        "phrase":"credible",
+        "transcription":"/ˈkrɛdəbl/",
+        "translation":"надёжный, заслуживающий доверия"
+      },
+      {
+        "phrase":"bring up",
+        "transcription":"/brɪŋ  ʌp/",
+        "translation":"воспитывать"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"commando",
+        "transcription":"/kəˈmɑːndəʊ/",
+        "translation":"боец диверсионно-десантного отряда"
+      },
+      {
+        "phrase":"tiny",
+        "transcription":"/ˈtaɪni/",
+        "translation":"крошечный"
+      },
+      {
+        "phrase":"manual",
+        "transcription":"/ˈmænjʊəl/",
+        "translation":"руководство, справочник"
+      },
+      {
+        "phrase":"precision",
+        "transcription":"/prɪˈsɪʒən/",
+        "translation":"точность, чёткость"
+      },
+      {
+        "phrase":"approach",
+        "transcription":"/əˈprəʊʧ/",
+        "translation":"подходить, подступать"
+      },
+      {
+        "phrase":"first-rate",
+        "transcription":"/ˈfɜːstˈreɪt/",
+        "translation":"первоклассный"
+      },
+      {
+        "phrase":"earplugs",
+        "transcription":"/ˈɪə.plʌɡz/",
+        "translation":"затычки для ушей, беруши"
+      },
+      {
+        "phrase":"nappy",
+        "transcription":"/ˈnæpi/",
+        "translation":"подгузник"
+      },
+      {
+        "phrase":"trooper",
+        "transcription":"/ˈtruːpə/",
+        "translation":"солдат"
+      },
+      {
+        "phrase":"manoeuvre",
+        "transcription":"/məˈnuːvə/",
+        "translation":"манёвр"
+      },
+      {
+        "phrase":"base camp",
+        "transcription":"/beɪs  kæmp/",
+        "translation":"базовый лагерь"
+      },
+      {
+        "phrase":"bomb disposal",
+        "transcription":"/bɒm  dɪsˈpəʊzəl/",
+        "translation":"обезвреживание бомбы"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"look forward to",
+        "transcription":"/lʊk  ˈfɔːwəd  tuː/",
+        "translation":"ждать с нетерпением"
+      },
+      {
+        "phrase":"superstition",
+        "transcription":"/ˌsjuːpəˈstɪʃən/",
+        "translation":"суеверие"
+      },
+      {
+        "phrase":"belong",
+        "transcription":"/bɪˈlɒŋ/",
+        "translation":"принадлежать"
+      },
+      {
+        "phrase":"remind",
+        "transcription":"/ˈrɪmaɪnd/",
+        "translation":"напоминать"
+      },
+      {
+        "phrase":"be fed up with",
+        "transcription":"/biː  fɛd  ʌp  wɪð/",
+        "translation":"быть сытым по горло"
+      }
+    ]
+  },
+  "Unit: 4А":{
+    "Reading":[
+      {
+        "phrase":"give up",
+        "transcription":"/gɪv  ʌp/",
+        "translation":"сдаться"
+      },
+      {
+        "phrase":"blame",
+        "transcription":"/bleɪm/",
+        "translation":"винить, обвинять"
+      },
+      {
+        "phrase":"destroy",
+        "transcription":"/dɪsˈtrɔɪ/",
+        "translation":"уничтожать, разрушать"
+      },
+      {
+        "phrase":"evidence",
+        "transcription":"/ˈɛvɪdəns/",
+        "translation":"доказательство"
+      },
+      {
+        "phrase":"fabulous",
+        "transcription":"/ˈfæbjʊləs/",
+        "translation":"потрясающий, изумительный"
+      },
+      {
+        "phrase":"snorkelling",
+        "transcription":"/ˈsnɔːkəlɪŋ/",
+        "translation":"плавание под водой с маской и трубкой"
+      },
+      {
+        "phrase":"oriental",
+        "transcription":"/ˌɔːrɪˈɛnt(ə)l/",
+        "translation":"восточный"
+      },
+      {
+        "phrase":"disappointed",
+        "transcription":"/ˌdɪsəˈpɔɪntɪd/",
+        "translation":"разочарованный, огорчённый"
+      },
+      {
+        "phrase":"multilingual",
+        "transcription":"/ˌmʌltɪˈlɪŋgwəl/",
+        "translation":"многоязычный"
+      },
+      {
+        "phrase":"generate",
+        "transcription":"/ˈʤɛnəreɪt/",
+        "translation":"вызывать, порождать"
+      },
+      {
+        "phrase":"exception",
+        "transcription":"/ɪkˈsɛpʃən/",
+        "translation":"исключение"
+      },
+      {
+        "phrase":"tactless",
+        "transcription":"/ˈtæktlɪs/",
+        "translation":"бестактный"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"grateful",
+        "transcription":"/ˈgreɪtfʊl/",
+        "translation":"благодарный"
+      },
+      {
+        "phrase":"shut down",
+        "transcription":"/ʃʌt  daʊn/",
+        "translation":"отключить"
+      },
+      {
+        "phrase":"reward",
+        "transcription":"/rɪˈwɔːd/",
+        "translation":"награда"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"evidence",
+        "transcription":"/ˈɛvɪdəns/",
+        "translation":"свидетельства, доказательство"
+      },
+      {
+        "phrase":"skydiving",
+        "transcription":"/ˈskaɪˌdaɪvɪŋ/",
+        "translation":"скайдайвинг (затяжной прыжок с парашютом)"
+      }
+    ]
+  },
+  "Unit: 4B":{
+    "Reading":[
+      {
+        "phrase":"get on",
+        "transcription":"/gɛt  ɒn/",
+        "translation":"ладить"
+      },
+      {
+        "phrase":"in-laws",
+        "transcription":"/ˈɪnlɔːz/",
+        "translation":"родственники со стороны мужа/жены"
+      },
+      {
+        "phrase":"fiance",
+        "transcription":"/fɪˈɑːnseɪ/",
+        "translation":"жених"
+      },
+      {
+        "phrase":"stepmother",
+        "transcription":"/ˈstɛpˌmʌðə/",
+        "translation":"мачеха"
+      },
+      {
+        "phrase":"nasty",
+        "transcription":"/ˈnɑːsti/",
+        "translation":"неприятный, отвратительный"
+      },
+      {
+        "phrase":"lack of",
+        "transcription":"/læk  ɒv/",
+        "translation":"недостаток, отсутствие"
+      },
+      {
+        "phrase":"declare",
+        "transcription":"/dɪˈkleə/",
+        "translation":"заявлять, объявлять"
+      },
+      {
+        "phrase":"helping",
+        "transcription":"/ˈhɛlpɪŋ/",
+        "translation":"порция"
+      },
+      {
+        "phrase":"forward",
+        "transcription":"/ˈfɔːwəd/",
+        "translation":"пересылать, переадресовывать"
+      },
+      {
+        "phrase":"handwritten",
+        "transcription":"/ˌhændˈrɪt(ə)n/",
+        "translation":"написанный от руки"
+      },
+      {
+        "phrase":"jealous",
+        "transcription":"/ˈʤɛləs/",
+        "translation":"ревнивый"
+      },
+      {
+        "phrase":"sense",
+        "transcription":"/sɛns/",
+        "translation":"здравый смысл"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"invisible",
+        "transcription":"/ɪnˈvɪzəbl/",
+        "translation":"невидимый"
+      },
+      {
+        "phrase":"take notice",
+        "transcription":"/teɪk  ˈnəʊtɪs/",
+        "translation":"замечать, обратить внимание"
+      },
+      {
+        "phrase":"disturb",
+        "transcription":"/dɪsˈtɜːb/",
+        "translation":"волновать, тревожить, беспокоить"
+      },
+      {
+        "phrase":"intimate",
+        "transcription":"/ˈɪntɪmɪt/",
+        "translation":"личный, сокровенный"
+      },
+      {
+        "phrase":"appropriate",
+        "transcription":"/əˈprəʊprɪɪt/",
+        "translation":"подходящий, соответствующий"
+      },
+      {
+        "phrase":"reception",
+        "transcription":"/rɪˈsɛpʃən/",
+        "translation":"приём"
+      },
+      {
+        "phrase":"make difference",
+        "transcription":"/meɪk  ˈdɪfrəns/",
+        "translation":"изменить ситуацию"
+      },
+      {
+        "phrase":"deserve",
+        "transcription":"/dɪˈzɜːv/",
+        "translation":"заслуживать"
+      },
+      {
+        "phrase":"mealtime",
+        "transcription":"/ˈmiːltaɪm/",
+        "translation":"время приёма пищи"
+      },
+      {
+        "phrase":"in advance",
+        "transcription":"/ɪn  ədˈvɑːns/",
+        "translation":"заранее"
+      },
+      {
+        "phrase":"insulting",
+        "transcription":"/ɪnˈsʌltɪŋ/",
+        "translation":"оскорбительный, обидный"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"mad",
+        "transcription":"/mæd/",
+        "translation":"сумасшедший"
+      },
+      {
+        "phrase":"mind",
+        "transcription":"/maɪnd/",
+        "translation":"возражать, иметь что-л. против"
+      },
+      {
+        "phrase":"pass",
+        "transcription":"/pɑːs/",
+        "translation":"передавать"
+      },
+      {
+        "phrase":"For goodness sake!",
+        "transcription":"/fɔː  ˈgʊdnɪs  seɪk/!",
+        "translation":"Ради Бога!"
+      },
+      {
+        "phrase":"favour",
+        "transcription":"/ˈfeɪvə/",
+        "translation":"услуга, одолжение"
+      },
+      {
+        "phrase":"direct",
+        "transcription":"/dɪˈrɛkt/",
+        "translation":"прямой, открытый"
+      },
+      {
+        "phrase":"see the point",
+        "transcription":"/siː  ðə  pɔɪnt/",
+        "translation":"понимать суть дела"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"dial",
+        "transcription":"/ˈdaɪəl/",
+        "translation":"набирать номер, звонить"
+      },
+      {
+        "phrase":"hang up",
+        "transcription":"/hæŋ  ʌp/",
+        "translation":"повесить телефонную трубку"
+      },
+      {
+        "phrase":"engaged/busy",
+        "transcription":"/ɪnˈgeɪʤd / ˈbɪzi/",
+        "translation":"занятый"
+      },
+      {
+        "phrase":"make",
+        "transcription":"/meɪk/",
+        "translation":"марка, модель"
+      },
+      {
+        "phrase":"screensaver",
+        "transcription":"/ˈskriːnˌseɪ.və/",
+        "translation":"экранная заставка"
+      },
+      {
+        "phrase":"silent mode",
+        "transcription":"/ˈsaɪlənt  məʊd/",
+        "translation":"бесшумный режим"
+      },
+      {
+        "phrase":"instant messaging",
+        "transcription":"/ˈɪnstənt  ˈmɛsɪʤɪŋ/",
+        "translation":"мгновенная передача сообщений"
+      },
+      {
+        "phrase":"consequences",
+        "transcription":"/ˈkɒnsɪkwənsɪz/",
+        "translation":"последствия"
+      }
+    ]
+  },
+  "Unit: 5A":{
+    "Reading":[
+      {
+        "phrase":"superstition",
+        "transcription":"/ˌsjuːpəˈstɪʃən/",
+        "translation":"суеверие"
+      },
+      {
+        "phrase":"confine",
+        "transcription":"/kənˈfaɪn/",
+        "translation":"ограничивать"
+      },
+      {
+        "phrase":"serving",
+        "transcription":"/ˈsɜːvɪŋ/",
+        "translation":"порция"
+      },
+      {
+        "phrase":"shoe laces",
+        "transcription":"/ʃuː  ˈleɪsɪz/",
+        "translation":"шнурки"
+      },
+      {
+        "phrase":"bounce",
+        "transcription":"/baʊns/",
+        "translation":"пружинить, отскакивать, ударять"
+      },
+      {
+        "phrase":"disaster",
+        "transcription":"/dɪˈzɑːstə/",
+        "translation":"катастрофа"
+      },
+      {
+        "phrase":"fate",
+        "transcription":"/feɪt/",
+        "translation":"судьба"
+      },
+      {
+        "phrase":"lucky charm",
+        "transcription":"/ˈlʌki  ʧɑːm/",
+        "translation":"счастливый талисман"
+      },
+      {
+        "phrase":"reveal",
+        "transcription":"/rɪˈviːl/",
+        "translation":"открывать, показывать"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"sweat",
+        "transcription":"/swɛt/",
+        "translation":"потеть"
+      },
+      {
+        "phrase":"sprint",
+        "transcription":"/sprɪnt/",
+        "translation":"рвануться, броситься"
+      },
+      {
+        "phrase":"quarter-finals",
+        "transcription":"/ˈkwɔːtə-ˈfaɪnlz/",
+        "translation":"матчи четвертьфинала"
+      },
+      {
+        "phrase":"shortcut",
+        "transcription":"/ˈʃɔːtkʌt/",
+        "translation":"кратчайшее расстояние, путь напрямик"
+      }
+    ],
+    "Speaking":[
+      {
+        "phrase":"sports facilities",
+        "transcription":"/spɔːts  fəˈsɪlɪtiz/",
+        "translation":"спорткомплексы"
+      },
+      {
+        "phrase":"optional",
+        "transcription":"/ˈɒpʃənl/",
+        "translation":"необязательный, факультативный"
+      },
+      {
+        "phrase":"compulsory",
+        "transcription":"/kəmˈpʌlsəri/",
+        "translation":"обязательный"
+      },
+      {
+        "phrase":"cup",
+        "transcription":"/kʌp/",
+        "translation":"кубок"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"coach",
+        "transcription":"/kəʊʧ/",
+        "translation":"тренер"
+      },
+      {
+        "phrase":"umpire",
+        "transcription":"/ˈʌmpaɪə/",
+        "translation":"рефери, судья"
+      },
+      {
+        "phrase":"spectators",
+        "transcription":"/spɛkˈteɪtəz/",
+        "translation":"зрители"
+      },
+      {
+        "phrase":"circuit",
+        "transcription":"/ˈsɜːkɪt/",
+        "translation":"автодром"
+      },
+      {
+        "phrase":"pitch",
+        "transcription":"/pɪʧ/",
+        "translation":"поле"
+      },
+      {
+        "phrase":"slope",
+        "transcription":"/sləʊp/",
+        "translation":"спуск"
+      },
+      {
+        "phrase":"draw",
+        "transcription":"/drɔː/",
+        "translation":"ничья"
+      },
+      {
+        "phrase":"score",
+        "transcription":"/skɔː/",
+        "translation":"забивать (гол), вести счет"
+      },
+      {
+        "phrase":"goal",
+        "transcription":"/gəʊl/",
+        "translation":"гол/ворота"
+      },
+      {
+        "phrase":"get injured",
+        "transcription":"/gɛt  ˈɪnʤəd/",
+        "translation":"получить травму"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"frustrated",
+        "transcription":"/frʌsˈtreɪtɪd/",
+        "translation":"несостоявшийся"
+      },
+      {
+        "phrase":"cheating",
+        "transcription":"/ˈʧiːtɪŋ/",
+        "translation":"нарушение, обман, мошенничество"
+      },
+      {
+        "phrase":"detect",
+        "transcription":"/dɪˈtɛkt/",
+        "translation":"замечать, обнаруживать"
+      },
+      {
+        "phrase":"pretend",
+        "transcription":"/prɪˈtɛnd/",
+        "translation":"притворяться"
+      },
+      {
+        "phrase":"foul",
+        "transcription":"/faʊl/",
+        "translation":"нарушать правила, фолить"
+      },
+      {
+        "phrase":"fair play",
+        "transcription":"/feə  pleɪ/",
+        "translation":"честная игра"
+      }
+    ]
+  },
+  "Unit: 5B":{
+    "Reading":[
+      {
+        "phrase":"tollbooth",
+        "transcription":"/ˈtɒl.buːθ/",
+        "translation":"пост у заставы, где взимается дорожный сбор"
+      },
+      {
+        "phrase":"likely",
+        "transcription":"/ˈlaɪkli/",
+        "translation":"вероятный"
+      },
+      {
+        "phrase":"plot",
+        "transcription":"/plɒt/",
+        "translation":"сюжет"
+      },
+      {
+        "phrase":"frequent",
+        "transcription":"/ˈfriːkwənt/",
+        "translation":"частый"
+      },
+      {
+        "phrase":"commuter",
+        "transcription":"/kəˈmjuːtə/",
+        "translation":"пассажир, регулярно совершающий поездки из пригорода в город и обратно"
+      },
+      {
+        "phrase":"audition",
+        "transcription":"/ɔːˈdɪʃ(ə)n/",
+        "translation":"проба, прослушивание"
+      },
+      {
+        "phrase":"traffic соnе",
+        "transcription":"/ˈtræfɪk  kəʊn/",
+        "translation":"дорожный конус"
+      },
+      {
+        "phrase":"barrier",
+        "transcription":"/ˈbærɪə/",
+        "translation":"шлагбаум"
+      },
+      {
+        "phrase":"shift",
+        "transcription":"/ʃɪft/",
+        "translation":"(рабочая) смена"
+      },
+      {
+        "phrase":"nursing home",
+        "transcription":"/ˈnɜːsɪŋ  həʊm/",
+        "translation":"дом для престарелых с медицинским обслуживанием"
+      },
+      {
+        "phrase":"turn out",
+        "transcription":"/tɜːn  aʊt/",
+        "translation":"оказываться"
+      },
+      {
+        "phrase":"courage",
+        "transcription":"/ˈkʌrɪʤ/",
+        "translation":"смелость"
+      },
+      {
+        "phrase":"wax",
+        "transcription":"/wæks/",
+        "translation":"воск"
+      },
+      {
+        "phrase":"brave",
+        "transcription":"/breɪv/",
+        "translation":"смелый"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"current",
+        "transcription":"/ˈkʌrənt/",
+        "translation":"текущий, нынешний"
+      },
+      {
+        "phrase":"launch",
+        "transcription":"/lɔːnʧ/",
+        "translation":"запускать, выпускать"
+      },
+      {
+        "phrase":"peak",
+        "transcription":"/piːk/",
+        "translation":"достичь максимума, достичь вершины"
+      },
+      {
+        "phrase":"keep up with",
+        "transcription":"/kiːp  ʌp  wɪð/",
+        "translation":"идти в ногу с; поддерживать отношения"
+      },
+      {
+        "phrase":"start off",
+        "transcription":"/stɑːt  ɒf/",
+        "translation":"начинать делать (что-л.)"
+      },
+      {
+        "phrase":"liberating",
+        "transcription":"/ˈlɪbəreɪtɪŋ/",
+        "translation":"освободительный"
+      },
+      {
+        "phrase":"stranger",
+        "transcription":"/ˈstreɪnʤə/",
+        "translation":"незнакомец"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"classmate",
+        "transcription":"/ˈklɑːsmeɪt/",
+        "translation":"одноклассник"
+      },
+      {
+        "phrase":"fiance",
+        "transcription":"/fɪˈɑːnseɪ/",
+        "translation":"жених"
+      },
+      {
+        "phrase":"fiancee",
+        "transcription":"/fɪˈɑːnseɪ/",
+        "translation":"невеста"
+      },
+      {
+        "phrase":"break up",
+        "transcription":"/breɪk  ʌp/",
+        "translation":"разорвать отношения, порвать"
+      },
+      {
+        "phrase":"get in touch",
+        "transcription":"/gɛt  ɪn  tʌʧ/",
+        "translation":"связаться, вступить в контакт"
+      },
+      {
+        "phrase":"have sth in common",
+        "transcription":"/hæv ˈsʌm.θɪŋ ɪn  ˈkɒmən/",
+        "translation":"иметь что-то общее"
+      },
+      {
+        "phrase":"lose touch",
+        "transcription":"/luːz  tʌʧ/",
+        "translation":"потерять связь с кем-л."
+      },
+      {
+        "phrase":"propose",
+        "transcription":"/prəˈpəʊz/",
+        "translation":"предлагать руку и сердце"
+      },
+      {
+        "phrase":"fancy",
+        "transcription":"/ˈfænsi/",
+        "translation":"испытывать симпатию"
+      },
+      {
+        "phrase":"dump",
+        "transcription":"/dʌmp/",
+        "translation":"бросать, прекращать близкие отношения"
+      },
+      {
+        "phrase":"have a crush on",
+        "transcription":"/hæv  ə  krʌʃ  ɒn/",
+        "translation":"влюбляться, увлекаться"
+      },
+      {
+        "phrase":"split up",
+        "transcription":"/splɪt  ʌp/",
+        "translation":"разойтись"
+      },
+      {
+        "phrase":"fall out with",
+        "transcription":"/fɔːl  aʊt  wɪð/",
+        "translation":"переругаться, ссориться"
+      }
+    ]
+  },
+  "Unit: 6A":{
+    "Reading":[
+      {
+        "phrase":"inhabited",
+        "transcription":"/ɪnˈhæbɪtɪd/",
+        "translation":"населенный"
+      },
+      {
+        "phrase":"Earl",
+        "transcription":"/ɜːl/",
+        "translation":"граф"
+      },
+      {
+        "phrase":"Countess",
+        "transcription":"/ˈkaʊntɪs/",
+        "translation":"графиня"
+      },
+      {
+        "phrase":"servant",
+        "transcription":"/ˈsɜːvənt/",
+        "translation":"слуга"
+      },
+      {
+        "phrase":"fictional",
+        "transcription":"/ˈfɪkʃənl/",
+        "translation":"вымышленный"
+      },
+      {
+        "phrase":"tomb",
+        "transcription":"/tuːm/",
+        "translation":"гробница"
+      },
+      {
+        "phrase":"chase",
+        "transcription":"/ʧeɪs/",
+        "translation":"гнаться"
+      },
+      {
+        "phrase":"edge",
+        "transcription":"/ɛʤ/",
+        "translation":"край"
+      },
+      {
+        "phrase":"spectacular",
+        "transcription":"/spɛkˈtækjʊlə/",
+        "translation":"зрелищный"
+      },
+      {
+        "phrase":"Dean",
+        "transcription":"/diːn/",
+        "translation":"декан"
+      },
+      {
+        "phrase":"pen-name",
+        "transcription":"/ˈpɛnneɪm/",
+        "translation":"псевдоним"
+      },
+      {
+        "phrase":"film adaptation",
+        "transcription":"/fɪlm  ˌædæpˈteɪʃ(ə)n/",
+        "translation":"экранизация"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"interpret",
+        "transcription":"/ɪnˈtɜːprɪt/",
+        "translation":"переводить"
+      },
+      {
+        "phrase":"coincidence",
+        "transcription":"/kəʊˈɪnsɪdəns/",
+        "translation":"совпадение"
+      },
+      {
+        "phrase":"crew",
+        "transcription":"/kruː/",
+        "translation":"(тут) съёмочная группа"
+      },
+      {
+        "phrase":"stunned",
+        "transcription":"/stʌnd/",
+        "translation":"ошеломлённый, потрясенный"
+      },
+      {
+        "phrase":"pinch",
+        "transcription":"/pɪnʧ/",
+        "translation":"ущипнуть"
+      },
+      {
+        "phrase":"eventually",
+        "transcription":"/ɪˈvɛnʧəli/",
+        "translation":"со временем"
+      },
+      {
+        "phrase":"demanding",
+        "transcription":"/dɪˈmɑːndɪŋ/",
+        "translation":"требовательный"
+      },
+      {
+        "phrase":"final cut",
+        "transcription":"/ˈfaɪnl  kʌt/",
+        "translation":"окончательный монтаж"
+      },
+      {
+        "phrase":"trip",
+        "transcription":"/trɪp/",
+        "translation":"спотыкаться"
+      },
+      {
+        "phrase":"twist the ankle",
+        "transcription":"/twɪst  ði  ˈæŋkl/",
+        "translation":"вывихнуть лодыжку"
+      },
+      {
+        "phrase":"broadcast live",
+        "transcription":"/ˈbrɔːdkɑːst  lɪv/",
+        "translation":"транслировать в прямом эфире"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"horror film",
+        "transcription":"/ˈhɒrə  fɪlm/",
+        "translation":"ужастик"
+      },
+      {
+        "phrase":"rom-com",
+        "transcription":"/rɒm-kɒm/",
+        "translation":"романтическая комедия"
+      },
+      {
+        "phrase":"science fiction film",
+        "transcription":"/ˈsaɪəns  ˈfɪkʃən  fɪlm/",
+        "translation":"научная фантастика"
+      },
+      {
+        "phrase":"western",
+        "transcription":"/ˈwɛstən/",
+        "translation":"вестерн, ковбойский фильм"
+      },
+      {
+        "phrase":"violent",
+        "transcription":"/ˈvaɪələnt/",
+        "translation":"жестокий"
+      },
+      {
+        "phrase":"moving",
+        "transcription":"/ˈmuːvɪŋ/",
+        "translation":"трогательный, волнующий"
+      },
+      {
+        "phrase":"audience",
+        "transcription":"/ˈɔːdiəns/",
+        "translation":"зрители"
+      },
+      {
+        "phrase":"cast",
+        "transcription":"/kɑːst/",
+        "translation":"в ролях"
+      },
+      {
+        "phrase":"extra",
+        "transcription":"/ˈɛkstrə/",
+        "translation":"актер массовки"
+      },
+      {
+        "phrase":"plot",
+        "transcription":"/plɒt/",
+        "translation":"сюжет, фабула"
+      },
+      {
+        "phrase":"review",
+        "transcription":"/rɪˈvjuː/",
+        "translation":"обзор, рецензия"
+      },
+      {
+        "phrase":"scene",
+        "transcription":"/siːn/",
+        "translation":"сцена, место действия"
+      },
+      {
+        "phrase":"sequel",
+        "transcription":"/ˈsiːkwəl/",
+        "translation":"продолжение, сиквел"
+      },
+      {
+        "phrase":"dub",
+        "transcription":"/dʌb/",
+        "translation":"дублировать"
+      },
+      {
+        "phrase":"play the part",
+        "transcription":"/pleɪ  ðə  pɑːt/",
+        "translation":"исполнять роль"
+      },
+      {
+        "phrase":"be on",
+        "transcription":"/biː  ɒn/",
+        "translation":"идти (о фильме, спектакле)"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"costume",
+        "transcription":"/ˈkɒstjuːm/",
+        "translation":"костюм"
+      },
+      {
+        "phrase":"make-up artist",
+        "transcription":"/ˈmeɪkʌp  ˈɑːtɪst/",
+        "translation":"гример"
+      },
+      {
+        "phrase":"box office",
+        "transcription":"/bɒks  ˈɒfɪs/",
+        "translation":"касса театра/кинотеатра"
+      },
+      {
+        "phrase":"script",
+        "transcription":"/skrɪpt/",
+        "translation":"сценарий"
+      }
+    ]
+		},
+	"Unit: 6B": {
+    "Reading":[
+      {
+        "phrase":"represent",
+        "transcription":"/ˌrɛprɪˈzɛnt/",
+        "translation":"представлять"
+      },
+      {
+        "phrase":"significant",
+        "transcription":"/sɪgˈnɪfɪkənt/",
+        "translation":"значимый"
+      },
+      {
+        "phrase":"other half",
+        "transcription":"/ˈʌðə  hɑːf/",
+        "translation":"половина, спутник жизни"
+      },
+      {
+        "phrase":"carefree",
+        "transcription":"/ˈkeəfriː/",
+        "translation":"беззаботный"
+      },
+      {
+        "phrase":"project image",
+        "transcription":"/prəˈʤɛkt  ˈɪmɪʤ/",
+        "translation":"производить впечатление"
+      },
+      {
+        "phrase":"escapist",
+        "transcription":"/ɪsˈkeɪpɪst/",
+        "translation":"эскапист; уходящий от проблем жизни"
+      },
+      {
+        "phrase":"keen",
+        "transcription":"/kiːn/",
+        "translation":"увлекающийся"
+      },
+      {
+        "phrase":"rigid",
+        "transcription":"/ˈrɪʤɪd/",
+        "translation":"неизменный, жесткий"
+      },
+      {
+        "phrase":"take somebody/something seriously",
+        "transcription":"/teɪk  ˈsʌmbədi / ˈsʌmθɪŋ  ˈsɪərɪəsli/",
+        "translation":"серьезно относиться"
+      },
+      {
+        "phrase":"dress up",
+        "transcription":"/drɛs  ʌp/",
+        "translation":"изысканно одеться"
+      },
+      {
+        "phrase":"identifiable",
+        "transcription":"/aɪˈdɛntɪfaɪəbl/",
+        "translation":"узнаваемый"
+      },
+      {
+        "phrase":"professional capacity",
+        "transcription":"/prəˈfɛʃənl  kəˈpæsɪti/",
+        "translation":"должностные обязанности"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"bench",
+        "transcription":"/bɛnʧ/",
+        "translation":"лавочка"
+      },
+      {
+        "phrase":"hole",
+        "transcription":"/həʊl/",
+        "translation":"дыра"
+      },
+      {
+        "phrase":"tramp",
+        "transcription":"/træmp/",
+        "translation":"бродяга"
+      },
+      {
+        "phrase":"mean",
+        "transcription":"/miːn/",
+        "translation":"скупой"
+      },
+      {
+        "phrase":"go viral",
+        "transcription":"/gəʊ  ˈvaɪərəl/",
+        "translation":"распространиться"
+      },
+      {
+        "phrase":"vitally",
+        "transcription":"/ˈvaɪtəli/",
+        "translation":"жизненно"
+      },
+      {
+        "phrase":"prehistoric",
+        "transcription":"/ˌpriːhɪsˈtɒrɪk/",
+        "translation":"доисторический"
+      },
+      {
+        "phrase":"dominant",
+        "transcription":"/ˈdɒmɪnənt/",
+        "translation":"властный"
+      },
+      {
+        "phrase":"persist",
+        "transcription":"/pəˈsɪst/",
+        "translation":"упорствовать"
+      },
+      {
+        "phrase":"accurate",
+        "transcription":"/ˈækjʊrɪt/",
+        "translation":"точный"
+      },
+      {
+        "phrase":"wordly experience",
+        "transcription":"/ˈwɜːdli  ɪksˈpɪərɪəns/",
+        "translation":"житейский опыт"
+      },
+      {
+        "phrase":"underdog",
+        "transcription":"/ˈʌndədɒg/",
+        "translation":"аутсайдер; более слабый из соперников"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"back",
+        "transcription":"/bæk/",
+        "translation":"спина"
+      },
+      {
+        "phrase":"knees",
+        "transcription":"/niːz/",
+        "translation":"колени"
+      },
+      {
+        "phrase":"stomach",
+        "transcription":"/ˈstʌmək/",
+        "translation":"живот, желудок"
+      },
+      {
+        "phrase":"toes",
+        "transcription":"/təʊz/",
+        "translation":"пальцы на ногах"
+      },
+      {
+        "phrase":"tongue",
+        "transcription":"/tʌŋ/",
+        "translation":"язык"
+      },
+      {
+        "phrase":"bite",
+        "transcription":"/baɪt/",
+        "translation":"кусать"
+      },
+      {
+        "phrase":"kick",
+        "transcription":"/kɪk/",
+        "translation":"ударять ногой"
+      },
+      {
+        "phrase":"throw",
+        "transcription":"/θrəʊ/",
+        "translation":"бросать"
+      },
+      {
+        "phrase":"nod",
+        "transcription":"/nɒd/",
+        "translation":"кивать"
+      },
+      {
+        "phrase":"point",
+        "transcription":"/pɔɪnt/",
+        "translation":"указывать"
+      },
+      {
+        "phrase":"stare",
+        "transcription":"/steə/",
+        "translation":"уставиться"
+      },
+      {
+        "phrase":"skinny",
+        "transcription":"/ˈskɪni/",
+        "translation":"худощавый"
+      },
+      {
+        "phrase":"whistle",
+        "transcription":"/ˈwɪsl/",
+        "translation":"свистеть"
+      },
+      {
+        "phrase":"moustache",
+        "transcription":"/məsˈtɑːʃ/",
+        "translation":"усы"
+      },
+      {
+        "phrase":"shave",
+        "transcription":"/ʃeɪv/",
+        "translation":"бриться"
+      },
+      {
+        "phrase":"straight",
+        "transcription":"/streɪt/",
+        "translation":"прямой"
+      },
+      {
+        "phrase":"curly",
+        "transcription":"/ˈkɜːli/",
+        "translation":"курчавый"
+      },
+      {
+        "phrase":"deaf",
+        "transcription":"/dɛf/",
+        "translation":"глухой"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"dye",
+        "transcription":"/daɪ/",
+        "translation":"красить"
+      },
+      {
+        "phrase":"descent",
+        "transcription":"/dɪˈsɛnt/",
+        "translation":"потомок"
+      },
+      {
+        "phrase":"convict of",
+        "transcription":"/kənˈvɪkt  ɒv/",
+        "translation":"осуждать за"
+      },
+      {
+        "phrase":"insurance policy",
+        "transcription":"/ɪnˈʃʊərəns  ˈpɒlɪsi/",
+        "translation":"страховой полис"
+      },
+      {
+        "phrase":"commute",
+        "transcription":"/kəˈmjuːt/",
+        "translation":"ездить на работу и обратно (часто из пригорода)"
+      }
+    ]
+  },
+  "Unit: 7А":{
+    "Reading":[
+      {
+        "phrase":"delighted",
+        "transcription":"/dɪˈlaɪtɪd/",
+        "translation":"в восторге"
+      },
+      {
+        "phrase":"hug",
+        "transcription":"/hʌg/",
+        "translation":"обнять"
+      },
+      {
+        "phrase":"prodigy",
+        "transcription":"/ˈprɒdɪʤi/",
+        "translation":"чудо, дарование"
+      },
+      {
+        "phrase":"controversy",
+        "transcription":"/ˈkɒntrəvɜːsi/",
+        "translation":"противоречие"
+      },
+      {
+        "phrase":"determined",
+        "transcription":"/dɪˈtɜːmɪnd/",
+        "translation":"решительный"
+      },
+      {
+        "phrase":"forbid",
+        "transcription":"/fəˈbɪd/",
+        "translation":"запрещать"
+      },
+      {
+        "phrase":"outstanding",
+        "transcription":"/aʊtˈstændɪŋ/",
+        "translation":"выдающийся"
+      },
+      {
+        "phrase":"violinist",
+        "transcription":"/ˈvaɪəlɪnɪst/",
+        "translation":"скрипач"
+      },
+      {
+        "phrase":"ехсеl",
+        "transcription":"/ɪkˈsɛl/",
+        "translation":"превзойти, добиться успехов"
+      },
+      {
+        "phrase":"eventually",
+        "transcription":"/ɪˈvɛnʧəli/",
+        "translation":"со временем"
+      },
+      {
+        "phrase":"rebel",
+        "transcription":"/rɪˈbɛl/",
+        "translation":"бунтовать"
+      },
+      {
+        "phrase":"violent",
+        "transcription":"/ˈvaɪələnt/",
+        "translation":"жестокий"
+      },
+      {
+        "phrase":"take up",
+        "transcription":"/teɪk  ʌp/",
+        "translation":"браться за что-л."
+      },
+      {
+        "phrase":"resent",
+        "transcription":"/rɪˈzɛnt/",
+        "translation":"обижаться, гневаться"
+      },
+      {
+        "phrase":"pushy",
+        "transcription":"/ˈpʊʃi/",
+        "translation":"настырный, напористый"
+      },
+      {
+        "phrase":"mystery",
+        "transcription":"/ˈmɪstəri/",
+        "translation":"загадка"
+      },
+      {
+        "phrase":"what it takes",
+        "transcription":"/wɒt  ɪt  teɪks/",
+        "translation":"то, что требуется"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"relativity",
+        "transcription":"/ˌrɛləˈtɪvɪti/",
+        "translation":"относительность"
+      },
+      {
+        "phrase":"boarding school",
+        "transcription":"/ˈbɔːdɪŋ  skuːl/",
+        "translation":"школа-пансион"
+      },
+      {
+        "phrase":"head teacher",
+        "transcription":"/hɛd  ˈtiːʧə/",
+        "translation":"директор"
+      },
+      {
+        "phrase":"nursery school (BrE)",
+        "transcription":"/ˈnɜːsəri  skuːl/",
+        "translation":"детский сад"
+      },
+      {
+        "phrase":"kindergarten (AmE)",
+        "transcription":"/ˈkɪndəˌgɑːtn/",
+        "translation":"детский сад"
+      },
+      {
+        "phrase":"secondary school",
+        "transcription":"/ˈsɛkəndəri  skuːl/",
+        "translation":"средняя школа"
+      },
+      {
+        "phrase":"term",
+        "transcription":"/tɜːm/",
+        "translation":"семестр, триместр"
+      },
+      {
+        "phrase":"semester (AmE)",
+        "transcription":"/sɪˈmɛstə/",
+        "translation":"семестр"
+      },
+      {
+        "phrase":"elementary school",
+        "transcription":"/ˌɛlɪˈmɛntəri  skuːl/",
+        "translation":"начальная школа"
+      },
+      {
+        "phrase":"bring up",
+        "transcription":"/brɪŋ  ʌp/",
+        "translation":"воспитывать, растить"
+      },
+      {
+        "phrase":"educate",
+        "transcription":"/ˈɛdju(ː)keɪt/",
+        "translation":"обучать, давать образование"
+      },
+      {
+        "phrase":"state school",
+        "transcription":"/steɪt  skuːl/",
+        "translation":"государственная школа"
+      },
+      {
+        "phrase":"be punished",
+        "transcription":"/biː  ˈpʌnɪʃt/",
+        "translation":"быть наказанным"
+      },
+      {
+        "phrase":"be expelled",
+        "transcription":"/biː  ɪksˈpɛld/",
+        "translation":"быть исключенным"
+      },
+      {
+        "phrase":"take /do an exam",
+        "transcription":"/teɪk / duː  ən  ɪgˈzæm/",
+        "translation":"сдавать экзамен"
+      },
+      {
+        "phrase":"pass an exam",
+        "transcription":"/pɑːs  ən  ɪgˈzæm/",
+        "translation":"сдать экзамен (успешно)"
+      },
+      {
+        "phrase":"fail an exam",
+        "transcription":"/feɪl  ən  ɪgˈzæm/",
+        "translation":"провалить экзамен"
+      },
+      {
+        "phrase":"mixed school",
+        "transcription":"/mɪkst  skuːl/",
+        "translation":"школа смешанного типа"
+      },
+      {
+        "phrase":"single sex school",
+        "transcription":"/ˈsɪŋgl  sɛks  skuːl/",
+        "translation":"школа раздельного обучения (для учащихся одного пола)"
+      },
+      {
+        "phrase":"graduate",
+        "transcription":"/ˈgrædjʊət/",
+        "translation":"выпускник университета"
+      },
+      {
+        "phrase":"compulsory",
+        "transcription":"/kəmˈpʌlsəri/",
+        "translation":"обязательный"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"choirmaster",
+        "transcription":"/ˈkwaɪəˌmɑːstə/",
+        "translation":"хормейстер, регент"
+      },
+      {
+        "phrase":"accomplished",
+        "transcription":"/əˈkɒmplɪʃt/",
+        "translation":"опытный, квалифицированный"
+      },
+      {
+        "phrase":"climbing",
+        "transcription":"/ˈklaɪmɪŋ/",
+        "translation":"лазание"
+      },
+      {
+        "phrase":"major",
+        "transcription":"/ˈmeɪʤə/",
+        "translation":"главный, основной"
+      },
+      {
+        "phrase":"enthusiastic",
+        "transcription":"/ɪnˌθjuːzɪˈæstɪk/",
+        "translation":"увлеченный"
+      },
+      {
+        "phrase":"debate",
+        "transcription":"/dɪˈbeɪt/",
+        "translation":"дебаты"
+      },
+      {
+        "phrase":"make a point",
+        "transcription":"/meɪk  ə  pɔɪnt/",
+        "translation":"доказать положение, донести мысль"
+      },
+      {
+        "phrase":"alien",
+        "transcription":"/ˈeɪliən/",
+        "translation":"инопланетянин"
+      },
+      {
+        "phrase":"thrilled",
+        "transcription":"/θrɪld/",
+        "translation":"взволнованный"
+      }
+    ]
+  },
+  "Unit: 7В":{
+    "Reading":[
+      {
+        "phrase":"valley",
+        "transcription":"/ˈvæli/",
+        "translation":"долина"
+      },
+      {
+        "phrase":"bookcase",
+        "transcription":"/ˈbʊkkeɪs/",
+        "translation":"книжный шкаф"
+      },
+      {
+        "phrase":"writing desk",
+        "transcription":"/ˈraɪtɪŋ  dɛsk/",
+        "translation":"письменный стол"
+      },
+      {
+        "phrase":"plain",
+        "transcription":"/pleɪn/",
+        "translation":"простой, незамысловатый"
+      },
+      {
+        "phrase":"overlooking",
+        "transcription":"/ˌəʊvəˈlʊkɪŋ/",
+        "translation":"выходить на, с видом на"
+      },
+      {
+        "phrase":"tidy",
+        "transcription":"/ˈtaɪdi/",
+        "translation":"опрятный, аккуратный"
+      },
+      {
+        "phrase":"lily of the valley",
+        "transcription":"/ˈlɪli  ɒv  ðə  ˈvæli/",
+        "translation":"ландыш"
+      },
+      {
+        "phrase":"fire shots",
+        "transcription":"/ˈfaɪə  ʃɒts/",
+        "translation":"вести стрельбу одиночными выстрелами"
+      },
+      {
+        "phrase":"anarchist",
+        "transcription":"/ˈænəkɪst/",
+        "translation":"анархист"
+      },
+      {
+        "phrase":"hang",
+        "transcription":"/hæŋ/",
+        "translation":"висеть"
+      },
+      {
+        "phrase":"property",
+        "transcription":"/ˈprɒpəti/",
+        "translation":"имущество"
+      },
+      {
+        "phrase":"remain",
+        "transcription":"/rɪˈmeɪn/",
+        "translation":"оставаться"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"outskirts",
+        "transcription":"/ˈaʊtskɜːts/",
+        "translation":"окраина"
+      },
+      {
+        "phrase":"suburb",
+        "transcription":"/ˈsʌbɜːb/",
+        "translation":"пригород"
+      },
+      {
+        "phrase":"basement",
+        "transcription":"/ˈbeɪsmənt/",
+        "translation":"подвал"
+      },
+      {
+        "phrase":"chimney",
+        "transcription":"/ˈʧɪmni/",
+        "translation":"труба"
+      },
+      {
+        "phrase":"gate",
+        "transcription":"/geɪt/",
+        "translation":"калитка, ворота"
+      },
+      {
+        "phrase":"path",
+        "transcription":"/pɑːθ/",
+        "translation":"тропинка, дорожка"
+      },
+      {
+        "phrase":"roof",
+        "transcription":"/ruːf/",
+        "translation":"крыша"
+      },
+      {
+        "phrase":"steps",
+        "transcription":"/stɛps/",
+        "translation":"ступеньки"
+      },
+      {
+        "phrase":"terrace",
+        "transcription":"/ˈtɛrəs/",
+        "translation":"веранда"
+      },
+      {
+        "phrase":"patio",
+        "transcription":"/ˈpætɪəʊ/",
+        "translation":"внутренний дворик"
+      },
+      {
+        "phrase":"ceiling",
+        "transcription":"/ˈsiːlɪŋ/",
+        "translation":"потолок"
+      },
+      {
+        "phrase":"open fire",
+        "transcription":"/ˈəʊpən  ˈfaɪə/",
+        "translation":"камин, открытый огонь"
+      },
+      {
+        "phrase":"cosy",
+        "transcription":"/ˈkəʊzi/",
+        "translation":"уютный"
+      },
+      {
+        "phrase":"spacious",
+        "transcription":"/ˈspeɪʃəs/",
+        "translation":"просторный"
+      },
+      {
+        "phrase":"wooden",
+        "transcription":"/ˈwʊdn/",
+        "translation":"деревянный"
+      },
+      {
+        "phrase":"ground floor (BrE)",
+        "transcription":"/graʊnd  flɔː/",
+        "translation":"первый этаж"
+      },
+      {
+        "phrase":"first floor (AmE)",
+        "transcription":"/fɜːst  flɔː/",
+        "translation":"первый этаж"
+      },
+      {
+        "phrase":"breathtaking",
+        "transcription":"/ˈbrɛθˌteɪkɪŋ/",
+        "translation":"захватывающий"
+      },
+      {
+        "phrase":"magnificent",
+        "transcription":"/mægˈnɪfɪsnt/",
+        "translation":"великолепный, пышный"
+      },
+      {
+        "phrase":"luxurious",
+        "transcription":"/lʌgˈzjʊərɪəs/",
+        "translation":"роскошный"
+      },
+      {
+        "phrase":"superb",
+        "transcription":"/sju(ː)ˈpɜːb/",
+        "translation":"великолепный, роскошный"
+      },
+      {
+        "phrase":"district",
+        "transcription":"/ˈdɪstrɪkt/",
+        "translation":"округ"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"hi-tech",
+        "transcription":"/haɪ-tɛk/",
+        "translation":"высокотехнологичный"
+      },
+      {
+        "phrase":"solar panel",
+        "transcription":"/ˈsəʊlə  ˈpænl/",
+        "translation":"солнечная батарея"
+      },
+      {
+        "phrase":"wind turbine",
+        "transcription":"/wɪnd  ˈtɜːbɪn/",
+        "translation":"ветровая турбина"
+      },
+      {
+        "phrase":"live off",
+        "transcription":"/lɪv  ɒf/",
+        "translation":"жить за счет"
+      },
+      {
+        "phrase":"pesticides",
+        "transcription":"/ˈpɛstɪsaɪdz/",
+        "translation":"пестициды"
+      },
+      {
+        "phrase":"candlelit",
+        "transcription":"/ˈkæn.dəl.lɪt/",
+        "translation":"при свете свечей"
+      },
+      {
+        "phrase":"stove",
+        "transcription":"/stəʊv/",
+        "translation":"печь"
+      },
+      {
+        "phrase":"fabulous",
+        "transcription":"/ˈfæbjʊləs/",
+        "translation":"потрясающий, невероятный"
+      }
+    ]
+  },
+  "Unit: 8А":{
+    "Reading":[
+      {
+        "phrase":"admirable",
+        "transcription":"/ˈædmərəbl/",
+        "translation":"восхитительный"
+      },
+      {
+        "phrase":"eccentric",
+        "transcription":"/ɪkˈsɛntrɪk/",
+        "translation":"эксцентричный, чудаковатый"
+      },
+      {
+        "phrase":"obsessive",
+        "transcription":"/əbˈsɛsɪv/",
+        "translation":"навязчивый, одержимый"
+      },
+      {
+        "phrase":"faulty",
+        "transcription":"/ˈfɔːlti/",
+        "translation":"неправильный"
+      },
+      {
+        "phrase":"lobby",
+        "transcription":"/ˈlɒbi/",
+        "translation":"вестибюль"
+      },
+      {
+        "phrase":"countless",
+        "transcription":"/ˈkaʊntlɪs/",
+        "translation":"бесчисленный"
+      },
+      {
+        "phrase":"complimentary",
+        "transcription":"/ˌkɒmplɪˈmɛntəri/",
+        "translation":"бесплатный, дополнительный"
+      },
+      {
+        "phrase":"fumes",
+        "transcription":"/fjuːmz/",
+        "translation":"дым, газы"
+      },
+      {
+        "phrase":"puddle",
+        "transcription":"/ˈpʌdl/",
+        "translation":"лужа"
+      },
+      {
+        "phrase":"mouldy",
+        "transcription":"/ˈməʊldi/",
+        "translation":"заплесневелый"
+      },
+      {
+        "phrase":"catering facilities",
+        "transcription":"/ˈkeɪtərɪŋ  fəˈsɪlɪtiz/",
+        "translation":"служба организации питания"
+      },
+      {
+        "phrase":"swear",
+        "transcription":"/sweə/",
+        "translation":"ругаться"
+      },
+      {
+        "phrase":"spoil",
+        "transcription":"/spɔːɪl/",
+        "translation":"портить"
+      },
+      {
+        "phrase":"make a mental note of",
+        "transcription":"/meɪk  ə  ˈmɛntl  nəʊt  ɒv/",
+        "translation":"отметить про себя, запомнить"
+      },
+      {
+        "phrase":"circumstances",
+        "transcription":"/ˈsɜːkəmstənsɪz/",
+        "translation":"обстоятельства"
+      },
+      {
+        "phrase":"be fond of",
+        "transcription":"/biː  fɒnd  ɒv/",
+        "translation":"увлекаться"
+      },
+      {
+        "phrase":"hesitate",
+        "transcription":"/ˈhɛzɪteɪt/",
+        "translation":"колебаться"
+      },
+      {
+        "phrase":"lose temper",
+        "transcription":"/luːz  ˈtɛmpə/",
+        "translation":"выходить из себя"
+      },
+      {
+        "phrase":"threaten",
+        "transcription":"/ˈθrɛtn/",
+        "translation":"угрожать"
+      },
+      {
+        "phrase":"flattery",
+        "transcription":"/ˈflætəri/",
+        "translation":"лесть"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"outlet store",
+        "transcription":"/ˈaʊtlɛt  stɔː/",
+        "translation":"аутлет, магазин/торговый центр, продающий товары из прошлых коллекций известных брендов со скидками"
+      },
+      {
+        "phrase":"department store",
+        "transcription":"/dɪˈpɑːtmənt  stɔː/",
+        "translation":"универмаг"
+      },
+      {
+        "phrase":"put on",
+        "transcription":"/pʊt  ɒn/",
+        "translation":"надевать"
+      },
+      {
+        "phrase":"try on",
+        "transcription":"/traɪ  ɒn/",
+        "translation":"мерять"
+      },
+      {
+        "phrase":"fit",
+        "transcription":"/fɪt/",
+        "translation":"подходить по размеру"
+      },
+      {
+        "phrase":"suit",
+        "transcription":"/sjuːt/",
+        "translation":"быть к лицу, идти"
+      },
+      {
+        "phrase":"bargain",
+        "transcription":"/ˈbɑːgɪn/",
+        "translation":"выгодная покупка"
+      },
+      {
+        "phrase":"discount",
+        "transcription":"/ˈdɪskaʊnt/",
+        "translation":"скидка"
+      },
+      {
+        "phrase":"price tag",
+        "transcription":"/praɪs  tæg/",
+        "translation":"ценник"
+      },
+      {
+        "phrase":"receipt",
+        "transcription":"/rɪˈsiːt/",
+        "translation":"чек"
+      },
+      {
+        "phrase":"refund",
+        "transcription":"/ˈriːfʌnd/",
+        "translation":"возврат денег"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"not have a clue",
+        "transcription":"/nɒt  hæv  ə  kluː/",
+        "translation":"не иметь ни малейшего понятия"
+      },
+      {
+        "phrase":"fare",
+        "transcription":"/feə/",
+        "translation":"плата"
+      },
+      {
+        "phrase":"ridiculous",
+        "transcription":"/rɪˈdɪkjʊləs/",
+        "translation":"смехотворный,"
+      },
+      {
+        "phrase":"manicotti",
+        "transcription":"-",
+        "translation":"маникотти (макаронные изделия)"
+      },
+      {
+        "phrase":"cannelloni",
+        "transcription":"/ˌkæn.əlˈəʊ.ni/",
+        "translation":"каннеллони"
+      },
+      {
+        "phrase":"filling",
+        "transcription":"/ˈfɪlɪŋ/",
+        "translation":"начинка"
+      },
+      {
+        "phrase":"in stock",
+        "transcription":"/ɪn  stɒk/",
+        "translation":"в наличии"
+      },
+      {
+        "phrase":"resolve",
+        "transcription":"/rɪˈzɒlv/",
+        "translation":"разрешать"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"marvelous",
+        "transcription":"/ˈmɑːvələs/",
+        "translation":"изумительный"
+      },
+      {
+        "phrase":"cheat",
+        "transcription":"/ʧiːt/",
+        "translation":"изменять"
+      },
+      {
+        "phrase":"break-up price",
+        "transcription":"/ˈbreɪkˈʌp  praɪs/",
+        "translation":"новая цена, сниженная цена"
+      },
+      {
+        "phrase":"matching",
+        "transcription":"/ˈmæʧɪŋ/",
+        "translation":"соответствующий; такого же цвета"
+      },
+      {
+        "phrase":"veil",
+        "transcription":"/veɪl/",
+        "translation":"фата, вуаль"
+      },
+      {
+        "phrase":"be over",
+        "transcription":"/biː  ˈəʊvə/",
+        "translation":"пройти, закончиться"
+      },
+      {
+        "phrase":"move on",
+        "transcription":"/muːv  ɒn/",
+        "translation":"жить дальше"
+      },
+      {
+        "phrase":"scratch",
+        "transcription":"/skræʧ/",
+        "translation":"царапина"
+      },
+      {
+        "phrase":"dump",
+        "transcription":"/dʌmp/",
+        "translation":"бросить (парня, девушку)"
+      },
+      {
+        "phrase":"fiance",
+        "transcription":"/fɪˈɑːnseɪ/",
+        "translation":"жених"
+      }
+    ]
+  },
+  "Unit: 8В":{
+    "Reading":[
+      {
+        "phrase":"den",
+        "transcription":"/dɛn/",
+        "translation":"логово"
+      },
+      {
+        "phrase":"share in profits",
+        "transcription":"/ʃeər  ɪn  ˈprɒfɪts/",
+        "translation":"доля в прибылях"
+      },
+      {
+        "phrase":"nickname",
+        "transcription":"/ˈnɪkneɪm/",
+        "translation":"давать прозвище"
+      },
+      {
+        "phrase":"contestant",
+        "transcription":"/kənˈtɛstənt/",
+        "translation":"конкурент, участник соревнования"
+      },
+      {
+        "phrase":"entrepreneur",
+        "transcription":"/ˌɒntrəprəˈnɜː/",
+        "translation":"предприниматель"
+      },
+      {
+        "phrase":"dreaded",
+        "transcription":"/ˈdrɛdɪd/",
+        "translation":"ужасный, устрашающий"
+      },
+      {
+        "phrase":"profitable",
+        "transcription":"/ˈprɒfɪtəbl/",
+        "translation":"выгодный, прибыльный"
+      },
+      {
+        "phrase":"reject",
+        "transcription":"/rɪˈʤɛkt/",
+        "translation":"отвергать"
+      },
+      {
+        "phrase":"replica",
+        "transcription":"/ˈrɛplɪkə/",
+        "translation":"репродукция, модель, точная копия"
+      },
+      {
+        "phrase":"worthless",
+        "transcription":"/ˈwɜːθlɪs/",
+        "translation":"ничего не стоящий"
+      },
+      {
+        "phrase":"empty-handed",
+        "transcription":"/ˈɛmptɪˈhændɪd/",
+        "translation":"ни с чем, с пустыми руками"
+      },
+      {
+        "phrase":"be fired",
+        "transcription":"/biː  ˈfaɪəd/",
+        "translation":"быть уволенным"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"set up (a business)",
+        "transcription":"/sɛt  ʌp (ə  ˈbɪznɪs)/",
+        "translation":"начать дело, бизнес"
+      },
+      {
+        "phrase":"be sacked",
+        "transcription":"/biː  sækt/",
+        "translation":"быть уволенным"
+      },
+      {
+        "phrase":"apply for",
+        "transcription":"/əˈplaɪ  fɔː/",
+        "translation":"подать заявление о приеме на работу"
+      },
+      {
+        "phrase":"CV (curriculum vitae)",
+        "transcription":"/siː-viː (kəˈrɪkjʊləm  ˈviːtaɪ)/",
+        "translation":"резюме"
+      },
+      {
+        "phrase":"do overtime",
+        "transcription":"/duː  ˈəʊvətaɪm/",
+        "translation":"работать сверхурочно"
+      },
+      {
+        "phrase":"get promoted",
+        "transcription":"/gɛt  prəˈməʊtɪd/",
+        "translation":"получить повышение"
+      },
+      {
+        "phrase":"be made redundant",
+        "transcription":"/biː  meɪd  rɪˈdʌndənt/",
+        "translation":"быть сокращенным"
+      },
+      {
+        "phrase":"resign",
+        "transcription":"/rɪˈzaɪn/",
+        "translation":"уволиться по собственному желанию"
+      },
+      {
+        "phrase":"retire",
+        "transcription":"/rɪˈtaɪə/",
+        "translation":"выйти на пенсию"
+      },
+      {
+        "phrase":"self-employed",
+        "transcription":"/sɛlf-ɪmˈplɔɪd/",
+        "translation":"работающий на себя"
+      },
+      {
+        "phrase":"temporary",
+        "transcription":"/ˈtɛmpərəri/",
+        "translation":"временный"
+      },
+      {
+        "phrase":"resignation",
+        "transcription":"/ˌrɛzɪgˈneɪʃən/",
+        "translation":"уход в отставку"
+      },
+      {
+        "phrase":"be in charge of",
+        "transcription":"/biː  ɪn  ʧɑːʤ  ɒv/",
+        "translation":"быть ответственным"
+      }
+    ],
+    "Grammar":[
+      {
+        "phrase":"stock market",
+        "transcription":"/stɒk  ˈmɑːkɪt/",
+        "translation":"фондовая биржа"
+      },
+      {
+        "phrase":"spatial sense",
+        "transcription":"/ˈspeɪʃəl  sɛns/",
+        "translation":"пространственное чувство, чувство ориентации в пространстве"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"tap water",
+        "transcription":"/tæp  ˈwɔːtə/",
+        "translation":"вода из-под крана"
+      },
+      {
+        "phrase":"flavour",
+        "transcription":"/ˈfleɪvə/",
+        "translation":"вкус"
+      },
+      {
+        "phrase":"refill",
+        "transcription":"/ˌriːˈfɪl/",
+        "translation":"вновь наполнить"
+      }
+    ]
+  },
+  "Unit: 9А":{
+    "Reading":[
+      {
+        "phrase":"wonder",
+        "transcription":"/ˈwʌndə/",
+        "translation":"интересоваться"
+      },
+      {
+        "phrase":"desperate",
+        "transcription":"/ˈdɛspərɪt/",
+        "translation":"отчаянный"
+      },
+      {
+        "phrase":"hitchhike",
+        "transcription":"/ˈhɪʧˌhaɪk/",
+        "translation":"ехать автостопом"
+      },
+      {
+        "phrase":"rudely",
+        "transcription":"/ˈruːdli/",
+        "translation":"грубо"
+      },
+      {
+        "phrase":"intend",
+        "transcription":"/ɪnˈtɛnd/",
+        "translation":"намереваться"
+      },
+      {
+        "phrase":"ferry",
+        "transcription":"/ˈfɛri/",
+        "translation":"паром"
+      },
+      {
+        "phrase":"be offended",
+        "transcription":"/biː  əˈfɛndɪd/",
+        "translation":"быть обиженным"
+      },
+      {
+        "phrase":"grab",
+        "transcription":"/græb/",
+        "translation":"схватить"
+      },
+      {
+        "phrase":"appreciate",
+        "transcription":"/əˈpriːʃɪeɪt/",
+        "translation":"ценить"
+      },
+      {
+        "phrase":"decent",
+        "transcription":"/ˈdiːsnt/",
+        "translation":"достойный"
+      },
+      {
+        "phrase":"obviously",
+        "transcription":"/ˈɒbvɪəsli/",
+        "translation":"очевидно"
+      },
+      {
+        "phrase":"tutor",
+        "transcription":"/ˈtjuːtə/",
+        "translation":"руководитель группы студентов (в английских университетах)"
+      },
+      {
+        "phrase":"properly",
+        "transcription":"/ˈprɒpəli/",
+        "translation":"должным образом"
+      },
+      {
+        "phrase":"shiver",
+        "transcription":"/ˈʃɪvə/",
+        "translation":"дрожать, трястись"
+      },
+      {
+        "phrase":"boot",
+        "transcription":"/buːt/",
+        "translation":"багажник"
+      },
+      {
+        "phrase":"petrol tank",
+        "transcription":"/ˈpɛtrəl  tæŋk/",
+        "translation":"бензобак"
+      },
+      {
+        "phrase":"rescue",
+        "transcription":"/ˈrɛskjuː/",
+        "translation":"спасать"
+      },
+      {
+        "phrase":"assume",
+        "transcription":"/əˈsjuːm/",
+        "translation":"предполагать, допускать"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"an estimated",
+        "transcription":"/ən  ˈɛstɪmeɪtɪd/",
+        "translation":"приблизительно, как минимум"
+      },
+      {
+        "phrase":"stroke of luck",
+        "transcription":"/strəʊk  ɒv  lʌk/",
+        "translation":"удача, счастливая случайность"
+      },
+      {
+        "phrase":"obsession",
+        "transcription":"/əbˈsɛʃən/",
+        "translation":"навязчивая идея, одержимость"
+      },
+      {
+        "phrase":"coaching",
+        "transcription":"/ˈkəʊʧɪŋ/",
+        "translation":"тренировка"
+      },
+      {
+        "phrase":"skip",
+        "transcription":"/skɪp/",
+        "translation":"пропускать"
+      },
+      {
+        "phrase":"vital",
+        "transcription":"/ˈvaɪtl/",
+        "translation":"важный, крайне необходимый"
+      },
+      {
+        "phrase":"determine",
+        "transcription":"/dɪˈtɜːmɪn/",
+        "translation":"определять"
+      }
+    ]
+  },
+  "Unit: 9B":{
+    "Reading":[
+      {
+        "phrase":"overload",
+        "transcription":"/ˈəʊvələʊd/",
+        "translation":"избыток"
+      },
+      {
+        "phrase":"anxious",
+        "transcription":"/ˈæŋkʃəs/",
+        "translation":"обеспокоенный"
+      },
+      {
+        "phrase":"hit",
+        "transcription":"/hɪt/",
+        "translation":"совпадение (при поиске), результат поиска"
+      },
+      {
+        "phrase":"obscure",
+        "transcription":"/əbˈskjʊə/",
+        "translation":"непонятный, неизвестный"
+      },
+      {
+        "phrase":"irritation",
+        "transcription":"/ˌɪrɪˈteɪʃən/",
+        "translation":"раздражение"
+      },
+      {
+        "phrase":"highlight",
+        "transcription":"/ˈhaɪˌlaɪt/",
+        "translation":"подчеркнуть"
+      },
+      {
+        "phrase":"survey",
+        "transcription":"/ˈsɜːveɪ/",
+        "translation":"опрос"
+      },
+      {
+        "phrase":"relevant",
+        "transcription":"/ˈrɛlɪvənt/",
+        "translation":"уместный, относящийся к делу, важны"
+      },
+      {
+        "phrase":"multitasking",
+        "transcription":"/ˌmʌltɪˈtɑːskɪŋ/",
+        "translation":"многозадачность"
+      },
+      {
+        "phrase":"preset",
+        "transcription":"/prɪˈsɛt/",
+        "translation":"заданный, предустановленный"
+      },
+      {
+        "phrase":"willpower",
+        "transcription":"/ˈwɪlˌpaʊə/",
+        "translation":"сила воли"
+      },
+      {
+        "phrase":"common sense",
+        "transcription":"/ˈkɒmən  sɛns/",
+        "translation":"здравый смысл"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"speaker",
+        "transcription":"/ˈspiːkə/",
+        "translation":"колонка"
+      },
+      {
+        "phrase":"memory stick",
+        "transcription":"/ˈmɛməri  stɪk/",
+        "translation":"флэш-накопитель"
+      },
+      {
+        "phrase":"plug",
+        "transcription":"/plʌg/",
+        "translation":"вилка (штепсельная)"
+      },
+      {
+        "phrase":"remote control",
+        "transcription":"/rɪˈməʊt  kənˈtrəʊl/",
+        "translation":"пульт управления"
+      },
+      {
+        "phrase":"socket",
+        "transcription":"/ˈsɒkɪt/",
+        "translation":"розетка"
+      },
+      {
+        "phrase":"switch",
+        "transcription":"/swɪʧ/",
+        "translation":"выключатель"
+      },
+      {
+        "phrase":"adaptor",
+        "transcription":"/əˈdæptə/",
+        "translation":"переходник"
+      },
+      {
+        "phrase":"headphones",
+        "transcription":"/ˈhɛdfəʊnz/",
+        "translation":"наушники"
+      },
+      {
+        "phrase":"turn up/down",
+        "transcription":"/tɜːn  ʌp / daʊn/",
+        "translation":"сделать громче/тише"
+      },
+      {
+        "phrase":"switch on/off",
+        "transcription":"/swɪʧ  ɒn / ɒf/",
+        "translation":"включить/выключить"
+      },
+      {
+        "phrase":"plug in",
+        "transcription":"/plʌg  ɪn/",
+        "translation":"подключить к розетке"
+      },
+      {
+        "phrase":"unplug",
+        "transcription":"/ˌʌnˈplʌg/",
+        "translation":"вынуть из розетки"
+      },
+      {
+        "phrase":"set",
+        "transcription":"/sɛt/",
+        "translation":"настроить"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"hilarious",
+        "transcription":"/hɪˈleərɪəs/",
+        "translation":"смешной"
+      },
+      {
+        "phrase":"addicted",
+        "transcription":"/əˈdɪktɪd/",
+        "translation":"одержимый"
+      },
+      {
+        "phrase":"constantly",
+        "transcription":"/ˈkɒnstəntli/",
+        "translation":"постоянно"
+      },
+      {
+        "phrase":"video console",
+        "transcription":"/ˈvɪdɪəʊ  ˈkɒnsəʊl/",
+        "translation":"игровая приставка"
+      },
+      {
+        "phrase":"intention",
+        "transcription":"/ɪnˈtɛnʃən/",
+        "translation":"намерение"
+      },
+      {
+        "phrase":"pull the plug",
+        "transcription":"/pʊl  ðə  plʌg/",
+        "translation":"выдернуть вилку из розетки"
+      },
+      {
+        "phrase":"relate to",
+        "transcription":"/rɪˈleɪt  tuː/",
+        "translation":"относиться, ладить"
+      },
+      {
+        "phrase":"distinction",
+        "transcription":"/dɪsˈtɪŋkʃən/",
+        "translation":"различие"
+      },
+      {
+        "phrase":"landline phone",
+        "transcription":"/ˈlændlaɪn  fəʊn/",
+        "translation":"стационарный телефон"
+      },
+      {
+        "phrase":"how on earth",
+        "transcription":"/haʊ  ɒn  ɜːθ/",
+        "translation":"как вообще"
+      },
+      {
+        "phrase":"bribe",
+        "transcription":"/braɪb/",
+        "translation":"подкупить, дать взятку"
+      },
+      {
+        "phrase":"profits",
+        "transcription":"/ˈprɒfɪts/",
+        "translation":"доход, выгода"
+      },
+      {
+        "phrase":"background music",
+        "transcription":"/ˈbækgraʊnd  ˈmjuːzɪk/",
+        "translation":"музыкальное сопровождение"
+      },
+      {
+        "phrase":"bitterly",
+        "transcription":"/ˈbɪtəli/",
+        "translation":"горько"
+      },
+      {
+        "phrase":"ache",
+        "transcription":"/eɪk/",
+        "translation":"болеть"
+      },
+      {
+        "phrase":"lasting",
+        "transcription":"/ˈlɑːstɪŋ/",
+        "translation":"продолжительный"
+      },
+      {
+        "phrase":"dare",
+        "transcription":"/deə/",
+        "translation":"осмеливаться"
+      }
+    ]
+  },
+  "Unit: 10A":{
+    "Reading":[
+      {
+        "phrase":"drop out",
+        "transcription":"/drɒp  aʊt/",
+        "translation":"бросать учебу"
+      },
+      {
+        "phrase":"expel",
+        "transcription":"/ɪksˈpɛl/",
+        "translation":"отчислять"
+      },
+      {
+        "phrase":"co-found",
+        "transcription":"/kəʊ-faʊnd/",
+        "translation":"совместно основывать"
+      },
+      {
+        "phrase":"monochrome screen",
+        "transcription":"/ˈmɒnəkrəʊm  skriːn/",
+        "translation":"монохромный (одноцветный) экран"
+      },
+      {
+        "phrase":"adopt",
+        "transcription":"/əˈdɒpt/",
+        "translation":"усыновить"
+      },
+      {
+        "phrase":"worldwide",
+        "transcription":"/ˌwɜːldˈwaɪd/",
+        "translation":"всемирный, в мировом масштабе"
+      },
+      {
+        "phrase":"inspire",
+        "transcription":"/ɪnˈspaɪə/",
+        "translation":"вдохновить, воодушевить"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"confusing",
+        "transcription":"/kənˈfjuːzɪŋ/",
+        "translation":"сбивающий с толку"
+      },
+      {
+        "phrase":"electrical circuit",
+        "transcription":"/ɪˈlɛktrɪkəl  ˈsɜːkɪt/",
+        "translation":"элекстрическаяцепь"
+      },
+      {
+        "phrase":"landmark",
+        "transcription":"/ˈlændmɑːk/",
+        "translation":"достопримечательность, ориентир"
+      },
+      {
+        "phrase":"millennium",
+        "transcription":"/mɪˈlɛnɪəm/",
+        "translation":"тысячелетие"
+      },
+      {
+        "phrase":"wheel",
+        "transcription":"/wiːl/",
+        "translation":"колесо"
+      },
+      {
+        "phrase":"capsule",
+        "transcription":"/ˈkæpsjuːl/",
+        "translation":"капсула"
+      },
+      {
+        "phrase":"bookstall",
+        "transcription":"/ˈbʊkstɔːl/",
+        "translation":"книжная лавка"
+      },
+      {
+        "phrase":"dignified",
+        "transcription":"/ˈdɪgnɪfaɪd/",
+        "translation":"представительный, достойный"
+      },
+      {
+        "phrase":"paperback",
+        "transcription":"/ˈpeɪpəbæk/",
+        "translation":"книга в мягкой обложке"
+      },
+      {
+        "phrase":"mug",
+        "transcription":"/mʌg/",
+        "translation":"кружка"
+      }
+    ]
+  },
+  "Unit: 10В":{
+    "Reading":[
+      {
+        "phrase":"defence",
+        "transcription":"/dɪˈfɛns/",
+        "translation":"сторона защиты"
+      },
+      {
+        "phrase":"death penalty",
+        "transcription":"/dɛθ  ˈpɛnlti/",
+        "translation":"смертная казнь"
+      },
+      {
+        "phrase":"prisoner",
+        "transcription":"/ˈprɪznə/",
+        "translation":"заключенный"
+      },
+      {
+        "phrase":"abolish",
+        "transcription":"/əˈbɒlɪʃ/",
+        "translation":"отменять"
+      },
+      {
+        "phrase":"attend",
+        "transcription":"/əˈtɛnd/",
+        "translation":"посещать"
+      },
+      {
+        "phrase":"trial",
+        "transcription":"/ˈtraɪəl/",
+        "translation":"судебный процесс"
+      },
+      {
+        "phrase":"bloodshot eyes",
+        "transcription":"/ˈblʌdʃɒt  aɪz/",
+        "translation":"красные, налитые кровью глаза"
+      },
+      {
+        "phrase":"prosecution",
+        "transcription":"/ˌprɒsɪˈkjuːʃən/",
+        "translation":"сторона обвинения"
+      },
+      {
+        "phrase":"accused",
+        "transcription":"/əˈkjuːzd/",
+        "translation":"обвиняемый"
+      },
+      {
+        "phrase":"intend",
+        "transcription":"/ɪnˈtɛnd/",
+        "translation":"намереваться"
+      },
+      {
+        "phrase":"plead guilty",
+        "transcription":"/pliːd  ˈgɪlti/",
+        "translation":"признаваться виновным"
+      },
+      {
+        "phrase":"dazed",
+        "transcription":"/deɪzd/",
+        "translation":"изумлен, поражен"
+      },
+      {
+        "phrase":"witness",
+        "transcription":"/ˈwɪtnɪs/",
+        "translation":"свидетель"
+      },
+      {
+        "phrase":"plead",
+        "transcription":"/pliːd/",
+        "translation":"защищать (в суде)"
+      },
+      {
+        "phrase":"examine",
+        "transcription":"/ɪgˈzæmɪn/",
+        "translation":"обследовать, проверять"
+      },
+      {
+        "phrase":"feature",
+        "transcription":"/ˈfiːʧə/",
+        "translation":"черта"
+      },
+      {
+        "phrase":"slight",
+        "transcription":"/slaɪt/",
+        "translation":"лёгкий, небольшой"
+      },
+      {
+        "phrase":"cross-examine",
+        "transcription":"/ˈkrɒsɪgˈzæmɪn/",
+        "translation":"подвергнуть перекрёстному допросу (свидетеля противной стороны)"
+      },
+      {
+        "phrase":"eyesight",
+        "transcription":"/ˈaɪsaɪt/",
+        "translation":"зрение"
+      },
+      {
+        "phrase":"malice",
+        "transcription":"/ˈmælɪs/",
+        "translation":"злоба, злой умысел"
+      },
+      {
+        "phrase":"acquit",
+        "transcription":"/əˈkwɪt/",
+        "translation":"признать невиновным"
+      }
+    ],
+    "Vocabulary":[
+      {
+        "phrase":"evidence",
+        "transcription":"/ˈɛvɪdəns/",
+        "translation":"улика, доказательство"
+      },
+      {
+        "phrase":"murder",
+        "transcription":"/ˈmɜːdə/",
+        "translation":"убийство"
+      },
+      {
+        "phrase":"prove",
+        "transcription":"/pruːv/",
+        "translation":"доказывать"
+      },
+      {
+        "phrase":"suspect",
+        "transcription":"/ˈsʌspɛkt/",
+        "translation":"подозреваемый"
+      },
+      {
+        "phrase":"victim",
+        "transcription":"/ˈvɪktɪm/",
+        "translation":"жертва"
+      },
+      {
+        "phrase":"witness",
+        "transcription":"/ˈwɪtnɪs/",
+        "translation":"свидетель"
+      },
+      {
+        "phrase":"inhabitant",
+        "transcription":"/ɪnˈhæbɪtənt/",
+        "translation":"житель"
+      },
+      {
+        "phrase":"investigate",
+        "transcription":"/ɪnˈvɛstɪgeɪt/",
+        "translation":"расследовать"
+      },
+      {
+        "phrase":"attempt",
+        "transcription":"/əˈtɛmpt/",
+        "translation":"попытка"
+      },
+      {
+        "phrase":"deliberately",
+        "transcription":"/dɪˈlɪbərɪtli/",
+        "translation":"преднамеренно, умышленно"
+      },
+      {
+        "phrase":"commit a crime",
+        "transcription":"/kəˈmɪt  ə  kraɪm/",
+        "translation":"совершить преступление"
+      },
+      {
+        "phrase":"remain unanswered",
+        "transcription":"/rɪˈmeɪn  ʌnˈɑːnsəd/",
+        "translation":"оставаться без ответа"
+      },
+      {
+        "phrase":"considerable amount of time",
+        "transcription":"/kənˈsɪdərəbl  əˈmaʊnt  ɒv  taɪm/",
+        "translation":"значительное количество времени"
+      },
+      {
+        "phrase":"sample",
+        "transcription":"/ˈsɑːmpl/",
+        "translation":"образец"
+      },
+      {
+        "phrase":"put forward",
+        "transcription":"/pʊt  ˈfɔːwəd/",
+        "translation":"выдвигать, представлять"
+      }
+    ],
+    "Listening":[
+      {
+        "phrase":"confessing",
+        "transcription":"/kənˈfɛsɪŋ/",
+        "translation":"признание"
+      },
+      {
+        "phrase":"solve a mystery",
+        "transcription":"/sɒlv  ə  ˈmɪstəri/",
+        "translation":"разгадать тайну, загадку"
+      },
+      {
+        "phrase":"unsolved murder",
+        "transcription":"/ʌnˈsɒlvd  ˈmɜːdə/",
+        "translation":"неразгаданное убийство"
+      },
+      {
+        "phrase":"cotton merchant",
+        "transcription":"/ˈkɒtn  ˈmɜːʧənt/",
+        "translation":"торговец хлопком"
+      },
+      {
+        "phrase":"case",
+        "transcription":"/keɪs/",
+        "translation":"дело"
+      },
+      {
+        "phrase":"furious",
+        "transcription":"/ˈfjʊərɪəs/",
+        "translation":"взбешенный"
+      },
+      {
+        "phrase":"great expense",
+        "transcription":"/greɪt  ɪksˈpɛns/",
+        "translation":"с большими затратами"
+      },
+      {
+        "phrase":"admit",
+        "transcription":"/ədˈmɪt/",
+        "translation":"признавать"
+      },
+      {
+        "phrase":"genuine",
+        "transcription":"/ˈʤɛnjʊɪn/",
+        "translation":"истинный, настоящий"
+      },
+      {
+        "phrase":"cult",
+        "transcription":"/kʌlt/",
+        "translation":"культ"
+      },
+      {
+        "phrase":"ridiculous",
+        "transcription":"/rɪˈdɪkjʊləs/",
+        "translation":"нелепый"
+      }
+    ]
+  }
+}

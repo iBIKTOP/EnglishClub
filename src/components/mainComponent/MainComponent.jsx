@@ -12,7 +12,7 @@ export default function MainComponent() {
     const [user, setUser] = React.useState(null);
     const [page, setPage] = React.useState('welcome');
 
-    React.useEffect( () => {
+    React.useEffect(() => {
         if (user == null) {
             (async () => {
                 let cookieId = await getCookie('ID');
@@ -20,7 +20,7 @@ export default function MainComponent() {
                     let user = await getUser(cookieId);
                     setUser(user);
                     setPage('userPlace');
-            }
+                }
             })();
         }
     });
@@ -63,7 +63,7 @@ export default function MainComponent() {
             switch (page) {
                 case 'userPlace':
                     return (
-                        <UserPlaceComponent id={user.id} onLogOut={onLogOut}/>
+                        <UserPlaceComponent id={user.id} onLogOut={onLogOut} />
                     )
             }
         }

@@ -3,14 +3,14 @@ import SearchRowComponent from './SearchRowComponent'
 import { getAllWords, addNewWord, addWordToGroup } from "../../../../services/requests";
 
 
-export default function SearchComponent({group, onUserPlacePageChange, onLogOut}) {
-    const[allWords, setAllWords] = React.useState(null);
-    const[temp, setTemp] = React.useState([]);
-    const[newEng, setNewEng] = React.useState('');
-    const[newRus, setNewRus] = React.useState('');
-    
+export default function SearchComponent({ group, onUserPlacePageChange }) {
+    const [allWords, setAllWords] = React.useState(null);
+    const [temp, setTemp] = React.useState([]);
+    const [newEng, setNewEng] = React.useState('');
+    const [newRus, setNewRus] = React.useState('');
+
     React.useEffect(() => {
-        if(allWords == null){
+        if (allWords == null) {
             (async () => {
                 let data = await getAllWords();
                 setAllWords(data);
@@ -31,8 +31,8 @@ export default function SearchComponent({group, onUserPlacePageChange, onLogOut}
         }
     }
     let renderContent = () => {
-        if(temp.length>0){
-            return(
+        if (temp.length > 0) {
+            return (
                 temp.map(function (row, i) {
                     return (
                         <SearchRowComponent key={i} row={row} onSave={onSave}></SearchRowComponent>
@@ -40,8 +40,8 @@ export default function SearchComponent({group, onUserPlacePageChange, onLogOut}
                 })
             )
         }
-        else if(temp.length==0){
-            return(
+        else if (temp.length == 0) {
+            return (
                 <div className="flex-container">
                     <div className='flex-block-1'></div>
                     <div className='flex-block-9'>
@@ -75,7 +75,7 @@ export default function SearchComponent({group, onUserPlacePageChange, onLogOut}
         setNewRus('');
         onUserPlacePageChange('wordsList');
     }
-    return(
+    return (
         <div>
             <div className="header">
                 <div className="container">
@@ -88,11 +88,11 @@ export default function SearchComponent({group, onUserPlacePageChange, onLogOut}
                         <div className="flex-block-9" style={{ textAlign: 'right' }}>
                             <input type="text" className="myInput" placeholder="Search" value={newEng} onChange={searchWords}></input>
                         </div>
-                        <div className="flex-block-1" style={{ textAlign: 'right' }}>
+                        {/* <div className="flex-block-1" style={{ textAlign: 'right' }}>
                             <button className='mybutton' onClick={onLogOut}>
                                 <i className="material-icons">exit_to_app</i>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

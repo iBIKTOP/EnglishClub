@@ -1,18 +1,18 @@
 export const getUserGroups = async (userID) => {
-    try{
+    try {
         let response = await fetch(`http://18.130.38.194:5000/userGroups/`,
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userID: userID })
-        });
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userID: userID })
+            });
         let data = await response.text();
-        return JSON.parse(data);   
+        return JSON.parse(data);
     }
-    catch(error){
+    catch (error) {
         console.error("Server doesn't answer");
     }
 };
@@ -61,47 +61,47 @@ export function getIrregularVerbs(id, callback) {
 
 //проверка логина при регистрации или логировании
 export const authentication = async (login, pass) => {
-    try{
+    try {
         let response = await fetch("http://18.130.38.194:5000/authentication/",
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ login: login, pass: pass })
-        });
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login, pass: pass })
+            });
         let data = await response.text();
         let user = JSON.parse(data);
         return user[0];
     }
-    catch(error){
+    catch (error) {
         console.log("Server doesn't answer", error);
     }
 };
 
 export const getLogin = async (login) => {
-    try{
+    try {
         let response = await fetch("http://18.130.38.194:5000/getLogin/",
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ login: login })
-        });
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login })
+            });
         let data = await response.text();
         let user = JSON.parse(data);
         return user[0];
     }
-    catch(error){
+    catch (error) {
         console.log("Server doesn't answer", error);
     }
 };
 
 export const getWordsList = async (groupID) => {
-    try{
+    try {
         let response = await fetch(`http://18.130.38.194:5000/userGroupWords/${groupID}`);
         return await response.json();
     }
@@ -111,16 +111,16 @@ export const getWordsList = async (groupID) => {
 }
 
 export const addUser = async (login, pass) => {
-    try{
+    try {
         let response = await fetch("http://18.130.38.194:5000/addUser",
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ login: login, pass: pass })
-        });
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login, pass: pass })
+            });
         let data = await response.text();
         let user = JSON.parse(data);
         return user[0];
@@ -153,7 +153,7 @@ export function addNewGroup(userID, newGroup, callback) {
 }
 
 export const getAllWords = async () => {
-    try{
+    try {
         let response = await fetch("http://18.130.38.194:5000/words/getAllWords");
         let data = await response.text();
         return JSON.parse(data);
@@ -175,17 +175,49 @@ export const getAllWords = async () => {
     //     });
 };
 
+let data = require('./words.json');
+export const words = async () => {
+    for (let key1 in data) {
+        for (let key2 in data[key1]) {
+            for (let i = 0; i < data[key1][key2].length; i++) {
+                if (data[key1][key2][i] == undefined) continue;
+                let phrase = data[key1][key2][i].phrase;
+                let translation = data[key1][key2][i].translation;
+                let transcription = data[key1][key2][i].transcription;
+                console.log('Подготовка к отправке: ', phrase, translation, transcription);
+                try {
+                    let response = await fetch("http://18.130.38.194:5000/addWords",
+                        {
+                            method: "POST",
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ newEng: phrase, newRus: translation, transcription: transcription })
+                        });
+                    let data = await response.text();
+                    console.log('WordList is updated, ', data);
+                }
+                catch (error) {
+                    // console.log(new Error("Server doesn't answer!!!", error));
+                    console.log("Ошибка catch: ", error);
+                }
+            }
+        }
+    }
+}
+
 export const addNewWord = async (groupID, newEng, newRus) => {
-    try{
+    try {
         let response = await fetch("http://18.130.38.194:5000/addNewWord",
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
-        });
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
+            });
         let data = await response.text();
         // return JSON.parse(data);
         console.log('WordList is updated');
@@ -196,7 +228,7 @@ export const addNewWord = async (groupID, newEng, newRus) => {
 }
 
 export const addWordToGroup = async (groupID, wordID) => {
-    try{
+    try {
         let response = await fetch(`http://18.130.38.194:5000/addWordToGroup/${groupID}/${wordID}`);
         let data = await response.text();
         // return JSON.parse(data);
@@ -221,14 +253,14 @@ export const addWordToGroup = async (groupID, wordID) => {
 
 export const deleteWord = async (groupID, wordID) => {
     let response = await fetch(`http://18.130.38.194:5000/deleteWord`,
-    {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ groupID: groupID, wordID: wordID })
-    });
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ groupID: groupID, wordID: wordID })
+        });
     let wordsList = await response.text();
-    return JSON.parse(wordsList);  
+    return JSON.parse(wordsList);
 }
