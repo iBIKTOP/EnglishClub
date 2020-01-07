@@ -5,10 +5,6 @@
     .container{
         max-width: 100% !important;
     }
-    .logo{
-        font-size: 0.8rem;
-        font-weight: bold;
-    }
     .welcomeImg, .logInLogUpPlace{
         width: 70%;
     }
@@ -92,7 +88,7 @@ h1,h6 {
     font-size: 25px;
 }
 .logo:hover{
-    color: rgb(212, 212, 212);
+    cursor: pointer;
 }
 .message{
     color: red;

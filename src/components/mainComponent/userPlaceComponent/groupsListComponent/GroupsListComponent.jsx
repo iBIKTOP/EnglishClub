@@ -26,7 +26,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                             <div className="flex-block-3" style={{ textAlign: 'left' }}>
                                 <div className='logo'>Groups</div>
                             </div>
-                            <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                            <div className="flex-block-3" style={{ textAlign: 'center' }}>
                                 <button className='mybutton'>
                                     <i className="material-icons">done_all</i>
                                 </button>

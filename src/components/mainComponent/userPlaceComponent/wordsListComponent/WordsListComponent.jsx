@@ -1,9 +1,11 @@
 import React from 'react';
-import { getWordsList, deleteWord } from "../../../../services/requests";
+import { getWordsList, deleteWord, updateGroupName } from "../../../../services/requests";
 import WordListRowComponent from './WordListRowComponent';
 
-export default function WordsListComponent({ group, onUserPlacePageChange }) {
+export default function WordsListComponent({ userID, group, onUserPlacePageChange }) {
     const [wordsList, setWordsList] = React.useState(null);
+    const [editGroupName, setEditGroupName] = React.useState(false);
+    const [groupName, setGroupName] = React.useState(group.group_name);
     React.useEffect(() => {
         if (wordsList == null) {
             (async () => {
@@ -16,11 +18,30 @@ export default function WordsListComponent({ group, onUserPlacePageChange }) {
         let newWordsList = await deleteWord(group.id, rowID);
         setWordsList(newWordsList);
     }
-    let onClickOnLogOut = () => {
-        // onLogOut();
-        setWordsList([]);
+    let editGroupTitleToggle = () => {
+        console.log(editGroupName);
+        editGroupName == false ? setEditGroupName(true) : setEditGroupName(false);
     }
-    // let onClickBack = () => clickBack('userGroups');
+    let saveNewGroupName = () => {
+        updateGroupName(group.id, userID, groupName);
+        editGroupTitleToggle();
+    }
+    let changeGroupTitle = (e) => setGroupName(e.target.value);
+    let renderGroupTitle = () => {
+        if (editGroupName) {
+            return (
+                <div className="flex-container">
+                    <div className='flex-block-9'>
+                        <input className='myInput' placeholder='Укажите название группы...' onChange={changeGroupTitle} value={groupName}></input>
+                    </div>
+                    <div className='flex-block-1' style={{ textAlign: 'center' }}>
+                        <button className='mybutton' type='submit' onClick={saveNewGroupName}>Save</button>
+                    </div>
+                </div>
+            )
+        }
+        else return <div className='logo' onClick={editGroupTitleToggle}>{groupName}</div>
+    }
 
     let renderContent = () => {
         if (wordsList && wordsList.length == 0) {
@@ -40,6 +61,7 @@ export default function WordsListComponent({ group, onUserPlacePageChange }) {
                             )
                         })
                     }
+                    <div style={{ textAlign: 'center' }}><small>Для удаления группы, необходимо чтобы она была пустая.</small></div>
                 </div>
             )
         } else {
@@ -56,17 +78,13 @@ export default function WordsListComponent({ group, onUserPlacePageChange }) {
                                 <i className="material-icons">arrow_back</i>
                             </button>
                         </div>
-                        <div className="flex-block-9" style={{ textAlign: 'right' }}>
-                            <div className='logo'>{group.group_name}</div>
+                        <div className="flex-block-9" style={{ textAlign: 'center' }}>
+                            {renderGroupTitle()}
                         </div>
                         <div className="flex-block-1" style={{ textAlign: 'right' }}>
-                            {/* <button className='mybutton' onClick={onClickOnLogOut}>
-                                <i className="material-icons">exit_to_app</i>
-                            </button> */}
                             <button className='mybutton' onClick={() => onUserPlacePageChange('search')}>
                                 <i className="material-icons">add_circle</i>
                             </button>
-
                         </div>
                     </div>
                 </div>

@@ -63,7 +63,7 @@ export default function MainComponent() {
             switch (page) {
                 case 'userPlace':
                     return (
-                        <UserPlaceComponent id={user.id} onLogOut={onLogOut} />
+                        <UserPlaceComponent userID={user.id} onLogOut={onLogOut} />
                     )
             }
         }
