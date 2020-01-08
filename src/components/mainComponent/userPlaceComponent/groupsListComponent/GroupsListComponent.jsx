@@ -57,7 +57,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
         )
     } else if (userGroups == null) {
         return (
-            <p>Загрузка...</p>
+            <div className="spinner"></div>
         )
     }
 

@@ -31,26 +31,33 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
         }
     }
     let renderContent = () => {
-        if (temp.length > 0) {
-            return (
-                temp.map(function (row, i) {
-                    return (
-                        <SearchRowComponent key={i} row={row} onSave={onSave}></SearchRowComponent>
-                    )
-                })
-            )
+        if(allWords != null){
+            if (temp.length > 0) {
+                return (
+                    temp.map(function (row, i) {
+                        return (
+                            <SearchRowComponent key={i} row={row} onSave={onSave}></SearchRowComponent>
+                        )
+                    })
+                )
+            }
+            else if (temp.length == 0) {
+                return (
+                    <div className="flex-container">
+                        <div className='flex-block-1'></div>
+                        <div className='flex-block-9'>
+                            <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
+                        </div>
+                        <div className='flex-block-1' style={{ textAlign: 'center' }}>
+                            <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
+                        </div>
+                    </div>
+                )
+            }
         }
-        else if (temp.length == 0) {
-            return (
-                <div className="flex-container">
-                    <div className='flex-block-1'></div>
-                    <div className='flex-block-9'>
-                        <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
-                    </div>
-                    <div className='flex-block-1' style={{ textAlign: 'center' }}>
-                        <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
-                    </div>
-                </div>
+        else {
+            return(
+                <div className="spinner"></div>
             )
         }
     }
@@ -86,7 +93,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                             </button>
                         </div>
                         <div className="flex-block-9" style={{ textAlign: 'right' }}>
-                            <input type="text" className="myInput" placeholder="Search" value={newEng} onChange={searchWords}></input>
+                            <input type="text" autofocus className="myInput" placeholder="Search" value={newEng} onChange={searchWords} ></input>
                         </div>
                         {/* <div className="flex-block-1" style={{ textAlign: 'right' }}>
                             <button className='mybutton' onClick={onLogOut}>
