@@ -130,26 +130,44 @@ export const addUser = async (login, pass) => {
     }
 };
 
-export function addNewGroup(userID, newGroup, callback) {
-    fetch("http://18.130.38.194:5000/urerGroups/addNewGroup",
-        {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userID: userID, newGroup: newGroup })
-        })
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            data = JSON.parse(data);//парсим JSON, создаем объект
-            callback(data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
+export const addNewGroup = async (userID, newGroup) => {
+    try {
+        let response = await fetch("http://18.130.38.194:5000/urerGroups/addNewGroup",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userID: userID, newGroup: newGroup })
+            })
+        let data = await response.text();
+        let group = JSON.parse(data);
+        // console.log(group);
+        return group[0];
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
+    // fetch("http://18.130.38.194:5000/urerGroups/addNewGroup",
+    //     {
+    //         method: "POST",
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ userID: userID, newGroup: newGroup })
+    //     })
+    //     .then(function (response) {
+    //         return response.text();
+    //     })
+    //     .then(function (data) {
+    //         data = JSON.parse(data);//парсим JSON, создаем объект
+    //         callback(data);
+    //     })
+    //     .catch(function (error) {
+    //         console.log('Request failed', error)
+    //     });
 }
 
 export const updateGroupName = async (groupID, userID, groupName) => {

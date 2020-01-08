@@ -1,18 +1,27 @@
 import React from 'react';
-import { getWordsList, deleteWord, updateGroupName } from "../../../../services/requests";
+import { getWordsList, deleteWord, addNewGroup, updateGroupName } from "../../../../services/requests";
 import WordListRowComponent from './WordListRowComponent';
 
-export default function WordsListComponent({ userID, group, onUserPlacePageChange }) {
+export default function WordsListComponent({ userID, group, onUserPlacePageChange, groupWordsChange }) {
     const [wordsList, setWordsList] = React.useState(null);
     const [editGroupName, setEditGroupName] = React.useState(false);
-    const [groupName, setGroupName] = React.useState(group.group_name);
+    const [groupName, setGroupName] = React.useState('');
+    const [temp, setTemp] = React.useState(group);
     React.useEffect(() => {
-        if (wordsList == null) {
+        if (group != null && wordsList == null) {
             (async () => {
                 setWordsList(await getWordsList(group.id));
             })();
+            setTemp(1);
+            setGroupName(group.group_name);
+        }
+        if (temp == null) {
+            setTemp(1);
+            setWordsList([]);
+            setEditGroupName(true);
         }
     });
+
     let onDelete = async (rowID) => {
         //function removes necessary word and sends answer with new word's list
         let newWordsList = await deleteWord(group.id, rowID);
@@ -22,8 +31,8 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
         console.log(editGroupName);
         editGroupName == false ? setEditGroupName(true) : setEditGroupName(false);
     }
-    let saveNewGroupName = () => {
-        updateGroupName(group.id, userID, groupName);
+    let saveGroupName = () => {
+        group == null ? groupWordsChange(addNewGroup(userID, groupName)) : updateGroupName(group.id, userID, groupName);
         editGroupTitleToggle();
     }
     let changeGroupTitle = (e) => setGroupName(e.target.value);
@@ -35,7 +44,7 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
                         <input className='myInput' placeholder='Укажите название группы...' onChange={changeGroupTitle} value={groupName}></input>
                     </div>
                     <div className='flex-block-1' style={{ textAlign: 'center' }}>
-                        <button className='mybutton' type='submit' onClick={saveNewGroupName}>Save</button>
+                        <button className='mybutton' type='submit' onClick={saveGroupName}>Save</button>
                     </div>
                 </div>
             )
@@ -61,7 +70,6 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
                             )
                         })
                     }
-                    <div style={{ textAlign: 'center' }}><small>Для удаления группы, необходимо чтобы она была пустая.</small></div>
                 </div>
             )
         } else {
@@ -90,6 +98,7 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
                 </div>
             </div>
             {renderContent()}
+            <div style={{ textAlign: 'center' }}><small>Для удаления группы, необходимо чтобы она была пустая.</small></div>
         </div>
     )
 }

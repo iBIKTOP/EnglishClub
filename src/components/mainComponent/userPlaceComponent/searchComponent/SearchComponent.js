@@ -31,7 +31,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
         }
     }
     let renderContent = () => {
-        if(allWords != null){
+        if (allWords != null) {
             if (temp.length > 0) {
                 return (
                     temp.map(function (row, i) {
@@ -56,7 +56,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             }
         }
         else {
-            return(
+            return (
                 <div className="spinner"></div>
             )
         }
@@ -93,7 +93,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                             </button>
                         </div>
                         <div className="flex-block-9" style={{ textAlign: 'right' }}>
-                            <input type="text" autofocus className="myInput" placeholder="Search" value={newEng} onChange={searchWords} ></input>
+                            <input type="text" autoFocus className="myInput" placeholder="Search" value={newEng} onChange={searchWords} ></input>
                         </div>
                         {/* <div className="flex-block-1" style={{ textAlign: 'right' }}>
                             <button className='mybutton' onClick={onLogOut}>
