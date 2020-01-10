@@ -4,24 +4,20 @@ import WordListRowComponent from './WordListRowComponent';
 
 export default function WordsListComponent({ userID, group, onUserPlacePageChange, groupWordsChange }) {
     const [wordsList, setWordsList] = React.useState(null);
-    const [editGroupName, setEditGroupName] = React.useState(false);
     const [groupName, setGroupName] = React.useState('');
-    const [temp, setTemp] = React.useState(group);
+    const [editGroupName, setEditGroupName] = React.useState(false);
     React.useEffect(() => {
-        if (group != null && wordsList == null) {
+        if (wordsList == null) {
             (async () => {
                 setWordsList(await getWordsList(group.id));
             })();
-            setTemp(1);
             setGroupName(group.group_name);
         }
-        if (temp == null) {
-            setTemp(1);
-            setWordsList([]);
-            setEditGroupName(true);
-        }
     });
-
+    let wordsCount = () => {
+        if(wordsList == null) return '0';
+        if(wordsList != null) return wordsList.length;
+    }
     let onDelete = async (rowID) => {
         //function removes necessary word and sends answer with new word's list
         let newWordsList = await deleteWord(group.id, rowID);
@@ -32,7 +28,7 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
         editGroupName == false ? setEditGroupName(true) : setEditGroupName(false);
     }
     let saveGroupName = () => {
-        group == null ? groupWordsChange(addNewGroup(userID, groupName)) : updateGroupName(group.id, userID, groupName);
+        updateGroupName(group.id, userID, groupName);
         editGroupTitleToggle();
     }
     let changeGroupTitle = (e) => setGroupName(e.target.value);
@@ -49,7 +45,10 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
                 </div>
             )
         }
-        else return <div className='logo' onClick={editGroupTitleToggle}>{groupName}</div>
+        else 
+            return (
+                <div className='logo' onClick={editGroupTitleToggle}>{groupName} (Слов: {wordsCount()})</div>
+            )
     }
 
     let renderContent = () => {

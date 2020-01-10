@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-import ir from '../../../../img/iv.png';
 import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs"
 import GroupsListRowComponent from "./GroupsListRowComponent";
-import { getUserGroups, getNewGroup } from "../../../../services/requests"
-
+import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
 
 export default function GroupsListComponent({ id, onUserPlacePageChange, groupWordsChange }) {
     const [userGroups, setUserGroups] = React.useState(null);
+    const [visible, setVisible] = React.useState(false);
+    const [newGroupName, setNewGroupName] = React.useState('');
     React.useEffect(() => {
         if (userGroups == null) {
             (async () => {
@@ -16,9 +16,33 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
             })();
         }
     });
-    let onAddNewGroup = () => {
+    let saveNewGroup = async () => {
+        let newGroup = await addNewGroup(id, newGroupName);
+        groupWordsChange(newGroup);
         onUserPlacePageChange('wordsList');
-        groupWordsChange(null);
+    }
+    let changeGroupName = (e) => setNewGroupName(e.target.value);
+    let visibleToggle = () => visible ? setVisible(false) : setVisible(true);
+    let creatingNewGroup = () => {
+        if(visible){
+            return(
+                <div>
+                <div className="creatingNewGroupBackground" onClick={visibleToggle}></div>
+                    <div className="creatingNewGroupPlace">
+                        <div className="flex-container">
+                            <div className="flex-block-9" style={{ textAlign: 'center' }}>
+                                <input type="text" autoFocus className="myInput" placeholder="New Group" onChange={changeGroupName} value={newGroupName}></input>
+                            </div>
+                            <div className="flex-block-1" style={{ textAlign: 'center' }}>
+                                <button className='mybutton' onClick={saveNewGroup}>
+                                    <i className="material-icons">check</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }   
     }
 
     if (userGroups != null) {
@@ -36,14 +60,14 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                                 </button>
                             </div>
                             <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                                <button className='mybutton' onClick={onAddNewGroup}>
+                                <button className='mybutton' onClick={visibleToggle}>
                                     <i className="material-icons">add_box</i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='container'>
+                <div className='container'>                    
                     {
                         userGroups.map(function (row, i) {
                             return (
@@ -51,6 +75,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                             )
                         })
                     }
+                    {creatingNewGroup()}
                 </div>
             </div>
         )
