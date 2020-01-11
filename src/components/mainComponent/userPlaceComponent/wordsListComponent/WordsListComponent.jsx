@@ -15,8 +15,8 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
         }
     });
     let wordsCount = () => {
-        if(wordsList == null) return '0';
-        if(wordsList != null) return wordsList.length;
+        if (wordsList == null) return '0';
+        if (wordsList != null) return wordsList.length;
     }
     let onDelete = async (rowID) => {
         //function removes necessary word and sends answer with new word's list
@@ -24,7 +24,6 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
         setWordsList(newWordsList);
     }
     let editGroupTitleToggle = () => {
-        console.log(editGroupName);
         editGroupName == false ? setEditGroupName(true) : setEditGroupName(false);
     }
     let saveGroupName = () => {
@@ -45,7 +44,7 @@ export default function WordsListComponent({ userID, group, onUserPlacePageChang
                 </div>
             )
         }
-        else 
+        else
             return (
                 <div className='logo' onClick={editGroupTitleToggle}>{groupName} (Слов: {wordsCount()})</div>
             )

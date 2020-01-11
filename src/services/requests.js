@@ -149,25 +149,6 @@ export const addNewGroup = async (userID, newGroup) => {
     catch{
         console.log(new Error("Server doesn't answer!!!"));
     }
-    // fetch("http://18.130.38.194:5000/urerGroups/addNewGroup",
-    //     {
-    //         method: "POST",
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ userID: userID, newGroup: newGroup })
-    //     })
-    //     .then(function (response) {
-    //         return response.text();
-    //     })
-    //     .then(function (data) {
-    //         data = JSON.parse(data);//парсим JSON, создаем объект
-    //         callback(data);
-    //     })
-    //     .catch(function (error) {
-    //         console.log('Request failed', error)
-    //     });
 }
 
 export const updateGroupName = async (groupID, userID, groupName) => {
@@ -200,6 +181,25 @@ export const updateChecked = async (wordID, checked) => {
                 body: JSON.stringify({ wordID: wordID, checked: checked })
             });
         console.log(await response.text());
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
+}
+
+export const startLearning = async (arr) => {
+    try {
+        let response = await fetch("http://18.130.38.194:5000/startLearning",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ arr: arr })
+            });
+        let data = await response.json();
+        return data;
     }
     catch{
         console.log(new Error("Server doesn't answer!!!"));

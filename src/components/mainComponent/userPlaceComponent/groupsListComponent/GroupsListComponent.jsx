@@ -1,13 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs";
 import GroupsListRowComponent from "./GroupsListRowComponent";
-import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests";
+import { getUserGroups, getNewGroup, addNewGroup, startLearning } from "../../../../services/requests";
+import Message from "../../../public/Message";
+import LearningComponent from "./LearningComponent";
 
 export default function GroupsListComponent({ id, onUserPlacePageChange, groupWordsChange, onLogOut }) {
     const [userGroups, setUserGroups] = React.useState(null);
     const [visible, setVisible] = React.useState(false);
     const [newGroupName, setNewGroupName] = React.useState('');
+    const [message, setMessage] = React.useState('');
+    const [page, setPage] = React.useState('groupList');
     let arr = [];
 
     React.useEffect(() => {
@@ -18,19 +22,17 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
             })();
         }
     });
-    let editArr = (id) => {
+    let editArr = (groupID) => {
         let temp = 1;
-        for(let i=0; i<arr.length; i++){
-            if(arr[i] == id) {
-                console.log("удаляем id =", id);
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == groupID) {
                 arr.splice(i, 1);
                 temp = 0;
             }
         }
-        if(temp == 1){
-            arr.push(id);
+        if (temp == 1) {
+            arr.push(groupID);
         }
-        console.log(arr);
     }
     let saveNewGroup = async () => {
         let newGroup = await addNewGroup(id, newGroupName);
@@ -40,10 +42,10 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
     let changeGroupName = (e) => setNewGroupName(e.target.value);
     let visibleToggle = () => visible ? setVisible(false) : setVisible(true);
     let creatingNewGroup = () => {
-        if(visible){
-            return(
+        if (visible) {
+            return (
                 <div>
-                <div className="creatingNewGroupBackground" onClick={visibleToggle}></div>
+                    <div className="creatingNewGroupBackground" onClick={visibleToggle}></div>
                     <div className="creatingNewGroupPlace">
                         <div className="flex-container">
                             <div className="flex-block-9" style={{ textAlign: 'center' }}>
@@ -58,50 +60,77 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                     </div>
                 </div>
             )
-        }   
+        }
+    }
+    let startLesson = () => {
+        if (arr.length == 0) {
+            setMessage("Необходимо выбрать хотя бы один урок");
+            let msg = document.getElementById('msg');
+            msg.style.cssText = "left: calc(50% - 130px); opacity: 1;";
+            setTimeout(() => {
+                msg.style.opacity = 0;
+            }, 1500);
+            setTimeout(() => {
+                msg.style.left = '-10000000px';
+            }, 2000);
+        } else if (arr.length > 0) {
+            setPage("learning");
+        }
+    }
+    let onSetPage = (page) => {
+        setPage(page);
     }
 
-    if (userGroups != null) {
-        return (
-            <div>
-                <div className="header">
-                    <div className="container">
-                        <div className="flex-container">
-                            <div className="flex-block-3" style={{ textAlign: 'left' }}>
-                                <div className='logo'>Groups</div>
-                            </div>
-                            <div className="flex-block-3" style={{ textAlign: 'center' }}>
-                                <button className='mybutton'>
-                                    <i className="material-icons">done_all</i>
-                                </button>
-                            </div>
-                            <div className="flex-block-3" style={{ textAlign: 'right' }}>
-                                <button className='mybutton' onClick={visibleToggle}>
-                                    <i className="material-icons">add_box</i>
-                                </button>
+    switch (page) {
+        case "groupList":
+            if (userGroups != null) {
+                return (
+                    <div>
+                        <div className="header">
+                            <div className="container">
+                                <div className="flex-container">
+                                    <div className="flex-block-3" style={{ textAlign: 'left' }}>
+                                        <div className='logo'>Groups</div>
+                                    </div>
+                                    <div className="flex-block-3" style={{ textAlign: 'center' }}>
+                                        <button className='mybutton'>
+                                            <i className="material-icons" onClick={startLesson}>done_outline</i>
+                                        </button>
+                                    </div>
+                                    <div className="flex-block-3" style={{ textAlign: 'right' }}>
+                                        <button className='mybutton' onClick={visibleToggle}>
+                                            <i className="material-icons">add_box</i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className='container'>                    
-                    {
-                        userGroups.map(function (row, i) {
-                            if(row.checked == 1){
-                                arr.push(row.id);
-                                console.log(arr);
+                        <div className='container'>
+                            {
+                                userGroups.map(function (row, i) {
+                                    if (row.checked == 1) {
+                                        arr.push(row.id);
+                                        console.log(arr);
+                                    }
+                                    return (
+                                        <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} editArr={editArr} />
+                                    )
+                                })
                             }
-                            return (
-                                <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} editArr={editArr}/>
-                            )
-                        })
-                    }
-                    {creatingNewGroup()}
-                </div>
-            </div>
-        )
-    } else if (userGroups == null) {
-        return (
-            <div className="spinner"></div>
-        )
+                            {creatingNewGroup()}
+                            {<Message message={message} />}
+                        </div>
+                    </div>
+                )
+            } else if (userGroups == null) {
+                return (
+                    <div className="spinner"></div>
+                )
+            }
+        case "learning":
+            return (
+                <LearningComponent arr={arr} onSetPage={onSetPage} />
+            )
     }
+
 }
