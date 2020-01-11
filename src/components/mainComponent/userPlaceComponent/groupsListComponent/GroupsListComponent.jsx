@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
-import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs"
+import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs";
 import GroupsListRowComponent from "./GroupsListRowComponent";
-import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests"
+import { getUserGroups, getNewGroup, addNewGroup } from "../../../../services/requests";
 
-export default function GroupsListComponent({ id, onUserPlacePageChange, groupWordsChange }) {
+export default function GroupsListComponent({ id, onUserPlacePageChange, groupWordsChange, onLogOut }) {
     const [userGroups, setUserGroups] = React.useState(null);
     const [visible, setVisible] = React.useState(false);
     const [newGroupName, setNewGroupName] = React.useState('');
+    let arr = [];
+
     React.useEffect(() => {
         if (userGroups == null) {
             (async () => {
@@ -16,6 +18,20 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
             })();
         }
     });
+    let editArr = (id) => {
+        let temp = 1;
+        for(let i=0; i<arr.length; i++){
+            if(arr[i] == id) {
+                console.log("удаляем id =", id);
+                arr.splice(i, 1);
+                temp = 0;
+            }
+        }
+        if(temp == 1){
+            arr.push(id);
+        }
+        console.log(arr);
+    }
     let saveNewGroup = async () => {
         let newGroup = await addNewGroup(id, newGroupName);
         groupWordsChange(newGroup);
@@ -70,8 +86,12 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                 <div className='container'>                    
                     {
                         userGroups.map(function (row, i) {
+                            if(row.checked == 1){
+                                arr.push(row.id);
+                                console.log(arr);
+                            }
                             return (
-                                <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} />
+                                <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} editArr={editArr}/>
                             )
                         })
                     }

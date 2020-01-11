@@ -1,43 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
+import { updateChecked } from "../../../../services/requests"
 
-export default function GroupsListRowComponent({ row, onUserPlacePageChange, groupWordsChange }) {
+export default function GroupsListRowComponent({ row, onUserPlacePageChange, groupWordsChange, editArr }) {
+    const [checked, setChecked] = React.useState(row.checked);
     let getChecked = () => {
-        return row.checked == 0 ? 'check_box_outline_blank' : 'check_box'
+        return checked == 0 ? 'check_box_outline_blank' : 'check_box'
+    }
+    let onUpdateChecked = () => {
+        if(checked == 0){
+            setChecked(1)
+            updateChecked(row.id, 1);
+        }else{
+            setChecked(0)
+            updateChecked(row.id, 0);
+        }
+        editArr(row.id);        
     }
     return (
         <div className="groupsRow">
             <div className="flex-container">
-                <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'left' }}>
+                <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'left' }} onClick={onUpdateChecked}>
                     <i className="material-icons icons">{getChecked()}</i>
                 </div>
-                <div className="flex-block-9 groupsRowItem" style={{ textAlign: 'left' }} >
+                <div className="flex-block-9 groupsRowItem" style={{ textAlign: 'left' }} onClick={() => { onUserPlacePageChange('wordsList'); groupWordsChange(row); }}>
                     {row.group_name}
                 </div>
-                <div className="flex-block-1 groupsRowItem" style={{ textAlign: 'right' }} onClick={() => { onUserPlacePageChange('wordsList'); groupWordsChange(row); }}>
-                    <i className="material-icons icons">edit</i>
-                </div>
-
             </div>
         </div>
     )
 }
-// export default class GroupsListRowComponent extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.onClickItem = this.onClickItem.bind(this);
-//     }
-
-//     onClickItem() {
-//         this.props.setWordsList(this.props.row);
-//     }
-//     render() {
-//         return (
-//             <div className={this.props.groupsClass} onClick={this.onClickItem}>
-//                 <div className="mycard-body">
-//                     {this.props.row.group_name}
-//                 </div>
-//             </div>
-
-//         )
-//     }
-// }

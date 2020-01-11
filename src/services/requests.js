@@ -187,6 +187,25 @@ export const updateGroupName = async (groupID, userID, groupName) => {
         console.log(new Error("Server doesn't answer!!!"));
     }
 }
+
+export const updateChecked = async (wordID, checked) => {
+    try {
+        let response = await fetch("http://18.130.38.194:5000/groupWords/updateChecked",
+            {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ wordID: wordID, checked: checked })
+            });
+        console.log(await response.text());
+    }
+    catch{
+        console.log(new Error("Server doesn't answer!!!"));
+    }
+}
+
 export const getAllWords = async () => {
     try {
         let response = await fetch("http://18.130.38.194:5000/words/getAllWords");
