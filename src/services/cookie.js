@@ -8,7 +8,7 @@ export function getCookie(id) {
         ));
         matches ? resolve(decodeURIComponent(matches[1])) : resolve('');
     });
-    
+
 }
 export function deleteCookie() {
     document.cookie = `ID=''; path=/; expires=${(new Date(Date.now() - 100000)).toUTCString()}`;

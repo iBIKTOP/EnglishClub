@@ -12,6 +12,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
     const [newGroupName, setNewGroupName] = React.useState('');
     const [message, setMessage] = React.useState('');
     const [page, setPage] = React.useState('groupList');
+    const [learningArr, setLearningArr] = React.useState([]);
     let arr = [];
 
     React.useEffect(() => {
@@ -26,12 +27,16 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
         let temp = 1;
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] == groupID) {
-                arr.splice(i, 1);
+                // let arr2 = arr;
+                // setArr(arr2.splice(i, 1));
+                arr.splice(i, 1)
                 temp = 0;
             }
         }
         if (temp == 1) {
-            arr.push(groupID);
+            // let arr2 = arr;
+            // setArr(arr2.push(groupID));
+            arr.push(groupID)
         }
     }
     let saveNewGroup = async () => {
@@ -75,6 +80,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
             }, 2000);
         } else if (arr.length > 0) {
             setPage("learning");
+            setLearningArr(arr);
         }
     }
     let onSetPage = (page) => {
@@ -109,8 +115,9 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                             {
                                 userGroups.map(function (row, i) {
                                     if (row.checked == 1) {
-                                        arr.push(row.id);
-                                        console.log(arr);
+                                        // let arr2 = arr;
+                                        // setArr(arr2.push(row.id));
+                                        arr.push(row.id)
                                     }
                                     return (
                                         <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} editArr={editArr} />
@@ -129,7 +136,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
             }
         case "learning":
             return (
-                <LearningComponent arr={arr} onSetPage={onSetPage} />
+                <LearningComponent learningArr={learningArr} onSetPage={onSetPage} />
             )
     }
 

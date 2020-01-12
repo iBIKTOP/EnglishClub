@@ -198,8 +198,7 @@ export const startLearning = async (arr) => {
                 },
                 body: JSON.stringify({ arr: arr })
             });
-        let data = await response.json();
-        return data;
+        return await response.json();
     }
     catch{
         console.log(new Error("Server doesn't answer!!!"));
