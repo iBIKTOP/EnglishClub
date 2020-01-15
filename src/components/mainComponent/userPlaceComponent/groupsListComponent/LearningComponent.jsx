@@ -13,20 +13,24 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                 setWords(data);
             })();
         }
-        // if(words != null && phrase == null) nextWord();
+        if(words != null && phrase == null) nextWord();
     });
 
     let rand = (min, max) => {
-        return Math.floor(Math.random() * (max - min) + min);
+        let per = Math.floor(Math.random() * (max - min) + min);
+        return per;
     }
     let nextWord = () => {
         let randomPercent = rand(0, 100);
+        console.log(randomPercent);
         if(randomPercent>=0 && randomPercent<=10) {
             let arr = [];
             for(let i=0; i<words.length; i++){
                 if(words[i].level == 1) arr.push(words[i]);
             }
+            console.log("arr1=",arr);
             if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
+            
             else nextWord();
         }
         if(randomPercent>=11 && randomPercent<=50) {
@@ -34,14 +38,17 @@ export default function LearningComponent({ learningArr, onSetPage }) {
             for(let i=0; i<words.length; i++){
                 if(words[i].level == 2) arr.push(words[i]);
             }
+            console.log("arr2=",arr);
             if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
+            
             else nextWord();
         }
         if(randomPercent>=51 && randomPercent<=100) {
             let arr = [];
             for(let i=0; i<words.length; i++){
-                if(words[i].level == 3) arr.push(words[i]);
+                if(words[i].level == 3 || words[i].level == '') arr.push(words[i]);
             }
+            console.log("arr3=",arr);
             if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
             else nextWord();
         }
