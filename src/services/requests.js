@@ -293,3 +293,16 @@ export const deleteWord = async (groupID, wordID) => {
     let wordsList = await response.text();
     return JSON.parse(wordsList);
 }
+
+export const updateLevelForWord = async (wordID, level) => {
+    let response = await fetch(`http://18.130.38.194:5000/updateLevelForWord`,
+        {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ wordID: wordID, level: level })
+        });
+    console.log(await response.text());
+}

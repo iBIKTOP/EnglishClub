@@ -1,6 +1,6 @@
 import React from "react";
 
-import { startLearning } from "../../../../services/requests";
+import { startLearning, updateLevelForWord } from "../../../../services/requests";
 
 export default function LearningComponent({ learningArr, onSetPage }) {
     const [words, setWords] = React.useState(null);
@@ -16,39 +16,34 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         if(words != null && phrase == null) nextWord();
     });
 
-    let rand = (min, max) => {
-        let per = Math.floor(Math.random() * (max - min) + min);
-        return per;
+    let rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
+    let toFirstLevel = () => {
+        updateLevelForWord(phrase.id, 1);
+        nextWord();
+    }
+    let toSecondLevel = () => {
+        nextWord();
+    }
+    let toThirdLevel = () => {
+        nextWord();
     }
     let nextWord = () => {
+        let setUpPhrase = (level) => {
+            let arr = [];
+            for(let i=0; i<words.length; i++){
+                if(words[i].level == level) arr.push(words[i]);
+            }
+            if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
+            else nextWord();
+        }
         let randomPercent = rand(0, 100);
-        console.log(randomPercent);
-        if(randomPercent>=0 && randomPercent<=10) {
-            let arr = [];
-            for(let i=0; i<words.length; i++){
-                if(words[i].level == 1) arr.push(words[i]);
-            }
-            console.log("arr1=",arr);
-            if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
-            
-            else nextWord();
-        }
-        if(randomPercent>=11 && randomPercent<=50) {
-            let arr = [];
-            for(let i=0; i<words.length; i++){
-                if(words[i].level == 2) arr.push(words[i]);
-            }
-            console.log("arr2=",arr);
-            if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
-            
-            else nextWord();
-        }
+        if(randomPercent>=0 && randomPercent<=10) setUpPhrase(1);
+        if(randomPercent>=11 && randomPercent<=50) setUpPhrase(2);
         if(randomPercent>=51 && randomPercent<=100) {
             let arr = [];
             for(let i=0; i<words.length; i++){
                 if(words[i].level == 3 || words[i].level == '') arr.push(words[i]);
             }
-            console.log("arr3=",arr);
             if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
             else nextWord();
         }
@@ -67,9 +62,9 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                     </div>
                     <div id="menuPlace">
                         <div>
-                            <button className="btn btn-blue" onClick={() => nextWord()}>Знаю</button><br />
-                            <button className="btn btn-yellow">Сомневаюсь</button><br />
-                            <button className="btn btn-red">Не знаю</button><br />
+                            <button className="btn btn-blue" onClick={toFirstLevel}>Знаю</button><br />
+                            <button className="btn btn-yellow" onClick={toSecondLevel}>Сомневаюсь</button><br />
+                            <button className="btn btn-red" onClick={toThirdLevel}>Не знаю</button><br />
                             <button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
                         </div>
                     </div>
