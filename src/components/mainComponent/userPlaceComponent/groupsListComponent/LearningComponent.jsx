@@ -22,9 +22,11 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         nextWord();
     }
     let toSecondLevel = () => {
+        updateLevelForWord(phrase.id, 2);
         nextWord();
     }
     let toThirdLevel = () => {
+        updateLevelForWord(phrase.id, 3);
         nextWord();
     }
     let nextWord = () => {
@@ -48,12 +50,19 @@ export default function LearningComponent({ learningArr, onSetPage }) {
             else nextWord();
         }
     }
+    let rusColor = () => {
+        console.log(phrase);
+        if(phrase.level == 1) return 'rgb(100, 100, 255)';
+        if(phrase.level == 2) return 'rgb(255, 255, 100)';
+        if(phrase.level == 3 || phrase.level == 0) return 'rgb(255, 100, 100)';
+    }
 
     if (phrase != null) {
+        rusColor();
         return (
             <div>
                 <div id="commonPlace">
-                    <div id="rusPlace"><div>{phrase.rus}</div></div>
+                    <div id="rusPlace" style={{backgroundColor: rusColor()}}><div>{phrase.rus}</div></div>
                     <div id="engPlace">
                         <div>
                             <div>{phrase.eng}</div>
