@@ -19,14 +19,23 @@ export default function LearningComponent({ learningArr, onSetPage }) {
     let rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
     let toFirstLevel = () => {
         updateLevelForWord(phrase.id, 1);
-        nextWord();
+        toggleMenuPlace();
     }
     let toSecondLevel = () => {
         updateLevelForWord(phrase.id, 2);
-        nextWord();
+        toggleMenuPlace();
     }
     let toThirdLevel = () => {
         updateLevelForWord(phrase.id, 3);
+        toggleMenuPlace();
+    }
+    let toggleMenuPlace = () => {
+        let menuPlace = document.getElementById('menuPlace');
+        let nextPlace = document.getElementById('nextPlace');
+        menuPlace.style.left == '0' ? menuPlace.style.left = '-100%' : menuPlace.style.left = '0';
+        nextPlace.style.left == '-100%' ? nextPlace.style.left = '0' : nextPlace.style.left = '-100%';
+    }
+    let toNextPhrase = () => {
         nextWord();
     }
     let nextWord = () => {
@@ -52,17 +61,17 @@ export default function LearningComponent({ learningArr, onSetPage }) {
     }
     let rusColor = () => {
         console.log(phrase);
-        if(phrase.level == 1) return 'rgb(100, 100, 255)';
-        if(phrase.level == 2) return 'rgb(255, 255, 100)';
-        if(phrase.level == 3 || phrase.level == 0) return 'rgb(255, 100, 100)';
+        if(phrase.level == 1) return 'rgb(150, 150, 255)';
+        if(phrase.level == 2) return 'rgb(255, 255, 150)';
+        if(phrase.level == 3 || phrase.level == 0) return 'rgb(255, 150, 150)';
     }
 
     if (phrase != null) {
         rusColor();
         return (
             <div>
-                <div id="commonPlace">
-                    <div id="rusPlace" style={{backgroundColor: rusColor()}}><div>{phrase.rus}</div></div>
+                <div id="commonPlace" style={{backgroundColor: rusColor()}}>
+                    <div id="rusPlace"><div>{phrase.rus}</div></div>
                     <div id="engPlace">
                         <div>
                             <div>{phrase.eng}</div>
@@ -75,6 +84,11 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                             <button className="btn btn-yellow" onClick={toSecondLevel}>Сомневаюсь</button><br />
                             <button className="btn btn-red" onClick={toThirdLevel}>Не знаю</button><br />
                             <button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
+                        </div>
+                    </div>
+                    <div id="nextPlace">
+                        <div>
+                            <button className="btn btn-blue" onClick={toNextPhrase}>Далее</button>
                         </div>
                     </div>
                 </div>
