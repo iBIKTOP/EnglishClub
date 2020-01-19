@@ -456,11 +456,16 @@ label{
     height: 100vh;
     z-index: 0;
 }
+#statisticPlace{
+    position: relative;
+    width: 100%;
+    height: 5%;
+}
 #rusPlace{
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: 30%;
+    height: 25%;
     position: relative;
     z-index: 0;
 }
@@ -490,13 +495,16 @@ label{
     left: -100%;
 }
 
-#rusPlace div, #engPlace>div, #menuPlace div, #nextPlace>div{
+#rusPlace div, #engPlace>div, #menuPlace div, #nextPlace>div, #statisticPlace>div{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 23px;
     text-align: center;
+}
+#statisticPlace>div{
+    font-size: 15px;
 }
 .btn{
     border: none;

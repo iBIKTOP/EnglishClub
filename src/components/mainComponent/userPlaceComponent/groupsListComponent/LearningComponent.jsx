@@ -3,20 +3,30 @@ import React from "react";
 import { startLearning, updateLevelForWord } from "../../../../services/requests";
 
 export default function LearningComponent({ learningArr, onSetPage }) {
+
     const [words, setWords] = React.useState(null);
     const [phrase, setPhrase] = React.useState(null);
 
     React.useEffect(() => {
-        if (words == null) {
-            (async () => {
-                let data = await startLearning(learningArr);
-                setWords(data);
-            })();
-        }
+        if (words == null) setUpWords();
         if (words != null && phrase == null) nextWord();
     });
 
+    let setUpWords = async () => {
+        let data = await startLearning(learningArr);
+        let lvl1 = [];
+        let lvl2 = [];
+        let lvl3 = [];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].level == 1) lvl1.push(data[i]);
+            if (data[i].level == 2) lvl2.push(data[i]);
+            if (data[i].level == 3 || data[i].level == '') lvl3.push(data[i]);
+        }
+        setWords([lvl1, lvl2, lvl3]);
+    }
+
     let rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
     let toFirstLevel = () => {
         updateLevelForWord(phrase.id, 1);
         toggleMenuPlace();
@@ -48,24 +58,24 @@ export default function LearningComponent({ learningArr, onSetPage }) {
     }
     let nextWord = () => {
         let setUpPhrase = (level) => {
-            let arr = [];
-            for (let i = 0; i < words.length; i++) {
-                if (words[i].level == level) arr.push(words[i]);
+            if (words[0].length == 0 && words[1].length == 0 && words[2].length == 0) setUpWords();
+            else {
+                if (words[level - 1].length > 0) {
+                    let randIndex = rand(0, words[level - 1].length);
+                    let phrase = words[level - 1][randIndex];
+                    setPhrase(phrase);
+                    let temp = words;
+                    temp[level - 1].splice(randIndex, 1);
+                    setWords(temp);
+                }
+                if (words[level - 1].length == 0) nextWord();
             }
-            if (arr.length > 0) setPhrase(arr[rand(0, arr.length)]);
-            else nextWord();
+
         }
         let randomPercent = rand(0, 100);
         if (randomPercent >= 0 && randomPercent <= 10) setUpPhrase(1);
         if (randomPercent >= 11 && randomPercent <= 50) setUpPhrase(2);
-        if (randomPercent >= 51 && randomPercent <= 100) {
-            let arr = [];
-            for (let i = 0; i < words.length; i++) {
-                if (words[i].level == 3 || words[i].level == '') arr.push(words[i]);
-            }
-            if (arr.length > 0) setPhrase(arr[rand(0, arr.length)]);
-            else nextWord();
-        }
+        if (randomPercent >= 51 && randomPercent <= 100) setUpPhrase(3);
     }
     let rusColor = () => {
         if (phrase.level == 1) return 'rgb(150, 150, 255)';
@@ -77,13 +87,9 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         return (
             <div>
                 <div id="commonPlace" style={{ backgroundColor: rusColor() }}>
+                    <div id="statisticPlace"><div>Знаю: {words[0].length}; Сомневаюсь: {words[1].length}; Не знаю: {words[2].length}</div></div>
                     <div id="rusPlace"><div>{phrase.rus}</div></div>
-                    <div id="engPlace"><div>?</div>
-                        {/* <div>
-                            <div>{phrase.eng}</div>
-                            <div>{phrase.transcription}</div>
-                        </div> */}
-                    </div>
+                    <div id="engPlace"><div>?</div></div>
                     <div id="menuPlace">
                         <div>
                             <button className="btn btn-blue" onClick={toFirstLevel}>Знаю</button><br />
