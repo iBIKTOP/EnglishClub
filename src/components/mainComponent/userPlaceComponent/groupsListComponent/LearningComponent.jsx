@@ -13,7 +13,7 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                 setWords(data);
             })();
         }
-        if(words != null && phrase == null) nextWord();
+        if (words != null && phrase == null) nextWord();
     });
 
     let rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -30,53 +30,59 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         toggleMenuPlace();
     }
     let toggleMenuPlace = () => {
+        let eng = document.getElementById("engPlace");
         let menuPlace = document.getElementById('menuPlace');
         let nextPlace = document.getElementById('nextPlace');
-        menuPlace.style.left == '0' ? menuPlace.style.left = '-100%' : menuPlace.style.left = '0';
-        nextPlace.style.left == '-100%' ? nextPlace.style.left = '0' : nextPlace.style.left = '-100%';
+        eng.innerHTML = `<div><div>${phrase.eng}</div><div>${phrase.transcription}</div></div>`
+        menuPlace.style.left = '-100%';
+        nextPlace.style.left = '0';
     }
     let toNextPhrase = () => {
+        let eng = document.getElementById("engPlace");
+        let menuPlace = document.getElementById('menuPlace');
+        let nextPlace = document.getElementById('nextPlace');
+        eng.innerHTML = `<div>?</div>`
+        menuPlace.style.left = '0';
+        nextPlace.style.left = '-100%';
         nextWord();
     }
     let nextWord = () => {
         let setUpPhrase = (level) => {
             let arr = [];
-            for(let i=0; i<words.length; i++){
-                if(words[i].level == level) arr.push(words[i]);
+            for (let i = 0; i < words.length; i++) {
+                if (words[i].level == level) arr.push(words[i]);
             }
-            if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
+            if (arr.length > 0) setPhrase(arr[rand(0, arr.length)]);
             else nextWord();
         }
         let randomPercent = rand(0, 100);
-        if(randomPercent>=0 && randomPercent<=10) setUpPhrase(1);
-        if(randomPercent>=11 && randomPercent<=50) setUpPhrase(2);
-        if(randomPercent>=51 && randomPercent<=100) {
+        if (randomPercent >= 0 && randomPercent <= 10) setUpPhrase(1);
+        if (randomPercent >= 11 && randomPercent <= 50) setUpPhrase(2);
+        if (randomPercent >= 51 && randomPercent <= 100) {
             let arr = [];
-            for(let i=0; i<words.length; i++){
-                if(words[i].level == 3 || words[i].level == '') arr.push(words[i]);
+            for (let i = 0; i < words.length; i++) {
+                if (words[i].level == 3 || words[i].level == '') arr.push(words[i]);
             }
-            if(arr.length>0) setPhrase(arr[rand(0, arr.length)]);
+            if (arr.length > 0) setPhrase(arr[rand(0, arr.length)]);
             else nextWord();
         }
     }
     let rusColor = () => {
-        console.log(phrase);
-        if(phrase.level == 1) return 'rgb(150, 150, 255)';
-        if(phrase.level == 2) return 'rgb(255, 255, 150)';
-        if(phrase.level == 3 || phrase.level == 0) return 'rgb(255, 150, 150)';
+        if (phrase.level == 1) return 'rgb(150, 150, 255)';
+        if (phrase.level == 2) return 'rgb(255, 255, 150)';
+        if (phrase.level == 3 || phrase.level == 0) return 'rgb(255, 150, 150)';
     }
 
     if (phrase != null) {
-        rusColor();
         return (
             <div>
-                <div id="commonPlace" style={{backgroundColor: rusColor()}}>
+                <div id="commonPlace" style={{ backgroundColor: rusColor() }}>
                     <div id="rusPlace"><div>{phrase.rus}</div></div>
-                    <div id="engPlace">
-                        <div>
+                    <div id="engPlace"><div>?</div>
+                        {/* <div>
                             <div>{phrase.eng}</div>
                             <div>{phrase.transcription}</div>
-                        </div>
+                        </div> */}
                     </div>
                     <div id="menuPlace">
                         <div>
@@ -88,7 +94,7 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                     </div>
                     <div id="nextPlace">
                         <div>
-                            <button className="btn btn-blue" onClick={toNextPhrase}>Далее</button>
+                            <button className="btn btn-green" onClick={toNextPhrase}>Далее</button>
                         </div>
                     </div>
                 </div>
