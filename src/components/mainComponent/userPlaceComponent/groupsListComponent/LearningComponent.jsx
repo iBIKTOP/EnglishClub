@@ -58,7 +58,7 @@ export default function LearningComponent({ learningArr, onSetPage }) {
     }
     let nextWord = () => {
         let setUpPhrase = (level) => {
-            if (words[0].length == 0 && words[1].length == 0 && words[2].length == 0) setUpWords();
+            if (words[1].length == 0 && words[2].length == 0) setUpWords();
             else {
                 if (words[level - 1].length > 0) {
                     let randIndex = rand(0, words[level - 1].length);

@@ -12,6 +12,12 @@
         font-size: 16px !important;
         overflow: hidden;
     }
+	#statisticPlace>div{
+		font-size: 7px !important;
+	}
+	.btn{
+		height: 35px !important;
+	}
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
