@@ -3,7 +3,7 @@ import React from "react";
 import { startLearning, updateLevelForWord } from "../../../../services/requests";
 
 export default function LearningComponent({ learningArr, onSetPage }) {
-
+	const [allDone, setAllDone] = React.useState(null);
     const [words, setWords] = React.useState(null);
     const [phrase, setPhrase] = React.useState(null);
 
@@ -20,9 +20,10 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         for (let i = 0; i < data.length; i++) {
             if (data[i].level == 1) lvl1.push(data[i]);
             if (data[i].level == 2) lvl2.push(data[i]);
-            if (data[i].level == 3 || data[i].level == '') lvl3.push(data[i]);
+            if (data[i].level == 3 || data[i].level == '' || data[i].level == 0) lvl3.push(data[i]);
         }
-        setWords([lvl1, lvl2, lvl3]);
+		if(lvl2.length > 0 || lvl3.length > 0) setWords([lvl1, lvl2, lvl3]);
+		else setAllDone("Все слова из выбранных групп выучены");
     }
 
     let rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -63,6 +64,7 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                 if (words[level - 1].length > 0) {
                     let randIndex = rand(0, words[level - 1].length);
                     let phrase = words[level - 1][randIndex];
+					console.log(phrase);
                     setPhrase(phrase);
                     let temp = words;
                     temp[level - 1].splice(randIndex, 1);
@@ -83,34 +85,53 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         if (phrase.level == 3 || phrase.level == 0) return 'rgb(255, 150, 150)';
     }
 
-    if (phrase != null) {
-        return (
+	if(allDone == null){
+		if (phrase != null) {
+			return (
+				<div>
+					<div id="commonPlace" style={{ backgroundColor: rusColor() }}>
+						<div id="statisticPlace"><div>Знаю: {words[0].length}; Сомневаюсь: {words[1].length}; Не знаю: {words[2].length}</div></div>
+						<div id="rusPlace"><div>{phrase.rus}</div></div>
+						<div id="engPlace"><div>?</div></div>
+						<div id="menuPlace">
+							<div>
+								<button className="btn btn-blue" onClick={toFirstLevel}>Знаю</button><br />
+								<button className="btn btn-yellow" onClick={toSecondLevel}>Сомневаюсь</button><br />
+								<button className="btn btn-red" onClick={toThirdLevel}>Не знаю</button><br />
+								<button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
+							</div>
+						</div>
+						<div id="nextPlace">
+							<div>
+								<button className="btn btn-green" onClick={toNextPhrase}>Далее</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			)
+		} 
+		else if (phrase == null) {
+			return (
+				<div className="spinner"></div>
+			)
+		}
+	}    
+	else if (allDone != null) {
+		return (
             <div>
-                <div id="commonPlace" style={{ backgroundColor: rusColor() }}>
-                    <div id="statisticPlace"><div>Знаю: {words[0].length}; Сомневаюсь: {words[1].length}; Не знаю: {words[2].length}</div></div>
-                    <div id="rusPlace"><div>{phrase.rus}</div></div>
-                    <div id="engPlace"><div>?</div></div>
+                <div id="commonPlace">
+					<div id="rusPlace">
+						<div>{allDone}</div>
+					</div>
                     <div id="menuPlace">
                         <div>
-                            <button className="btn btn-blue" onClick={toFirstLevel}>Знаю</button><br />
-                            <button className="btn btn-yellow" onClick={toSecondLevel}>Сомневаюсь</button><br />
-                            <button className="btn btn-red" onClick={toThirdLevel}>Не знаю</button><br />
                             <button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
-                        </div>
-                    </div>
-                    <div id="nextPlace">
-                        <div>
-                            <button className="btn btn-green" onClick={toNextPhrase}>Далее</button>
                         </div>
                     </div>
                 </div>
             </div>
         )
-    } else if (phrase == null) {
-        return (
-            <div className="spinner"></div>
-        )
-    }
+	}
 
 }
 
