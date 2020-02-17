@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import SearchRowComponent from './SearchRowComponent'
 import { getAllWords, addNewWord, addWordToGroup, getTranslateWooodHunter } from "../../../../services/requests";
-
+import Message from '../../../public/Message';
 
 export default function SearchComponent({ group, onUserPlacePageChange }) {
     const [allWords, setAllWords] = React.useState(null);
     const [temp, setTemp] = React.useState([]);
     const [newEng, setNewEng] = React.useState('');
     const [newRus, setNewRus] = React.useState('');
+    const [translate, setTranslate] = React.useState('');
+    const [message, setMessage] = React.useState('');
 
     React.useEffect(() => {
         if (allWords == null) {
@@ -18,8 +20,20 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             })();
         }
     });
-    let onGetTranslateWooodHunter = () => {
-        getTranslateWooodHunter(newEng);
+    let onGetTranslateWooodHunter = async () => {
+        let data = await getTranslateWooodHunter(newEng);
+        if(data == '') {
+            setMessage("Фраза не найдена");
+            let msg = document.getElementById('msg');
+            msg.style.cssText = "left: calc(50% - 130px); opacity: 1;";
+            setTimeout(() => {
+                msg.style.opacity = 0;
+            }, 1500);
+            setTimeout(() => {
+                msg.style.left = '-10000000px';
+            }, 2000);
+        }
+        else setTranslate(data);
     }
     let searchWords = (e) => {
         changeEng(e);
@@ -56,8 +70,18 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                                 <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
                             </div>
                         </div>
-                        <div>
-                            <button className='mybutton' onClick={onGetTranslateWooodHunter}>test</button>
+                        <br />
+                        <div className="flex-container">
+                            <div className='flex-block-9' style={{ textAlign: 'center' }}>
+                                <button className='mybutton' onClick={onGetTranslateWooodHunter}>Translate by WooordHunt</button>
+                                
+                            </div>
+                        </div>
+                        <br />
+                        <div className="flex-container">
+                            <div className='flex-block-9' style={{ textAlign: 'center' }}>
+                                <p>{translate}</p>
+                            </div>
                         </div>
                     </div>
                 )
@@ -92,6 +116,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     }
     return (
         <div>
+            <Message message={message} />
             <div className="header">
                 <div className="container">
                     <div className="flex-container">
@@ -114,6 +139,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             <div className="container">
                 {renderContent()}
             </div>
+            
         </div>
     );
 }

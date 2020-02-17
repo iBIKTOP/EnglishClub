@@ -317,8 +317,7 @@ export const getTranslateWooodHunter = async (phrase) => {
                 },
                 body: JSON.stringify({ phrase: phrase })
             });
-        let data = await response.text();
-        data == '' ? console.log('Фраза не найдена') : console.log(data);
+        return await response.text();
     }
     catch{
         console.log(new Error("Server doesn't answer!!!"));
