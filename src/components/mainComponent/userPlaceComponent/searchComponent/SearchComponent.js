@@ -8,7 +8,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     const [temp, setTemp] = React.useState([]);
     const [newEng, setNewEng] = React.useState('');
     const [newRus, setNewRus] = React.useState('');
-    const [translate, setTranslate] = React.useState('');
+    const [translate, setTranslate] = React.useState({ transcription: '', translate: '' });
     const [message, setMessage] = React.useState('');
 
     React.useEffect(() => {
@@ -22,7 +22,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     });
     let onGetTranslateWooodHunter = async () => {
         let data = await getTranslateWooodHunter(newEng);
-        if(data == '') {
+        if (data == '') {
             setMessage("Фраза не найдена");
             let msg = document.getElementById('msg');
             msg.style.cssText = "left: calc(50% - 130px); opacity: 1;";
@@ -33,7 +33,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                 msg.style.left = '-10000000px';
             }, 2000);
         }
-        else setTranslate(data);
+        else setTranslate(JSON.parse(data));
     }
     let searchWords = (e) => {
         changeEng(e);
@@ -74,13 +74,12 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                         <div className="flex-container">
                             <div className='flex-block-9' style={{ textAlign: 'center' }}>
                                 <button className='mybutton' onClick={onGetTranslateWooodHunter}>Translate by WooordHunt</button>
-                                
                             </div>
                         </div>
                         <br />
                         <div className="flex-container">
                             <div className='flex-block-9' style={{ textAlign: 'center' }}>
-                                <p>{translate}</p>
+                                <p>{translate.transcription} - {translate.translate}</p>
                             </div>
                         </div>
                     </div>
@@ -139,7 +138,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             <div className="container">
                 {renderContent()}
             </div>
-            
+
         </div>
     );
 }
