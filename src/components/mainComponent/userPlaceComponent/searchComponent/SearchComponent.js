@@ -18,9 +18,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             })();
         }
     });
-	let onGetTranslateWooodHunter = () => {
-		getTranslateWooodHunter();
-	}
+    let onGetTranslateWooodHunter = () => {
+        getTranslateWooodHunter(newEng);
+    }
     let searchWords = (e) => {
         changeEng(e);
         if (e.target.value) {
@@ -46,20 +46,20 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             }
             else if (temp.length == 0) {
                 return (
-					<div>
-						<div className="flex-container">
-							<div className='flex-block-1'></div>
-							<div className='flex-block-9'>
-								<input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
-							</div>
-							<div className='flex-block-1' style={{ textAlign: 'center' }}>
-								<button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
-							</div>
-						</div>
-						<div>
-							<button className='mybutton' onClick={onGetTranslateWooodHunter}>test</button>
-						</div>
-					</div>
+                    <div>
+                        <div className="flex-container">
+                            <div className='flex-block-1'></div>
+                            <div className='flex-block-9'>
+                                <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
+                            </div>
+                            <div className='flex-block-1' style={{ textAlign: 'center' }}>
+                                <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
+                            </div>
+                        </div>
+                        <div>
+                            <button className='mybutton' onClick={onGetTranslateWooodHunter}>test</button>
+                        </div>
+                    </div>
                 )
             }
         }
@@ -101,7 +101,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                             </button>
                         </div>
                         <div className="flex-block-9" style={{ textAlign: 'right' }}>
-                            <input type="text" autoFocus className="myInput" placeholder="Search" value={newEng} onChange={searchWords} style={{color: 'white'}}></input>
+                            <input type="text" autoFocus className="myInput" placeholder="Search" value={newEng} onChange={searchWords} style={{ color: 'white' }}></input>
                         </div>
                         {/* <div className="flex-block-1" style={{ textAlign: 'right' }}>
                             <button className='mybutton' onClick={onLogOut}>
