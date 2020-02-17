@@ -129,7 +129,8 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                         </div>
                     </div>
                 )
-            } else if (userGroups == null) {
+            }
+            if (userGroups == null) {
                 return (
                     <div className="spinner"></div>
                 )

@@ -226,6 +226,14 @@ h1,h6 {
     margin: auto;
     width: 100%;
 }
+.flex-block-4 {
+    box-sizing: border-box;
+    flex-basis: 50px;/*базовый размер отдельно взятого flex-блока*/
+    flex-grow: 4;/*“жадность” отдельно взятого flex-блока*/
+    flex-shrink: 4;/*фактор “сжимаемости” отдельно взятого flex-блока*/
+    margin: auto;
+    width: 100%;
+}
 .flex-block-9 {
     box-sizing: border-box;
     flex-basis: 100px;/*базовый размер отдельно взятого flex-блока*/
