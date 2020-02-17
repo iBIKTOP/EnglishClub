@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchRowComponent from './SearchRowComponent'
-import { getAllWords, addNewWord, addWordToGroup } from "../../../../services/requests";
+import { getAllWords, addNewWord, addWordToGroup, getTranslateWooodHunter } from "../../../../services/requests";
 
 
 export default function SearchComponent({ group, onUserPlacePageChange }) {
@@ -18,6 +18,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             })();
         }
     });
+	let onGetTranslateWooodHunter = () => {
+		getTranslateWooodHunter();
+	}
     let searchWords = (e) => {
         changeEng(e);
         if (e.target.value) {
@@ -43,15 +46,20 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             }
             else if (temp.length == 0) {
                 return (
-                    <div className="flex-container">
-                        <div className='flex-block-1'></div>
-                        <div className='flex-block-9'>
-                            <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
-                        </div>
-                        <div className='flex-block-1' style={{ textAlign: 'center' }}>
-                            <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
-                        </div>
-                    </div>
+					<div>
+						<div className="flex-container">
+							<div className='flex-block-1'></div>
+							<div className='flex-block-9'>
+								<input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
+							</div>
+							<div className='flex-block-1' style={{ textAlign: 'center' }}>
+								<button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
+							</div>
+						</div>
+						<div>
+							<button className='mybutton' onClick={onGetTranslateWooodHunter}>test</button>
+						</div>
+					</div>
                 )
             }
         }

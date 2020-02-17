@@ -1,3 +1,6 @@
+var needle = require('needle');
+var cheerio = require('cheerio');
+
 export const getUserGroups = async (userID) => {
     try {
         let response = await fetch(`http://18.130.38.194:5000/userGroups/`,
@@ -305,4 +308,22 @@ export const updateLevelForWord = async (wordID, level) => {
             body: JSON.stringify({ wordID: wordID, level: level })
         });
     console.log(await response.text());
+}
+export const getTranslateWooodHunter = () => {
+	needle.get(`https://wooordhunt.ru/word/get`, (err, res, body) => {
+		console.log(body);
+		/* let $ = cheerio.load(res.body);
+		let $transcription = $('#us_tr_sound > .transcription');
+		let transcription = $transcription.text();
+		console.log(transcription); */
+	});
+	/* var temp = arr;
+	for (let i = 0; i < arr.length; i++) {
+		needle.get(`https://wooordhunt.ru/word/${arr[i].phrase}`, (err, res) => {
+			let $ = cheerio.load(res.body);
+			let $transcription = $('#us_tr_sound > .transcription');
+			temp[i].transcription = $transcription.text();
+			console.log(temp[i]);
+		});
+	} */
 }
