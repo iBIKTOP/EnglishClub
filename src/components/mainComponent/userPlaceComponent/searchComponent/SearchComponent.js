@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import SearchRowComponent from './SearchRowComponent'
 import { getAllWords, addNewWord, addWordToGroup, getTranslateWooodHunter } from "../../../../services/requests";
 import Message from '../../../public/Message';
+import AnswerComponent from "./AnswerComponent";
 
 export default function SearchComponent({ group, onUserPlacePageChange }) {
     const [allWords, setAllWords] = React.useState(null);
     const [temp, setTemp] = React.useState([]);
     const [newEng, setNewEng] = React.useState('');
     const [newRus, setNewRus] = React.useState('');
-    const [answer, setAnswer] = React.useState({phrase: '', transcription: '', translate: ''});
+    const [answer, setAnswer] = React.useState({ phrase: '', transcription: '', translate: '' });
     const [message, setMessage] = React.useState('');
 
     React.useEffect(() => {
@@ -34,9 +35,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             }, 2000);
         }
         else {
-			console.log(JSON.parse(data));
-			setAnswer(JSON.parse(data));
-		}
+            console.log(JSON.parse(data));
+            setAnswer(JSON.parse(data));
+        }
     }
     let searchWords = (e) => {
         changeEng(e);
@@ -80,13 +81,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                             </div>
                         </div>
                         <br />
-                        <div className="flex-container">
-                            <div className='flex-block-9' style={{ textAlign: 'center' }}>
-								<p>Phrase: {answer.phrase}</p>
-                                <p>Transcription: {answer.transcription}</p>
-								
-                            </div>
-                        </div>
+                        <AnswerComponent answer={answer} />
                     </div>
                 )
             }
