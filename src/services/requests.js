@@ -322,5 +322,4 @@ export const getTranslateWooodHunter = async (phrase) => {
     catch{
         console.log(new Error("Server doesn't answer!!!"));
     }
-
 }

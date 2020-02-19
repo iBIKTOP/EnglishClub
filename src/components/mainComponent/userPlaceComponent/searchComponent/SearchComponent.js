@@ -8,7 +8,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     const [temp, setTemp] = React.useState([]);
     const [newEng, setNewEng] = React.useState('');
     const [newRus, setNewRus] = React.useState('');
-    const [translate, setTranslate] = React.useState({ transcription: '', translate: '' });
+    const [answer, setAnswer] = React.useState({phrase: '', transcription: '', translate: ''});
     const [message, setMessage] = React.useState('');
 
     React.useEffect(() => {
@@ -33,7 +33,10 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                 msg.style.left = '-10000000px';
             }, 2000);
         }
-        else setTranslate(JSON.parse(data));
+        else {
+			console.log(JSON.parse(data));
+			setAnswer(JSON.parse(data));
+		}
     }
     let searchWords = (e) => {
         changeEng(e);
@@ -79,7 +82,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                         <br />
                         <div className="flex-container">
                             <div className='flex-block-9' style={{ textAlign: 'center' }}>
-                                <p>{translate.transcription} - {translate.translate}</p>
+								<p>Phrase: {answer.phrase}</p>
+                                <p>Transcription: {answer.transcription}</p>
+								
                             </div>
                         </div>
                     </div>
@@ -143,3 +148,17 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     );
 }
 
+/* {
+									(() => {
+										return(
+											if(answer.translate != ''){
+												answer.translate.map(function (row, i) {
+													return (
+														<p>Translate: {row} </p>
+													)
+												})
+												console.log(answer.translate);
+											}
+										)
+									})()
+								} */
