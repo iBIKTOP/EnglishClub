@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import SearchRowComponent from './SearchRowComponent'
+import SearchRowComponent from './SearchRowComponent';
+import TranslateComponent from './TranslateComponent';
 import { getAllWords, addNewWord, addWordToGroup, getTranslateWooodHunter } from "../../../../services/requests";
 import Message from '../../../public/Message';
 
@@ -20,6 +21,14 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             })();
         }
     });
+	let renderTranslate = () => {
+		if(answer.translate != ''){
+			return(
+				<TranslateComponent data={answer}/>
+			)
+		}
+	}
+	
     let onGetTranslateWooodHunter = async () => {
         let data = await getTranslateWooodHunter(newEng);
         if (data == '') {
@@ -73,20 +82,12 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                                 <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
                             </div>
                         </div>
-                        <br />
-                        <div className="flex-container">
+                        {/* <div className="flex-container">
                             <div className='flex-block-9' style={{ textAlign: 'center' }}>
                                 <button className='mybutton' onClick={onGetTranslateWooodHunter}>Translate by WooordHunt</button>
                             </div>
-                        </div>
-                        <br />
-                        <div className="flex-container">
-                            <div className='flex-block-9' style={{ textAlign: 'center' }}>
-								<p>Phrase: {answer.phrase}</p>
-                                <p>Transcription: {answer.transcription}</p>
-								
-                            </div>
-                        </div>
+                        </div> */}
+                        {renderTranslate()}
                     </div>
                 )
             }
@@ -132,11 +133,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                         <div className="flex-block-9" style={{ textAlign: 'right' }}>
                             <input type="text" autoFocus className="myInput" placeholder="Search" value={newEng} onChange={searchWords} style={{ color: 'white' }}></input>
                         </div>
-                        {/* <div className="flex-block-1" style={{ textAlign: 'right' }}>
-                            <button className='mybutton' onClick={onLogOut}>
-                                <i className="material-icons">exit_to_app</i>
-                            </button>
-                        </div> */}
+                        <div className="flex-block-1" style={{ textAlign: 'right' }}>
+							<button className='mybutton' onClick={onGetTranslateWooodHunter}>Translate</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,18 +146,3 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
         </div>
     );
 }
-
-/* {
-									(() => {
-										return(
-											if(answer.translate != ''){
-												answer.translate.map(function (row, i) {
-													return (
-														<p>Translate: {row} </p>
-													)
-												})
-												console.log(answer.translate);
-											}
-										)
-									})()
-								} */
