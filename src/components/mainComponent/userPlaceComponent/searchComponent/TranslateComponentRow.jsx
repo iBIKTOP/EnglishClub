@@ -6,6 +6,8 @@ export default function TranslateComponentRow({ row, changeArr }) {
 		changeArr(row);
 	}
 	return(
-		<h6 onClick={onChangeArr}>{row}</h6>
+		<div onClick={onChangeArr} className='groupsRow'>
+			<div className='groupsRowItem' style={{ textAlign: 'center' }}>{row}</div>
+		</div>
 	)
 }

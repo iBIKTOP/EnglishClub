@@ -31,6 +31,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
 	}
 	
     let onGetTranslateWooodHunter = async () => {
+		setTemp([]);
         let data = await getTranslateWooodHunter(newEng);
         if (data == '') {
             setMessage("Фраза не найдена");
