@@ -21,10 +21,11 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             })();
         }
     });
+	let onSetNewRus = (str) => setNewRus(str);
 	let renderTranslate = () => {
 		if(answer.translate != ''){
 			return(
-				<TranslateComponent data={answer}/>
+				<TranslateComponent data={answer} newRus={newRus} onSetNewRus={onSetNewRus}/>
 			)
 		}
 	}
@@ -43,7 +44,6 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             }, 2000);
         }
         else {
-			console.log(JSON.parse(data));
 			setAnswer(JSON.parse(data));
 		}
     }
