@@ -248,7 +248,8 @@ export const getAllWords = async () => {
 //     }
 // }
 
-export const addNewWord = async (groupID, newEng, newRus) => {
+//функция добавляет новое слово в группу, если его нет в БД то добавляет и туда
+export const addNewWord = async (groupID, newEng, newRus, transcription) => {
     try {
         let response = await fetch("http://18.130.38.194:5000/addNewWord",
             {
@@ -257,7 +258,7 @@ export const addNewWord = async (groupID, newEng, newRus) => {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus })
+                body: JSON.stringify({ groupID: groupID, newEng: newEng, newRus: newRus, transcription: transcription })
             });
         let data = await response.text();
         // return JSON.parse(data);

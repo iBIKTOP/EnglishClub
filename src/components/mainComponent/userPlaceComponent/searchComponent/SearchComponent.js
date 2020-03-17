@@ -63,6 +63,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     let renderContent = () => {
         if (allWords != null) {
             if (temp.length > 0) {
+				console.log(temp);
                 return (
                     temp.map(function (row, i) {
                         return (
@@ -80,14 +81,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                                 <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
                             </div>
                             <div className='flex-block-1' style={{ textAlign: 'center' }}>
-                                <button className='mybutton' type='submit' onClick={onSubmit}>Save</button>
+                                <button className='mybutton' type='submit' onClick={addNewPhraseToGroup}>Save</button>
                             </div>
                         </div>
-                        {/* <div className="flex-container">
-                            <div className='flex-block-9' style={{ textAlign: 'center' }}>
-                                <button className='mybutton' onClick={onGetTranslateWooodHunter}>Translate by WooordHunt</button>
-                            </div>
-                        </div> */}
                         {renderTranslate()}
                     </div>
                 )
@@ -101,10 +97,12 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     }
     let changeEng = (e) => setNewEng(e.target.value);
     let changeRus = (e) => setNewRus(e.target.value);
-    let onSubmit = async (e) => {
+	
+	//функция добавления обсалютно нового слова в группу
+    let addNewPhraseToGroup = async (e) => {
         e.preventDefault();
         if (newEng != '' && newRus != '') {
-            await addNewWord(group.id, newEng, newRus);
+            await addNewWord(group.id, newEng, newRus, answer.transcription);//   <------   нужно добавить транскрипцию
             setTemp([]);
             setNewEng('');
             setNewRus('');
@@ -113,6 +111,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             alert('поля пустые');
         }
     }
+	//функция добавления нового слова в группу из списка БД
     let onSave = async (row) => {
         await addWordToGroup(group.id, row.id);
         setTemp([]);
