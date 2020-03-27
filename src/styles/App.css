@@ -140,6 +140,7 @@ h1,h6 {
     /*box-shadow: 0 0 5px gray;*/
     border-bottom: 1px solid lightgray;
     padding: 7px;
+    cursor: pointer;
 }
 .htable{
     box-sizing: border-box;
