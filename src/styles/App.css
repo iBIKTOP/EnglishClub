@@ -79,6 +79,12 @@ button{
     position: fixed;
     top: 0; left: 0; bottom: 0; right: 0;
 }
+.searchImg{
+    width: 200px;
+    position: relative;
+    left: calc(50% - 100px); 
+    margin-top: 10px;
+}
 .container{
     display: block;
     margin: 0;

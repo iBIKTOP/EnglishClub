@@ -64,7 +64,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
         if (allWords != null) {
             if (temp == null) {
                 return (
-                    <img src={search} className='welcomeImg'></img>
+                    <img src={search} className='searchImg'></img>
                 )
             }
             else if (temp != null && temp.length > 0) {
