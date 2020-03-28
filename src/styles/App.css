@@ -219,7 +219,7 @@ h1,h6 {
 }
 .flex-block-2 {
     box-sizing: border-box;
-    flex-basis: 25px;/*базовый размер отдельно взятого flex-блока*/
+    flex-basis: 20px;/*базовый размер отдельно взятого flex-блока*/
     flex-grow: 2;/*“жадность” отдельно взятого flex-блока*/
     flex-shrink: 2;/*фактор “сжимаемости” отдельно взятого flex-блока*/
     margin: auto;
@@ -227,7 +227,7 @@ h1,h6 {
 }
 .flex-block-3 {
     box-sizing: border-box;
-    flex-basis: 50px;/*базовый размер отдельно взятого flex-блока*/
+    flex-basis: 30px;/*базовый размер отдельно взятого flex-блока*/
     flex-grow: 3;/*“жадность” отдельно взятого flex-блока*/
     flex-shrink: 3;/*фактор “сжимаемости” отдельно взятого flex-блока*/
     margin: auto;
@@ -235,15 +235,23 @@ h1,h6 {
 }
 .flex-block-4 {
     box-sizing: border-box;
-    flex-basis: 50px;/*базовый размер отдельно взятого flex-блока*/
+    flex-basis: 40px;/*базовый размер отдельно взятого flex-блока*/
     flex-grow: 4;/*“жадность” отдельно взятого flex-блока*/
     flex-shrink: 4;/*фактор “сжимаемости” отдельно взятого flex-блока*/
     margin: auto;
     width: 100%;
 }
+.flex-block-8 {
+    box-sizing: border-box;
+    flex-basis: 80px;/*базовый размер отдельно взятого flex-блока*/
+    flex-grow: 8;/*“жадность” отдельно взятого flex-блока*/
+    flex-shrink: 8;/*фактор “сжимаемости” отдельно взятого flex-блока*/
+    margin: auto;
+    width: 100%;
+}
 .flex-block-9 {
     box-sizing: border-box;
-    flex-basis: 100px;/*базовый размер отдельно взятого flex-блока*/
+    flex-basis: 90px;/*базовый размер отдельно взятого flex-блока*/
     flex-grow: 9;/*“жадность” отдельно взятого flex-блока*/
     flex-shrink: 9;/*фактор “сжимаемости” отдельно взятого flex-блока*/
     margin: auto;
@@ -392,7 +400,7 @@ h1,h6 {
 .visible{
     display: block;
 }
-.groupsRow{
+.rowPlace{
     box-sizing: border-box;
     box-shadow:  0 0 2px #2a2a2a;
     margin: 10px 10px 0 10px;
@@ -401,10 +409,10 @@ h1,h6 {
     /* background-color: #fff; */
     background: linear-gradient(to top, #fefcea, #f9f9fa, #fefcea);
 }
-.groupsRow:hover{
+.rowPlace:hover{
     box-shadow: 0 0 10px #2a2a2a;
 }
-.groupsRowItem{
+.rowItem{
     /* border: 1px solid rgb(212, 212, 212); */
     padding: 10px;
 	cursor: pointer;

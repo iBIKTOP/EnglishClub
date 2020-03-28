@@ -79,13 +79,21 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
             else if (temp != null && temp.length == 0) {
                 return (
                     <div>
-                        <div className="flex-container">
-                            <div className='flex-block-1'></div>
-                            <div className='flex-block-9'>
-                                <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus}></input>
-                            </div>
-                            <div className='flex-block-1' style={{ textAlign: 'center' }}>
-                                <button className='mybutton' type='submit' onClick={addNewPhraseToGroup}>Save</button>
+                        <div className="header" style={{ marginTop: '5px' }}>
+                            <div className="container">
+                                <div className="flex-container">
+                                    <div className='flex-block-1'>
+                                        <button className='mybutton' onClick={() => { setNewEng(''); setNewRus(''); setAnswer({ phrase: '', transcription: '', translate: '' }); }}>
+                                            <span className="material-icons">backspace</span>
+                                        </button>
+                                    </div>
+                                    <div className='flex-block-8'>
+                                        <input className='myInput' placeholder='Введите перевод...' onChange={changeRus} value={newRus} style={{ color: 'white' }}></input>
+                                    </div>
+                                    <div className='flex-block-1' style={{ textAlign: 'right' }}>
+                                        <button className='mybutton' type='submit' onClick={addNewPhraseToGroup}><span className="material-icons">save</span></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {renderTranslate()}
@@ -134,11 +142,11 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                                 <i className="material-icons">arrow_back</i>
                             </button>
                         </div>
-                        <div className="flex-block-9" style={{ textAlign: 'right' }}>
+                        <div className="flex-block-8" style={{ textAlign: 'right' }}>
                             <input type="text" autoFocus className="myInput" placeholder="Search" value={newEng} onChange={searchPhrase} style={{ color: 'white' }}></input>
                         </div>
                         <div className="flex-block-1" style={{ textAlign: 'right' }}>
-                            <button className='mybutton' onClick={onGetTranslateWooodHunter}>Translate</button>
+                            <button className='mybutton' onClick={onGetTranslateWooodHunter}><span className="material-icons">translate</span></button>
                         </div>
                     </div>
                 </div>
