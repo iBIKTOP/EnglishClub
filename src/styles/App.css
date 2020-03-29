@@ -112,25 +112,21 @@ h1,h6 {
 .logo:hover{
     cursor: pointer;
 }
-.message{
+.newMessage{
     position: fixed;
-    width: 260px;
-    left: -10000000px;
     top: 90%;
-    text-align: center;
+    display: block;
+    width: 260px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    left: calc(50% - 130px);
     color: #fff;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 5px 20px 5px 20px;
-    border-radius: 100px;
-    font-weight: bold;
+    text-align: center;
+    border-radius: 50px;
     opacity: 0;
     transition: opacity 1s;
-    font-size: 10px;
-    display: inline-block;
 }
-/* .invisible{
-    opacity: 0;
-} */
 .header{
     background: #2bbbad;
     box-shadow: 0 0 3px #2a2a2a;

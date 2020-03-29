@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import HeaderComponent from "./headerComponent/HeaderComponent";
-import { getCookie, deleteCookie } from '../../services/cookie';
+import { getCookie, setCookie, deleteCookie } from '../../services/cookie';
 import '../../styles/App.css';
 import RegistrationComponent from "./registrationComponent/RegistrationComponent";
 import LoginComponent from "./loginComponent/LoginComponent";
@@ -13,16 +13,17 @@ export default function MainComponent() {
     const [page, setPage] = React.useState('welcome');
 
     React.useEffect(() => {
-        if (user == null) {
-            (async () => {
-                let cookieId = await getCookie('ID');
-                if (cookieId != '') {
-                    let user = await getUser(cookieId);
-                    setUser(user);
-                    setPage('userPlace');
-                }
-            })();
-        }
+        (async () => {
+            let cookieId = await getCookie('ID');
+            if (cookieId != '' && user == null) {
+                let user = await getUser(cookieId);
+                setUser(user);
+                setPage('userPlace');
+            }
+            if (cookieId != '' && user != null) {
+                setCookie(user.id);
+            }
+        })();
     });
 
     let setWelcomePage = (page) => setPage(page);

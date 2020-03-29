@@ -3,14 +3,13 @@ import React from "react";
 import Irregular_verbs from "../irregularVerbsPage/Irregular_verbs";
 import GroupsListRowComponent from "./GroupsListRowComponent";
 import { getUserGroups, getNewGroup, addNewGroup, startLearning } from "../../../../services/requests";
-import Message from "../../../public/Message";
+import newMessage from "../../../../services/newMessage";
 import LearningComponent from "./LearningComponent";
 
 export default function GroupsListComponent({ id, onUserPlacePageChange, groupWordsChange, onLogOut }) {
     const [userGroups, setUserGroups] = React.useState(null);
     const [visible, setVisible] = React.useState(false);
     const [newGroupName, setNewGroupName] = React.useState('');
-    const [message, setMessage] = React.useState('');
     const [page, setPage] = React.useState('groupList');
     const [learningArr, setLearningArr] = React.useState([]);
     let arr = [];
@@ -69,15 +68,7 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
     }
     let startLesson = () => {
         if (arr.length == 0) {
-            setMessage("Необходимо выбрать хотя бы один урок");
-            let msg = document.getElementById('msg');
-            msg.style.cssText = "left: calc(50% - 130px); opacity: 1;";
-            setTimeout(() => {
-                msg.style.opacity = 0;
-            }, 1500);
-            setTimeout(() => {
-                msg.style.left = '-10000000px';
-            }, 2000);
+            newMessage("Необходимо выбрать хотя бы один урок");
         } else if (arr.length > 0) {
             setPage("learning");
             setLearningArr(arr);
@@ -125,7 +116,6 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                                 })
                             }
                             {creatingNewGroup()}
-                            {<Message message={message} />}
                         </div>
                     </div>
                 )

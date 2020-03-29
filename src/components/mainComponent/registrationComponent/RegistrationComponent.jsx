@@ -1,35 +1,31 @@
 import React from 'react';
 import validate from "../../../services/validate";
 import { getLogin, addUser, addUserIrregularVerbs } from "../../../services/requests"
-import Message from '../../public/Message';
+import newMessage from "../../../services/newMessage";
 
 export default function RegistrationComponent({ onUserChange, setWelcomePage }) {
     const [login, setLogin] = React.useState('');
     const [pass1, setPass1] = React.useState('');
     const [pass2, setPass2] = React.useState('');
-    const [message, setMessage] = React.useState('');
 
     let onLoginChange = (e) => {
         let login = e.target.value;
         setLogin(validate(login));
-        setMessage('');
     }
     let onPass1Change = (e) => {
         let pass1 = e.target.value;
         setPass1(validate(pass1));
-        setMessage('');
     }
     let onPass2Change = (e) => {
         let pass2 = e.target.value;
         setPass2(validate(pass2));
-        setMessage('');
     }
     let onSubmit = async (e) => {
         e.preventDefault();
         if (login.length > 0 && pass1.length > 0 && pass2.length > 0 && pass1 == pass2) {
             let user = await getLogin(login);
             if (user) {
-                setMessage('(Ошибка: login занят)');
+                newMessage('login занят');
             } else {
                 let user = await addUser(login, pass1);
                 // addUserIrregularVerbs(user[0].id);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -37,7 +33,7 @@ export default function RegistrationComponent({ onUserChange, setWelcomePage }) 
                 setWelcomePage('userPlace');
             }
         } else {
-            setMessage('(Ошибка: Данные введены некоректно)');
+            newMessage('Данные введены некоректно');
         }
     }
     return (
@@ -46,7 +42,7 @@ export default function RegistrationComponent({ onUserChange, setWelcomePage }) 
                 <div className="mycard-header">
                     <div className="flex-container">
                         <div className="flex-block-3" style={{ textAlign: 'left' }}>
-                            Регистрация <Message message={message} />
+                            Регистрация
                         </div>
                         <div className="flex-block-3" style={{ textAlign: 'right' }}>
                             <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{ float: 'right' }}>X</button>

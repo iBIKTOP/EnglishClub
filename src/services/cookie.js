@@ -1,5 +1,5 @@
 export function setCookie(userID) {
-    document.cookie = `ID=${userID}; path=/; expires=${(new Date(Date.now() + 1000 * 60 * 60 * 24)).toUTCString()}`;
+    document.cookie = `ID=${userID}; path=/; expires=${(new Date(Date.now() + 1000 * 60 * 60 * 24 * 7)).toUTCString()}`; // 7 days
 }
 export function getCookie(id) {
     return new Promise((resolve, reject) => {

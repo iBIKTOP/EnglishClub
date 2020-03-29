@@ -1,22 +1,19 @@
 import React from 'react';
 import validate from "../../../services/validate";
-import Message from '../../public/Message';
+import newMessage from "../../../services/newMessage";
 import { authentication } from "../../../services/requests"
 import { setCookie } from '../../../services/cookie';
 
 export default function LoginComponent({ onUserChange, setWelcomePage }) {
     const [login, setLogin] = React.useState('');
     const [pass1, setPass1] = React.useState('');
-    const [message, setMessage] = React.useState('');
     let onLoginChange = (e) => {
         let login = e.target.value;
         setLogin(validate(login));
-        setMessage('');
     }
     let onPass1Change = (e) => {
         let pass1 = e.target.value;
         setPass1(validate(pass1));
-        setMessage('');
     }
     let onSubmit = async (e) => {
         e.preventDefault();
@@ -27,10 +24,10 @@ export default function LoginComponent({ onUserChange, setWelcomePage }) {
                 onUserChange(user);
                 setWelcomePage('userPlace');
             } else {
-                setMessage('(Ошибка: Неверный логин или пароль.)');
+                newMessage("Неверный логин или пароль");
             }
         } else {
-            setMessage('(Ошибка: Данные введены некоректно)');
+            newMessage("Данные введены некоректно");
         }
     }
     return (
@@ -39,7 +36,7 @@ export default function LoginComponent({ onUserChange, setWelcomePage }) {
                 <div className="mycard-header">
                     <div className="flex-container">
                         <div className="flex-block-3" style={{ textAlign: 'left' }}>
-                            Авторизация <Message message={message} />
+                            Авторизация
                         </div>
                         <div className="flex-block-3" style={{ textAlign: 'right' }}>
                             <button className="mybutton" onClick={() => setWelcomePage('welcome')} style={{ float: 'right' }}>X</button>
