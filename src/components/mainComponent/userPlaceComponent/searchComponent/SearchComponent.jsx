@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import SearchRowComponent from './SearchRowComponent';
 import TranslateComponent from './TranslateComponent';
 import { getAllWords, addNewWord, addWordToGroup, getTranslateWooodHunter } from "../../../../services/requests";
-import Message from '../../../public/Message';
+import newMessage from "../../../../services/newMessage";
 import search from "../../../../img/search.jpg";
 
 export default function SearchComponent({ group, onUserPlacePageChange }) {
@@ -11,7 +11,6 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     const [newEng, setNewEng] = React.useState('');
     const [newRus, setNewRus] = React.useState('');
     const [answer, setAnswer] = React.useState({ phrase: '', transcription: '', translate: '' });
-    const [message, setMessage] = React.useState('');
 
     React.useEffect(() => {
         if (allWords == null) {
@@ -25,7 +24,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     let renderTranslate = () => {
         if (answer.translate != '') {
             return (
-                <TranslateComponent data={answer} newRus={newRus} onSetNewRus={onSetNewRus} />
+                <div className="container">
+                    <TranslateComponent data={answer} newRus={newRus} onSetNewRus={onSetNewRus} />
+                </div>
             )
         }
     }
@@ -34,15 +35,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
         setTemp([]);
         let data = await getTranslateWooodHunter(newEng.toLowerCase());
         if (data == '') {
-            setMessage("Фраза не найдена");
-            let msg = document.getElementById('msg');
-            msg.style.cssText = "left: calc(50% - 130px); opacity: 1;";
-            setTimeout(() => {
-                msg.style.opacity = 0;
-            }, 1500);
-            setTimeout(() => {
-                msg.style.left = '-10000000px';
-            }, 2000);
+            newMessage("Фраза не найдена");
         }
         else {
             setAnswer(JSON.parse(data));
@@ -71,7 +64,9 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                 return (
                     temp.map(function (row, i) {
                         return (
-                            <SearchRowComponent key={i} row={row} onSave={onSave}></SearchRowComponent>
+                            <div className="container">
+                                <SearchRowComponent key={i} row={row} onSave={onSave}></SearchRowComponent>
+                            </div>
                         )
                     })
                 )
@@ -133,7 +128,6 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
     }
     return (
         <div>
-            <Message message={message} />
             <div className="header">
                 <div className="container">
                     <div className="flex-container">
@@ -151,10 +145,7 @@ export default function SearchComponent({ group, onUserPlacePageChange }) {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                {renderContent()}
-            </div>
-
+            {renderContent()}
         </div>
     );
 }

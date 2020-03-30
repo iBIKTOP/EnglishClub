@@ -1,18 +1,15 @@
 import React from "react";
-import { updateChecked } from "../../../../services/requests"
 
-export default function GroupsListRowComponent({ row, onUserPlacePageChange, groupWordsChange, editArr }) {
-    const [checked, setChecked] = React.useState(row.checked);
+export default function GroupsListRowComponent({ row, onUserPlacePageChange, groupWordsChange, editArr, check }) {
+    const [checked, setChecked] = React.useState(check);
     let getChecked = () => {
-        return checked == 0 ? 'check_box_outline_blank' : 'check_box'
+        return checked == false ? 'check_box_outline_blank' : 'check_box';
     }
     let onUpdateChecked = () => {
         if (checked == 0) {
-            setChecked(1)
-            updateChecked(row.id, 1);
+            setChecked(true)
         } else {
-            setChecked(0)
-            updateChecked(row.id, 0);
+            setChecked(false)
         }
         editArr(row.id);
     }

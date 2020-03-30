@@ -5,7 +5,7 @@ export default function newMessage(text) {
     document.body.append(div);
     setTimeout(() => {
         div.style.opacity = 1;
-    }, 1);
+    }, 10);
     setTimeout(() => {
         div.style.opacity = 0;
     }, 1500);

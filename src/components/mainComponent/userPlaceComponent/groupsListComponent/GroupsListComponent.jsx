@@ -12,7 +12,6 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
     const [newGroupName, setNewGroupName] = React.useState('');
     const [page, setPage] = React.useState('groupList');
     const [learningArr, setLearningArr] = React.useState([]);
-    let arr = [];
 
     React.useEffect(() => {
         if (userGroups == null) {
@@ -23,20 +22,15 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
         }
     });
     let editArr = (groupID) => {
-        let temp = 1;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] == groupID) {
-                // let arr2 = arr;
-                // setArr(arr2.splice(i, 1));
-                arr.splice(i, 1)
-                temp = 0;
-            }
+        let array = learningArr;
+        let index = array.indexOf(groupID);
+        if (index == -1) {
+            array.push(groupID);
         }
-        if (temp == 1) {
-            // let arr2 = arr;
-            // setArr(arr2.push(groupID));
-            arr.push(groupID)
+        if (index != -1) {
+            array.splice(index, 1);
         }
+        setLearningArr(array);
     }
     let saveNewGroup = async () => {
         let newGroup = await addNewGroup(id, newGroupName);
@@ -67,11 +61,10 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
         }
     }
     let startLesson = () => {
-        if (arr.length == 0) {
+        if (learningArr.length == 0) {
             newMessage("Необходимо выбрать хотя бы один урок");
-        } else if (arr.length > 0) {
+        } else if (learningArr.length > 0) {
             setPage("learning");
-            setLearningArr(arr);
         }
     }
     let onSetPage = (page) => {
@@ -105,13 +98,12 @@ export default function GroupsListComponent({ id, onUserPlacePageChange, groupWo
                         <div className='container'>
                             {
                                 userGroups.map(function (row, i) {
-                                    if (row.checked == 1) {
-                                        // let arr2 = arr;
-                                        // setArr(arr2.push(row.id));
-                                        arr.push(row.id)
+                                    let check = false;
+                                    if (learningArr.includes(row.id)) {
+                                        check = true;
                                     }
                                     return (
-                                        <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} editArr={editArr} />
+                                        <GroupsListRowComponent key={i} row={row} index={i} onUserPlacePageChange={onUserPlacePageChange} groupWordsChange={groupWordsChange} editArr={editArr} check={check} />
                                     )
                                 })
                             }
