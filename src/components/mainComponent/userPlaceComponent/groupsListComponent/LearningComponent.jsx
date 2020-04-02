@@ -3,7 +3,7 @@ import React from "react";
 import { startLearning, updateLevelForWord } from "../../../../services/requests";
 
 export default function LearningComponent({ learningArr, onSetPage }) {
-	const [allDone, setAllDone] = React.useState(null);
+    const [allDone, setAllDone] = React.useState(null);
     const [words, setWords] = React.useState(null);
     const [phrase, setPhrase] = React.useState(null);
 
@@ -22,24 +22,46 @@ export default function LearningComponent({ learningArr, onSetPage }) {
             if (data[i].level == 2) lvl2.push(data[i]);
             if (data[i].level == 3 || data[i].level == '' || data[i].level == 0) lvl3.push(data[i]);
         }
-		if(lvl2.length > 0 || lvl3.length > 0) setWords([lvl1, lvl2, lvl3]);
-		else setAllDone("Все слова из выбранных групп выучены");
+        if (lvl2.length > 0 || lvl3.length > 0) setWords([lvl1, lvl2, lvl3]);
+        else setAllDone("Все слова из выбранных групп выучены");
+    }
+
+    let nextWord = () => {
+        let setUpPhrase = (level) => {
+            // if (words[1].length == 0 && words[2].length == 0) setUpWords();
+            if (words[1].length == 0 && words[2].length == 0) setAllDone("All Done");
+            else {
+                if (words[level - 1].length == 0) nextWord();
+                else if (words[level - 1].length > 0) {
+                    console.log("Firstly: ", words[0].length, words[1].length, words[2].length);
+                    let temp = words;
+                    let randIndex = rand(0, temp[level - 1].length);
+                    console.log("level =", level, "randIndex =", randIndex, "length =", temp[level - 1].length);
+                    let phrase1 = words[level - 1][randIndex];
+                    console.log("phrase1 ", phrase1);
+                    setPhrase(phrase1);
+                    console.log("обновили phrase");
+                    temp[level - 1].splice(randIndex, 1);
+                    console.log(temp[0].length, temp[1].length, temp[2].length);
+                    setWords(temp);
+                    console.log("обновили words");
+                }
+
+            }
+        }
+        let randomPercent = rand(0, 100);
+        if (randomPercent >= 0 && randomPercent <= 20) setUpPhrase(1);
+        if (randomPercent >= 21 && randomPercent <= 60) setUpPhrase(2);
+        if (randomPercent >= 61 && randomPercent <= 100) setUpPhrase(3);
     }
 
     let rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
-    let toFirstLevel = () => {
-        updateLevelForWord(phrase.id, 1);
+    let changeLevel = (level) => {
+        updateLevelForWord(phrase.id, level);
         toggleMenuPlace();
     }
-    let toSecondLevel = () => {
-        updateLevelForWord(phrase.id, 2);
-        toggleMenuPlace();
-    }
-    let toThirdLevel = () => {
-        updateLevelForWord(phrase.id, 3);
-        toggleMenuPlace();
-    }
+
     let toggleMenuPlace = () => {
         let eng = document.getElementById("engPlace");
         let menuPlace = document.getElementById('menuPlace');
@@ -48,6 +70,7 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         menuPlace.style.left = '-100%';
         nextPlace.style.left = '0';
     }
+
     let toNextPhrase = () => {
         let eng = document.getElementById("engPlace");
         let menuPlace = document.getElementById('menuPlace');
@@ -57,72 +80,51 @@ export default function LearningComponent({ learningArr, onSetPage }) {
         nextPlace.style.left = '-100%';
         nextWord();
     }
-    let nextWord = () => {
-        let setUpPhrase = (level) => {
-            if (words[1].length == 0 && words[2].length == 0) setUpWords();
-            else {
-                if (words[level - 1].length > 0) {
-                    let randIndex = rand(0, words[level - 1].length);
-                    let phrase = words[level - 1][randIndex];
-					console.log(phrase);
-                    setPhrase(phrase);
-                    let temp = words;
-                    temp[level - 1].splice(randIndex, 1);
-                    setWords(temp);
-                }
-                if (words[level - 1].length == 0) nextWord();
-            }
 
-        }
-        let randomPercent = rand(0, 100);
-        if (randomPercent >= 0 && randomPercent <= 10) setUpPhrase(1);
-        if (randomPercent >= 11 && randomPercent <= 50) setUpPhrase(2);
-        if (randomPercent >= 51 && randomPercent <= 100) setUpPhrase(3);
-    }
     let rusColor = () => {
         if (phrase.level == 1) return 'rgb(150, 150, 255)';
         if (phrase.level == 2) return 'rgb(255, 255, 150)';
         if (phrase.level == 3 || phrase.level == 0) return 'rgb(255, 150, 150)';
     }
 
-	if(allDone == null){
-		if (phrase != null) {
-			return (
-				<div>
-					<div id="commonPlace" style={{ backgroundColor: rusColor() }}>
-						<div id="statisticPlace"><div>Знаю: {words[0].length}; Сомневаюсь: {words[1].length}; Не знаю: {words[2].length}</div></div>
-						<div id="rusPlace"><div>{phrase.rus}</div></div>
-						<div id="engPlace"><div>?</div></div>
-						<div id="menuPlace">
-							<div>
-								<button className="btn btn-blue" onClick={toFirstLevel}>Знаю</button><br />
-								<button className="btn btn-yellow" onClick={toSecondLevel}>Сомневаюсь</button><br />
-								<button className="btn btn-red" onClick={toThirdLevel}>Не знаю</button><br />
-								<button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
-							</div>
-						</div>
-						<div id="nextPlace">
-							<div>
-								<button className="btn btn-green" onClick={toNextPhrase}>Далее</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			)
-		} 
-		else if (phrase == null) {
-			return (
-				<div className="spinner"></div>
-			)
-		}
-	}    
-	else if (allDone != null) {
-		return (
+    if (allDone == null) {
+        if (phrase != null) {
+            return (
+                <div>
+                    <div id="commonPlace" style={{ backgroundColor: rusColor() }}>
+                        <div id="statisticPlace"><div>Знаю: {words[0].length}; Сомневаюсь: {words[1].length}; Не знаю: {words[2].length}</div></div>
+                        <div id="rusPlace"><div>{phrase.rus}</div></div>
+                        <div id="engPlace"><div>?</div></div>
+                        <div id="menuPlace">
+                            <div>
+                                <button className="btn btn-blue" onClick={() => changeLevel(1)}>Знаю</button><br />
+                                <button className="btn btn-yellow" onClick={() => changeLevel(2)}>Сомневаюсь</button><br />
+                                <button className="btn btn-red" onClick={() => changeLevel(3)}>Не знаю</button><br />
+                                <button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
+                            </div>
+                        </div>
+                        <div id="nextPlace">
+                            <div>
+                                <button className="btn btn-green" onClick={toNextPhrase}>Далее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        else if (phrase == null) {
+            return (
+                <div className="spinner"></div>
+            )
+        }
+    }
+    else if (allDone != null) {
+        return (
             <div>
                 <div id="commonPlace">
-					<div id="rusPlace">
-						<div>{allDone}</div>
-					</div>
+                    <div id="finalPlace">
+                        <div>Вы завершили урок. <br /> Желаете выйти или начать заново?</div>
+                    </div>
                     <div id="menuPlace">
                         <div>
                             <button className="btn btn-green btn-small" onClick={() => onSetPage('groupList')}><i className="material-icons">arrow_back</i></button>
@@ -131,7 +133,7 @@ export default function LearningComponent({ learningArr, onSetPage }) {
                 </div>
             </div>
         )
-	}
+    }
 
 }
 
