@@ -23,30 +23,25 @@ export default function LearningComponent({ learningArr, onSetPage }) {
             if (data[i].level == 3 || data[i].level == '' || data[i].level == 0) lvl3.push(data[i]);
         }
         if (lvl2.length > 0 || lvl3.length > 0) setWords([lvl1, lvl2, lvl3]);
-        else setAllDone("Все слова из выбранных групп выучены");
+        else if (lvl2.length == 0 && lvl3.length == 0) setAllDone("All Done");
     }
 
     let nextWord = () => {
         let setUpPhrase = (level) => {
-            // if (words[1].length == 0 && words[2].length == 0) setUpWords();
-            if (words[1].length == 0 && words[2].length == 0) setAllDone("All Done");
+            if (words[1].length == 0 && words[2].length == 0) {
+                setAllDone("All Done");
+                setUpWords(); // для отображения статистики
+            }
             else {
                 if (words[level - 1].length == 0) nextWord();
                 else if (words[level - 1].length > 0) {
-                    console.log("Firstly: ", words[0].length, words[1].length, words[2].length);
                     let temp = words;
                     let randIndex = rand(0, temp[level - 1].length);
-                    console.log("level =", level, "randIndex =", randIndex, "length =", temp[level - 1].length);
                     let phrase1 = words[level - 1][randIndex];
-                    console.log("phrase1 ", phrase1);
                     setPhrase(phrase1);
-                    console.log("обновили phrase");
                     temp[level - 1].splice(randIndex, 1);
-                    console.log(temp[0].length, temp[1].length, temp[2].length);
                     setWords(temp);
-                    console.log("обновили words");
                 }
-
             }
         }
         let randomPercent = rand(0, 100);
@@ -123,7 +118,12 @@ export default function LearningComponent({ learningArr, onSetPage }) {
             <div>
                 <div id="commonPlace">
                     <div id="finalPlace">
-                        <div>Вы завершили урок. <br /> Желаете выйти или начать заново?</div>
+                        <div>
+                            <div><span className="btn-green">{words[0].length}</span> / <span className="btn-yellow">{words[1].length}</span> / <span className="btn-red">{words[2].length}</span></div>
+                            Вы завершили урок. <br />
+                            Желаете начать заново?
+                            <button className="btn btn-green" onClick={() => { setUpWords(); setAllDone(null) }}>Да, желаю!</button>
+                        </div>
                     </div>
                     <div id="menuPlace">
                         <div>
